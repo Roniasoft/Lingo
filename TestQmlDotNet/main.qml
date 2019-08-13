@@ -2,14 +2,14 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.1
+import FramelessWindow 1.0
 
-ApplicationWindow {
+FramelessAppWindow {
     id: window
     width: 640
     height: 680
     visible: true
     title: "Project Management"
-    flags: Qt.FramelessWindowHint | Qt.Window // Disable window frame
 
     Material.theme: Material.Dark
     Material.accent: '#4885cc'
@@ -19,17 +19,10 @@ ApplicationWindow {
     property int previousX
     property int previousY
 
-    property bool isMaximized: false;
 
     function updateStatusBar(msg) {
         footerLabel.text = msg;
         timerFooterCleaner.start();
-    }
-
-    Timer {
-        id: resizingWindowTimer;
-        interval: 500;
-        repeat: false;
     }
 
     Timer {
@@ -116,6 +109,7 @@ ApplicationWindow {
         modal: true;
         height: 240;
         y: (parent.height - height) / 2
+        closePolicy: Popup.NoAutoClose
 
         header: Rectangle {
             height: 35;
@@ -160,25 +154,30 @@ ApplicationWindow {
 
     }
 
-    header: ToolBar {
+    ToolBar {
         id: header;
         Material.foreground: "#0e1621"
+        anchors.top: window.top;
+        anchors.left: window.left;
+        anchors.right: window.right;
+        width: parent.width;
         height: 30
 
         background: Rectangle {
             color: "#0e1621"
             height: 30;
-            anchors.fill: parent
             width: parent.width;
+            anchors.fill: parent
 
             Image {
                 id: imgMenu
                 source: "images/Icons/MenuH.png"
-                width: 20;
+                width: isMax ? 18 : 20;
                 fillMode: Image.PreserveAspectFit;
-                anchors.verticalCenter: parent.verticalCenter;
+                anchors.bottom: parent.bottom;
+                anchors.bottomMargin: isMax ? 2 : 5;
                 anchors.left: parent.left;
-                anchors.leftMargin: 5;
+                anchors.leftMargin: isMax ? 10 : 5;
 
                 MouseArea {
                     anchors.fill: parent;
@@ -201,11 +200,11 @@ ApplicationWindow {
             Row {
                 id: rowWindowButtons;
                 anchors.right: parent.right;
-                anchors.rightMargin: 0;
-                anchors.top: parent.top;
-                height: parent.height;
+                anchors.rightMargin: isMax ? 8 : 0;
+                anchors.bottom: parent.bottom;
+                height: isMax ? 22 : 30
                 Rectangle {
-                    height: 30
+                    height: isMax ? 22 : 30
                     width: 40;
                     color: maMinButton.containsMouse ? "#2c3847" : "#0e1621";
                     Image {
@@ -223,11 +222,11 @@ ApplicationWindow {
                         anchors.fill: parent;
                         hoverEnabled: true;
                         cursorShape: Qt.PointingHandCursor;
-                        onClicked: window.showMinimized();
+                        onClicked: showMin();
                     }
                 }
                 Rectangle {
-                    height: 30
+                    height: isMax ? 22 : 30
                     width: 40;
                     color: maMaxButton.containsMouse ? "#2c3847" : "#0e1621";
                     Image {
@@ -235,8 +234,8 @@ ApplicationWindow {
                         anchors.verticalCenter: parent.verticalCenter;
                         anchors.horizontalCenter: parent.horizontalCenter;
                         height: 12;
-                        source: maMaxButton.containsMouse ? (isMaximized ? "images/WindowIcons/4H.png" : "images/WindowIcons/2H.png") :
-                                                            (isMaximized ? "images/WindowIcons/4.png" : "images/WindowIcons/2.png");
+                        source: maMaxButton.containsMouse ? (isMax ? "images/WindowIcons/4H.png" : "images/WindowIcons/2H.png") :
+                                                            (isMax ? "images/WindowIcons/4.png" : "images/WindowIcons/2.png");
                         fillMode: Image.PreserveAspectFit
                     }
 
@@ -246,18 +245,17 @@ ApplicationWindow {
                         hoverEnabled: true;
                         cursorShape: Qt.PointingHandCursor;
                         onClicked: {
-                            resizingWindowTimer.start();
-                            if (isMaximized) {
+                            if (isMax) {
                                 window.showNormal();
                             } else {
                                 window.showMaximized();
                             }
-                            isMaximized = !isMaximized;
+                        //    isMaximized = !isMaximized;
                         }
                     }
                 }
                 Rectangle {
-                    height: 30
+                    height: isMax ? 22 : 30
                     width: 40;
                     color: maCloseButton.containsMouse ? "#e92539" : "#0e1621";
                     Image {
@@ -290,14 +288,14 @@ ApplicationWindow {
 
                 onPressed: {
 
-                    if (!resizingWindowTimer.running && isMaximized == false) {
+                    if (isMax === false) {
                         previousX = mouseX
                         previousY = mouseY
                     }
                 }
 
                 onMouseXChanged: {
-                    if (resizingWindowTimer.running || isMaximized)
+                    if (isMax)
                         return;
 
                     var dx = mouseX - previousX
@@ -306,25 +304,23 @@ ApplicationWindow {
 
                 onMouseYChanged: {
                     var dy = mouseY - previousY
-                    if (!resizingWindowTimer.running && dy > 5 && isMaximized) {
+                    if (dy > 5 && isMax) {
                         window.showNormal();
                         window.setY(mouseY);
-                        isMaximized = false;
+                       // isMaximized = false;
                         return;
                     }
 
-                    if (resizingWindowTimer.running == false)
-                        window.setY(window.y + dy)
+                    window.setY(window.y + dy)
                 }
 
                 onDoubleClicked: {
-                    resizingWindowTimer.start();
-                            if (isMaximized) {
-                                window.showNormal();
-                            } else {
-                                window.showMaximized();
-                            }
-                            isMaximized = !isMaximized;
+                    if (isMax) {
+                        window.showNormal();
+                    } else {
+                        window.showMaximized();
+                    }
+                  //  isMaximized = !isMaximized;
                 }
             }
 
@@ -359,7 +355,7 @@ ApplicationWindow {
         id: drawer
         width: Math.min(window.width, window.height) / 6 * 2
         height: window.height
-        interactive: stackView.depth === 1
+        interactive: true;//stackView.depth === 1
         background: Rectangle {
             color: "#0e1621";
         }
@@ -428,11 +424,11 @@ ApplicationWindow {
         }
     }
 
-    StackView {
-        id: stackView
-        anchors.fill: parent
-        initialItem: Item{}
-    }
+//    StackView {
+//        id: stackView
+//        anchors.fill: parent
+//        initialItem: Item{}
+//    }
 
     TabBar {
         id: bar;
@@ -453,14 +449,15 @@ ApplicationWindow {
     StackLayout {
         id: stacklayout;
         width: parent.width
-        height: parent.height;
+        //height: parent.height;
         //        anchors.fill: parent;
         anchors.top: bar.bottom;
+        anchors.bottom: footerBar.top;
         currentIndex: bar.currentIndex
 
         Projects {
             id: projectsTab;
-            height: parent.height * 0.8;
+            height: parent.height;
 
             onOpenRequested: {
                 var tab = tabButtonComponent.createObject(bar, {text: projName});
@@ -521,8 +518,11 @@ ApplicationWindow {
         }
     }
 
-    footer: ToolBar {
+    ToolBar {
         id: footerBar;
+        anchors.bottom: parent.bottom;
+        anchors.left: parent.left;
+        anchors.right: parent.right;
         height: 25;
 
 

@@ -33,6 +33,7 @@ Rectangle {
             font.bold: false;
             color: "white";
             font.family: "Open Sans"
+            font.underline: flatButton.focus
         }
     }
 
