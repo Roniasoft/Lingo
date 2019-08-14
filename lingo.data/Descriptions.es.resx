@@ -1,0 +1,1625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml">
+  <xsd:schema id="root" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChargeRule.Primers" xml:space="preserve">
+    <!--The primers contained in this charge rule-->
+    <value>Las primas de ésta regla de carguío</value>
+  </data>
+  <data name="ChargeRule.SectionRules" xml:space="preserve">
+    <!--The section rules used to define how holes using this charge rule should be filled-->
+    <value>Las reglas de sección que definen cómo se cargan los pozos segun ésta regla de carga.</value>
+  </data>
+  <data name="DagNode.ActualVisibility" xml:space="preserve">
+    <!--Is this node actually visible based on both its own visibility and the visibility of ancestors-->
+    <value>¿Es realmente visible este nodo basado tanto en su propia visibilidad como en la visibilidad de los antepasados. </value>
+  </data>
+  <data name="DagNode.Visible" xml:space="preserve">
+    <!--Controls whether this node is visible in the viewport or not-->
+    <value>Controla si este nodo está visible en la ventana de visualización o no. </value>
+  </data>
+  <data name="DGNode.Name" xml:space="preserve">
+    <!--The name of this node. Nodes can be named however you want and exist purely for your reference-->
+    <value>El nombre del nodo. Los nodos pueden ser nombrados en cualquier manera y existen solamente para el beneficio del usuario</value>
+  </data>
+  <data name="ExplosiveType.Density" xml:space="preserve">
+    <!--The density of the explosive-->
+    <value>La densidad del explosivo  </value>
+  </data>
+  <data name="ExplosiveType.FragmentationEfficiencyFactor" xml:space="preserve">
+    <!--The fragmentation efficiency factor is also known as the "Explosive Performance Term"-->
+    <value>El factor de eficiencia de fragmentación expresado también como el Explosive Performance Term (EPT)</value>
+  </data>
+  <data name="ExplosiveType.RelWeightStrength" xml:space="preserve">
+    <!--The effective weight strength of the explosive compared with ANFO, indicating fragmentation potential of the explosive-->
+    <value>La potencia por peso del explosivo en relación al ANFO</value>
+  </data>
+  <data name="ExplosiveType.SpecificEnergy" xml:space="preserve">
+    <!--The specific energy of the explosive-->
+    <value>La energía específica del explosivo </value>
+  </data>
+  <data name="ExplosiveType.VOD" xml:space="preserve">
+    <!--The velocity of detonation-->
+    <value>La velocidad de detonación </value>
+  </data>
+  <data name="FixedLengthRule.Length" xml:space="preserve">
+    <!--The maximum length this section should occupy-->
+    <value>La longitud máxima de ésta sección</value>
+  </data>
+  <data name="FixedWeightRule.Weight" xml:space="preserve">
+    <!--The maximum weight this section should contain-->
+    <value>El peso máximo de ésta sección</value>
+  </data>
+  <data name="PercentageLengthRule.Percentage" xml:space="preserve">
+    <!--The percentage of the containing hole length taken up by this section-->
+    <value>El porcentaje de la longitud del pozo ocupado por ésta sección</value>
+  </data>
+  <data name="PrimerNode.Depth" xml:space="preserve">
+    <!--The depth to place the primer relative to the reference section-->
+    <value>La profundidad del iniciador en relación con la sección de referencia</value>
+  </data>
+  <data name="PrimerNode.DepthMode" xml:space="preserve">
+    <!--Defines whether depth is measured from the top down or up from the bottom up-->
+    <value>Define si la profundidad se refiere desde arriba hacia abajo o desde abajo hacia arriba</value>
+  </data>
+  <data name="PrimerNode.ReferenceSection" xml:space="preserve">
+    <!--The section rule used as reference when placing this primer-->
+    <value>La regla de sección utilizada como referencia al ubicar éste iniciador</value>
+  </data>
+  <data name="SectionRule.AutoColour" xml:space="preserve">
+    <!--When true, the colour is automatically determined based on the explosive density-->
+    <value>Cuando es verdadero, el color se determina automáticamente en base a la densidad  del explosivo</value>
+  </data>
+  <data name="SectionRule.Colour" xml:space="preserve">
+    <!--The colour used to represent this section-->
+    <value>El color utilizado para representar esta sección </value>
+  </data>
+  <data name="SectionRule.ExplosiveType" xml:space="preserve">
+    <!--The explosive type used in this particular section-->
+    <value>El tipo de explosivo utilizado en ésta sección particular</value>
+  </data>
+  <data name="SectionRule.Type" xml:space="preserve">
+    <!--Describes what sort of material this section contains-->
+    <value>Describe qué tipo de material contiene ésta sección</value>
+  </data>
+  <data name="SectionRule.UserColour" xml:space="preserve">
+    <!--The user-defined colour used to represent this section-->
+    <value>El color definido por el usuario y utilizado para representar ésta sección</value>
+  </data>
+  <data name="VariableDiameterRule.Length" xml:space="preserve">
+    <!--The maximum length this section should occupy-->
+    <value>La longitud máxima de ésta sección</value>
+  </data>
+  <data name="VariableDiameterRule.Weight" xml:space="preserve">
+    <!--The maximum weight this section should contain-->
+    <value>El peso máximo de ésta sección</value>
+  </data>
+  <data name="VariableLengthRule.Units" xml:space="preserve">
+    <!--The number of units this section is to fill. This becomes a fraction of the total length to be charged by dividing it by the sum of all variable section unit values-->
+    <value>El número de unidades que ésta sección debe llenar. Esto se convierte en una fracción de la longitud total a cargar, dividiéndola por la suma de todos los valores unitarios de la sección variable</value>
+  </data>
+  <data name="BenchBlastHole.ActualLength" xml:space="preserve">
+    <!--The actual length of the hole taking into account all length modifiers-->
+    <value>La longitud real del pozo teniendo en cuenta todos los modificadores de longitud</value>
+  </data>
+  <data name="BenchBlastHole.Bearing" xml:space="preserve">
+    <!--The bearing direction that defines the plane of inclination for this hole-->
+    <value>La dirección de inclinación de éste pozo</value>
+  </data>
+  <data name="BenchBlastHole.ChargeRule" xml:space="preserve">
+    <!--The node used to define how this hole is to be charged-->
+    <value>El nodo utilizado para definir cómo cargar éste pozo</value>
+  </data>
+  <data name="BenchBlastHole.Colour" xml:space="preserve">
+    <!--The colour used to represent this hole-->
+    <value>El color utilizado para representar éste pozo</value>
+  </data>
+  <data name="BenchBlastHole.Diameter" xml:space="preserve">
+    <!--The diameter of the hole-->
+    <value>El diámetro del pozo</value>
+  </data>
+  <data name="BenchBlastHole.ExplicitLength" xml:space="preserve">
+    <!--The physical length of the hole. This is sometimes thought of as the bench height plus any sub-drill-->
+    <value>La longitud del pozo</value>
+  </data>
+  <data name="BenchBlastHole.ExplosiveWeight" xml:space="preserve">
+    <!--The weight of explosive this hole contains-->
+    <value>El peso del explosivo que contiene éste pozo</value>
+  </data>
+  <data name="BenchBlastHole.Geology" xml:space="preserve">
+    <!--The geology of the rock surrounding this hole-->
+    <value>La geología de la roca que rodea éste pozo</value>
+  </data>
+  <data name="BenchBlastHole.Inclination" xml:space="preserve">
+    <!--The angle of inclination around the axis defined by the Bearing-->
+    <value>El ángulo de inclinación con respecto al eje definido por la dirección de inclinación</value>
+  </data>
+  <data name="BenchBlastHole.InitiationTime" xml:space="preserve">
+    <!--The initiation time of this hole using the current timing scenario-->
+    <value>El tiempo de iniciación de éste pozo utilizando el escenario de secuenciación actual</value>
+  </data>
+  <data name="BenchBlastHole.SubDrill" xml:space="preserve">
+    <!--That portion of the specified total hole length that is drilled below the intended final bench floor level. A hole's length always includes the sub-drill value-->
+    <value>La sobre-perforación. La longitud del pozo siempre incluye la sobre-perforacion</value>
+  </data>
+  <data name="BlastDagNode.BlastPosition" xml:space="preserve">
+    <!--The position of this node in mine coordinates-->
+    <value>La posición de éste nodo en las coordenadas de la mina </value>
+  </data>
+  <data name="CustomFragmentationMetric.PercentageValue" xml:space="preserve">
+    <!--For PercentageFromSize types, this is the percentage value-->
+    <value>Para los tipos PercentageFromSize, éste es el porcentaje por peso</value>
+  </data>
+  <data name="CustomFragmentationMetric.SizeValue" xml:space="preserve">
+    <!--For SizeFromPercentage types, this is the size value-->
+    <value>Para los tipos SizeFromPercentage, éste es el valor del tamaño </value>
+  </data>
+  <data name="DelayNode.Colour" xml:space="preserve">
+    <!--The colour used to represent this delay-->
+    <value>El color utilizado para representar éste retardo</value>
+  </data>
+  <data name="DelayNode.DelayTime" xml:space="preserve">
+    <!--The delay time-->
+    <value>El tiempo de retardo </value>
+  </data>
+  <data name="DelayNode.DrawIcon" xml:space="preserve">
+    <!--Controls the visual representation of this delay-->
+    <value>Controla la representación visual de este retardo </value>
+  </data>
+  <data name="DelayNode.Length" xml:space="preserve">
+    <!--Used to define the length of non-electric delays-->
+    <value>Se utiliza para definir la longitud de los retardos no eléctricos</value>
+  </data>
+  <data name="DelayNode.Notes" xml:space="preserve">
+    <!--Additional notes describing the delay-->
+    <value>Notas adicionales que describen el retardo</value>
+  </data>
+  <data name="DirectionalTimingScenario.Bearing" xml:space="preserve">
+    <!--The direction the blast front will travel in-->
+    <value>La dirección en la cual viajará el frente de detonación</value>
+  </data>
+  <data name="DirectionalTimingScenario.DelayPerLength" xml:space="preserve">
+    <!--The delay per distance along the direction vector-->
+    <value>El tiempo de alivio a lo largo del vector de dirección</value>
+  </data>
+  <data name="DirectionalTimingScenario.StartTime" xml:space="preserve">
+    <!--The initiation starting time-->
+    <value>Tiempo de iniciación del primer pozo</value>
+  </data>
+  <data name="FragmentationScenario.BlastFragCalibrationVisible" xml:space="preserve">
+    <!--Toggles whether or not the BlastFrag curve appears in the geology calibration graph-->
+    <value>Determina si la curva BlastFrag aparece o no en el gráfico de calibración </value>
+  </data>
+  <data name="FragmentationScenario.GraphXLog" xml:space="preserve">
+    <!--Toggles whether or not the X-Axis of the Fragmentation size graph is drawn with a log scale-->
+    <value>Determina si el eje X del gráfico de tamaño de fragmentación se dibuja o no con escala  logarítmica</value>
+  </data>
+  <data name="FragmentationScenario.GraphXMax" xml:space="preserve">
+    <!--The largest size to display on the Fragmentation size graph-->
+    <value>El tamaño más grande mostrado en el gráfico de tamaño de partícula</value>
+  </data>
+  <data name="FragmentationScenario.GraphXMin" xml:space="preserve">
+    <!--The smallest size to display on the Fragmentation size graph-->
+    <value>El tamaño más pequeño a mostrar en el gráfico de tamaño de partícula</value>
+  </data>
+  <data name="FragmentationScenario.KcoAndKuzRamHoleDeviation" xml:space="preserve">
+    <!--The standard deviation for hole collar positional error, used for the KCO and Kuz-Ram fragmentation algorithms. Set this to zero if you are using surveyed data, or set it to an appropriate value if you are using design data to simulate drill deviation-->
+    <value>La desviación estándar para el error de posiciónamiento de los collares, utilizada para los algoritmos de fragmentación KCO y Kuz-Ram. Cambie este valor a cero al usar datos reales o ajústelo a un valor apropiado al usar datos teóricos para simular la desviación de  perforación</value>
+  </data>
+  <data name="FragmentationScenario.KcoCalibrationVisible" xml:space="preserve">
+    <!--Toggles whether or not the KCO curve appears in the geology calibration graph-->
+    <value>Determina si la curva KCO aparece o no en el gráfico de calibración </value>
+  </data>
+  <data name="FragmentationScenario.KuzRamCalibrationVisible" xml:space="preserve">
+    <!--Toggles whether or not the Kuz-Ram curve appears in the geology calibration graph-->
+    <value>Determina si la curva Kuz-Ram aparece o no en el gráfico de calibración </value>
+  </data>
+  <data name="FragmentationScenario.KuzRamUniformityFactor" xml:space="preserve">
+    <!--The KuzRam uniformity index scaling factor-->
+    <value>El factor de escala del índice de uniformidad KuzRam </value>
+  </data>
+  <data name="FragmentationScenario.OversizeDefinition" xml:space="preserve">
+    <!--Oversize definition value for this modelling scenario-->
+    <value>Valor de definición de sobre-tamaño para éste escenario </value>
+  </data>
+  <data name="Geology.B50" xml:space="preserve">
+    <!--The 50% passing size of in-situ blocks for this geology type-->
+    <value>El tamaño promedio de los bloques in-situ para ésta geología</value>
+  </data>
+  <data name="Geology.B50Adjuster" xml:space="preserve">
+    <!--The average in-situ block size adjuster-->
+    <value>El factor de ajuste del tamaño promedio de bloque in-situ </value>
+  </data>
+  <data name="Geology.B50Lower" xml:space="preserve">
+    <!--The 50% passing size for the lower-limit estimate of in-situ blocks of this geology type-->
+    <value>El tamaño promedio del límite inferior de bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.B50Upper" xml:space="preserve">
+    <!--The 50% passing size for the upper-limit estimate of in-situ blocks of this geology type-->
+    <value>El tamaño promedio del límite superior de bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.B80" xml:space="preserve">
+    <!--The 80% passing size of in-situ blocks for this geology type-->
+    <value>El tamaño de paso de 80% de los bloques in situ para ésta geología</value>
+  </data>
+  <data name="Geology.B80Lower" xml:space="preserve">
+    <!--The 80% passing size for the lower-limit estimate of in-situ blocks of this geology type-->
+    <value>El tamaño de paso de 80% para el límite inferior de los bloques in situ de ésta geología</value>
+  </data>
+  <data name="Geology.B80Upper" xml:space="preserve">
+    <!--The 80% passing size for the upper-limit estimate of in-situ blocks of this geology type-->
+    <value>El tamaño de paso de 80% para el límite superior de los bloques in situ de ésta geología</value>
+  </data>
+  <data name="Geology.B99" xml:space="preserve">
+    <!--The maximum size of in-situ blocks for this geology type-->
+    <value>El tamaño máximo de los bloques in-situ para ésta geología</value>
+  </data>
+  <data name="Geology.B99Lower" xml:space="preserve">
+    <!--The maximum size for the lower-limit estimate of in-situ blocks of this geology type-->
+    <value>El tamaño máximo del límite inferior de bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.B99Upper" xml:space="preserve">
+    <!--The maximum size for the upper-limit estimate of in-situ blocks of this geology type-->
+    <value>El tamaño máximo del límite superior de bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.CriticalPowderFactorAdjuster_BlastFrag" xml:space="preserve">
+    <!--The factor used to calibrate the recommended powder factor value-->
+    <value>El factor de ajuste utilizado para calibrar el factor de carga recomendado</value>
+  </data>
+  <data name="Geology.CriticalPowderFactorAdjuster_KCO" xml:space="preserve">
+    <!--The factor used to calibrate the recommended powder factor value-->
+    <value>El factor de ajuste utilizado para calibrar el factor de carga recomendado</value>
+  </data>
+  <data name="Geology.GraphCalibrationXLog" xml:space="preserve">
+    <!--Toggles whether or not the X-Axis of the calibrated fragmentation size graph is drawn with a log scale-->
+    <value>Determina si el eje X del gráfico de tamaño de partícula calibrado se dibuja o no con una escala logarítmica</value>
+  </data>
+  <data name="Geology.GraphCalibrationXMax" xml:space="preserve">
+    <!--The largest size to display on the calibrated fragmentation size graph of this geology type-->
+    <value>El tamaño máximo que se mostrará en el gráfico de tamaño de partícula calibrado de ésta geología</value>
+  </data>
+  <data name="Geology.GraphCalibrationXMin" xml:space="preserve">
+    <!--The smallest size to display on the calibrated fragmentation size graph of this geology type-->
+    <value>El tamaño mínimo que se mostrará en el gráfico de tamaño de fragmentación calibrado a ésta geología</value>
+  </data>
+  <data name="Geology.GraphInSituXLog" xml:space="preserve">
+    <!--Toggles whether or not the X-Axis of the in-situ block size graph is drawn with a log scale-->
+    <value>Alterna si el eje X del gráfico de tamaño de bloque in situ se dibuja o no con una escala logarítmica </value>
+  </data>
+  <data name="Geology.GraphInSituXMax" xml:space="preserve">
+    <!--The largest size to display on the in-situ block size graph of this geology type-->
+    <value>El tamaño máximo que se mostrará en el gráfico de tamaño de bloque in situ de ésta geología</value>
+  </data>
+  <data name="Geology.GraphInSituXMin" xml:space="preserve">
+    <!--The smallest size to display on the in-situ block size graph of this geology type-->
+    <value>El tamaño mínimo para mostrar en el gráfico de tamaño de bloque in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.JointConditionFreshNotWeathered" xml:space="preserve">
+    <!--A description of the in-situ rock joint condition - either weathered and open rocks or fresh clean and tight rocks-->
+    <value>Una descripción de la condición in-situ de las fracturas -  oxidadas y abiertas o frescas y apretadas </value>
+  </data>
+  <data name="Geology.MeasuredCalibrationData" xml:space="preserve">
+    <!--Measured empirical post-blasting size distribution data for fragmentation modelling calibration-->
+    <value>Datos empíricos de distribución por tamaño de las partículas después de la voladura para calibración del modelo de fragmentación</value>
+  </data>
+  <data name="Geology.PWaveVelocity" xml:space="preserve">
+    <!--The calculated P-Wave Velocity for in-situ blocks of this geology type-->
+    <value>La Velocidad de onda P calculada para bloques in-situ de éste tipo de geología</value>
+  </data>
+  <data name="Geology.PWaveVelocityLower" xml:space="preserve">
+    <!--The calculated P-Wave Velocity for the lower-limit estimate of in-situ blocks of this geology type-->
+    <value>El límite inferior de la velocidad estimada de la onda P de ésta geología</value>
+  </data>
+  <data name="Geology.PWaveVelocityUpper" xml:space="preserve">
+    <!--The calculated P-Wave Velocity for the upper-limit estimate of in-situ blocks of this geology type-->
+    <value>El límite superior de la velocidad estimada de la onda P de ésta geología.</value>
+  </data>
+  <data name="Geology.RockDensity" xml:space="preserve">
+    <!--The UCS rock strength for in-situ blocks of this geology type-->
+    <value>La resistencia a la compresión de la roca para bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.RockDensityLower" xml:space="preserve">
+    <!--The rock density for the lower-limit estimate of in-situ blocks of this geology type-->
+    <value>El límite inferior de la densidad de roca para los bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.RockDensityUpper" xml:space="preserve">
+    <!--The rock density for the upper-limit estimate of in-situ blocks of this geology type-->
+    <value>El límite superior de la densidad de roca para los bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.RockFactorAdjuster_BlastFrag" xml:space="preserve">
+    <!--This is a rock factor adjustment value applied to the BlastFrag fragmentation algortihm-->
+    <value>Un ajuste al Factor de Roca para el algoritmo BlastFrag </value>
+  </data>
+  <data name="Geology.RockFactorAdjuster_KCO" xml:space="preserve">
+    <!--This is a rock factor adjustment value applied to the KCO fragmentation algortihm-->
+    <value>Un ajuste al Factor de Roca para el algoritmo KCO </value>
+  </data>
+  <data name="Geology.RockFactorAdjuster_KuzRam" xml:space="preserve">
+    <!--This is a rock factor adjustment value applied to the Kuz-Ram fragmentation algortihm-->
+    <value>Un ajuste al Factor de Roca para el algoritmo Kuz Ram. </value>
+  </data>
+  <data name="Geology.RockStrength" xml:space="preserve">
+    <!--The rock density for in-situ blocks of this geology type-->
+    <value>La densidad de roca para los bloques in-situ de ésta geología</value>
+  </data>
+  <data name="Geology.RockStrengthLower" xml:space="preserve">
+    <!--The UCS rock strength for the lower-limit estimate of in-situ blocks of this geology type-->
+    <value>El límite inferior de la resistencia a la compresión de la roca para ésta geología</value>
+  </data>
+  <data name="Geology.RockStrengthUpper" xml:space="preserve">
+    <!--The UCS rock strength for the upper-limit estimate of in-situ blocks of this geology type-->
+    <value>El límite superior de la resistencia a la compresion de la roca ésta geología</value>
+  </data>
+  <data name="Geology.SwebrecSlopeFactor_BlastFrag" xml:space="preserve">
+    <!--The swebrec shape adjustment factor-->
+    <value>El factor de ajuste de la forma para la curva Swebrec del modelo BlastFrag</value>
+  </data>
+  <data name="Geology.SwebrecSlopeFactor_KCO" xml:space="preserve">
+    <!--The swebrec shape adjustment factor-->
+    <value>El factor de ajuste de la forma para la curva Swebrec del modelo KCO</value>
+  </data>
+  <data name="Geology.VpScaleFactor" xml:space="preserve">
+    <!--The velocity of shock-wave propagation scale factor used in the computation of the timing factor for this geology type-->
+    <value>El Factor de Ajuste de la velocidad de la onda de choque usado al calcular el tiempo óptimo para ésta geología.</value>
+  </data>
+  <data name="MineSettings.Beta" xml:space="preserve">
+    <!--The scaled distance exponent often referred to as "n"-->
+    <value>El exponente, n, de la distancia escalada </value>
+  </data>
+  <data name="MineSettings.BlastNorth" xml:space="preserve">
+    <!--Defines which direction is north-->
+    <value>Define la dirección hacia el norte good</value>
+  </data>
+  <data name="MineSettings.BlastOrigin" xml:space="preserve">
+    <!--Used to specify the real-world origin of the design-->
+    <value>Se utiliza para especificar el origen real del diseño good</value>
+  </data>
+  <data name="MineSettings.BlastType" xml:space="preserve">
+    <!--A description about the type of blast this is-->
+    <value>Una descripción sobre el tipo de voladura </value>
+  </data>
+  <data name="MineSettings.DefaultDownHoleDelay" xml:space="preserve">
+    <!--The default delay time for a hole's first deck. This is zero (0) for electronic timing scenarios-->
+    <value>El tiempo predeterminado del retardo al fondo. Cero (0) para los escenarios de secuenciación electrónicos</value>
+  </data>
+  <data name="MineSettings.DefaultPrimerIncrement" xml:space="preserve">
+    <!--The default inter-deck delay time for electronic and non-electric timing scenarios-->
+    <value>El tiempo predeterminado de los retardos entre-deck para los escenarios de secuenciación electrónicos y no eléctricos</value>
+  </data>
+  <data name="MineSettings.K" xml:space="preserve">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.Location" xml:space="preserve">
+    <!--A description about the location of this design-->
+    <value>Una descripción de la ubicación de éste diseño</value>
+  </data>
+  <data name="MineSettings.NonIdealGasConstant" xml:space="preserve">
+    <!--The non-ideal gas constant used-->
+    <value>La constante de gas no ideal </value>
+  </data>
+  <data name="MineSettings.Notes" xml:space="preserve">
+    <!--Stores additional information about the design-->
+    <value>Información adicional sobre el diseño</value>
+  </data>
+  <data name="MineSettings.PWaveVelocity" xml:space="preserve">
+    <!--The propagation velocity of p-wave through the rock-->
+    <value>La velocidad de propagación de la onda p a través de la roca </value>
+  </data>
+  <data name="MineSettings.PWaveVelocityMultiplier" xml:space="preserve">
+    <!--The multiplier for p-wave velocity, specified by the user-->
+    <value>El multiplicador para la velocidad de la onda p, especificado por el usuario </value>
+  </data>
+  <data name="MineSettings.RockDensity" xml:space="preserve">
+    <!--Stores the density of the rock for this blast-->
+    <value>la densidad de la roca para ésta voladura</value>
+  </data>
+  <data name="MineSettings.RockStrength" xml:space="preserve">
+    <!--The strength of the rock-->
+    <value>La resistencia a la compresión de la roca</value>
+  </data>
+  <data name="PreferencesNode.AutoOpenPrevious" xml:space="preserve">
+    <!--Automatically opens the most recently opened file when the application loads-->
+    <value>Automáticamente abre el archivo más reciente cuando la aplicación se carga</value>
+  </data>
+  <data name="PreferencesNode.AutoSaveSession" xml:space="preserve">
+    <!--Defines whether auto-save is enabled-->
+    <value>Define si el auto-guardar está habilitado</value>
+  </data>
+  <data name="PreferencesNode.AutoSaveSessionInterval" xml:space="preserve">
+    <!--The time interval between auto-saves-->
+    <value>El intervalo de tiempo entre los auto-guardar</value>
+  </data>
+  <data name="PreferencesNode.BearingZeroAngle" xml:space="preserve">
+    <!--Defines the direction interpreted as zero for bearing angles-->
+    <value>Define la dirección interpretada como cero para ángulos de dirección </value>
+  </data>
+  <data name="PreferencesNode.DefaultDelayFilepath" xml:space="preserve">
+    <!--The file containing the delays to add to new paradigm files-->
+    <value>El archivo que contiene los tipos de explosivos para añadir a los nuevos archivos de Paradigm</value>
+  </data>
+  <data name="PreferencesNode.DefaultExplosivesFilepath" xml:space="preserve">
+    <!--The file containing the explosive types to add to new paradigm files-->
+    <value>El archivo que contiene los retardos para añadir a los nuevos archivos de Paradigm</value>
+  </data>
+  <data name="PreferencesNode.InclinationZeroAxis" xml:space="preserve">
+    <!--Defines whether zero is defined as horizontal or vertical for inclination angles-->
+    <value>Define si cero se define como horizontal o vertical los ángulos de inclinación</value>
+  </data>
+  <data name="PreferencesNode.RadialDirection" xml:space="preserve">
+    <!--Defines which radial direction is considered positive for bearing angles-->
+    <value>Define la dirección radial que se considera positiva para los ángulos de dirección</value>
+  </data>
+  <data name="PreferencesNode.UndoQueueSize" xml:space="preserve">
+    <!--The number of undo items stored in the undo queue-->
+    <value>El número de elementos de deshacer almacenados en la cola de deshacer </value>
+  </data>
+  <data name="PreferencesNode.ViewportTextLineHeight" xml:space="preserve">
+    <!--The actual height of a single line of text displayed in the viewport-->
+    <value>La altura real de una sola línea de texto que se muestra en la ventana gráfica </value>
+  </data>
+  <data name="PreferencesNode.VisualScaleFactor2d" xml:space="preserve">
+    <!--The scale factor applied to holes when drawing in plan viewports-->
+    <value>El factor de escala aplicado a los pozos al dibujar en las vistas en planta</value>
+  </data>
+  <data name="PreferencesNode.VisualScaleFactor3d" xml:space="preserve">
+    <!--The scale factor applied to holes when drawing in perspective viewports-->
+    <value>El factor de escala aplicado a los pozos al dibujar en vistas en perspectiva</value>
+  </data>
+  <data name="RadialTimingScenario.Bearing" xml:space="preserve">
+    <!--The bearing of the primary axis-->
+    <value>La dirección del eje primario</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthA" xml:space="preserve">
+    <!--The delay per distance along the primary axis-->
+    <value>El tiempo de alivio a lo largo del eje primario</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthB" xml:space="preserve">
+    <!--The delay per distance along the secondary axis (perpendicular to the primary axis)-->
+    <value>El tiempo de alivio a lo largo del eje secundario (perpendicular al eje primario)</value>
+  </data>
+  <data name="RadialTimingScenario.MinePosition" xml:space="preserve">
+    <!--The point from which the timing radiates-->
+    <value>El punto desde el cual irradia el tiempo </value>
+  </data>
+  <data name="RadialTimingScenario.OffsetInDirection" xml:space="preserve">
+    <!--The time offset for holes along the primary axis-->
+    <value>El desfase de tiempo para pozos en lados opuestos del eje primario</value>
+  </data>
+  <data name="RadialTimingScenario.OffsetInPerpendicular" xml:space="preserve">
+    <!--The time offset for holes along the secondary axis (perpendicular to the primary axis)-->
+    <value>El desfase de tiempo para los pozos en lados opuestos del eje secundario (perpendicular al eje primario)</value>
+  </data>
+  <data name="RadialTimingScenario.Origin" xml:space="preserve">
+    <!--The point from which the timing radiates-->
+    <value>El punto desde el cual irradia el tiempo </value>
+  </data>
+  <data name="RadialTimingScenario.RadialInterpolation" xml:space="preserve">
+    <!--Controls whether the timing is diamond in shape or ellipsoid-->
+    <value>Controla si la secuenciación es de forma de diamante o elipsoide</value>
+  </data>
+  <data name="RadialTimingScenario.RespectDistanceToOrigin" xml:space="preserve">
+    <!--When true, hole times will take into account the distance to the origin. When false, the closest hole gets assigned the value of the StartTime attribute-->
+    <value>Cuando es verdadera, los tiempos de los pozos toman en cuenta la distancia al origen. Cuando es falso, el pozo más cercano recibe el valor del atributo StartTime</value>
+  </data>
+  <data name="RadialTimingScenario.StartTime" xml:space="preserve">
+    <!--The initiation time of the first hole-->
+    <value>El tiempo de iniciación del primer pozo/carga</value>
+  </data>
+  <data name="SequenceScenario.Colour" xml:space="preserve">
+    <!--The colour used to draw these ties in the viewport-->
+    <value>El color utilizado para dibujar las celdas de Voronoi en la ventana de visualización</value>
+  </data>
+  <data name="SequenceScenario.DrawIcon" xml:space="preserve">
+    <!--Controls how these ties are drawn in the viewport-->
+    <value>Controla cómo se dibujan las celdas de Voronoi en la ventana gráfica</value>
+  </data>
+  <data name="TieInTimingScenario.ScenarioIsElectronic" xml:space="preserve">
+    <!--Electronic timing scenarios ignore any downhole delay settings that have been defined-->
+    <value>Los escenarios de secuenciación electrónicos ignoran cualquier configuración de retardo de fondo que se haya sido definido</value>
+  </data>
+  <data name="TieInTimingScenario.StartTime" xml:space="preserve">
+    <!--The start time for initiation holes in this scenarios-->
+    <value>El tiempo de iniciación del primer pozo/carga del escenario</value>
+  </data>
+  <data name="TimingScenarioBase.Sequence" xml:space="preserve">
+    <!--The ordering sequence associated with this timing scenario-->
+    <value>La secuencia de salida asociada con éste escenario </value>
+  </data>
+  <data name="MineSettings.BurdenDanger" p3:space="preserve" xmlns:p3="xml">
+    <!--The distance below which is considered dangerous. Terrain within this range from a hole is coloured red.-->
+    <value>La distancia bajo la cual se considera peligroso. El terreno dentro de este rango se colora rojo.</value>
+  </data>
+  <data name="MineSettings.BurdenWarning" p3:space="preserve" xmlns:p3="xml">
+    <!--The distance below which should be treated with extreme caution. Terrain within this range from a hole is coloured yellow.-->
+    <value>La distancia bajo la cual se considera con precaucion. El terreno dentro de este rango se colora amarillo</value>
+  </data>
+  <data name="MineSettings.OpaqueBurdenHeatmap" p3:space="preserve" xmlns:p3="xml">
+    <!--When checked, the burden heatmap will be drawn opaque instead of inheriting the opacity from the terrain-->
+    <value>Cuando activado, el heatmap de burden se dibuja opaco en lugar de heredar la opacidad del terreno </value>
+  </data>
+  <data name="MineSettings.FaceContour" p3:space="preserve" xmlns:p3="xml">
+    <!--Defines an optional contour line node used to define the shape of the front face. This is most useful for sessions that don't have terrain data.-->
+    <value>Define una línea de contorno opcional para definir la forma de la cara libre. Más util en los casos donde no hay terreno.</value>
+  </data>
+  <data name="MineSettings.FrontRowHoles" p3:space="preserve" xmlns:p3="xml">
+    <!--Stores the list of holes that define the front row-->
+    <value>Almanecen la lista de  pozos que definen la primera fila con cara libre</value>
+  </data>
+  <data name="DesignPageNode.Angle" p3:space="preserve" xmlns:p3="xml">
+    <!--The rotation angle of the page-->
+    <value>El ángulo de rotación de la página</value>
+  </data>
+  <data name="DesignPageNode.GridSize" p3:space="preserve" xmlns:p3="xml">
+    <!--The physical size of grid cells on the page-->
+    <value>El tamaño fisico de la malla dibujada en la página</value>
+  </data>
+  <data name="DesignPageNode.Origin" p3:space="preserve" xmlns:p3="xml">
+    <!--The worldspace center of this page-->
+    <value>Coordenadas globales del punto central de la página</value>
+  </data>
+  <data name="DesignPageNode.PageHeight" p3:space="preserve" xmlns:p3="xml">
+    <!--The physical height of the page-->
+    <value>La longitud física de la página</value>
+  </data>
+  <data name="DesignPageNode.PageWidth" p3:space="preserve" xmlns:p3="xml">
+    <!--The physical width of the page-->
+    <value>El ancho físico de la página</value>
+  </data>
+  <data name="DesignPageNode.PrintContours" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether contour lines get drawn on this page-->
+    <value>Controla si se dibujan las lineas de contorno en esta página</value>
+  </data>
+  <data name="DesignPageNode.PrintDeckDetonationTimes" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether deck detonation times get drawn on this page-->
+    <value>Controla si se dibujan los tiempos de detonación en esta página</value>
+  </data>
+  <data name="DesignPageNode.PrintGrid" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether the grid is drawn on this page-->
+    <value>Controla si se dibuja la malla en esta página</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleIds" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether hole id text is drawn on this page-->
+    <value>Controla si se dibujan los ID de los pozos en esta página</value>
+  </data>
+  <data name="DesignPageNode.PrintInitiationTime" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether hole initiation times are drawn on this page-->
+    <value>Controla si se dibujan los tiempos de iniciación en esta página</value>
+  </data>
+  <data name="DesignPageNode.PrintTies" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether hole ties are drawn on this page-->
+    <value>Controla si se dibujan las lineas de los retardos de superficie en esta página</value>
+  </data>
+  <data name="DesignPageNode.TextColourDeckDetonationTime" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls the colour used to draw detonation time text on this page-->
+    <value>Controla el color del texto: tiempo de detonación </value>
+  </data>
+  <data name="DesignPageNode.TextColourHoleId" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls the colour used to draw text on this page-->
+    <value>Controla el color del texto general </value>
+  </data>
+  <data name="DesignPageNode.TextColourInitiationTime" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls the colour used to draw initiation time text on this page-->
+    <value>Controla el color del texto: tiempo de iniciación </value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Diameter" p3:space="preserve" xmlns:p3="xml">
+    <!--The diameter of the pre-split product used in this charge rule-->
+    <value>El diámetro del producto contínuo de precorte usado en esta regla de carguío</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Explosive" p3:space="preserve" xmlns:p3="xml">
+    <!--Which explosive product is used in the pre-split product used in this charge rule-->
+    <value>Cual es el producto de precorte usado en esta regla de carguío</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.FillMode" p3:space="preserve" xmlns:p3="xml">
+    <!--Describes whether charge length should fill from the bottom up, or top down-->
+    <value>Describe si se llena el pozo desde el collar hacia la pata, o a revés</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Length" p3:space="preserve" xmlns:p3="xml">
+    <!--Defines how long the charge should be based on the length mode. The absolute length mode uses the literal value of this atttribute, whereas relative length mode uses this value as an offset of the hole length-->
+    <value>Define la longitud de carga segun el modo de llenar. El modo de longitud absoluta utiliza el valor literal de este atributo, pero el modo de longitud relativa utiliza el valor como alejamiento de la longitud del pozo </value>
+  </data>
+  <data name="PreSplitChargeRuleNode.LengthMode" p3:space="preserve" xmlns:p3="xml">
+    <!--Absolute uses the literal length as the charge length. Relative adds the length value to the length of the hole the rule is being applied to-->
+    <value>Valor absoluto utiliza la longitud literal. Valor relativo agrega el valor a la longitud del pozo al cual se aplica la regla.</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.StartDepth" p3:space="preserve" xmlns:p3="xml">
+    <!--The depth which should remain uncharged-->
+    <value>La profundidad que se queda sin carga</value>
+  </data>
+  <data name="DesignPageNode.HoleIdPrefix" p3:space="preserve" xmlns:p3="xml">
+    <!--The string written before the hole ID-->
+    <value>El texto delante del número del pozo</value>
+  </data>
+  <data name="DesignPageNode.HoleIdSuffix" p3:space="preserve" xmlns:p3="xml">
+    <!--The string written after the hole ID-->
+    <value>El texto despues del número del pozo</value>
+  </data>
+  <data name="DesignPageNode.HoleScale" p3:space="preserve" xmlns:p3="xml">
+    <!--The scale factor for the holes drawn on the page-->
+    <value>El factor de escalamiento para los pozos  en la página</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleDiameters" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether hole diameter values are drawn on this page-->
+    <value>Controla si se dibuja los diámetros de los pozos en la página</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleLengths" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether hole length values are drawn on this page-->
+    <value>Controla si se dibuja las longitudes de los pozos en la página</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleWeights" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether hole explosive weight values are drawn on this page-->
+    <value>Controla si se dibuja los pesos de carga de los pozos en la página</value>
+  </data>
+  <data name="DesignPageNode.TieScale" p3:space="preserve" xmlns:p3="xml">
+    <!--The scale factor for ties drawn on this page-->
+    <value>El factor de escalamiento para los retardos dibujados en la página</value>
+  </data>
+  <data name="PrintedPageNode.Name" p3:space="preserve" xmlns:p3="xml">
+    <!--The title drawn on this page-->
+    <value>El titulo para la página</value>
+  </data>
+  <data name="PrintedPageNode.SubTitle" p3:space="preserve" xmlns:p3="xml">
+    <!--The sub title drawn under the title on this page-->
+    <value>El sub- titulo para la la página (bajo el titulo)</value>
+  </data>
+  <data name="DesignPageNode.TextScale" p3:space="preserve" xmlns:p3="xml">
+    <!--The scale factor for hole text drawn on the page-->
+    <value>El factor de escalamiento para el texto de pozos en la página</value>
+  </data>
+  <data name="SectionRule.Diameter" p3:space="preserve" xmlns:p3="xml">
+    <!--The diameter of this section rule-->
+    <value>El diámetro de la regla de carguío</value>
+  </data>
+  <data name="SectionRule.FixedDiameter" p3:space="preserve" xmlns:p3="xml">
+    <!--Enables the ability to define a maximum diameter for product in this section. This allows the simulation of packaged bulk explosive or cartridge product-->
+    <value>Permite especificación del diametro máximo del producto de esta sección. Permite simular productos encartuchados o envasados</value>
+  </data>
+  <data name="AnnotationNode.Bearing" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls the plan orientation of the text-->
+    <value>Controla la orientación del texto en la vista en planta</value>
+  </data>
+  <data name="AnnotationNode.Colour" p3:space="preserve" xmlns:p3="xml">
+    <!--The colour of the text-->
+    <value>El color del texto</value>
+  </data>
+  <data name="AnnotationNode.LineHeight" p3:space="preserve" xmlns:p3="xml">
+    <!--The physical line height of the text-->
+    <value>La altura fisica del texto</value>
+  </data>
+  <data name="AnnotationNode.Text" p3:space="preserve" xmlns:p3="xml">
+    <!--The text drawn in the viewport-->
+    <value>El texto imprimido en el View Port</value>
+  </data>
+  <data name="DistanceMeasureNode.Visible" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether this measure node is visible-->
+    <value>Controla la visibilidad de este nodo en la plantalla</value>
+  </data>
+  <data name="DistanceMeasureNode.Colour" p3:space="preserve" xmlns:p3="xml">
+    <!--The colour this measure node gets drawn with-->
+    <value>El color de este nodo</value>
+  </data>
+  <data name="DistanceMeasureNode.Distance" p3:space="preserve" xmlns:p3="xml">
+    <!--The linear distance between the start and end point-->
+    <value>La distancia linear entre los punto definidios</value>
+  </data>
+  <data name="DistanceMeasureNode.BlastStartPoint" p3:space="preserve" xmlns:p3="xml">
+    <!--The start point of this measure line-->
+    <value>El primer punto de este linea de medición</value>
+  </data>
+  <data name="DistanceMeasureNode.BlastEndPoint" p3:space="preserve" xmlns:p3="xml">
+    <!--The end point of this measure line-->
+    <value>El segundo punto de este linea de medición</value>
+  </data>
+  <data name="Geology.LogB99Upper" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Geology.LogB99Lower" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Geology.SigmaUpper" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Geology.SigmaLower" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Geology.LogB50Upper" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Geology.LogB50Lower" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Geology.LogB80Upper" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Geology.LogB80Lower" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DummyHole.Diameter" p3:space="preserve" xmlns:p3="xml">
+    <!--The visual size of this dummy hole-->
+    <value>El tamaño del pozo virtual</value>
+  </data>
+  <data name="DummyHole.Colour" p3:space="preserve" xmlns:p3="xml">
+    <!--The colour used to represent this dummy in the viewport-->
+    <value>El color del pozo virtual in el View Port</value>
+  </data>
+  <data name="DesignPageNode.PrintAnnotations" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls whether annotation text and user created contour lines get drawn on this page-->
+    <value>Controla si se dibuja texto de anotacion y lineas de contorno</value>
+  </data>
+  <data name="DesignPageNode.HoleOpacity" p3:space="preserve" xmlns:p3="xml">
+    <!--The opacity of the hole circles drawn on this page-->
+    <value>La opacidad de los pozos imprimidos</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.StemmingLength" p3:space="preserve" xmlns:p3="xml">
+    <!--The length of stemming to place at the top of a hole charged with this rule-->
+    <value>La longitud del taco superior con esta regla de carguio</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.UnchargedLength" p3:space="preserve" xmlns:p3="xml">
+    <!--The length to leave uncharged below the stemming (if any is present)-->
+    <value>La longitud de la cámara de aire por debajo del taco (si hay cámara)</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.LinearWeight" p3:space="preserve" xmlns:p3="xml">
+    <!--The computed linear weight of charge-->
+    <value>El peso lineal calculado de la carga</value>
+  </data>
+  <data name="PreSplitDesignerNode.UCS" p3:space="preserve" xmlns:p3="xml">
+    <!--The compression strength of the rock-->
+    <value>La resistencia a la compresion de la roca</value>
+  </data>
+  <data name="PreSplitDesignerNode.UCS_UTS_Ratio" p3:space="preserve" xmlns:p3="xml">
+    <!--The ratio between the UCS and the UTS of the rock being blasted-->
+    <value>La razon de la resistencia de compresion a traccion de la roca</value>
+  </data>
+  <data name="PreSplitDesignerNode.UTS" p3:space="preserve" xmlns:p3="xml">
+    <!--The tensile strength of the rock-->
+    <value>La resistencia a la traccion de la roca</value>
+  </data>
+  <data name="PreSplitDesignerNode.Condition" p3:space="preserve" xmlns:p3="xml">
+    <!--Roughly describes the condition for the majority of holes-->
+    <value>Describe aproximadamente la condicion de la mayoria de los pozos</value>
+  </data>
+  <data name="PreSplitDesignerNode.FillMode" p3:space="preserve" xmlns:p3="xml">
+    <!--Describes whether the charge length starts at the top of bottom of the hole-->
+    <value>Describe si la longitud de la carga comienza a la cima o la pata del pozo</value>
+  </data>
+  <data name="PreSplitDesignerNode.HoleDiameter" p3:space="preserve" xmlns:p3="xml">
+    <!--The diameter of the pre-split holes-->
+    <value>El diametro de los pozos de precorte</value>
+  </data>
+  <data name="PreSplitDesignerNode.HoleLength" p3:space="preserve" xmlns:p3="xml">
+    <!--The length of the pre-split holes-->
+    <value>La longitud de los pozos de precorte</value>
+  </data>
+  <data name="PreSplitDesignerNode.Spacing" p3:space="preserve" xmlns:p3="xml">
+    <!--The desired or actual spacing between pre-split holes-->
+    <value>El espaciamiento deseado entre los pozos de precorte</value>
+  </data>
+  <data name="PreSplitDesignerNode.IdealSpacing" p3:space="preserve" xmlns:p3="xml">
+    <!--The ideal spacing between pre-split holes-->
+    <value>El espaciamiento ideal entre los pozos de precorte</value>
+  </data>
+  <data name="PreSplitDesignerNode.StemmingLength" p3:space="preserve" xmlns:p3="xml">
+    <!--The length of stemming above the charge-->
+    <value>La longitud del taco superior por encima de la carga</value>
+  </data>
+  <data name="PreSplitDesignerNode.UnchargedLength" p3:space="preserve" xmlns:p3="xml">
+    <!--The length of hole to remain uncharged-->
+    <value>La longitud del pozo sin carga</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveDensity" p3:space="preserve" xmlns:p3="xml">
+    <!--The density of the explosive being used-->
+    <value>La densidad del explosivo utilizado</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveDiameter" p3:space="preserve" xmlns:p3="xml">
+    <!--The diameter of the explosive product-->
+    <value>El diametro del explosivo utilizado</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveLength" p3:space="preserve" xmlns:p3="xml">
+    <!--The length of explosive product-->
+    <value>La longitud del explosivo</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveWeight" p3:space="preserve" xmlns:p3="xml">
+    <!--The computed weight of explosive in the hole-->
+    <value>El peso calculado del explosivo por pozo</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveVOD" p3:space="preserve" xmlns:p3="xml">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreSplitDesignerNode.HolePressure" p3:space="preserve" xmlns:p3="xml">
+    <!--The computed peak pressure in the holes at the time of detonation based based on the conditions described-->
+    <value>La presion maxima calculada dentro del pozo con las condiciones ya descritas</value>
+  </data>
+  <data name="FragmentationSeriesNode.Algorithm" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="FragmentationSeriesNode.ChargeScenario" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="FragmentationSeriesNode.TimingScenario" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="FragmentationSeriesNode.Holes" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="FixedSizeRule.Length" p3:space="preserve" xmlns:p3="xml">
+    <!--The maximum length this section should occupy-->
+    <value>La longitud maxim que esta seccion deberia ocupar</value>
+  </data>
+  <data name="FixedSizeRule.Weight" p3:space="preserve" xmlns:p3="xml">
+    <!--The maximum explosive weight this section should contain-->
+    <value>El peso maximo de explosivo que esta seccion deberia contener</value>
+  </data>
+  <data name="MineSettings.AllowDuplicateNames" p3:space="preserve" xmlns:p3="xml">
+    <!--Allows nodes to share the same name-->
+    <value>Para que distintos nodos puedan compartir el mismo nombre</value>
+  </data>
+  <data name="MineSettings.MinSDoB" p3:space="preserve" xmlns:p3="xml">
+    <!--Min SDoB is the minimum value of the Scaled Depth of Burial which the program uses to calculate the maximum flyrock range. The minimum value has been chosen to give maximum flyrock range predictions equal to those presented by Lundborg in his seminal paper in 1974. A lower value of the Min SDoB parameter produces estimates of the maximum flyrock range which exceed those extreme values reported by Lundborg-->
+    <value>El SDoB minimo es el valor utilizado para calcular el rango maximo de flyrock (caso peor). Este valor entrega  distancias un poco mayor que los de Lundborg en su articulo seminal de 1974. Para permitir distancia aun mayores, disminuye este valor.</value>
+  </data>
+  <data name="BenchBlastHole.SDoB" p3:space="preserve" xmlns:p3="xml">
+    <!--The scaled depth of burial for this hole-->
+    <value>La profundidad escalada dela carga de este pozo</value>
+  </data>
+  <data name="DistanceMeasureNode.Bearing" p3:space="preserve" xmlns:p3="xml">
+    <!--The bearing direction defined by the line drawn from the start to the end point-->
+    <value>El rumbo de la linea definida por dos puntos</value>
+  </data>
+  <data name="DistanceMeasureNode.PlanDistance" p3:space="preserve" xmlns:p3="xml">
+    <!--The distance between plan points (ie: removing the elevation contribution)-->
+    <value>La distancia que separa dos puntos en vista en planta (ignorando elevacion)</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthMinusA" p3:space="preserve" xmlns:p3="xml">
+    <!--The delay per distance in the opposite direction of the primary axis-->
+    <value>El retardo por metro en la direccion contraria al eje primario</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthMinusB" p3:space="preserve" xmlns:p3="xml">
+    <!--The delay per distance in the opposite direction of the secondary axis-->
+    <value>El retardo por metro en la direccion contraria al eje segundario</value>
+  </data>
+  <data name="RadialTimingScenario.SplitAxisDelays" p3:space="preserve" xmlns:p3="xml">
+    <!--Enables separate delay per length values in the negative direction of the axes-->
+    <value>Permite distintos retardos por metro enla direccion negativa de los ejes.</value>
+  </data>
+  <data name="BenchBlastHole.BurdenSpacing" p3:space="preserve" xmlns:p3="xml">
+    <!--The computed burden spacing for this particular hole. The burden is computed as the average distance to neighbours. Spacing is the area of the hole cell divided by the computed burden-->
+    <value>El burden y espaciamiento calculados para este pozo particular. El burden se calcula como la distancia promedia a sus vecinos. El espaciamiento se calcula por dividir el area de la celda Voronoi por el burden calculado.</value>
+  </data>
+  <data name="BenchBlastHole.PowderFactor" p3:space="preserve" xmlns:p3="xml">
+    <!--The powder factor for the hole-->
+    <value>El factor de carga del pozo</value>
+  </data>
+  <data name="BranchNode.Colour" p3:space="preserve" xmlns:p3="xml">
+    <!--The colour the branch is drawn in the viewport-->
+    <value>The colour the branch is drawn in the viewport</value>
+  </data>
+  <data name="BranchNode.DrawIcon" p3:space="preserve" xmlns:p3="xml">
+    <!--The style used to draw ties that belong to this branch-->
+    <value>El estilo de dibujar las lineas de esta rama</value>
+  </data>
+  <data name="BranchNode.Notes" p3:space="preserve" xmlns:p3="xml">
+    <!--Any notes about how this branch should be tied-->
+    <value>Cualquier comentarios con respecto a esta rama</value>
+  </data>
+  <data name="PreferencesNode.DefaultChargeRulesFilepath" p3:space="preserve" xmlns:p3="xml">
+    <!--The file containing the charge rules to add to new paradigm files-->
+    <value>El archivo que contiene las reglas de carguio para agregar a los nuevos archivos de Paradigm</value>
+  </data>
+  <data name="PreferencesNode.DefaultInterDeckDelay" p3:space="preserve" xmlns:p3="xml">
+    <!--The value to use for the default inter-deck delay when create a new session-->
+    <value>El valor predeterminado de los retardos entre-deck para cada sesion nueva</value>
+  </data>
+  <data name="PreferencesNode.DxfBinary" p3:space="preserve" xmlns:p3="xml">
+    <!--If you prefer to write DXF files as ascii files, uncheck this option-->
+    <value>Si prefieres escribir archivos de dxf en formato de texto, deseleccionar esta opcion</value>
+  </data>
+  <data name="PreferencesNode.DesignerBurden" p3:space="preserve" xmlns:p3="xml">
+    <!--Burden-->
+    <value>Burden</value>
+  </data>
+  <data name="PreferencesNode.DesignerSpacing" p3:space="preserve" xmlns:p3="xml">
+    <!--Spacing-->
+    <value>Espaciamiento</value>
+  </data>
+  <data name="PreferencesNode.DesignerPatternType" p3:space="preserve" xmlns:p3="xml">
+    <!--Changes the way holes are placed between alternating rows-->
+    <value>Cambiar la geometria de perforacion de las fila consecutivas</value>
+  </data>
+  <data name="PreferencesNode.DesignerPatternShape" p3:space="preserve" xmlns:p3="xml">
+    <!--Defines the outline shape of the pattern-->
+    <value>Define la forma del patron</value>
+  </data>
+  <data name="PreferencesNode.DesignerNamingPolicy" p3:space="preserve" xmlns:p3="xml">
+    <!--Defines the naming policy for the created holes-->
+    <value>Define el protocolo de nombrar los pozos</value>
+  </data>
+  <data name="PreferencesNode.DesignerRowN" p3:space="preserve" xmlns:p3="xml">
+    <!--Defines the number of rows-->
+    <value>Define la cantidad de filas</value>
+  </data>
+  <data name="PreferencesNode.DesignerHolesPerRowN" p3:space="preserve" xmlns:p3="xml">
+    <!--Defines the number of holes in each row-->
+    <value>Define la cantidad de pozos por fila</value>
+  </data>
+  <data name="PreferencesNode.DesignerFlipRow" p3:space="preserve" xmlns:p3="xml">
+    <!--Controls which side of the axis the holes are created on-->
+    <value>Controla el tamano del eje en el cual se perfora los pozos</value>
+  </data>
+  <data name="BlastDagNode.Bearing" p3:space="preserve" xmlns:p3="xml">
+    <!--The bearing direction for this node-->
+    <value>El rumbo de este nodo</value>
+  </data>
+  <data name="MeshGeometryNode.Colour" p3:space="preserve" xmlns:p3="xml">
+    <!--The colour to tint the mesh. If you want the mesh untinted, set the colour to white-->
+    <value>El color de la malla que representa la superficie del terreno. Para hacerlo invisible, cambiar el color a blanco.</value>
+  </data>
+  <data name="MeshGeometryNode.Opacity" p3:space="preserve" xmlns:p3="xml">
+    <!--Setting the opacity to less than 1 will make the surface semi-transparent. This can be useful if you want to be able to see holes through the surface, but can make it difficult to tell exactly where the surface is-->
+    <value>Haciendo la opacidad menor de 1 hara la superficie transparente. Ese pueda ser util si se quiere poder ver los pozos a traves la superficie, pero tambien pueda dificultar visualizacion de la superficie.</value>
+  </data>
+  <data name="MeshGeometryNode.TextureFilepath" p3:space="preserve" xmlns:p3="xml">
+    <!--The filepath to the image to map on to the mesh. This is generally referred to as a Texture-->
+    <value>La ruta de acceso del imagen que define el terreno, nombrado generalmente como "La Textura"</value>
+  </data>
+  <data name="DistanceMeasureNode.StartPoint" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DistanceMeasureNode.EndPoint" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DistanceMeasureNode.StartToEndBearing" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="SequenceScenario.ConnectionPairs" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="RadialTimingScenario.origin3" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="RadialTimingScenario.minePosition3" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="RadialTimingScenario.Direction" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="RadialTimingScenario.Invert" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="BenchBlastHole.MinBurden" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ManualTimingScenario.InitiationTimes" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="BlastDagNode.BlastTransform" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.BlastTransform" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.BlastInverseTransform" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.ActiveTiming" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.ActiveSequence" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.ActiveCharge" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.AnimationPlaybackSpeed" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MineSettings.AnimationEndTimeOffset" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TieInTimingScenario.ConnectionPairs" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TieInTimingScenario.ConnectionDelays" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.EulaAccepted" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.AllowDuplicateNames" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.PreviousSelectionTest" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.DesignerOrigin" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.DesignerDirection" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.UseMetricUnits" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.PreferredPfUnit" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.UseShortTon" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.DefaultPowderFactor" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.MaxRecentFiles" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RecentFiles" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.GridVisible" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.GridSize" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.GridUnits" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.HeatMapDataSource" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.HeatMapGradientInterpolation" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.HeatMapGradientKeys" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.BurdenReliefMax" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ContourDataSource" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ContourInterval" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ContourGradientInterpolation" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ContourGradientKeys" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.DefaultInterval" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.MoveToolShowDistances" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.MoveToolDiscrete" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.MoveToolStep" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ViewportBackgroundColour" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.AntiAliasing" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenderHoleToes" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenderInitiationTimeText" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenderDetonationTimeText" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenderHoleIdText" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ShowHitRegions" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ShowTimingOverlay" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.CompositeTimingOverlay" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.CrashFilepath" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.FontName" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.FontSize" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.LineSelectorRadius" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.DelayIncrementSmall" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.DelayIncrementLarge" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.LibraryLocations" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.SessionTemplate" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.BranchNamingPolicy" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.LogoFilepath" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreferencesNode.MostRecentVersionNotes" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="LineGeometryNode.Points" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="LineGeometryNode.Indices" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="LineGeometryNode.Colour" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="LineGeometryNode.PointCount" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="LineGeometryNode.Length" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="LineGeometryNode.Custom" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Locator.VisualSize" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="Locator.Colour" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.indices" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.points" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.Inclination" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.Width" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.Length" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="CameraPlacement.Position" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="CameraPlacement.Rotation" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="CameraPlacement.LookAtDistance" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="CameraPlacement.OrthoSize" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="FrontTimingScenario.StartTime" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="FrontTimingScenario.Fronts" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="CompositeTimingScenario.HoleScenarios" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="CompositeTimingScenario.ScenarioColours" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="BranchScenarioNode.MaxDetonators" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="BranchScenarioNode.Branches" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="BranchNode.holes" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="BurdenReliefSettings.GradientKeys" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="BurdenReliefSettings.GradientInterpolated" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignPageNode.PrintBranches" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignPageNode.PrintHoleToes" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignPageNode.PrintHoleAngles" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignPageNode.PrintDeckWeightSuffix" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignPageNode.TextAngle" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignPageNode.TextOffset" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Primers" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreSplitDesignerNode.gamma" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreSplitDesignerNode.adjSpacing" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PreSplitDesignerNode.adjLength" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PrintPreferencesNode.PageWidth" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PrintPreferencesNode.Pages" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="PrintPreferencesNode.LogoFilepath" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ChargeScenario.HoleChargeRules" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ChargeScenario.DefaultChargeRule" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MeshGeometryNode.Points" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MeshGeometryNode.Indices" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MeshGeometryNode.TextureCoords" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MeshGeometryNode.PointCount" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="MeshGeometryNode.TriangleCount" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="StatsPageNode.Pattern" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="StatsPageNode.Drilling" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="StatsPageNode.Charging" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="StatsPageNode.Explosives" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="StatsPageNode.Timing" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TplDelayNode.Delay" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TplDelayNode.Colour" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TplDelayNode.DrawIcon" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TplTieInTimingScenario.StartTime" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TplTieInTimingScenario.Location" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TplTieInTimingScenario.ConnectionPairs" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="TplTieInTimingScenario.ConnectionDelays" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="CustomFragmentationMetric.MetricType" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.Type" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.Shape" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.NamingPolicy" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.Diameter" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.Length" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.Burden" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.Spacing" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.Rows" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.HolesPerRow" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.placedPoint1" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.placedPoint2" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.SurveyPoint1" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DesignerSettingsNode.SurveyPoint2" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="SetNode.Members" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DagNode.Translation" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DagNode.Rotation" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DagNode.Transform" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DagNode.WorldTransform" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DagNode.WorldInverseTransform" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DagNode.WorldTranslation" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="DagNode.WorldRotation" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ExplosiveType.RelBulkStrength" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+  <data name="ExplosiveType.Notes" p3:space="preserve" xmlns:p3="xml" dirty="1">
+    <!---->
+    <value></value>
+  </data>
+</root>

@@ -1,0 +1,1304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BenchBlastHole.ChargeRule" xml:space="preserve">
+    <value>Charging Rule</value>
+  </data>
+  <data name="BenchBlastHole.ExplicitLength" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="BlastDagNode.BlastPosition" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="DGNodeBase.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DirectionalTimingScenario.DelayPerLength" xml:space="preserve">
+    <value>Directional Relief</value>
+  </data>
+  <data name="DistanceMeasureNode.BlastEndPoint" xml:space="preserve">
+    <value>End Position</value>
+  </data>
+  <data name="DistanceMeasureNode.BlastStartPoint" xml:space="preserve">
+    <value>Start Position</value>
+  </data>
+  <data name="ExplosiveType.FragmentationEfficiencyFactor" xml:space="preserve">
+    <value>Frag Efficiency Factor</value>
+  </data>
+  <data name="ExplosiveType.RelWeightStrength" xml:space="preserve">
+    <value>Rel Wt. Strength</value>
+  </data>
+  <data name="ExplosiveType.RefDensity" xml:space="preserve">
+    <value>Reference Density</value>
+  </data>
+  <data name="FragmentationScenario.KcoAndKuzRamHoleDeviation" xml:space="preserve">
+    <value>Drill Deviation</value>
+  </data>
+  <data name="MineSettings.Beta" xml:space="preserve">
+    <value>Scaled Dist Exponent, n</value>
+  </data>
+  <data name="MineSettings.DefaultPrimerIncrement" xml:space="preserve">
+    <value>Default Inter-Deck Delay</value>
+  </data>
+  <data name="PreferencesNode.DefaultDelayFilepath" xml:space="preserve">
+    <value>Default Delays</value>
+  </data>
+  <data name="PreferencesNode.DefaultExplosivesFilepath" xml:space="preserve">
+    <value>Default Explosives</value>
+  </data>
+  <data name="PreferencesNode.DefaultChargeRulesFilepath" xml:space="preserve">
+    <value>Default Charge Rules</value>
+  </data>
+  <data name="PreferencesNode.DefaultGeologiesFilepath" xml:space="preserve">
+    <value>Default Geology Nodes</value>
+  </data>
+  <data name="PreferencesNode.DelayIncrementLarge" xml:space="preserve">
+    <value>Large Delay Increment</value>
+  </data>
+  <data name="PreferencesNode.DelayIncrementSmall" xml:space="preserve">
+    <value>Small Delay Increment</value>
+  </data>
+  <data name="PreferencesNode.VisualScaleFactor2d" xml:space="preserve">
+    <value>Plan Scale Factor</value>
+  </data>
+  <data name="PreferencesNode.VisualScaleFactor3d" xml:space="preserve">
+    <value>Perspective Scale Factor</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthA" xml:space="preserve">
+    <value>Primary Axis Relief</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthB" xml:space="preserve">
+    <value>Secondary Axis Relief</value>
+  </data>
+  <data name="RadialTimingScenario.OffsetInDirection" xml:space="preserve">
+    <value>Primary Axis Offset</value>
+  </data>
+  <data name="RadialTimingScenario.OffsetInPerpendicular" xml:space="preserve">
+    <value>Secondary Axis Offset</value>
+  </data>
+  <data name="SectionRule.Type" xml:space="preserve">
+    <value>Material Type</value>
+  </data>
+  <data name="TimingScenarioBase.Sequence" xml:space="preserve">
+    <value>Associated Ordering Scenario</value>
+  </data>
+  <data name="TimingScenarioBase.DeckPrimerOffset" xml:space="preserve">
+    <value>Intra-Deck Primer Delay</value>
+  </data>
+  <data name="DeckDelayTimingScenarioBase.DownHoleDelay" xml:space="preserve">
+    <value>Down Hole Delay</value>
+  </data>
+  <data name="DeckDelayTimingScenarioBase.PrimerIncrement" xml:space="preserve">
+    <value>Inter-Deck Delay</value>
+  </data>
+  <data name="DistanceMeasureNode.Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="DistanceMeasureNode.StartPoint" xml:space="preserve">
+    <value>Start Point</value>
+  </data>
+  <data name="DistanceMeasureNode.EndPoint" xml:space="preserve">
+    <value>End Point</value>
+  </data>
+  <data name="DistanceMeasureNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="DistanceMeasureNode.Distance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="Geology.B50Adjuster" xml:space="preserve">
+    <value>B50 Adjuster</value>
+  </data>
+  <data name="Geology.B99Upper" xml:space="preserve">
+    <value>B99 Upper</value>
+  </data>
+  <data name="Geology.B99Lower" xml:space="preserve">
+    <value>B99 Lower</value>
+  </data>
+  <data name="Geology.GraphInSituXMin" xml:space="preserve">
+    <value>Graph In Situ X Min</value>
+  </data>
+  <data name="Geology.GraphInSituXMax" xml:space="preserve">
+    <value>Graph In Situ X Max</value>
+  </data>
+  <data name="Geology.GraphInSituXLog" xml:space="preserve">
+    <value>Graph In Situ X Log</value>
+  </data>
+  <data name="Geology.VpScaleFactor" xml:space="preserve">
+    <value>Vp Scale Factor</value>
+  </data>
+  <data name="Geology.LogB99Upper" xml:space="preserve">
+    <value>Log B99 Upper</value>
+  </data>
+  <data name="Geology.LogB99Lower" xml:space="preserve">
+    <value>Log B99 Lower</value>
+  </data>
+  <data name="Geology.SigmaUpper" xml:space="preserve">
+    <value>Sigma Upper</value>
+  </data>
+  <data name="Geology.SigmaLower" xml:space="preserve">
+    <value>Sigma Lower</value>
+  </data>
+  <data name="Geology.LogB50Upper" xml:space="preserve">
+    <value>Log B50 Upper</value>
+  </data>
+  <data name="Geology.LogB50Lower" xml:space="preserve">
+    <value>Log B50 Lower</value>
+  </data>
+  <data name="Geology.LogB80Upper" xml:space="preserve">
+    <value>Log B80 Upper</value>
+  </data>
+  <data name="Geology.LogB80Lower" xml:space="preserve">
+    <value>Log B80 Lower</value>
+  </data>
+  <data name="Geology.B50Upper" xml:space="preserve">
+    <value>B50 Upper</value>
+  </data>
+  <data name="Geology.B50Lower" xml:space="preserve">
+    <value>B50 Lower</value>
+  </data>
+  <data name="Geology.B80Upper" xml:space="preserve">
+    <value>B80 Upper</value>
+  </data>
+  <data name="Geology.B80Lower" xml:space="preserve">
+    <value>B80 Lower</value>
+  </data>
+  <data name="Geology.JointConditionFreshNotWeathered" xml:space="preserve">
+    <value>Joint Condition Fresh Not Weathered</value>
+  </data>
+  <data name="Geology.RockDensityUpper" xml:space="preserve">
+    <value>Rock Density Upper</value>
+  </data>
+  <data name="Geology.RockDensityLower" xml:space="preserve">
+    <value>Rock Density Lower</value>
+  </data>
+  <data name="Geology.RockStrengthUpper" xml:space="preserve">
+    <value>Rock Strength Upper</value>
+  </data>
+  <data name="Geology.RockStrengthLower" xml:space="preserve">
+    <value>Rock Strength Lower</value>
+  </data>
+  <data name="Geology.PWaveVelocityUpper" xml:space="preserve">
+    <value>P Wave Velocity Upper</value>
+  </data>
+  <data name="Geology.PWaveVelocityLower" xml:space="preserve">
+    <value>P Wave Velocity Lower</value>
+  </data>
+  <data name="Geology.MeasuredCalibrationData" xml:space="preserve">
+    <value>Measured Calibration Data</value>
+  </data>
+  <data name="Geology.SwebrecSlopeFactor_BlastFrag" xml:space="preserve">
+    <value>Swebrec Slope Factor Blast Frag</value>
+  </data>
+  <data name="Geology.CriticalPowderFactorAdjuster_BlastFrag" xml:space="preserve">
+    <value>Critical Powder Factor Adjuster Blast Frag</value>
+  </data>
+  <data name="Geology.RockFactorAdjuster_BlastFrag" xml:space="preserve">
+    <value>Rock Factor Adjuster Blast Frag</value>
+  </data>
+  <data name="Geology.SwebrecSlopeFactor_KCO" xml:space="preserve">
+    <value>Swebrec Slope Factor K C O</value>
+  </data>
+  <data name="Geology.RockFactorAdjuster_KCO" xml:space="preserve">
+    <value>Rock Factor Adjuster K C O</value>
+  </data>
+  <data name="Geology.CriticalPowderFactorAdjuster_KCO" xml:space="preserve">
+    <value>Critical Powder Factor Adjuster K C O</value>
+  </data>
+  <data name="Geology.RockFactorAdjuster_KuzRam" xml:space="preserve">
+    <value>Rock Factor Adjuster Kuz Ram</value>
+  </data>
+  <data name="Geology.GraphCalibrationXMin" xml:space="preserve">
+    <value>Graph Calibration X Min</value>
+  </data>
+  <data name="Geology.GraphCalibrationXMax" xml:space="preserve">
+    <value>Graph Calibration X Max</value>
+  </data>
+  <data name="Geology.GraphCalibrationXLog" xml:space="preserve">
+    <value>Graph Calibration X Log</value>
+  </data>
+  <data name="SequenceScenario.ConnectionPairs" xml:space="preserve">
+    <value>Connection Pairs</value>
+  </data>
+  <data name="SequenceScenario.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="SequenceScenario.DrawIcon" xml:space="preserve">
+    <value>Draw Icon</value>
+  </data>
+  <data name="RadialTimingScenario.Origin" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="RadialTimingScenario.MinePosition" xml:space="preserve">
+    <value>Mine Position</value>
+  </data>
+  <data name="RadialTimingScenario.Bearing" xml:space="preserve">
+    <value>Bearing</value>
+  </data>
+  <data name="RadialTimingScenario.StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="RadialTimingScenario.RespectDistanceToOrigin" xml:space="preserve">
+    <value>Respect Distance To Origin</value>
+  </data>
+  <data name="RadialTimingScenario.RadialInterpolation" xml:space="preserve">
+    <value>Radial Interpolation</value>
+  </data>
+  <data name="BenchBlastHole.Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="BenchBlastHole.ActualLength" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="BenchBlastHole.SubDrill" xml:space="preserve">
+    <value>Sub Drill</value>
+  </data>
+  <data name="BenchBlastHole.Bearing" xml:space="preserve">
+    <value>Bearing</value>
+  </data>
+  <data name="BenchBlastHole.Inclination" xml:space="preserve">
+    <value>Inclination</value>
+  </data>
+  <data name="BenchBlastHole.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="BenchBlastHole.Geology" xml:space="preserve">
+    <value>Geology</value>
+  </data>
+  <data name="BenchBlastHole.ExplosiveWeight" xml:space="preserve">
+    <value>Explosive Weight</value>
+  </data>
+  <data name="BenchBlastHole.InitiationTime" xml:space="preserve">
+    <value>Initiation Time</value>
+  </data>
+  <data name="DelayNode.DelayTime" xml:space="preserve">
+    <value>Delay Time</value>
+  </data>
+  <data name="DelayNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="DelayNode.DrawIcon" xml:space="preserve">
+    <value>Draw Icon</value>
+  </data>
+  <data name="DelayNode.Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="DelayNode.Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="DirectionalTimingScenario.Bearing" xml:space="preserve">
+    <value>Bearing</value>
+  </data>
+  <data name="DirectionalTimingScenario.StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="ManualTimingScenario.InitiationTimes" xml:space="preserve">
+    <value>Initiation Times</value>
+  </data>
+  <data name="DummyHole.Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="DummyHole.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="BlastDagNode.BlastTransform" xml:space="preserve">
+    <value>Blast Transform</value>
+  </data>
+  <data name="MineSettings.Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="MineSettings.BlastType" xml:space="preserve">
+    <value>Blast Type</value>
+  </data>
+  <data name="MineSettings.Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="MineSettings.BlastOrigin" xml:space="preserve">
+    <value>Blast Origin</value>
+  </data>
+  <data name="MineSettings.BlastNorth" xml:space="preserve">
+    <value>Blast North</value>
+  </data>
+  <data name="MineSettings.BlastTransform" xml:space="preserve">
+    <value>Blast Transform</value>
+  </data>
+  <data name="MineSettings.BlastInverseTransform" xml:space="preserve">
+    <value>Blast Inverse Transform</value>
+  </data>
+  <data name="MineSettings.RockDensity" xml:space="preserve">
+    <value>Rock Density</value>
+  </data>
+  <data name="MineSettings.RockStrength" xml:space="preserve">
+    <value>Default Rock Strength</value>
+  </data>
+  <data name="MineSettings.PWaveVelocity" xml:space="preserve">
+    <value>P Wave Velocity</value>
+  </data>
+  <data name="MineSettings.PWaveVelocityMultiplier" xml:space="preserve">
+    <value>P Wave Velocity Multiplier</value>
+  </data>
+  <data name="MineSettings.K" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="MineSettings.NonIdealGasConstant" xml:space="preserve">
+    <value>Non Ideal Gas Constant</value>
+  </data>
+  <data name="MineSettings.DefaultDownHoleDelay" xml:space="preserve">
+    <value>Default Down Hole Delay</value>
+  </data>
+  <data name="MineSettings.ActiveTiming" xml:space="preserve">
+    <value>Active Timing</value>
+  </data>
+  <data name="MineSettings.ActiveSequence" xml:space="preserve">
+    <value>Active Sequence</value>
+  </data>
+  <data name="MineSettings.ActiveCharge" xml:space="preserve">
+    <value>Active Charge</value>
+  </data>
+  <data name="MineSettings.AnimationPlaybackSpeed" xml:space="preserve">
+    <value>Animation Playback Speed</value>
+  </data>
+  <data name="MineSettings.AnimationEndTimeOffset" xml:space="preserve">
+    <value>Animation End Time Offset</value>
+  </data>
+  <data name="TieInTimingScenario.ScenarioIsElectronic" xml:space="preserve">
+    <value>Scenario Is Electronic</value>
+  </data>
+  <data name="TieInTimingScenario.StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="TieInTimingScenario.ConnectionPairs" xml:space="preserve">
+    <value>Connection Pairs</value>
+  </data>
+  <data name="TieInTimingScenario.ConnectionDelays" xml:space="preserve">
+    <value>Connection Delays</value>
+  </data>
+  <data name="PreferencesNode.EulaAccepted" xml:space="preserve">
+    <value>Eula Accepted</value>
+  </data>
+  <data name="PreferencesNode.AutoOpenPrevious" xml:space="preserve">
+    <value>Auto Open Previous</value>
+  </data>
+  <data name="PreferencesNode.UseMetricUnits" xml:space="preserve">
+    <value>Use Metric Units</value>
+  </data>
+  <data name="PreferencesNode.UseShortTon" xml:space="preserve">
+    <value>Use Short Ton</value>
+  </data>
+  <data name="PreferencesNode.DefaultPowderFactor" xml:space="preserve">
+    <value>Default Powder Factor</value>
+  </data>
+  <data name="PreferencesNode.BearingZeroAngle" xml:space="preserve">
+    <value>Bearing Zero Angle</value>
+  </data>
+  <data name="PreferencesNode.RadialDirection" xml:space="preserve">
+    <value>Radial Direction</value>
+  </data>
+  <data name="PreferencesNode.InclinationZeroAxis" xml:space="preserve">
+    <value>Inclination Zero Axis</value>
+  </data>
+  <data name="PreferencesNode.MaxRecentFiles" xml:space="preserve">
+    <value>Max Recent Files</value>
+  </data>
+  <data name="PreferencesNode.RecentFiles" xml:space="preserve">
+    <value>Recent Files</value>
+  </data>
+  <data name="PreferencesNode.UndoQueueSize" xml:space="preserve">
+    <value>Undo Queue Size</value>
+  </data>
+  <data name="PreferencesNode.AutoSaveSession" xml:space="preserve">
+    <value>Auto Save Session</value>
+  </data>
+  <data name="PreferencesNode.AutoSaveSessionInterval" xml:space="preserve">
+    <value>Auto Save Session Interval</value>
+  </data>
+  <data name="PreferencesNode.GridVisible" xml:space="preserve">
+    <value>Grid Visible</value>
+  </data>
+  <data name="PreferencesNode.GridSize" xml:space="preserve">
+    <value>Grid Size</value>
+  </data>
+  <data name="PreferencesNode.GridUnits" xml:space="preserve">
+    <value>Grid Units</value>
+  </data>
+  <data name="PreferencesNode.HeatMapDataSource" xml:space="preserve">
+    <value>Heat Map Data Source</value>
+  </data>
+  <data name="PreferencesNode.HeatMapGradientInterpolation" xml:space="preserve">
+    <value>Heat Map Gradient Interpolation</value>
+  </data>
+  <data name="PreferencesNode.HeatMapGradientKeys" xml:space="preserve">
+    <value>Heat Map Gradient Keys</value>
+  </data>
+  <data name="PreferencesNode.ContourDataSource" xml:space="preserve">
+    <value>Contour Data Source</value>
+  </data>
+  <data name="PreferencesNode.ContourInterval" xml:space="preserve">
+    <value>Contour Interval</value>
+  </data>
+  <data name="PreferencesNode.ContourGradientInterpolation" xml:space="preserve">
+    <value>Contour Gradient Interpolation</value>
+  </data>
+  <data name="PreferencesNode.ContourGradientKeys" xml:space="preserve">
+    <value>Contour Gradient Keys</value>
+  </data>
+  <data name="PreferencesNode.DefaultInterval" xml:space="preserve">
+    <value>Default Interval</value>
+  </data>
+  <data name="PreferencesNode.ViewportBackgroundColour" xml:space="preserve">
+    <value>Viewport Background Colour</value>
+  </data>
+  <data name="PreferencesNode.AntiAliasing" xml:space="preserve">
+    <value>Anti Aliasing</value>
+  </data>
+  <data name="PreferencesNode.RenderHoleToes" xml:space="preserve">
+    <value>Render Hole Toes</value>
+  </data>
+  <data name="PreferencesNode.RenderInitiationTimeText" xml:space="preserve">
+    <value>Render Initiation Time Text</value>
+  </data>
+  <data name="PreferencesNode.RenderDetonationTimeText" xml:space="preserve">
+    <value>Render Detonation Time Text</value>
+  </data>
+  <data name="PreferencesNode.RenderHoleIdText" xml:space="preserve">
+    <value>Render Hole Id Text</value>
+  </data>
+  <data name="PreferencesNode.ShowHitRegions" xml:space="preserve">
+    <value>Show Hit Regions</value>
+  </data>
+  <data name="PreferencesNode.CrashFilepath" xml:space="preserve">
+    <value>Crash Filepath</value>
+  </data>
+  <data name="PreferencesNode.FontName" xml:space="preserve">
+    <value>Font Name</value>
+  </data>
+  <data name="PreferencesNode.FontSize" xml:space="preserve">
+    <value>Font Size</value>
+  </data>
+  <data name="PreferencesNode.ViewportTextLineHeight" xml:space="preserve">
+    <value>Viewport Text Line Height</value>
+  </data>
+  <data name="PreferencesNode.LibraryLocations" xml:space="preserve">
+    <value>Library Locations</value>
+  </data>
+  <data name="PreferencesNode.DelaySeriesFilepaths" xml:space="preserve">
+    <value>Delay Series Filepaths</value>
+  </data>
+  <data name="LineGeometryNode.Points" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="LineGeometryNode.Enclosed" xml:space="preserve">
+    <value>Enclosed</value>
+  </data>
+  <data name="LineGeometryNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="LineGeometryNode.PointCount" xml:space="preserve">
+    <value>Point Count</value>
+  </data>
+  <data name="Locator.VisualSize" xml:space="preserve">
+    <value>Visual Size</value>
+  </data>
+  <data name="Locator.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="BurdenReliefSettings.GradientKeys" xml:space="preserve">
+    <value>Gradient Keys</value>
+  </data>
+  <data name="BurdenReliefSettings.GradientInterpolated" xml:space="preserve">
+    <value>Gradient Interpolated</value>
+  </data>
+  <data name="DesignPageNode.PageType" xml:space="preserve">
+    <value>Page Type</value>
+  </data>
+  <data name="DesignPageNode.PageAspect" xml:space="preserve">
+    <value>Page Aspect</value>
+  </data>
+  <data name="DesignPageNode.Origin" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="DesignPageNode.Angle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="DesignPageNode.PageWidth" xml:space="preserve">
+    <value>Page Width</value>
+  </data>
+  <data name="DesignPageNode.PageHeight" xml:space="preserve">
+    <value>Page Height</value>
+  </data>
+  <data name="DesignPageNode.GridSize" xml:space="preserve">
+    <value>Grid Size</value>
+  </data>
+  <data name="DesignPageNode.PrintGrid" xml:space="preserve">
+    <value>Print Grid</value>
+  </data>
+  <data name="DesignPageNode.PrintTies" xml:space="preserve">
+    <value>Print Ties</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleIds" xml:space="preserve">
+    <value>Print Hole Ids</value>
+  </data>
+  <data name="DesignPageNode.PrintInitiationTime" xml:space="preserve">
+    <value>Initiation Time</value>
+  </data>
+  <data name="DesignPageNode.PrintDeckDetonationTimes" xml:space="preserve">
+    <value>Detonation Times</value>
+  </data>
+  <data name="DesignPageNode.PrintContours" xml:space="preserve">
+    <value>Print Contours</value>
+  </data>
+  <data name="DesignPageNode.TextColourHoleId" xml:space="preserve">
+    <value>Hole Id</value>
+  </data>
+  <data name="DesignPageNode.TextColourInitiationTime" xml:space="preserve">
+    <value>Initiation Time</value>
+  </data>
+  <data name="DesignPageNode.TextColourDeckDetonationTime" xml:space="preserve">
+    <value>Detonation Time</value>
+  </data>
+  <data name="PrintPreferencesNode.PageWidth" xml:space="preserve">
+    <value>Page Width</value>
+  </data>
+  <data name="PrintPreferencesNode.Pages" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="PrintPreferencesNode.LogoFilepath" xml:space="preserve">
+    <value>Logo Filepath</value>
+  </data>
+  <data name="ChargeScenario.HoleChargeRules" xml:space="preserve">
+    <value>Hole Charge Rules</value>
+  </data>
+  <data name="ChargeScenario.DefaultChargeRule" xml:space="preserve">
+    <value>Default Charge Rule</value>
+  </data>
+  <data name="MeshGeometryNode.Points" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="MeshGeometryNode.Indices" xml:space="preserve">
+    <value>Indices</value>
+  </data>
+  <data name="MeshGeometryNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="MeshGeometryNode.Opacity" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="MeshGeometryNode.PointCount" xml:space="preserve">
+    <value>Point Count</value>
+  </data>
+  <data name="MeshGeometryNode.TriangleCount" xml:space="preserve">
+    <value>Triangle Count</value>
+  </data>
+  <data name="CustomFragmentationMetric.MetricType" xml:space="preserve">
+    <value>Metric Type</value>
+  </data>
+  <data name="CustomFragmentationMetric.PercentageValue" xml:space="preserve">
+    <value>Percentage Value</value>
+  </data>
+  <data name="CustomFragmentationMetric.SizeValue" xml:space="preserve">
+    <value>Size Value</value>
+  </data>
+  <data name="FragmentationSeriesNode.Algorithm" xml:space="preserve">
+    <value>Algorithm</value>
+  </data>
+  <data name="FragmentationSeriesNode.ChargeScenario" xml:space="preserve">
+    <value>Charge Scenario</value>
+  </data>
+  <data name="FragmentationSeriesNode.TimingScenario" xml:space="preserve">
+    <value>Timing Scenario</value>
+  </data>
+  <data name="FragmentationSeriesNode.Holes" xml:space="preserve">
+    <value>Holes</value>
+  </data>
+  <data name="FragmentationScenario.OversizeDefinition" xml:space="preserve">
+    <value>Oversize Definition</value>
+  </data>
+  <data name="FragmentationScenario.KuzRamUniformityFactor" xml:space="preserve">
+    <value>Kuz Ram Uniformity Factor</value>
+  </data>
+  <data name="FragmentationScenario.GraphXMin" xml:space="preserve">
+    <value>Graph X Min</value>
+  </data>
+  <data name="FragmentationScenario.GraphXMax" xml:space="preserve">
+    <value>Graph X Max</value>
+  </data>
+  <data name="FragmentationScenario.GraphXLog" xml:space="preserve">
+    <value>Graph X Log</value>
+  </data>
+  <data name="FragmentationScenario.BlastFragCalibrationVisible" xml:space="preserve">
+    <value>Blast Frag Calibration Visible</value>
+  </data>
+  <data name="FragmentationScenario.KuzRamCalibrationVisible" xml:space="preserve">
+    <value>Kuz Ram Calibration Visible</value>
+  </data>
+  <data name="FragmentationScenario.KcoCalibrationVisible" xml:space="preserve">
+    <value>Kco Calibration Visible</value>
+  </data>
+  <data name="DesignerSettingsNode.Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DesignerSettingsNode.Shape" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="DesignerSettingsNode.NamingPolicy" xml:space="preserve">
+    <value>Naming Policy</value>
+  </data>
+  <data name="DesignerSettingsNode.Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="DesignerSettingsNode.Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="DesignerSettingsNode.Burden" xml:space="preserve">
+    <value>Burden</value>
+  </data>
+  <data name="DesignerSettingsNode.Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="DesignerSettingsNode.Rows" xml:space="preserve">
+    <value>Rows</value>
+  </data>
+  <data name="DesignerSettingsNode.HolesPerRow" xml:space="preserve">
+    <value>Holes Per Row</value>
+  </data>
+  <data name="DesignerSettingsNode.placedPoint1" xml:space="preserve">
+    <value>placed Point1</value>
+  </data>
+  <data name="DesignerSettingsNode.placedPoint2" xml:space="preserve">
+    <value>placed Point2</value>
+  </data>
+  <data name="DesignerSettingsNode.SurveyPoint1" xml:space="preserve">
+    <value>Survey Point1</value>
+  </data>
+  <data name="DesignerSettingsNode.SurveyPoint2" xml:space="preserve">
+    <value>Survey Point2</value>
+  </data>
+  <data name="SetNode.Members" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="DagNode.Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="DagNode.ActualVisibility" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="DagNode.Translation" xml:space="preserve">
+    <value>Translation</value>
+  </data>
+  <data name="DagNode.Rotation" xml:space="preserve">
+    <value>Rotation</value>
+  </data>
+  <data name="DagNode.Transform" xml:space="preserve">
+    <value>Transform</value>
+  </data>
+  <data name="DagNode.WorldTransform" xml:space="preserve">
+    <value>World Transform</value>
+  </data>
+  <data name="DagNode.WorldInverseTransform" xml:space="preserve">
+    <value>World Inverse Transform</value>
+  </data>
+  <data name="DagNode.WorldTranslation" xml:space="preserve">
+    <value>World Translation</value>
+  </data>
+  <data name="DagNode.WorldRotation" xml:space="preserve">
+    <value>World Rotation</value>
+  </data>
+  <data name="VariableDiameterRule.Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="VariableDiameterRule.Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="PrimerNode.ReferenceSection" xml:space="preserve">
+    <value>Reference Section</value>
+  </data>
+  <data name="PrimerNode.Depth" xml:space="preserve">
+    <value>Depth</value>
+  </data>
+  <data name="PrimerNode.DepthMode" xml:space="preserve">
+    <value>Depth Mode</value>
+  </data>
+  <data name="ChargeRule.SectionRules" xml:space="preserve">
+    <value>Section Rules</value>
+  </data>
+  <data name="ChargeRule.Primers" xml:space="preserve">
+    <value>Primers</value>
+  </data>
+  <data name="ExplosiveType.Density" xml:space="preserve">
+    <value>Density</value>
+  </data>
+  <data name="ExplosiveType.VOD" xml:space="preserve">
+    <value>VOD</value>
+  </data>
+  <data name="ExplosiveType.SpecificEnergy" xml:space="preserve">
+    <value>Specific Energy</value>
+  </data>
+  <data name="FixedLengthRule.Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="FixedWeightRule.Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="PercentageLengthRule.Percentage" xml:space="preserve">
+    <value>Percentage</value>
+  </data>
+  <data name="VariableLengthRule.Units" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveFactor" xml:space="preserve">
+    <value>Charge Factor</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.StartDepth" xml:space="preserve">
+    <value>Uncharged Collar</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.FillMode" xml:space="preserve">
+    <value>Fill Mode</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.LengthMode" xml:space="preserve">
+    <value>Length Mode</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Explosive" xml:space="preserve">
+    <value>Explosive</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.LinearWeight" xml:space="preserve">
+    <value>Linear Weight</value>
+  </data>
+  <data name="PreSplitDesignerNode.UCS" xml:space="preserve">
+    <value>UCS</value>
+  </data>
+  <data name="PreSplitDesignerNode.UCS_UTS_Ratio" xml:space="preserve">
+    <value>UCS/UTS</value>
+  </data>
+  <data name="PreSplitDesignerNode.UTS" xml:space="preserve">
+    <value>UTS</value>
+  </data>
+  <data name="PreSplitDesignerNode.Condition" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="PreSplitDesignerNode.FillMode" xml:space="preserve">
+    <value>Fill Mode</value>
+  </data>
+  <data name="PreSplitDesignerNode.HoleDiameter" xml:space="preserve">
+    <value>Hole Diameter</value>
+  </data>
+  <data name="PreSplitDesignerNode.HoleLength" xml:space="preserve">
+    <value>Hole Length</value>
+  </data>
+  <data name="PreSplitDesignerNode.Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="PreSplitDesignerNode.IdealSpacing" xml:space="preserve">
+    <value>Ideal Spacing</value>
+  </data>
+  <data name="PreSplitDesignerNode.UnchargedCollar" xml:space="preserve">
+    <value>Uncharged Collar</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveDensity" xml:space="preserve">
+    <value>Explosive Density</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveDiameter" xml:space="preserve">
+    <value>Explosive Diameter</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveLength" xml:space="preserve">
+    <value>Explosive Length</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveWeight" xml:space="preserve">
+    <value>Explosive Weight</value>
+  </data>
+  <data name="PreSplitDesignerNode.ExplosiveVOD" xml:space="preserve">
+    <value>Explosive VOD</value>
+  </data>
+  <data name="PreSplitDesignerNode.HolePressure" xml:space="preserve">
+    <value>Hole Pressure</value>
+  </data>
+  <data name="FixedSizeRule.Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="FixedSizeRule.Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="AnnotationNode.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="AnnotationNode.Bearing" xml:space="preserve">
+    <value>Bearing</value>
+  </data>
+  <data name="AnnotationNode.LineHeight" xml:space="preserve">
+    <value>Line Height</value>
+  </data>
+  <data name="AnnotationNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="StatsPageNode.Pattern" xml:space="preserve">
+    <value>Print Pattern Statistics</value>
+  </data>
+  <data name="StatsPageNode.Drilling" xml:space="preserve">
+    <value>Print Drilling Statistics</value>
+  </data>
+  <data name="StatsPageNode.Charging" xml:space="preserve">
+    <value>Print Charging Statistics</value>
+  </data>
+  <data name="StatsPageNode.Explosives" xml:space="preserve">
+    <value>Print Explosives Statistics</value>
+  </data>
+  <data name="StatsPageNode.Timing" xml:space="preserve">
+    <value>Print Timing Statistics</value>
+  </data>
+  <data name="DesignPageNode.TieScale" xml:space="preserve">
+    <value>Tie Scale</value>
+  </data>
+  <data name="DesignPageNode.HoleScale" xml:space="preserve">
+    <value>Hole Scale</value>
+  </data>
+  <data name="DesignPageNode.HoleIdPrefix" xml:space="preserve">
+    <value>Hole Id Prefix</value>
+  </data>
+  <data name="DesignPageNode.HoleIdSuffix" xml:space="preserve">
+    <value>Hole Id Suffix</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleDiameters" xml:space="preserve">
+    <value>Diameters</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleLengths" xml:space="preserve">
+    <value>Lengths</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleWeights" xml:space="preserve">
+    <value>Deck Weights</value>
+  </data>
+  <data name="DesignPageNode.PrintDeckWeightSuffix" xml:space="preserve">
+    <value>Incl. Weight Units</value>
+  </data>
+  <data name="DesignPageNode.TextScale" xml:space="preserve">
+    <value>Text Scale</value>
+  </data>
+  <data name="SectionRule.Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="SectionRule.FixedDiameter" xml:space="preserve">
+    <value>Is Packaged</value>
+  </data>
+  <data name="DesignPageNode.HoleOpacity" xml:space="preserve">
+    <value>Hole Opacity</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.Primers" xml:space="preserve">
+    <value>Primers</value>
+  </data>
+  <data name="LineGeometryNode.Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="DesignPageNode.PrintAnnotations" xml:space="preserve">
+    <value>Print Annotations</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.StemmingLength" xml:space="preserve">
+    <value>Stemming Length</value>
+  </data>
+  <data name="PreSplitChargeRuleNode.UnchargedLength" xml:space="preserve">
+    <value>Uncharged Length</value>
+  </data>
+  <data name="PreSplitDesignerNode.StemmingLength" xml:space="preserve">
+    <value>Stemming Length</value>
+  </data>
+  <data name="PreSplitDesignerNode.UnchargedLength" xml:space="preserve">
+    <value>Uncharged Length</value>
+  </data>
+  <data name="MineSettings.AllowDuplicateNames" xml:space="preserve">
+    <value>Allow Duplicate Names</value>
+  </data>
+  <data name="BenchBlastHole.SDoB" xml:space="preserve">
+    <value>SDoB</value>
+  </data>
+  <data name="MineSettings.MinSDoB" xml:space="preserve">
+    <value>Min. SDoB</value>
+  </data>
+  <data name="MineSettings.BurdenDanger" xml:space="preserve">
+    <value>Danger Dist.</value>
+  </data>
+  <data name="MineSettings.BurdenWarning" xml:space="preserve">
+    <value>Warning Dist.</value>
+  </data>
+  <data name="MineSettings.BurdenExcessive" xml:space="preserve">
+    <value>Excessive Dist.</value>
+  </data>
+  <data name="MineSettings.OpaqueBurdenHeatmap" xml:space="preserve">
+    <value>Opaque Heatmap</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthMinusA" xml:space="preserve">
+    <value>Neg. Primary Axis Relief</value>
+  </data>
+  <data name="RadialTimingScenario.DelayPerLengthMinusB" xml:space="preserve">
+    <value>Neg. Secondary Axis Relief</value>
+  </data>
+  <data name="RadialTimingScenario.SplitAxisDelays" xml:space="preserve">
+    <value>Enable Split Axis Relief</value>
+  </data>
+  <data name="BranchNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="BranchNode.DrawIcon" xml:space="preserve">
+    <value>Draw Style</value>
+  </data>
+  <data name="BranchNode.Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="BranchScenarioNode.MaxDetonators" xml:space="preserve">
+    <value>Max Detonators per Branch</value>
+  </data>
+  <data name="PreferencesNode.DefaultInterDeckDelay" xml:space="preserve">
+    <value>Default Inter-Deck Delay</value>
+  </data>
+  <data name="PreferencesNode.DxfBinary" xml:space="preserve">
+    <value>DXF as Binary</value>
+  </data>
+  <data name="DistanceMeasureNode.PlanDistance" xml:space="preserve">
+    <value>Plan Distance</value>
+  </data>
+  <data name="DistanceMeasureNode.Bearing" xml:space="preserve">
+    <value>Bearing</value>
+  </data>
+  <data name="RadialTimingScenario.Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="RadialTimingScenario.Invert" xml:space="preserve">
+    <value>Invert</value>
+  </data>
+  <data name="PreferencesNode.AllowDuplicateNames" xml:space="preserve">
+    <value>Allow Duplicate Names</value>
+  </data>
+  <data name="PreferencesNode.PreviousSelectionTest" xml:space="preserve">
+    <value>Previous Selection Test</value>
+  </data>
+  <data name="PreferencesNode.BurdenReliefMax" xml:space="preserve">
+    <value>Burden Relief Max</value>
+  </data>
+  <data name="PreferencesNode.ShowTimingOverlay" xml:space="preserve">
+    <value>Show Timing Overlay</value>
+  </data>
+  <data name="PreferencesNode.CompositeTimingOverlay" xml:space="preserve">
+    <value>Composite Timing Overlay</value>
+  </data>
+  <data name="PreferencesNode.LogoFilepath" xml:space="preserve">
+    <value>Logo Filepath</value>
+  </data>
+  <data name="PreferencesNode.MostRecentVersionNotes" xml:space="preserve">
+    <value>Most Recent Version Notes</value>
+  </data>
+  <data name="LineGeometryNode.Indices" xml:space="preserve">
+    <value>Indices</value>
+  </data>
+  <data name="FrontTimingScenario.StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="FrontTimingScenario.Fronts" xml:space="preserve">
+    <value>Fronts</value>
+  </data>
+  <data name="CompositeTimingScenario.HoleScenarios" xml:space="preserve">
+    <value>Hole Scenarios</value>
+  </data>
+  <data name="CompositeTimingScenario.ScenarioColours" xml:space="preserve">
+    <value>Scenario Colours</value>
+  </data>
+  <data name="BranchScenarioNode.Branches" xml:space="preserve">
+    <value>Branches</value>
+  </data>
+  <data name="DesignPageNode.PrintBranches" xml:space="preserve">
+    <value>Print Branches</value>
+  </data>
+  <data name="TplDelayNode.Delay" xml:space="preserve">
+    <value>Delay</value>
+  </data>
+  <data name="TplDelayNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="TplDelayNode.DrawIcon" xml:space="preserve">
+    <value>Draw Icon</value>
+  </data>
+  <data name="TplTieInTimingScenario.ScenarioIsElectronic" xml:space="preserve">
+    <value>Scenario Is Electronic</value>
+  </data>
+  <data name="TplTieInTimingScenario.StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="TplTieInTimingScenario.ConnectionPairs" xml:space="preserve">
+    <value>Connection Pairs</value>
+  </data>
+  <data name="TplTieInTimingScenario.ConnectionDelays" xml:space="preserve">
+    <value>Connection Delays</value>
+  </data>
+  <data name="ExplosiveType.RelBulkStrength" xml:space="preserve">
+    <value>Rel Bulk Strength</value>
+  </data>
+  <data name="ExplosiveType.Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="PreferencesNode.PreferredPfUnit" xml:space="preserve">
+    <value>Preferred Pf Unit</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleToes" xml:space="preserve">
+    <value>Print Hole Toes</value>
+  </data>
+  <data name="TplTieInTimingScenario.Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="DistanceMeasureNode.StartToEndBearing" xml:space="preserve">
+    <value>Bearing</value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitBurden" xml:space="preserve">
+    <value>Burden</value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitSpacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="DesignerPreferencesNode.Stretch" xml:space="preserve">
+    <value>Stretch</value>
+  </data>
+  <data name="DesignerPreferencesNode.Shape" xml:space="preserve">
+    <value>Row Stagger</value>
+  </data>
+  <data name="DesignerPreferencesNode.PatternOutline" xml:space="preserve">
+    <value>Outline Shape</value>
+  </data>
+  <data name="DesignerPreferencesNode.NamingPolicy" xml:space="preserve">
+    <value>Naming Policy</value>
+  </data>
+  <data name="DesignerPreferencesNode.RowOffset" xml:space="preserve">
+    <value>Start Row Offset</value>
+  </data>
+  <data name="DesignerPreferencesNode.ActualRowN" xml:space="preserve">
+    <value>Rows</value>
+    <comment>Number of rows for the designer - should be short because it gets concatenated with the HolesPerRowN attribute label</comment>
+  </data>
+  <data name="DesignerPreferencesNode.ActualHolesPerRowN" xml:space="preserve">
+    <value>Holes</value>
+    <comment>Number of holes per row in the designer - should be short because it gets concatenated with the RowN attribute label</comment>
+  </data>
+  <data name="DesignerPreferencesNode.FlipRow" xml:space="preserve">
+    <value>Flip Row Side</value>
+  </data>
+  <data name="DesignerPreferencesNode.FillColFromOrigin" xml:space="preserve">
+    <value>Holes Start at Origin</value>
+  </data>
+  <data name="DesignerPreferencesNode.FillRowFromOrigin" xml:space="preserve">
+    <value>Rows Start at Origin</value>
+  </data>
+  <data name="DesignerPreferencesNode.GuideVisible" xml:space="preserve">
+    <value>Show Guide</value>
+  </data>
+  <data name="DesignerPreferencesNode.GuideRadius" xml:space="preserve">
+    <value>Guide Radius</value>
+  </data>
+  <data name="BenchBlastHole.MinBurden" p2:space="preserve" xmlns:p2="xml">
+    <value>Min Burden</value>
+  </data>
+  <data name="BlastDagNode.Bearing" p2:space="preserve" xmlns:p2="xml">
+    <value>Bearing</value>
+  </data>
+  <data name="MineSettings.FaceContour" p2:space="preserve" xmlns:p2="xml">
+    <value>Face Contour</value>
+  </data>
+  <data name="MineSettings.FrontRowHoles" p2:space="preserve" xmlns:p2="xml">
+    <value>Front Row Holes</value>
+  </data>
+  <data name="PreferencesNode.DesignerOrigin" p2:space="preserve" xmlns:p2="xml">
+    <value>Designer Origin</value>
+  </data>
+  <data name="PreferencesNode.DesignerDirection" p2:space="preserve" xmlns:p2="xml">
+    <value>Designer Direction</value>
+  </data>
+  <data name="PreferencesNode.MoveToolShowDistances" p2:space="preserve" xmlns:p2="xml">
+    <value>Move Tool Show Distances</value>
+  </data>
+  <data name="PreferencesNode.MoveToolDiscrete" p2:space="preserve" xmlns:p2="xml">
+    <value>Move Tool Discrete</value>
+  </data>
+  <data name="PreferencesNode.MoveToolStep" p2:space="preserve" xmlns:p2="xml">
+    <value>Move Tool Step</value>
+  </data>
+  <data name="PreferencesNode.LineSelectorRadius" p2:space="preserve" xmlns:p2="xml">
+    <value>Line Selector Radius</value>
+  </data>
+  <data name="PreferencesNode.SessionTemplate" p2:space="preserve" xmlns:p2="xml">
+    <value>Session Template</value>
+  </data>
+  <data name="PreferencesNode.BranchNamingPolicy" p2:space="preserve" xmlns:p2="xml">
+    <value>Branch Naming Policy</value>
+  </data>
+  <data name="LineGeometryNode.Length" p2:space="preserve" xmlns:p2="xml">
+    <value>Length</value>
+  </data>
+  <data name="ConstructionPlaneNode.Inclination" p2:space="preserve" xmlns:p2="xml">
+    <value>Inclination</value>
+  </data>
+  <data name="ConstructionPlaneNode.Width" p2:space="preserve" xmlns:p2="xml">
+    <value>Width</value>
+  </data>
+  <data name="ConstructionPlaneNode.Length" p2:space="preserve" xmlns:p2="xml">
+    <value>Length</value>
+  </data>
+  <data name="ConstructionPlaneNode.Grade" p2:space="preserve" xmlns:p2="xml">
+    <value>Gradient</value>
+  </data>
+  <data name="ConstructionPlaneNode.TiltGrade" p2:space="preserve" xmlns:p2="xml">
+    <value>Tilt Gradient</value>
+  </data>
+  <data name="CameraPlacement.Position" p2:space="preserve" xmlns:p2="xml">
+    <value>Position</value>
+  </data>
+  <data name="CameraPlacement.Rotation" p2:space="preserve" xmlns:p2="xml">
+    <value>Rotation</value>
+  </data>
+  <data name="CameraPlacement.LookAtDistance" p2:space="preserve" xmlns:p2="xml">
+    <value>Look At Distance</value>
+  </data>
+  <data name="CameraPlacement.OrthoSize" p2:space="preserve" xmlns:p2="xml">
+    <value>Ortho Size</value>
+  </data>
+  <data name="DesignPageNode.PrintHoleAngles" p2:space="preserve" xmlns:p2="xml">
+    <value>Print Hole Angles</value>
+  </data>
+  <data name="DesignPageNode.TextAngle" p2:space="preserve" xmlns:p2="xml">
+    <value>Text Angle</value>
+  </data>
+  <data name="DesignPageNode.TextOffset" p2:space="preserve" xmlns:p2="xml">
+    <value>Text Offset</value>
+  </data>
+  <data name="MeshGeometryNode.TextureCoords" p2:space="preserve" xmlns:p2="xml">
+    <value>Texture Coords</value>
+  </data>
+  <data name="MeshGeometryNode.TextureFilepath" p2:space="preserve" xmlns:p2="xml">
+    <value>Texture Filepath</value>
+  </data>
+  <data name="MuckpileSettingsNode.A_factor" p2:space="preserve" xmlns:p2="xml">
+    <value>Throw Factor</value>
+  </data>
+  <data name="MuckpileSettingsNode.Friction" p2:space="preserve" xmlns:p2="xml">
+    <value>Friction</value>
+  </data>
+  <data name="MuckpileSettingsNode.DrawPerHoleDistances" p2:space="preserve" xmlns:p2="xml">
+    <value>Draw Distances</value>
+  </data>
+  <data name="MuckpileSettingsNode.DrawTerrainFootprint" p2:space="preserve" xmlns:p2="xml">
+    <value>Terrain Projection</value>
+  </data>
+</root>
