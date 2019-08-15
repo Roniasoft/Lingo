@@ -5,12 +5,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F043BC2D-93C5-4A98-9B2D-9773B400D11F}</ProjectGuid>
+    <ProjectGuid>{9C7064B8-D84D-461D-BD37-A70EDAFAD0DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>lingo.rsync.mock.test</RootNamespace>
-    <AssemblyName>lingo.rsync.mock.test</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>lingo.sync.tests</RootNamespace>
+    <AssemblyName>lingo.sync.tests</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -47,22 +47,22 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MockServiceTests.cs" />
+    <Compile Include="SyncDocumentsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <EmbeddedResource Include="testAuthoritiveDoc.xml" />
+    <EmbeddedResource Include="testWorkingDoc.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\lingo.common\lingo.common.csproj">
-      <Project>{25ff0012-4377-485e-9553-fe311262eced}</Project>
-      <Name>lingo.common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\lingo.rsync.mock\lingo.rsync.mock.csproj">
-      <Project>{7de95ec3-f46c-491d-a82e-41d9e883d63a}</Project>
-      <Name>lingo.rsync.mock</Name>
+    <ProjectReference Include="..\lingo.sync\lingo.sync.csproj">
+      <Project>{d8bfa1d6-870b-4269-ba5d-a11cfbd4bdeb}</Project>
+      <Name>lingo.sync</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

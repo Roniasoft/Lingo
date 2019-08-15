@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="AnnotationNode" xml:space="preserve">
+    <!--Annotation-->
+    <value>original</value>
+  </data>
+  <data name="NodeAttributeStore" xml:space="preserve">
+    <!--Attribute Store-->
+    <value>original</value>
+  </data>
+  <data name="BlastDagNode" xml:space="preserve" dirty="1">
+    <!--Blast Dag-->
+    <value>original</value>
+  </data>
+  <data name="BlastPolygonNode" xml:space="preserve">
+    <!--Blast Polygon-->
+    <value>original</value>
+  </data>
+  <data name="PercentageLengthRule" xml:space="preserve" dirty="1">
+    <!--Perc. Length-->
+    <value>original</value>
+  </data>
+  <data name="PreferencesNode" xml:space="preserve" dirty="1">
+    <!--Prefs-->
+    <value>original</value>
+  </data>
+  <data name="SnapshotNode" xml:space="preserve">
+    <!--Snapshot-->
+    <value>original</value>
+  </data>
+</root>

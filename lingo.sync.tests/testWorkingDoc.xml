@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="AnnotationNode" xml:space="preserve">
+    <!--Annotation-->
+    <value>translated</value>
+  </data>
+  <data name="NodeAttributeStore" xml:space="preserve">
+    <!--Attr. Store-->
+    <value>translated</value>
+  </data>
+  <data name="BlastDagNode" xml:space="preserve">
+    <!--Blast Dag-->
+    <value>translated</value>
+  </data>
+  <data name="PercentageLengthRule" xml:space="preserve">
+    <!--Percentage Length-->
+    <value>translated</value>
+  </data>
+  <data name="PreferencesNode" xml:space="preserve" dirty="1">
+    <!--Preferences-->
+    <value>random</value>
+  </data>
+  <data name="PrintPreferencesNode" xml:space="preserve" dirty="1">
+    <!--Printing-->
+    <value>original</value>
+  </data>
+  <data name="DeletedFromAuth" xml:space="preserve" dirty="1">
+    <!--Del from auth-->
+    <value>translated</value>
+  </data>
+  <data name="AnotherDeletedFromAuth" xml:space="preserve">
+    <!--Another del from auth-->
+    <value>translated</value>
+  </data>
+</root>
