@@ -15,7 +15,7 @@ namespace lingo
         public string Value
         {
             get => _valueElt?.Value ?? string.Empty;
-            set => _valueElt.Value = value;
+            set => _valueElt.Value = value ?? string.Empty;
         }
         public string Comment => _commentElt?.Value ?? string.Empty;
         public string EnglishValue
