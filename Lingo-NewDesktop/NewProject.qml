@@ -153,7 +153,5 @@ Dialog {
             KeyNavigation.tab: txtEditProjectTitle;
             KeyNavigation.priority: KeyNavigation.BeforeItem
         }
-
-
     }
 }

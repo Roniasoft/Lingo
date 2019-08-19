@@ -37,7 +37,8 @@ DISTFILES += \
     ProjectDetails.qml \
     Settings.qml \
     FlatButton.qml \
-    NewProject.qml
+    NewProject.qml \
+    DetailedSection.qml
 
 HEADERS += \
     t_application_window.h \

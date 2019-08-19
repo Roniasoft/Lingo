@@ -60,5 +60,6 @@
         <file>images/WindowIcons/4.png</file>
         <file>images/WindowIcons/4H.png</file>
         <file>NewProject.qml</file>
+        <file>DetailedSection.qml</file>
     </qresource>
 </RCC>

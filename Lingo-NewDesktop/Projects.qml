@@ -1,4 +1,4 @@
-﻿import QtQuick 2.7
+﻿import QtQuick 2.12
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.1
@@ -32,12 +32,12 @@ Rectangle {
 
     NewProject {
         id: newProjectDialog;
-        x: (parent.width - width) / 2
-        y: (parent.height - height) / 2
+        x: (parent.width - width) / 2;
+        y: (parent.height - height) / 2;
 
         btnSaveNewProject.onButtonClicked: {
             projectsModel.append({"name": txtEditProjectTitle.text, "detailText":txtEditProjectDesc.text, "isOpen":false});
-//            projectsModel.sync();
+            //            projectsModel.sync();
             newProjectDialog.close();
         }
     }
@@ -63,86 +63,148 @@ Rectangle {
             Rectangle {
                 id: wrapper
                 width: listView.width
-                height: 36
-                color: isOpen ? "#202b36" : ((mouseArea.containsMouse || imgCloseMA.containsMouse) ? "#253646" : "#17212b")
+                height: isOpen ? 220 : 36;
+                color: isOpen ? "white" : ((mouseArea.containsMouse || imgCloseMA.containsMouse || maEditEditable.containsMouse) ? "#253646" : "#17212b")
+                //                color: isOpen ? "#202b36" : ((mouseArea.containsMouse || imgCloseMA.containsMouse || maEditEditable.containsMouse) ? "#253646" : "#17212b")
+
+
+                Behavior on height {
+                    NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                }
 
                 Text {
                     id: txtIndex
                     text: index < 9 ? (index + 1) : "9";
                     visible: index < 9;
-                    font.bold: isOpen;
+//                    font.bold: isOpen;
                     anchors.left: parent.left;
                     anchors.leftMargin: 5;
-                    anchors.verticalCenter: parent.verticalCenter;
-                    font.pixelSize: 8
-                    color: isOpen ? "white" : "#7f7f7f";
+                    font.pixelSize: isOpen ? 12 : 8
+                    color: "#7f7f7f";
+
+                    anchors.top: parent.top;
+                    anchors.topMargin: 12;
+
+
+                    Behavior on font.pixelSize {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
                 }
 
                 Image {
                     id: imgIcon
-                    height: 14;
+                    height: isOpen ? 36 : 14;
                     anchors.left: txtIndex.right;
-                    anchors.leftMargin: 5;
+                    anchors.leftMargin: isOpen ? 10 : 5;
                     fillMode: Image.PreserveAspectFit
-                    anchors.verticalCenter: parent.verticalCenter;
                     source: isOpen ? "qrc:/images/Icons-filled/openedFolder2.png" :
                                      "qrc:/images/Icons-filled/Folder.png";
+
+                    anchors.top: parent.top;
+                    anchors.topMargin: 10;
+
+                    Behavior on height {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
+                    Behavior on anchors.leftMargin {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
                 }
 
-                Text {
-                    id: txtName;
-                    text: name
-                    font.bold: isOpen
-                    anchors.left: imgIcon.right;
-                    anchors.leftMargin: 10;
-                    anchors.verticalCenter: parent.verticalCenter;
-                    //                        font.underline:  (wrapper.ListView.isCurrentItem || mouseArea.containsMouse) ? true : false;
-                    color:"white";// wrapper.ListView.isCurrentItem ? "#6cc63d" : "#6cc63d"
-                }
-                Text {
-                    id: txtDetailed;
-                    text: detailText
-                    color: isOpen ? "white" : "#999999";
-                    font.pixelSize: 10
-                    anchors.left: imgIcon.right;
-                    anchors.leftMargin: 100;
-                    anchors.verticalCenter: parent.verticalCenter;
-                }
-                Text {
-                    id: txtTranslation;
-                    text: translation
-                    color: isOpen ? "white" : "#999999";
-                    font.pixelSize: 10
-                    anchors.left: imgIcon.right;
-                    anchors.leftMargin: 300;
-                    anchors.verticalCenter: parent.verticalCenter;
-                }
+                Item {
+                    id: summarySection;
+                    opacity: isOpen ? 0 : 1;
+                    anchors.top: parent.top;
+                    anchors.topMargin: 15;
 
-                Image {
-                    id: imgClose
-                    source: imgCloseMA.containsMouse ? "qrc:/images/Icons-filled/closeHovered.png" :
-                                                       "qrc:/images/Icons-filled/close.png";
-                    opacity: (mouseArea.containsMouse || imgCloseMA.containsMouse) ? 1 : 0;
-                    height: 8;
-                    scale: (imgCloseMA.containsMouse) ? 1.3 : 1.0;
-                    anchors.right: parent.right;
-                    anchors.rightMargin: 25;
-                    fillMode: Image.PreserveAspectFit
-                    anchors.verticalCenter: parent.verticalCenter;
-                    enabled: false;
-                    z: 1000;
+                    Behavior on opacity {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
 
-                    MouseArea {
-                        id: imgCloseMA;
-                        anchors.fill: parent;
-                        hoverEnabled: true;
-                        cursorShape: Qt.PointingHandCursor
+                    Text {
+                        id: txtName;
+                        text: name
+                        anchors.left: parent.right;
+                        anchors.leftMargin: 50;
+                        anchors.verticalCenter: parent.verticalCenter;
+                        //                        font.underline:  (wrapper.ListView.isCurrentItem || mouseArea.containsMouse) ? true : false;
+                        color:"white";// wrapper.ListView.isCurrentItem ? "#6cc63d" : "#6cc63d"
+                    }
+                    Text {
+                        id: txtDetailed;
+                        text: detailText
+                        color: "#999999";
+                        font.pixelSize: 10
+                        anchors.left: txtName.right;
+                        anchors.leftMargin: 5;
+                        anchors.verticalCenter: parent.verticalCenter;
+                    }
+                    Text {
+                        id: txtTranslation;
+                        text: translation
+                        color: "#999999";
+                        font.pixelSize: 10
+                        anchors.left: txtDetailed.right;
+                        anchors.leftMargin: 5;
+                        anchors.verticalCenter: parent.verticalCenter;
+                    }
 
-                        onClicked: {
+                    TextEdit {
+                        id: txtEditEditable;
+                        anchors.right: imgClose.left;
+                        width: 100;
+                        text: translation;
+                        readOnly: false;
+                        focus: true;
+                        anchors.verticalCenter: parent.verticalCenter
+                        color: "white";
+
+                        MouseArea {
+                            id: maEditEditable;
+                            anchors.fill: parent;
+                            hoverEnabled: true;
+                            propagateComposedEvents: true
+                            onClicked: {
+                                mouse.accepted = false
+                                txtEditEditable.focus = true
+                            }
                         }
                     }
 
-                    Behavior on scale { NumberAnimation { easing.type: Easing.InQuad; duration: 100 }}
+                    Image {
+                        id: imgClose
+                        visible: false;
+                        enabled: false;
+                        z: -100;
+                        source: imgCloseMA.containsMouse ? "qrc:/images/Icons-filled/closeHovered.png" :
+                                                           "qrc:/images/Icons-filled/close.png";
+                        opacity: (mouseArea.containsMouse || imgCloseMA.containsMouse) ? 1 : 0;
+                        height: 8;
+                        scale: (imgCloseMA.containsMouse) ? 1.3 : 1.0;
+                        anchors.right: parent.right;
+                        anchors.rightMargin: 25;
+                        fillMode: Image.PreserveAspectFit
+                        anchors.verticalCenter: parent.verticalCenter;
+
+                        MouseArea {
+                            id: imgCloseMA;
+                            anchors.fill: parent;
+                            hoverEnabled: true;
+                            cursorShape: Qt.PointingHandCursor
+
+                            onClicked: {
+                            }
+                        }
+
+                        Behavior on scale { NumberAnimation { easing.type: Easing.InQuad; duration: 100 }}
+                    }
+                }
+
+                DetailedSection {
+                    id: detailedSection;
+                    visible: isOpen;
+                    height: 220;
+                    clip: true;
                 }
 
                 MouseArea {
