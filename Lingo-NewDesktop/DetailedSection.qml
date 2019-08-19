@@ -2,10 +2,9 @@ import QtQuick 2.0
 import QtQuick.Controls 2.3
 
 Rectangle {
-    width: 635
-    height: 205
-//        color: "#17212b"
-    color: "white";
+    height: 200
+    width: 600;
+    //        color: "#17212b"
     clip: true;
 
     Row {
@@ -15,118 +14,106 @@ Rectangle {
         y: 41
         height: 40;
 
-        Text {
-            id: txtProjectTitle
-            text: qsTr("Name:")
-            color: "#2b5278";
-            anchors.verticalCenter: parent.verticalCenter;
-        }
-
-
-        Rectangle {
-            id: rectProjectTitle;
-            width: 225;
-            height: 35;
-            color: "#2b5278";
-            border.color: "white";
-            border.width: 1;
-            anchors.verticalCenter: parent.verticalCenter;
-
-            TextInput {
-                id: txtEditProjectTitle;
-                anchors.verticalCenter: parent.verticalCenter;
-                clip: true;
-                maximumLength: 25;
-                anchors.fill: parent;
-                anchors.margins: 5;
-                wrapMode: TextEdit.NoWrap
-                font.pixelSize: 15;
-                color: "white";
-                KeyNavigation.tab: txtEditProjectDesc;
-                KeyNavigation.priority: KeyNavigation.BeforeItem
-            }
-        }
     }
 
-    Row {
-        id: rowProjectDesc;
-        x: 8
-        y: 94
-        width: 294
-        height: 62
-        spacing: 10;
 
-        Text {
-            id: txtProjectDesc
-            text: qsTr("Description:")
-            color: "#2b5278";
-        }
+    Text {
+        id: txtProjectDesc
+        x: 11
+        y: 39
+        text: qsTr("English:")
+        color: "#2b5278";
+    }
 
-        Rectangle {
-            width: 225;
-            height: 60
-            color: "#2b5278";
-            border.color: "white";
-            border.width: 1;
-            TextInput {
-                id: txtEditProjectDesc;
-                anchors.fill: parent;
-                anchors.margins: 5;
-                wrapMode: TextEdit.Wrap;
-                color: "white";
-                KeyNavigation.tab: btnSaveNewProject;
-                KeyNavigation.priority: KeyNavigation.BeforeItem
-                maximumLength: 368;
-            }
+    Rectangle {
+        x: 302
+        y: 56
+        width: 290
+        height: 75
+        color: "#2b5278";
+        border.color: "white";
+        border.width: 1;
+        TextInput {
+            id: txtEditProjectDesc;
+            anchors.fill: parent;
+            anchors.margins: 5;
+            wrapMode: TextEdit.Wrap;
+            color: "white";
+            KeyNavigation.tab: btnSaveNewProject;
+            KeyNavigation.priority: KeyNavigation.BeforeItem
+            maximumLength: 368;
         }
     }
 
     FlatButton {
         id: btnSaveNewProject;
-        y: 164
+        y: 8
+        width: 111
         height: 33
-        anchors.horizontalCenterOffset: 218
-        labelString: "Save Project";
+        anchors.horizontalCenterOffset: 237
+        labelString: "Save";
         anchors.horizontalCenter: parent.horizontalCenter;
         labelIcon: "qrc:/images/Icons/SaveH.png";
         labelIconHovered: "qrc:/images/Icons/SaveH.png";
-        KeyNavigation.tab: txtEditProjectTitle;
+        // KeyNavigation.tab: txtEditProjectTitle;
         KeyNavigation.priority: KeyNavigation.BeforeItem
     }
+    Text {
+        id: txtProjectDesc1
+        x: 302
+        y: 39
+        color: "#2b5278";
+        text: qsTr("Translation:")
+    }
 
-    Row {
-        id: rowProjectDesc1
-        x: 319
-        y: 87
-        height: 62
-        Text {
-            id: txtProjectDesc1
-            color: "#2b5278";
-            text: qsTr("Description:")
-        }
-
-        Rectangle {
+    Rectangle {
+        x: 8
+        y: 56
+        width: 290
+        height: 75
+        color: "#2b5278"
+        TextInput {
+            id: txtEditProjectDesc1
             width: 225
-            height: 60
-            color: "#2b5278"
-            TextInput {
-                id: txtEditProjectDesc1
-                color: "#ffffff"
-                anchors.margins: 5
-                wrapMode: TextEdit.Wrap
-                maximumLength: 368
-                anchors.fill: parent
-            }
-            border.width: 1
-            border.color: "#ffffff"
+            color: "#ffffff"
+            anchors.margins: 5
+            wrapMode: TextEdit.Wrap
+            maximumLength: 368
+            anchors.fill: parent
         }
-        spacing: 10
+        border.width: 1
+        border.color: "#ffffff"
     }
 
     CheckBox {
         id: checkBox
-        x: 17
-        y: 157
-        text: qsTr("Check Box")
+        x: 376
+        y: 5
+        text: qsTr("Completed")
+    }
+    Text {
+        id: txtProjectDesc2
+        x: 11
+        y: 136
+        color: "#2b5278"
+        text: qsTr("Comment:")
+    }
+
+    Rectangle {
+        x: 8
+        y: 152
+        width: 270
+        height: 40
+        color: "#2b5278"
+        border.width: 1
+        TextInput {
+            id: txtEditProjectDesc2
+            color: "#ffffff"
+            anchors.fill: parent
+            anchors.margins: 5
+            wrapMode: TextEdit.Wrap
+            maximumLength: 368
+        }
+        border.color: "#ffffff"
     }
 }

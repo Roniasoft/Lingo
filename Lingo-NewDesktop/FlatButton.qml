@@ -6,7 +6,7 @@ Rectangle {
     height: 35
     border.width: 0
     border.color: "#888"
-    radius: 5
+    radius: 0
     color: maFlatButton.containsMouse ? "#3476ab" : "#2f6ea5";
 
     property string labelString: "New Button"

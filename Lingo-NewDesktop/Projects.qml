@@ -18,35 +18,46 @@ Rectangle {
         projectsModel.get(indx).isOpen = false;
     }
 
-    FlatButton {
-        id: btnNewProject;
-        labelString: "New Project";
-        onButtonClicked: newProjectDialog.open();
-        labelIcon: "qrc:/images/Icons/NewProjectH.png";
-        labelIconHovered: "qrc:/images/Icons/NewProjectH.png";
+//    FlatButton {
+//        id: btnNewProject;
+//        labelString: "New Project";
+//        onButtonClicked: newProjectDialog.open();
+//        labelIcon: "qrc:/images/Icons/NewProjectH.png";
+//        labelIconHovered: "qrc:/images/Icons/NewProjectH.png";
+//        anchors.top: parent.top;
+//        anchors.topMargin: 20;
+//        anchors.left: parent.left;
+//        anchors.leftMargin: 20;
+//    }
+
+//    NewProject {
+//        id: newProjectDialog;
+//        x: (parent.width - width) / 2;
+//        y: (parent.height - height) / 2;
+
+//        btnSaveNewProject.onButtonClicked: {
+//            projectsModel.append({"name": txtEditProjectTitle.text, "detailText":txtEditProjectDesc.text, "isOpen":false});
+//            //            projectsModel.sync();
+//            newProjectDialog.close();
+//        }
+//    }
+
+
+
+    Rectangle {
+        id: header;
         anchors.top: parent.top;
-        anchors.topMargin: 20;
-        anchors.left: parent.left;
-        anchors.leftMargin: 20;
+        anchors.topMargin: 15;
+        width: listView.width;
+        anchors.horizontalCenter: listView.horizontalCenter;
+        color: "#364451";
+        height: 30;
     }
-
-    NewProject {
-        id: newProjectDialog;
-        x: (parent.width - width) / 2;
-        y: (parent.height - height) / 2;
-
-        btnSaveNewProject.onButtonClicked: {
-            projectsModel.append({"name": txtEditProjectTitle.text, "detailText":txtEditProjectDesc.text, "isOpen":false});
-            //            projectsModel.sync();
-            newProjectDialog.close();
-        }
-    }
-
 
     ListView {
         id: listView;
-        anchors.top: btnNewProject.bottom;
-        anchors.topMargin: 15;
+        anchors.top: header.bottom;
+        anchors.topMargin: 0;
         anchors.left: parent.left;
         anchors.leftMargin: 20;
         anchors.right: parent.right;
@@ -63,52 +74,13 @@ Rectangle {
             Rectangle {
                 id: wrapper
                 width: listView.width
-                height: isOpen ? 220 : 36;
+                height: isOpen ? 200 : 36;
                 color: isOpen ? "white" : ((mouseArea.containsMouse || imgCloseMA.containsMouse || maEditEditable.containsMouse) ? "#253646" : "#17212b")
                 //                color: isOpen ? "#202b36" : ((mouseArea.containsMouse || imgCloseMA.containsMouse || maEditEditable.containsMouse) ? "#253646" : "#17212b")
 
 
                 Behavior on height {
                     NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
-                }
-
-                Text {
-                    id: txtIndex
-                    text: index < 9 ? (index + 1) : "9";
-                    visible: index < 9;
-//                    font.bold: isOpen;
-                    anchors.left: parent.left;
-                    anchors.leftMargin: 5;
-                    font.pixelSize: isOpen ? 12 : 8
-                    color: "#7f7f7f";
-
-                    anchors.top: parent.top;
-                    anchors.topMargin: 12;
-
-
-                    Behavior on font.pixelSize {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
-                    }
-                }
-
-                Image {
-                    id: imgIcon
-                    height: isOpen ? 36 : 14;
-                    anchors.left: txtIndex.right;
-                    anchors.leftMargin: isOpen ? 10 : 5;
-                    fillMode: Image.PreserveAspectFit
-                    source: isOpen ? "qrc:/images/Icons-filled/openedFolder2.png" :
-                                     "qrc:/images/Icons-filled/Folder.png";
-
-                    anchors.top: parent.top;
-                    anchors.topMargin: 10;
-
-                    Behavior on height {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
-                    }
-                    Behavior on anchors.leftMargin {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
-                    }
                 }
 
                 Item {
@@ -196,28 +168,94 @@ Rectangle {
                             }
                         }
 
-                        Behavior on scale { NumberAnimation { easing.type: Easing.InQuad; duration: 100 }}
+                        Behavior on scale { NumberAnimation { easing.type: Easing.InQuad; duration: 350 }}
                     }
                 }
 
                 DetailedSection {
                     id: detailedSection;
-                    visible: isOpen;
-                    height: 220;
+                    height: isOpen ? 200 : 0;
+                    opacity: isOpen ? 1 : 0;
+                    width: isOpen ? parent.width : parent.width;
+                    color: isOpen ? "white" : "#253646";
                     clip: true;
+                    Behavior on height {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
+                    Behavior on width {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
+
+                    Behavior on opacity {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
+                    Behavior on color {
+                        ColorAnimation {
+                            duration: 350
+                            easing.type: Easing.OutCubic;
+                        }
+                    }
+                }
+
+
+
+                Text {
+                    id: txtIndex
+                    text: index < 9 ? (index + 1) : "9";
+                    visible: index < 9;
+//                    font.bold: isOpen;
+                    anchors.left: parent.left;
+                    anchors.leftMargin: 5;
+                    font.pixelSize: isOpen ? 12 : 8
+                    color: isOpen ? "black" : "#7f7f7f";
+                    anchors.top: parent.top;
+                    anchors.topMargin: 12;
+
+                    Behavior on font.pixelSize {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
+                    Behavior on color {
+
+                        ColorAnimation {
+                            easing.type: Easing.OutCubic;
+                            duration: 350
+                        }
+                    }
+                }
+
+                Image {
+                    id: imgIcon
+                    height: isOpen ? 30 : 14;
+                    anchors.left: txtIndex.right;
+                    anchors.leftMargin: isOpen ? 10 : 5;
+                    fillMode: Image.PreserveAspectFit
+                    source: isOpen ? "qrc:/images/Icons-filled/openedFolder2.png" :
+                                     "qrc:/images/Icons-filled/Folder.png";
+
+                    anchors.top: parent.top;
+                    anchors.topMargin: 10;
+
+                    Behavior on height {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
+                    Behavior on anchors.leftMargin {
+                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    }
                 }
 
                 MouseArea {
                     id: mouseArea;
+//                    enabled: !isOpen;
                     anchors.fill: parent;
+                    anchors.bottomMargin: isOpen ? parent.height - 36 : 0;
                     hoverEnabled: true;
-                    cursorShape: Qt.PointingHandCursor
+                    cursorShape: isOpen ? Qt.ArrowCursor : Qt.PointingHandCursor;
+
+//                    onClicked: {
+//                        listView.currentIndex = index;
+//                    }
 
                     onClicked: {
-                        listView.currentIndex = index;
-                    }
-
-                    onDoubleClicked: {
                         listView.currentIndex = index;
                         var isOpen = !projectsModel.get(listView.currentIndex).isOpen;
                         projectsModel.get(listView.currentIndex).isOpen = isOpen;
