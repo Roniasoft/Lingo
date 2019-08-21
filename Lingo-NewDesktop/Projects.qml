@@ -80,7 +80,7 @@ Rectangle {
 
 
                 Behavior on height {
-                    NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                    NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                 }
 
                 Item {
@@ -90,7 +90,7 @@ Rectangle {
                     anchors.topMargin: 15;
 
                     Behavior on opacity {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                        NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                     }
 
                     Text {
@@ -168,7 +168,9 @@ Rectangle {
                             }
                         }
 
-                        Behavior on scale { NumberAnimation { easing.type: Easing.InQuad; duration: 350 }}
+                        Behavior on scale {
+                            NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
+                        }
                     }
                 }
 
@@ -180,14 +182,14 @@ Rectangle {
                     color: isOpen ? "white" : "#253646";
                     clip: true;
                     Behavior on height {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                        NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                     }
                     Behavior on width {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                        NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                     }
 
                     Behavior on opacity {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                        NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                     }
                     Behavior on color {
                         ColorAnimation {
@@ -212,7 +214,7 @@ Rectangle {
                     anchors.topMargin: 12;
 
                     Behavior on font.pixelSize {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                        NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                     }
                     Behavior on color {
 
@@ -225,21 +227,21 @@ Rectangle {
 
                 Image {
                     id: imgIcon
-                    height: isOpen ? 30 : 14;
+                    height: isOpen ? 17 : 14;
                     anchors.left: txtIndex.right;
-                    anchors.leftMargin: isOpen ? 10 : 5;
+                    anchors.leftMargin: isOpen ? 5 : 5;
                     fillMode: Image.PreserveAspectFit
-                    source: isOpen ? "qrc:/images/Icons-filled/openedFolder2.png" :
-                                     "qrc:/images/Icons-filled/Folder.png";
+                    source: completed ? (isOpen ? "qrc:/images/32X32/Completed2.png" : "qrc:/images/32X32/Completed.png") :
+                                     (isOpen ? "qrc:/images/32X32/inCompleted2.png" : "qrc:/images/32X32/inCompleted.png");
 
                     anchors.top: parent.top;
                     anchors.topMargin: 10;
 
                     Behavior on height {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                        NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                     }
                     Behavior on anchors.leftMargin {
-                        NumberAnimation { easing.type: Easing.OutCubic; duration: 350 }
+                        NumberAnimation { easing.type: Easing.OutSine; duration: 400 }
                     }
                 }
 
@@ -287,7 +289,7 @@ Rectangle {
             english: "this is english";
             translation: "this is translated text!!!!";
             comment: "this is english";
-            complete: "this is english";
+            completed: false;
         }
         ListElement {
             name: "Project 1"
@@ -296,7 +298,7 @@ Rectangle {
             english: "this is english";
             translation: "this is translated text!!!!";
             comment: "this is english";
-            complete: "this is english";
+            completed: false;
         }
         ListElement {
             name: "Project 1"
@@ -305,7 +307,7 @@ Rectangle {
             english: "this is english";
             translation: "this is translated text!!!!";
             comment: "this is english";
-            complete: "this is english";
+            completed: false;
         }
         ListElement {
             name: "Project 1"
@@ -314,7 +316,7 @@ Rectangle {
             english: "this is english";
             translation: "this is translated text!!!!";
             comment: "this is english";
-            complete: "this is english";
+            completed: false;
         }
     }
 

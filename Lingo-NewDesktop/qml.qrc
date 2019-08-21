@@ -61,5 +61,14 @@
         <file>images/WindowIcons/4H.png</file>
         <file>NewProject.qml</file>
         <file>DetailedSection.qml</file>
+        <file>images/32X32/Completed.png</file>
+        <file>images/32X32/fullScreen.png</file>
+        <file>images/32X32/Hide.png</file>
+        <file>images/32X32/inCompleted2.png</file>
+        <file>images/32X32/inCompleted.png</file>
+        <file>images/32X32/open_file.png</file>
+        <file>images/32X32/search.png</file>
+        <file>images/32X32/Unhide.png</file>
+        <file>images/32X32/Completed2.png</file>
     </qresource>
 </RCC>

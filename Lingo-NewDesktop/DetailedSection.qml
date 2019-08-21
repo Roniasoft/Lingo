@@ -30,15 +30,15 @@ Rectangle {
         y: 56
         width: 290
         height: 75
-        color: "#2b5278";
-        border.color: "white";
+        color: "white";
+        border.color: "#2b5278"
         border.width: 1;
         TextInput {
             id: txtEditProjectDesc;
             anchors.fill: parent;
             anchors.margins: 5;
             wrapMode: TextEdit.Wrap;
-            color: "white";
+            color: "#2b5278"
             KeyNavigation.tab: btnSaveNewProject;
             KeyNavigation.priority: KeyNavigation.BeforeItem
             maximumLength: 368;
@@ -71,18 +71,18 @@ Rectangle {
         y: 56
         width: 290
         height: 75
-        color: "#2b5278"
+        color: "white";
+        border.color: "#2b5278"
         TextInput {
             id: txtEditProjectDesc1
             width: 225
-            color: "#ffffff"
+            color: "#2b5278"
             anchors.margins: 5
             wrapMode: TextEdit.Wrap
             maximumLength: 368
             anchors.fill: parent
         }
         border.width: 1
-        border.color: "#ffffff"
     }
 
     CheckBox {
@@ -102,18 +102,19 @@ Rectangle {
     Rectangle {
         x: 8
         y: 152
-        width: 270
+        width: 268
         height: 40
-        color: "#2b5278"
         border.width: 1
+        radius: 0;
+        color: "white";
+        border.color: "#2b5278"
         TextInput {
             id: txtEditProjectDesc2
-            color: "#ffffff"
+            color: "#2b5278"
             anchors.fill: parent
             anchors.margins: 5
             wrapMode: TextEdit.Wrap
             maximumLength: 368
         }
-        border.color: "#ffffff"
     }
 }
