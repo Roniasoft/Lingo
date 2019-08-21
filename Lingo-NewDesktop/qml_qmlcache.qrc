@@ -53,5 +53,14 @@
         <file alias="images/WindowIcons/3H.png">images/WindowIcons/3H.png</file>
         <file alias="images/WindowIcons/4.png">images/WindowIcons/4.png</file>
         <file alias="images/WindowIcons/4H.png">images/WindowIcons/4H.png</file>
+        <file alias="images/32X32/Completed.png">images/32X32/Completed.png</file>
+        <file alias="images/32X32/fullScreen.png">images/32X32/fullScreen.png</file>
+        <file alias="images/32X32/Hide.png">images/32X32/Hide.png</file>
+        <file alias="images/32X32/inCompleted2.png">images/32X32/inCompleted2.png</file>
+        <file alias="images/32X32/inCompleted.png">images/32X32/inCompleted.png</file>
+        <file alias="images/32X32/open_file.png">images/32X32/open_file.png</file>
+        <file alias="images/32X32/search.png">images/32X32/search.png</file>
+        <file alias="images/32X32/Unhide.png">images/32X32/Unhide.png</file>
+        <file alias="images/32X32/Completed2.png">images/32X32/Completed2.png</file>
     </qresource>
 </RCC>

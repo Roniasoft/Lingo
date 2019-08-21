@@ -1,120 +1,132 @@
 import QtQuick 2.0
+import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 
 Rectangle {
     height: 200
+    property alias txtEditComment: txtEditComment
+    property alias txtEditTranslation: txtEditTranslation
+    property alias txtEditEng: txtEditEng
+    property alias btnSave: btnSave
     width: 600;
     //        color: "#17212b"
     clip: true;
 
-    Row {
-        id: rowProjectTitle;
-        x: 5
-        spacing: 43;
-        y: 41
-        height: 40;
-
-    }
-
-
-    Text {
-        id: txtProjectDesc
-        x: 11
-        y: 39
-        text: qsTr("English:")
-        color: "#2b5278";
-    }
-
     Rectangle {
-        x: 302
-        y: 56
-        width: 290
-        height: 75
-        color: "white";
-        border.color: "#2b5278"
-        border.width: 1;
-        TextInput {
-            id: txtEditProjectDesc;
-            anchors.fill: parent;
-            anchors.margins: 5;
-            wrapMode: TextEdit.Wrap;
-            color: "#2b5278"
-            KeyNavigation.tab: btnSaveNewProject;
-            KeyNavigation.priority: KeyNavigation.BeforeItem
-            maximumLength: 368;
-        }
+        color: "#253646";
+        width: parent.width;
+        height: 36;
     }
 
     FlatButton {
-        id: btnSaveNewProject;
-        y: 8
-        width: 111
-        height: 33
-        anchors.horizontalCenterOffset: 237
+        id: btnSave;
+        x: 495
+        y: 4
+        width: 95
+        height: 28
+        anchors.rightMargin: 0
         labelString: "Save";
-        anchors.horizontalCenter: parent.horizontalCenter;
         labelIcon: "qrc:/images/Icons/SaveH.png";
         labelIconHovered: "qrc:/images/Icons/SaveH.png";
         // KeyNavigation.tab: txtEditProjectTitle;
         KeyNavigation.priority: KeyNavigation.BeforeItem
-    }
-    Text {
-        id: txtProjectDesc1
-        x: 302
-        y: 39
-        color: "#2b5278";
-        text: qsTr("Translation:")
+        anchors.right: rowLayout.right;
     }
 
-    Rectangle {
-        x: 8
-        y: 56
-        width: 290
-        height: 75
-        color: "white";
-        border.color: "#2b5278"
-        TextInput {
-            id: txtEditProjectDesc1
-            width: 225
-            color: "#2b5278"
-            anchors.margins: 5
-            wrapMode: TextEdit.Wrap
-            maximumLength: 368
-            anchors.fill: parent
+    RowLayout {
+        id: rowLayout;
+        anchors.left: parent.left;
+        anchors.right: parent.right;
+        anchors.leftMargin: 10;
+        anchors.rightMargin: 10;
+
+        y: 40;
+        Column {
+//            Layout.preferredWidth: rowLayout.width * 0.49;
+            Layout.fillWidth: true;
+            Layout.preferredWidth: 290;
+            Text {
+                id: txtProjectDesc
+                text: qsTr("English:")
+                color: "#2b5278";
+            }
+
+            Rectangle {
+                width: parent.width;
+                height: 75
+                color: "white";
+                border.color: "#2b5278"
+                border.width: 1;
+                TextInput {
+                    id: txtEditEng;
+                    anchors.fill: parent;
+                    anchors.margins: 5;
+                    wrapMode: TextEdit.Wrap;
+                    color: "#2b5278"
+                    KeyNavigation.tab: btnSave;
+                    KeyNavigation.priority: KeyNavigation.BeforeItem
+                    maximumLength: 150;
+                    clip: true;
+                }
+            }
         }
-        border.width: 1
+
+        Column {
+//            Layout.preferredWidth: rowLayout.width * 0.49;
+            Layout.fillWidth: true;
+            Layout.preferredWidth: 290;
+            Text {
+                id: txtProjectDesc1
+                color: "#2b5278";
+                text: qsTr("Translation:")
+            }
+
+            Rectangle {
+                width: parent.width;
+                height: 75
+                color: "white";
+                border.color: "#2b5278"
+                TextInput {
+                    id: txtEditTranslation
+                    color: "#2b5278"
+                    anchors.margins: 5
+                    wrapMode: TextEdit.Wrap
+                    maximumLength: 150
+                    anchors.fill: parent
+                    clip: true;
+                }
+                border.width: 1
+            }
+        }
     }
 
-    CheckBox {
-        id: checkBox
-        x: 376
-        y: 5
-        text: qsTr("Completed")
-    }
-    Text {
-        id: txtProjectDesc2
+
+    Column {
+        width: rowLayout.width * 0.49;
         x: 11
         y: 136
-        color: "#2b5278"
-        text: qsTr("Comment:")
-    }
-
-    Rectangle {
-        x: 8
-        y: 152
-        width: 268
-        height: 40
-        border.width: 1
-        radius: 0;
-        color: "white";
-        border.color: "#2b5278"
-        TextInput {
-            id: txtEditProjectDesc2
+        Text {
+            id: txtProjectDesc2
             color: "#2b5278"
-            anchors.fill: parent
-            anchors.margins: 5
-            wrapMode: TextEdit.Wrap
-            maximumLength: 368
+            text: qsTr("Comment:")
+        }
+
+        Rectangle {
+            width: rowLayout.width * 0.49;
+            height: 40
+            border.width: 1
+            radius: 0;
+            color: "white";
+            border.color: "#2b5278"
+            TextInput {
+                id: txtEditComment
+                color: "#2b5278"
+                anchors.fill: parent
+                anchors.margins: 5
+                wrapMode: TextEdit.Wrap
+                maximumLength: 100
+                clip: true;
+            }
         }
     }
 }

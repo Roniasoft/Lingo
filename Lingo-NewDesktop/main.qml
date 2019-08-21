@@ -9,7 +9,7 @@ FramelessAppWindow {
     width: 640
     height: 680
     visible: true
-    title: "Project Management"
+    title: "Lingo"
 
     Material.theme: Material.Dark
     Material.accent: '#4885cc'
@@ -171,7 +171,7 @@ FramelessAppWindow {
 
             Image {
                 id: imgMenu
-                source: "qrc:/images/Icons/MenuH.png"
+                source: !drawer.visible ? "qrc:/images/drawer.png" : "qrc:/images/back.png";
                 width: isMax ? 18 : 20;
                 fillMode: Image.PreserveAspectFit;
                 anchors.bottom: parent.bottom;
@@ -183,14 +183,17 @@ FramelessAppWindow {
                     anchors.fill: parent;
                     cursorShape: Qt.PointingHandCursor;
                     onClicked: {
-                        drawer.open();
+                        if (drawer.visible)
+                            drawer.close();
+                        else
+                            drawer.open();
                     }
                 }
             }
 
             Label {
                 id: titleLabel
-                text: "Project Management";
+                text: "Lingo";
                 font.pixelSize: 12
                 anchors.verticalCenter: parent.verticalCenter;
                 anchors.horizontalCenter: parent.horizontalCenter;
@@ -250,7 +253,7 @@ FramelessAppWindow {
                             } else {
                                 window.showMaximized();
                             }
-                        //    isMaximized = !isMaximized;
+                            //    isMaximized = !isMaximized;
                         }
                     }
                 }
@@ -307,7 +310,7 @@ FramelessAppWindow {
                     if (dy > 5 && isMax) {
                         window.showNormal();
                         window.setY(mouseY);
-                       // isMaximized = false;
+                        // isMaximized = false;
                         return;
                     }
 
@@ -320,7 +323,7 @@ FramelessAppWindow {
                     } else {
                         window.showMaximized();
                     }
-                  //  isMaximized = !isMaximized;
+                    //  isMaximized = !isMaximized;
                 }
             }
 
@@ -354,7 +357,8 @@ FramelessAppWindow {
     Drawer {
         id: drawer
         width: Math.min(window.width, window.height) / 6 * 2
-        height: window.height
+        height: window.height -  header.height - footerBar.height;
+        y: header.height;
         interactive: true;//stackView.depth === 1
         background: Rectangle {
             color: "#0e1621";
@@ -414,91 +418,181 @@ FramelessAppWindow {
             }
 
             model: ListModel {
-                ListElement { title: "Projects"; source: "qrc:/Projects.qml"; iconSrc: "qrc:/images/Icons/ProjectH.png" }
+                ListElement { title: "Open File"; iconSrc: "qrc:/images/32X32/open_file.png" }
                 //                ListElement { title:  "  "; source: "" }
-                ListElement { title: "Preferences"; source: "" ; iconSrc: "qrc:/images/Icons/SettingsH.png"}
-                ListElement { title: "Exit"; source: "" ; iconSrc: "qrc:/images/Icons/ExitH.png"}
+                ListElement { title: "Hide Completed"; iconSrc: "qrc:/images/32X32/Hide.png"}
+                ListElement {title: "Full Screen"; iconSrc: "qrc:/images/32X32/fullScreen.png"}
+                ListElement { title: "Exit"; iconSrc: "qrc:/images/Icons/ExitH.png"}
             }
 
             ScrollIndicator.vertical: ScrollIndicator { }
         }
     }
 
-//    StackView {
-//        id: stackView
-//        anchors.fill: parent
-//        initialItem: Item{}
-//    }
+    //    StackView {
+    //        id: stackView
+    //        anchors.fill: parent
+    //        initialItem: Item{}
+    //    }
 
-    TabBar {
+    Rectangle {
         id: bar;
         anchors.top: header.bottom;
-        background: Rectangle {
-            color: "#464748"
+        height: 36;
+        color: "#17212b"
+
+        width: parent.width;
+
+        Row {
+            anchors.left: parent.left;
+            anchors.leftMargin: 10;
+            anchors.verticalCenter: parent.verticalCenter;
+            height: parent.height;
+            spacing: 5;
+
+            Rectangle {
+                height: parent.height * 0.8;
+                width: height;
+                color: openFileRectMA.pressed ? "#364451" : (openFileRectMA.containsMouse ? "#253646" : "transparent");
+                anchors.verticalCenter: parent.verticalCenter;
+                radius: 3;
+
+                Image {
+                    id: imgOpenFileToolbar
+                    source: "qrc:/images/32X32/open_file.png"
+                    fillMode: Image.PreserveAspectFit;
+                    height: parent.height * 0.7;
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.horizontalCenter: parent.horizontalCenter;
+                }
+
+                MouseArea {
+                    id: openFileRectMA;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor
+
+                    onClicked: {
+
+                    }
+                }
+            }
+
+
+
+
+
+            Rectangle {
+                height: parent.height * 0.8;
+                width: height;
+                color: hideCompletedRectMA.pressed ? "#364451" : (hideCompletedRectMA.containsMouse ? "#253646" : "transparent");
+                anchors.verticalCenter: parent.verticalCenter;
+                radius: 3;
+
+                Image {
+                    id: imgOpenHideCompleted
+                    source: "qrc:/images/32X32/Hide.png"
+                    fillMode: Image.PreserveAspectFit;
+                    height: parent.height * 0.7;
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.horizontalCenter: parent.horizontalCenter;
+                }
+
+                MouseArea {
+                    id: hideCompletedRectMA;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor
+
+                    onClicked: {
+
+                    }
+                }
+            }
+
+
+            Rectangle {
+                height: parent.height * 0.8;
+                width: height;
+                color: fullScreenRectMA.pressed ? "#364451" : (fullScreenRectMA.containsMouse ? "#253646" : "transparent");
+                anchors.verticalCenter: parent.verticalCenter;
+                radius: 3;
+
+                Image {
+                    id: imgFullScreen
+                    source: "qrc:/images/32X32/fullScreen.png"
+                    fillMode: Image.PreserveAspectFit;
+                    height: parent.height * 0.7;
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.horizontalCenter: parent.horizontalCenter;
+                }
+
+                MouseArea {
+                    id: fullScreenRectMA;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor
+
+                    onClicked: {
+
+                    }
+                }
+            }
         }
 
-        //            TabBar {
-        width: parent.width;
-        TTabButton {
-            text: qsTr("Projects")
-            closeable: false;
+
+        Row {
+            anchors.right: parent.right;
+            anchors.rightMargin: 10;
+            anchors.verticalCenter: parent.verticalCenter;
+            height: parent.height;
+            spacing: 5;
+
+            Rectangle {
+                width: 200;
+                height: parent.height * 0.85;
+                color: "transparent";
+                border.color: "white";
+                anchors.verticalCenter: parent.verticalCenter;
+
+                TextField {
+                    color: "white";
+                    background: Rectangle {
+                        anchors.fill: parent;
+                        color: "#17212b";
+                    }
+
+                    text: "";
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.fill: parent;
+                    anchors.margins: 1;
+                    font.pixelSize: 16;
+                    placeholderText: "Search...";
+                    maximumLength: 25
+                    clip: true;
+                }
+
+                Image {
+                    id: imgSearch
+                    source: "qrc:/images/32X32/search.png"
+                    fillMode: Image.PreserveAspectFit;
+                    height: 16;
+                    anchors.right: parent.right;
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.rightMargin: 16;
+                }
+            }
         }
-        //            }
     }
 
-    StackLayout {
+    Projects {
         id: stacklayout;
         width: parent.width
+        height: parent.height;
         //height: parent.height;
         //        anchors.fill: parent;
         anchors.top: bar.bottom;
         anchors.bottom: footerBar.top;
-        currentIndex: bar.currentIndex
-
-        Projects {
-            id: projectsTab;
-            height: parent.height;
-
-            onOpenRequested: {
-                var tab = tabButtonComponent.createObject(bar, {text: projName});
-                tab.projectIndex = index;
-                bar.addItem(tab);
-
-                tab.closeTab.connect(tabCloseRequested);
-
-
-
-                var projectDets = projectDetsComponent.createObject(stacklayout, {});
-                projectDets.txtProjectTitle.text = projName;
-                projectDets.txtProjectDetails.text = projDetail;
-                stacklayout.children.push(projectDets);
-
-
-                updateStatusBar("Project tab (" + projName + ") opened...");
-            }
-
-            onCloseRequested: {
-                for (var i = 0; i < bar.count; i++) {
-                    if (bar.itemAt(i).projectIndex === index) {
-                        bar.removeItem(i);
-                        updateStatusBar("Project tab (" + stacklayout.itemAt(i).txtProjectTitle.text + ") closed...");
-                        stacklayout.itemAt(i).destroy();
-                    }
-                }
-
-            }
-        }
-    }
-
-    function tabCloseRequested(projIndex) {
-        projectsTab.closeProject(projIndex);
-        for (var i = 0; i < bar.count; i++) {
-            if (bar.itemAt(i).projectIndex === projIndex) {
-                bar.removeItem(i);
-                updateStatusBar("Project tab (" + stacklayout.itemAt(i).txtProjectTitle.text + ") closed...");
-                stacklayout.itemAt(i).destroy();
-            }
-        }
     }
 
     Dialog {
