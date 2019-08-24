@@ -31,7 +31,7 @@ Rectangle {
         color: "#6396cb";
         Behavior on width {
             NumberAnimation {
-                duration: 150
+                duration: 250
             }
         }
     }

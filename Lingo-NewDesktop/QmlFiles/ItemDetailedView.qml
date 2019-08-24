@@ -44,7 +44,7 @@ Rectangle {
                 width: parent.width;
                 height: 75
                 KeyNavigation.tab: txtEditTranslation;
-                isReadOnly: false;
+                isReadOnly: true;
             }
         }
 
@@ -64,6 +64,7 @@ Rectangle {
                 width: parent.width;
                 height: 75
                 KeyNavigation.tab: txtEditComment;
+                isReadOnly: false;
             }
         }
     }

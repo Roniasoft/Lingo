@@ -2,7 +2,17 @@ import QtQuick 2.9
 
 Rectangle {
     id: delegate
-    color: (highlighted ? "#253646" : "#17212b")
+    color: (highlighted ? "#253646" : "#17212b");
+    property alias detailedSection: detailedSection;
+    property bool isDetailed: isOpen;
+
+    onIsDetailedChanged: {
+        if (isDetailed) {
+            detailedSection.txtEditTranslation.focus = true;
+        } else {
+            detailedSection.txtEditTranslation.focus = false;
+        }
+    }
 
     Behavior on height {
         NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
@@ -15,9 +25,15 @@ Rectangle {
 
         onTriggered: {
             if (listView.dragging === false) {
+                if (lastOpened != -1) {
+                    listModel.get(lastOpened).isOpen = false;
+                }
+
                 listView.currentIndex = index;
                 var isOpen = !listModel.get(listView.currentIndex).isOpen;
                 listModel.get(listView.currentIndex).isOpen = isOpen;
+
+                lastOpened = index;
             }
         }
     }

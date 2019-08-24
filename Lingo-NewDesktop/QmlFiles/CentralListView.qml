@@ -6,6 +6,7 @@ import QtQuick.Controls.Styles 1.4
 
 Rectangle {
     color: "#0e1621";
+    property int lastOpened: -1;
     signal openRequested(var projName, var projDetail, var index);
     signal closeRequested(var index);
     signal itemDeleted();
@@ -70,6 +71,7 @@ Rectangle {
     Component {
         id: delegate;
         ListItemDelegate {
+            id: listItemDelegate;
             width: listView.width
             height: isOpen ? 210 : 36;
         }
@@ -104,7 +106,7 @@ Rectangle {
         Shortcut {
             sequence: "Down"
             onActivated: {
-                if (listModel.count <= listView.currentIndex+1) {
+                if (listModel.count <= listView.currentIndex +1) {
                     return;
                 }
 
@@ -129,6 +131,12 @@ Rectangle {
             sequences: ["Return", "Enter"]
             onActivated: {
                 listModel.get(listView.currentIndex).isOpen = !listModel.get(listView.currentIndex).isOpen;
+                if (listModel.get(listView.currentIndex).isOpen) {
+                    if (lastOpened != -1) {
+                        listModel.get(lastOpened).isOpen = false;
+                    }
+                    lastOpened = listView.currentIndex;
+                }
             }
         }
         Shortcut {
@@ -138,9 +146,13 @@ Rectangle {
                     return;
                 }
 
+                if (lastOpened != -1) {
+                    listModel.get(lastOpened).isOpen = false;
+                }
                 listModel.get(listView.currentIndex).isOpen = false;
                 listView.currentIndex = listView.currentIndex + 1;
                 listModel.get(listView.currentIndex).isOpen = true;
+                lastOpened = listView.currentIndex;
             }
         }
         Shortcut {
@@ -150,9 +162,13 @@ Rectangle {
                     return;
                 }
 
+                if (lastOpened != -1) {
+                    listModel.get(lastOpened).isOpen = false;
+                }
                 listModel.get(listView.currentIndex).isOpen = false;
                 listView.currentIndex = listView.currentIndex - 1;
                 listModel.get(listView.currentIndex).isOpen = true;
+                lastOpened = listView.currentIndex;
             }
         }
         Shortcut {

@@ -253,8 +253,8 @@ FramelessAppWindow {
             model: ListModel {
                 ListElement { title: "Open File"; iconSrc: "qrc:/images/Icons/White/open_file.png" }
                 ListElement { title: "Hide Completed"; iconSrc: "qrc:/images/Icons/White/Hide.png"}
-                ListElement {title: "Full Screen"; iconSrc: "qrc:/images/Icons/White/fullScreen.png"}
-                ListElement { title: "Exit"; iconSrc: "qrc:/images/FilledIcons/ExitH.png"}
+                ListElement { title: "Full Screen"; iconSrc: "qrc:/images/Icons/White/fullScreen.png"}
+                ListElement { title: "Exit"; iconSrc: "qrc:/images/Icons/White/exit.png"}
             }
 
             ScrollIndicator.vertical: ScrollIndicator { }
