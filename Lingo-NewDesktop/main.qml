@@ -87,6 +87,7 @@ FramelessAppWindow {
                 anchors.bottom: parent.bottom;
                 height: isMax ? 22 : 30
                 Rectangle {
+                    id: rectMin;
                     height: isMax ? 22 : 30
                     width: 40;
                     color: maMinButton.containsMouse ? "#232e3c" : "#0e1621";
@@ -109,6 +110,7 @@ FramelessAppWindow {
                     }
                 }
                 Rectangle {
+                    id: rectMax;
                     height: isMax ? 22 : 30
                     width: 40;
                     color: maMaxButton.containsMouse ? "#232e3c" : "#0e1621";
@@ -138,6 +140,7 @@ FramelessAppWindow {
                     }
                 }
                 Rectangle {
+                    id: rectClose;
                     height: isMax ? 22 : 30
                     width: 40;
                     color: maCloseButton.containsMouse ? "#e92539" : "#0e1621";
@@ -219,6 +222,23 @@ FramelessAppWindow {
                             drawer.close();
                             updateStatusBar("Returned to projects...");
                         }
+                        if (index === 2) {  // fullscreen
+                            if (isFullScreen === false) {
+                                isFullScreen = true;
+                                window.showFullScreen();
+                                header.visible = false;
+                                header.height = 0;
+                                ribbonButtonExit.checked = true;
+                                drawer.close();
+                            } else {
+                                isFullScreen = false;
+                                header.visible = true;
+                                header.height = 30;
+                                window.showNormal();
+                                ribbonButtonExit.checked = false;
+                            }
+                        }
+
                         if (index === 1)  {
                             settings.open();
                             updateStatusBar("Settings Opened...");
@@ -278,12 +298,53 @@ FramelessAppWindow {
             }
 
             TRibbonButton {
+                id: ribbonButtonExit;
                 height: parent.height * 0.8;
                 width: height;
+                checkable: true;
                 anchors.verticalCenter: parent.verticalCenter;
                 imgSource: "qrc:/images/Icons/Grey/fullScreen.png";
                 imgSourceHovered: "qrc:/images/Icons/White/fullScreen.png";
                 onButtonClicked: {
+                    if (checked) {
+                        isFullScreen = true;
+                        window.showFullScreen();
+                        header.visible = false;
+                        header.height = 0;
+                    } else {
+                        isFullScreen = false;
+                        header.visible = true;
+                        header.height = 30;
+                        window.showNormal();
+                    }
+                }
+            }
+
+            Item {
+                width: 1;
+                height: parent.height;
+            }
+
+            Rectangle {
+                height: parent.height * 0.70;
+                width: 1;
+                color: "#6c7883";
+                anchors.verticalCenter: parent.verticalCenter;
+            }
+            Item {
+                width: 1;
+                height: parent.height;
+            }
+
+            TRibbonButton {
+                height: parent.height * 0.8;
+                width: height;
+                checkable: true;
+                anchors.verticalCenter: parent.verticalCenter;
+                imgSource: "qrc:/images/Icons/Grey/exit.png";
+                imgSourceHovered: "qrc:/images/Icons/White/exit.png";
+                onButtonClicked: {
+                    window.close();
                 }
             }
         }

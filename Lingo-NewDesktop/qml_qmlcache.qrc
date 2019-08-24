@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/">
+        <file alias="images/back.png">images/back.png</file>
+        <file alias="images/drawer.png">images/drawer.png</file>
+        <file alias="images/close.png">images/close.png</file>
+        <file alias="images/WindowIcons/1.png">images/WindowIcons/1.png</file>
+        <file alias="images/WindowIcons/1H.png">images/WindowIcons/1H.png</file>
+        <file alias="images/WindowIcons/2.png">images/WindowIcons/2.png</file>
+        <file alias="images/WindowIcons/2H.png">images/WindowIcons/2H.png</file>
+        <file alias="images/WindowIcons/3.png">images/WindowIcons/3.png</file>
+        <file alias="images/WindowIcons/3H.png">images/WindowIcons/3H.png</file>
+        <file alias="images/WindowIcons/4.png">images/WindowIcons/4.png</file>
+        <file alias="images/WindowIcons/4H.png">images/WindowIcons/4H.png</file>
+        <file alias="images/backG.png">images/backG.png</file>
+        <file alias="images/drawerG.png">images/drawerG.png</file>
+        <file alias="images/FilledIcons/ExitH.png">images/FilledIcons/ExitH.png</file>
+        <file alias="images/Icons/Grey/Completed.png">images/Icons/Grey/Completed.png</file>
+        <file alias="images/Icons/Grey/fullScreen.png">images/Icons/Grey/fullScreen.png</file>
+        <file alias="images/Icons/Grey/Hide.png">images/Icons/Grey/Hide.png</file>
+        <file alias="images/Icons/Grey/inCompleted2.png">images/Icons/Grey/inCompleted2.png</file>
+        <file alias="images/Icons/Grey/open_file.png">images/Icons/Grey/open_file.png</file>
+        <file alias="images/Icons/Grey/search.png">images/Icons/Grey/search.png</file>
+        <file alias="images/Icons/Grey/Unhide.png">images/Icons/Grey/Unhide.png</file>
+        <file alias="images/Icons/White/Completed.png">images/Icons/White/Completed.png</file>
+        <file alias="images/Icons/White/fullScreen.png">images/Icons/White/fullScreen.png</file>
+        <file alias="images/Icons/White/Hide.png">images/Icons/White/Hide.png</file>
+        <file alias="images/Icons/White/inCompleted2.png">images/Icons/White/inCompleted2.png</file>
+        <file alias="images/Icons/White/open_file.png">images/Icons/White/open_file.png</file>
+        <file alias="images/Icons/White/search.png">images/Icons/White/search.png</file>
+        <file alias="images/Icons/White/Unhide.png">images/Icons/White/Unhide.png</file>
+        <file alias="images/Icons/White/exit.png">images/Icons/White/exit.png</file>
+        <file alias="images/Icons/Grey/exit.png">images/Icons/Grey/exit.png</file>
+    </qresource>
+</RCC>

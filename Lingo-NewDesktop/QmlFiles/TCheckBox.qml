@@ -25,6 +25,7 @@ CheckBox {
 
             Behavior on opacity {
                 NumberAnimation {
+                    duration: 100
                     easing.type: Easing.InQuart
 
                 }

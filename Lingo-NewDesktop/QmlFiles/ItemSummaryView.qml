@@ -8,16 +8,7 @@ Item {
         NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
     }
 
-    Text {
-        id: txtName;
-        text: name
-        anchors.left: parent.left;
-        anchors.leftMargin: 40;
-        anchors.verticalCenter: parent.verticalCenter;
-        clip: true;
-        width: parent.width * 0.2;
-        color: "white";
-    }
+
 
     Text {
         id: txtEnglish;

@@ -82,6 +82,19 @@ Rectangle {
         }
     }
 
+    // name id
+    Text {
+        id: txtName;
+        text: name
+        anchors.left: parent.left;
+        anchors.leftMargin: 35;
+        anchors.top: parent.top;
+        anchors.topMargin: 12;
+        clip: true;
+        width: isOpen ? parent.width * 0.8 : parent.width * 0.2;
+        color: "white";
+    }
+
     // checkbox for displaying completeness of the items.
     TCheckBox {
         id: chckboxCompleted

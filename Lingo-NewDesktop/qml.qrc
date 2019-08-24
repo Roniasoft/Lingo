@@ -38,5 +38,7 @@
         <file>QmlFiles/TListModel.qml</file>
         <file>QmlFiles/TRibbonButton.qml</file>
         <file>QmlFiles/TTextEditBlock.qml</file>
+        <file>images/Icons/White/exit.png</file>
+        <file>images/Icons/Grey/exit.png</file>
     </qresource>
 </RCC>
