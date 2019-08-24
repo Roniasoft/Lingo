@@ -2,7 +2,7 @@ import QtQuick 2.9
 
 Rectangle {
     id: delegate
-    color: ((mouseArea.containsMouse) ? "#253646" : "#17212b")
+    color: (highlighted ? "#253646" : "#17212b")
 
     Behavior on height {
         NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
@@ -112,6 +112,14 @@ Rectangle {
         hoverEnabled: true;
         cursorShape: isOpen ? Qt.ArrowCursor : Qt.PointingHandCursor;
         propagateComposedEvents: true;
+
+        onHoveredChanged: {
+            if (mouseArea.containsMouse) {
+                listModel.get(index).highlighted = true;
+            } else {
+                listModel.get(index).highlighted = false;
+            }
+        }
 
         onPressed: {
             mouse.accepted = false;

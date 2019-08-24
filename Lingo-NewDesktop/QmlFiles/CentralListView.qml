@@ -100,5 +100,72 @@ Rectangle {
 
         model: listModel
         delegate: delegate
+
+        Shortcut {
+            sequence: "Down"
+            onActivated: {
+                if (listModel.count <= listView.currentIndex+1) {
+                    return;
+                }
+
+                listModel.get(listView.currentIndex).highlighted = false;
+                listView.currentIndex = listView.currentIndex + 1;
+                listModel.get(listView.currentIndex).highlighted = true;
+            }
+        }
+        Shortcut {
+            sequence: "Up"
+            onActivated: {
+                if (listView.currentIndex <= 0) {
+                    return;
+                }
+
+                listModel.get(listView.currentIndex).highlighted = false;
+                listView.currentIndex = listView.currentIndex - 1;
+                listModel.get(listView.currentIndex).highlighted = true;
+            }
+        }
+        Shortcut {
+            sequences: ["Return", "Enter"]
+            onActivated: {
+                listModel.get(listView.currentIndex).isOpen = !listModel.get(listView.currentIndex).isOpen;
+            }
+        }
+        Shortcut {
+            sequence: "Ctrl+Down"
+            onActivated: {
+                if (listModel.count <= listView.currentIndex+1) {
+                    return;
+                }
+
+                listModel.get(listView.currentIndex).isOpen = false;
+                listView.currentIndex = listView.currentIndex + 1;
+                listModel.get(listView.currentIndex).isOpen = true;
+            }
+        }
+        Shortcut {
+            sequence: "Ctrl+Up"
+            onActivated: {
+                if (listView.currentIndex <= 0) {
+                    return;
+                }
+
+                listModel.get(listView.currentIndex).isOpen = false;
+                listView.currentIndex = listView.currentIndex - 1;
+                listModel.get(listView.currentIndex).isOpen = true;
+            }
+        }
+        Shortcut {
+            sequences: ["Ctrl+Return", "Ctrl+Enter"]
+            onActivated: {
+                listModel.get(listView.currentIndex).completed = !listModel.get(listView.currentIndex).completed;
+            }
+        }
+        Shortcut {
+            sequence: "Ctrl+Del"
+            onActivated: {
+                listModel.get(listView.currentIndex).completed = false;
+            }
+        }
     }
 }
