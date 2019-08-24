@@ -17,7 +17,8 @@ FramelessAppWindow::FramelessAppWindow(QQuickWindow *parent) :
     QQuickWindow(parent),
     m_bResizeable(true),
     m_bJustMaximized(false),
-    m_borderWidth(5)
+    m_borderWidth(5),
+    _isFullScreen(false)
 {
     setFlags(flags() | Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint);
     setResizeable(m_bResizeable);
@@ -162,7 +163,7 @@ bool FramelessAppWindow::nativeEvent(const QByteArray &eventType, void *message,
         double dpr = this->devicePixelRatio();
         QPoint pos = this->mapFromGlobal(QPoint(x/dpr,y/dpr));
 
-        QRect rect(30, 0, this->width() - 140, 30);
+        QRect rect(30, 0, this->width() - 140, _isFullScreen ? 0 : 30);
         if (!rect.contains(pos))
             return false;
 
@@ -200,4 +201,14 @@ bool FramelessAppWindow::nativeEvent(const QByteArray &eventType, void *message,
     default:
         return QQuickWindow::nativeEvent(eventType, message, result);
     }
+}
+
+bool FramelessAppWindow::isFullScreen() const
+{
+    return _isFullScreen;
+}
+
+void FramelessAppWindow::setIsFullScreen(bool isFullScreen)
+{
+    _isFullScreen = isFullScreen;
 }

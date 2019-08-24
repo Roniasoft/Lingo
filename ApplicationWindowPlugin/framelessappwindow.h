@@ -15,6 +15,7 @@ class FramelessAppWindow : public QQuickWindow
 {
     Q_OBJECT
     Q_PROPERTY(bool isMax READ isMax NOTIFY isMaxChanged)
+    Q_PROPERTY(bool isFullScreen READ isFullScreen WRITE setIsFullScreen)
 public:
     explicit FramelessAppWindow(QQuickWindow *parent = nullptr);
 
@@ -27,6 +28,9 @@ public:
     Q_INVOKABLE void showMin();
 
     void resizeEvent(QResizeEvent *ev) override;
+
+    bool isFullScreen() const;
+    void setIsFullScreen(bool isFullScreen);
 
 protected:
     bool nativeEvent(const QByteArray &eventType, void *message, long *result) override;
@@ -41,6 +45,7 @@ private:
     QMargins m_frames;
     bool m_bJustMaximized;
     bool _isMax;
+    bool _isFullScreen;
 };
 
 #endif // FramelessAppWindow_H
