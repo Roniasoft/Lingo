@@ -16,9 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp \
-    t_application_window.cpp \
-    ttitlewidget.cpp
+        main.cpp
 
 RESOURCES += qml.qrc
 
@@ -34,17 +32,19 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    ProjectDetails.qml \
-    Settings.qml \
     FlatButton.qml \
-    NewProject.qml \
-    DetailedSection.qml
+    TRibbonButton.qml \
+    TCheckBox.qml \
+    main.qml \
+    TTextEditBlock.qml \
+    TListModel.qml \
+    ListItemDelegate.qml \
+    CentralListView.qml \
+    ItemSummaryView.qml \
+    ItemDetailedView.qml
 
 HEADERS += \
-    t_application_window.h \
-    ttitlewidget.h
 
 FORMS += \
-    ttitlewidget.ui
 
 

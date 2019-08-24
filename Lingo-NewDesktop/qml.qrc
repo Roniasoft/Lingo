@@ -1,56 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>images/arrow.png</file>
         <file>images/back.png</file>
         <file>images/drawer.png</file>
-        <file>images/menu.png</file>
-        <file>images/qt-logo.png</file>
-        <file>Projects.qml</file>
-        <file>TTabButton.qml</file>
         <file>images/close.png</file>
-        <file>images/add.png</file>
-        <file>images/folder.png</file>
-        <file>images/Icons-filled/Advanced.png</file>
-        <file>images/Icons-filled/Chat.png</file>
-        <file>images/Icons-filled/close.png</file>
-        <file>images/Icons-filled/Edit.png</file>
-        <file>images/Icons-filled/FAQ.png</file>
-        <file>images/Icons-filled/Folder.png</file>
-        <file>images/Icons-filled/Interface.png</file>
-        <file>images/Icons-filled/Language.png</file>
-        <file>images/Icons-filled/Notifications.png</file>
-        <file>images/Icons-filled/off.png</file>
-        <file>images/Icons-filled/on.png</file>
-        <file>images/Icons-filled/openedFolder.png</file>
-        <file>images/Icons-filled/Privacy.png</file>
-        <file>images/Icons-filled/Settings.png</file>
-        <file>images/Icons-filled/openedFolder2.png</file>
-        <file>images/loader.gif</file>
-        <file>ProjectDetails.qml</file>
-        <file>images/project.png</file>
-        <file>Settings.qml</file>
-        <file>images/Icons-filled/NotificationsHovered.png</file>
-        <file>images/Icons-filled/EditHovered.png</file>
-        <file>images/Icons-filled/closeHovered.png</file>
-        <file>HighlightButton.qml</file>
-        <file>images/Icons-filled/openedFolderHovered.png</file>
-        <file>FlatButton.qml</file>
-        <file>images/Icons/Cancel.png</file>
-        <file>images/Icons/Exit.png</file>
-        <file>images/Icons/Menu.png</file>
-        <file>images/Icons/NewProject.png</file>
-        <file>images/Icons/Project.png</file>
-        <file>images/Icons/Save.png</file>
-        <file>images/Icons/Settings.png</file>
-        <file>images/Icons/CancelH.png</file>
-        <file>images/Icons/ExitH.png</file>
-        <file>images/Icons/MenuH.png</file>
-        <file>images/Icons/NewProjectH.png</file>
-        <file>images/Icons/ProjectH.png</file>
-        <file>images/Icons/SaveH.png</file>
-        <file>images/Icons/SettingsH.png</file>
-        <file>images/Icons-filled/SettingsH.png</file>
         <file>images/WindowIcons/1.png</file>
         <file>images/WindowIcons/1H.png</file>
         <file>images/WindowIcons/2.png</file>
@@ -59,16 +12,31 @@
         <file>images/WindowIcons/3H.png</file>
         <file>images/WindowIcons/4.png</file>
         <file>images/WindowIcons/4H.png</file>
-        <file>NewProject.qml</file>
-        <file>DetailedSection.qml</file>
-        <file>images/32X32/Completed.png</file>
-        <file>images/32X32/fullScreen.png</file>
-        <file>images/32X32/Hide.png</file>
-        <file>images/32X32/inCompleted2.png</file>
-        <file>images/32X32/inCompleted.png</file>
-        <file>images/32X32/open_file.png</file>
-        <file>images/32X32/search.png</file>
-        <file>images/32X32/Unhide.png</file>
-        <file>images/32X32/Completed2.png</file>
+        <file>images/backG.png</file>
+        <file>images/drawerG.png</file>
+        <file>images/FilledIcons/ExitH.png</file>
+        <file>images/Icons/Grey/Completed.png</file>
+        <file>images/Icons/Grey/fullScreen.png</file>
+        <file>images/Icons/Grey/Hide.png</file>
+        <file>images/Icons/Grey/inCompleted2.png</file>
+        <file>images/Icons/Grey/open_file.png</file>
+        <file>images/Icons/Grey/search.png</file>
+        <file>images/Icons/Grey/Unhide.png</file>
+        <file>images/Icons/White/Completed.png</file>
+        <file>images/Icons/White/fullScreen.png</file>
+        <file>images/Icons/White/Hide.png</file>
+        <file>images/Icons/White/inCompleted2.png</file>
+        <file>images/Icons/White/open_file.png</file>
+        <file>images/Icons/White/search.png</file>
+        <file>images/Icons/White/Unhide.png</file>
+        <file>QmlFiles/CentralListView.qml</file>
+        <file>QmlFiles/FlatButton.qml</file>
+        <file>QmlFiles/ItemDetailedView.qml</file>
+        <file>QmlFiles/ItemSummaryView.qml</file>
+        <file>QmlFiles/ListItemDelegate.qml</file>
+        <file>QmlFiles/TCheckBox.qml</file>
+        <file>QmlFiles/TListModel.qml</file>
+        <file>QmlFiles/TRibbonButton.qml</file>
+        <file>QmlFiles/TTextEditBlock.qml</file>
     </qresource>
 </RCC>
