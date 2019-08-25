@@ -14,7 +14,7 @@ Rectangle {
 
     Image {
         id: imgOpenFileToolbar
-        source: mouseArea.containsMouse ? imgSourceHovered : imgSource
+        source: mouseArea.containsMouse ? pathCRDepth1(imgSourceHovered) : pathCRDepth1(imgSource)
         fillMode: Image.PreserveAspectFit;
         height: parent.height * 0.7;
         anchors.verticalCenter: parent.verticalCenter;

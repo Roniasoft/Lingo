@@ -16,12 +16,29 @@ FramelessAppWindow {
     Material.accent: '#4885cc'
     Material.primary: '#4885cc'
     property alias footerLabel: footerLabel;
+//    property bool runningFromQt: false;
 
     // status bar function and timer
     function updateStatusBar(msg) {
         footerLabel.text = msg;
         timerFooterCleaner.start();
     }
+
+    function pathCR(path) {
+        if (runningFromQt) {
+            return path;
+        } else {
+            return (path.replace("qrc:/",""));
+        }
+    }
+    function pathCRDepth1(path) {
+        if (runningFromQt) {
+            return path;
+        } else {
+            return (path.replace("qrc:/","../"));
+        }
+    }
+
     Timer {
         id: timerFooterCleaner;
         interval: 5000;
@@ -48,8 +65,8 @@ FramelessAppWindow {
 
             Image {
                 id: imgMenu
-                source: !drawer.visible ? (imgMenuMA.containsMouse ? "qrc:/images/drawer.png" : "qrc:/images/drawerG.png")
-                                        : (imgMenuMA.containsMouse ? "qrc:/images/back.png" : "qrc:/images/backG.png");
+                source: !drawer.visible ? (imgMenuMA.containsMouse ? pathCR("qrc:/images/drawer.png") : pathCR("qrc:/images/drawerG.png"))
+                                        : (imgMenuMA.containsMouse ? pathCR("qrc:/images/back.png") : pathCR("qrc:/images/backG.png"));
                 width: isMax ? 18 : 20;
                 fillMode: Image.PreserveAspectFit;
                 anchors.bottom: parent.bottom;
@@ -96,8 +113,8 @@ FramelessAppWindow {
                         anchors.verticalCenter: parent.verticalCenter;
                         anchors.horizontalCenter: parent.horizontalCenter;
                         height: 12;
-                        source: maMinButton.containsMouse ? "qrc:/images/WindowIcons/1H.png" :
-                                                            "qrc:/images/WindowIcons/1.png";
+                        source: maMinButton.containsMouse ? pathCR("qrc:/images/WindowIcons/1H.png") :
+                                                            pathCR("qrc:/images/WindowIcons/1.png");
                         fillMode: Image.PreserveAspectFit
                     }
 
@@ -119,8 +136,8 @@ FramelessAppWindow {
                         anchors.verticalCenter: parent.verticalCenter;
                         anchors.horizontalCenter: parent.horizontalCenter;
                         height: 12;
-                        source: maMaxButton.containsMouse ? (isMax ? "qrc:/images/WindowIcons/4H.png" : "qrc:/images/WindowIcons/2H.png") :
-                                                            (isMax ? "qrc:/images/WindowIcons/4.png" : "qrc:/images/WindowIcons/2.png");
+                        source: maMaxButton.containsMouse ? (isMax ? pathCR("qrc:/images/WindowIcons/4H.png") : pathCR("qrc:/images/WindowIcons/2H.png")) :
+                                                            (isMax ? pathCR("qrc:/images/WindowIcons/4.png") : pathCR("qrc:/images/WindowIcons/2.png"));
                         fillMode: Image.PreserveAspectFit
                     }
 
@@ -135,7 +152,6 @@ FramelessAppWindow {
                             } else {
                                 window.showMaximized();
                             }
-                            //    isMaximized = !isMaximized;
                         }
                     }
                 }
@@ -149,8 +165,8 @@ FramelessAppWindow {
                         anchors.verticalCenter: parent.verticalCenter;
                         anchors.horizontalCenter: parent.horizontalCenter;
                         height: 12;
-                        source: maCloseButton.containsMouse ? "qrc:/images/WindowIcons/3H.png" :
-                                                              "qrc:/images/WindowIcons/3.png";
+                        source: maCloseButton.containsMouse ? pathCR("qrc:/images/WindowIcons/3H.png") :
+                                                              pathCR("qrc:/images/WindowIcons/3.png");
                         fillMode: Image.PreserveAspectFit
 
                     }
@@ -194,7 +210,7 @@ FramelessAppWindow {
                 color: dlgMouseArea.containsMouse ? "#2b5278" : "#17212b";
                 Image {
                     id: imgIcon
-                    source: model.iconSrc;
+                    source: pathCR(model.iconSrc);
                     width: 16;
                     fillMode: Image.PreserveAspectFit;
                     anchors.left: parent.left;
@@ -251,7 +267,7 @@ FramelessAppWindow {
             }
 
             model: ListModel {
-                ListElement { title: "Open File"; iconSrc: "qrc:/images/Icons/White/open_file.png" }
+                ListElement { title: "Open File"; iconSrc: "qrc:/images/Icons/White/open_file.png"}
                 ListElement { title: "Hide Completed"; iconSrc: "qrc:/images/Icons/White/Hide.png"}
                 ListElement { title: "Full Screen"; iconSrc: "qrc:/images/Icons/White/fullScreen.png"}
                 ListElement { title: "Exit"; iconSrc: "qrc:/images/Icons/White/exit.png"}
@@ -383,7 +399,7 @@ FramelessAppWindow {
 
                 Image {
                     id: imgSearch
-                    source: "qrc:/images/Icons/White/search.png"
+                    source: pathCR("qrc:/images/Icons/White/search.png")
                     fillMode: Image.PreserveAspectFit;
                     height: 16;
                     anchors.right: parent.right;
