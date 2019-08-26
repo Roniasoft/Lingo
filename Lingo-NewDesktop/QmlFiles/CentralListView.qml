@@ -94,11 +94,11 @@ Rectangle {
         keyNavigationEnabled: true;
         clip: true;
         focus: true
-        snapMode: ListView.SnapToItem;
+//        snapMode: ListView.SnapToItem;
         ScrollBar.vertical: ScrollBar{}
         ScrollBar.horizontal: ScrollBar{}
-        interactive: true;
-        highlightRangeMode: ListView.StrictlyEnforceRange;
+//        interactive: true;
+//        highlightRangeMode: ListView.StrictlyEnforceRange;
 
         model: listModel
         delegate: delegate
