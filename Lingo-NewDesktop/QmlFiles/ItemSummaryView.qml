@@ -8,8 +8,6 @@ Item {
         NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
     }
 
-
-
     Text {
         id: txtEnglish;
         text: english

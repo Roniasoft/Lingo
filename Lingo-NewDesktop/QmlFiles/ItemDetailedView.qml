@@ -37,13 +37,12 @@ Rectangle {
             Text {
                 id: txtProjectDesc
                 text: qsTr("English:")
-                color: txtEditEng.focus ? "#65a8e5" : "#6f8398";
+                color: (!englishTextEditBlock && txtEditEng.focus) ? "#65a8e5" : "#6f8398";
             }
             TTextEditBlock {
                 id: englishTextEditBlock
                 width: parent.width;
                 height: 75
-                KeyNavigation.tab: txtEditTranslation;
                 isReadOnly: true;
             }
         }
@@ -56,14 +55,13 @@ Rectangle {
             spacing: 2;
             Text {
                 id: txtProjectDesc1
-                color: txtEditTranslation.focus ? "#65a8e5" : "#6f8398";
+                color: (txtEditTranslation.focus) ? "#65a8e5" : "#6f8398";
                 text: qsTr("Translation:")
             }
             TTextEditBlock {
                 id: translationTextEditBlock
                 width: parent.width;
                 height: 75
-                KeyNavigation.tab: txtEditComment;
                 isReadOnly: false;
             }
         }
@@ -78,14 +76,13 @@ Rectangle {
         spacing: 2;
         Text {
             id: txtProjectDesc2
-            color: txtEditComment.focus ? "#65a8e5" : "#6f8398"
+            color: (!commentTextEditBlock && txtEditComment.focus) ? "#65a8e5" : "#6f8398"
             text: qsTr("Comment:")
         }
         TTextEditBlock {
             id: commentTextEditBlock
             width: parent.width;
             height: 45
-            KeyNavigation.tab: txtEditEng;
         }
     }
 }

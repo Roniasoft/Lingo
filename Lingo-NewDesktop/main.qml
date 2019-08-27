@@ -10,7 +10,7 @@ FramelessAppWindow {
     width: 640
     height: 680
     visible: true
-    title: "Lingo"
+    title: "lingo"
 
     Material.theme: Material.Dark
     Material.accent: '#4885cc'
@@ -443,5 +443,4 @@ FramelessAppWindow {
             }
         }
     }
-
 }

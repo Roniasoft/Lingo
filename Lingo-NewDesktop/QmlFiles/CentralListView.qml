@@ -94,9 +94,9 @@ Rectangle {
         keyNavigationEnabled: true;
         clip: true;
         focus: true
-//        snapMode: ListView.SnapToItem;
         ScrollBar.vertical: ScrollBar{}
         ScrollBar.horizontal: ScrollBar{}
+//        snapMode: ListView.SnapToItem;
 //        interactive: true;
 //        highlightRangeMode: ListView.StrictlyEnforceRange;
 
@@ -140,7 +140,7 @@ Rectangle {
             }
         }
         Shortcut {
-            sequence: "Ctrl+Down"
+            sequence: "Tab"
             onActivated: {
                 if (listModel.count <= listView.currentIndex+1) {
                     return;
@@ -156,7 +156,7 @@ Rectangle {
             }
         }
         Shortcut {
-            sequence: "Ctrl+Up"
+            sequence: "Shift+Tab"
             onActivated: {
                 if (listView.currentIndex <= 0) {
                     return;

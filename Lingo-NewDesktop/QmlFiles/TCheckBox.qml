@@ -11,7 +11,7 @@ CheckBox {
         implicitHeight: 16
         x: control.leftPadding
         y: parent.height / 2 - height / 2
-        radius: 3
+        radius: 0
         border.color: control.down ? "#2e7bcd" : "#5288c1"
 
         Rectangle {
@@ -19,7 +19,7 @@ CheckBox {
             height: 10
             x: 3
             y: 3
-            radius: 2
+            radius: 0
             color: control.down ? "#2e7bcd" : "#5288c1"
             opacity: control.checked ? 1 : 0;
 
