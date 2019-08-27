@@ -22,8 +22,6 @@ public:
     void setResizeable(bool resizeable=true);
     bool isResizeable(){return m_bResizeable;}
 
-    void setResizeableAreaWidth(int width = 5);
-
     Q_INVOKABLE bool isMax();
     Q_INVOKABLE void showMin();
 

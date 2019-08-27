@@ -35,7 +35,7 @@ void FramelessAppWindow::setResizeable(bool resizeable)
         //we will get rid of titlebar and thick frame again in nativeEvent() later
         HWND hwnd = (HWND)this->winId();
         DWORD style = ::GetWindowLong(hwnd, GWL_STYLE);
-        ::SetWindowLong(hwnd, GWL_STYLE, style | WS_MAXIMIZEBOX | WS_THICKFRAME | WS_CAPTION);
+        ::SetWindowLong(hwnd, GWL_STYLE, style | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_THICKFRAME | WS_CAPTION);
     }else{
         setFlags(flags() & ~Qt::WindowMaximizeButtonHint);
 
@@ -49,12 +49,6 @@ void FramelessAppWindow::setResizeable(bool resizeable)
     DwmExtendFrameIntoClientArea(HWND(winId()), &shadow);
 
     setVisible(visible);
-}
-
-void FramelessAppWindow::setResizeableAreaWidth(int width)
-{
-    if (1 > width) width = 1;
-    m_borderWidth = width;
 }
 
 bool FramelessAppWindow::isMax()
@@ -111,47 +105,49 @@ bool FramelessAppWindow::nativeEvent(const QByteArray &eventType, void *message,
         long y = GET_Y_LPARAM(msg->lParam);
 
         if(m_bResizeable) {
+
             bool resizeWidth = minimumWidth() != maximumWidth();
             bool resizeHeight = minimumHeight() != maximumHeight();
+
             if(resizeWidth) {
                 //left border
-                if (x >= winrect.left && x < winrect.left + border_width) {
+                if (x >= (winrect.left - border_width) && x < winrect.left + border_width) {
                     *result = HTLEFT;
                 }
                 //right border
-                if (x < winrect.right && x >= winrect.right - border_width) {
+                if (x < winrect.right + border_width && x >= winrect.right - border_width) {
                     *result = HTRIGHT;
                 }
             }
             if(resizeHeight) {
                 //bottom border
-                if (y < winrect.bottom && y >= winrect.bottom - border_width) {
+                if (y < winrect.bottom + border_width && y >= winrect.bottom - border_width) {
                     *result = HTBOTTOM;
                 }
                 //top border
-                if (y >= winrect.top && y < winrect.top + border_width) {
+                if (y >= winrect.top - border_width && y < winrect.top + border_width) {
                     *result = HTTOP;
                 }
             }
             if(resizeWidth && resizeHeight) {
                 //bottom left corner
-                if (x >= winrect.left && x < winrect.left + border_width &&
-                        y < winrect.bottom && y >= winrect.bottom - border_width) {
+                if (x >= winrect.left - border_width && x < winrect.left + border_width &&
+                        y < winrect.bottom + border_width && y >= winrect.bottom - border_width) {
                     *result = HTBOTTOMLEFT;
                 }
                 //bottom right corner
-                if (x < winrect.right && x >= winrect.right - border_width &&
-                        y < winrect.bottom && y >= winrect.bottom - border_width) {
+                if (x < winrect.right + border_width && x >= winrect.right - border_width &&
+                        y < winrect.bottom + border_width && y >= winrect.bottom - border_width) {
                     *result = HTBOTTOMRIGHT;
                 }
                 //top left corner
-                if (x >= winrect.left && x < winrect.left + border_width &&
-                        y >= winrect.top && y < winrect.top + border_width) {
+                if (x >= winrect.left - border_width && x < winrect.left + border_width &&
+                        y >= winrect.top - border_width && y < winrect.top + border_width) {
                     *result = HTTOPLEFT;
                 }
                 //top right corner
-                if (x < winrect.right && x >= winrect.right - border_width &&
-                        y >= winrect.top && y < winrect.top + border_width) {
+                if (x < winrect.right + border_width && x >= winrect.right - border_width &&
+                        y >= winrect.top - border_width && y < winrect.top + border_width) {
                     *result = HTTOPRIGHT;
                 }
             }
@@ -164,11 +160,12 @@ bool FramelessAppWindow::nativeEvent(const QByteArray &eventType, void *message,
         QPoint pos = this->mapFromGlobal(QPoint(x/dpr,y/dpr));
 
         QRect rect(30, 0, this->width() - 140, _isFullScreen ? 0 : 30);
-        if (!rect.contains(pos))
-            return false;
+        if (rect.contains(pos)) {
+            *result = HTCAPTION;
+            return true;
+        }
 
-        *result = HTCAPTION;
-        return true;
+        return false;
     } //end case WM_NCHITTEST
     case WM_GETMINMAXINFO:
     {
