@@ -12,7 +12,7 @@ Item {
         id: txtEnglish;
         text: english
         color: "white";
-        font.pixelSize: 10
+        font.pixelSize: fontSize;
         anchors.left: parent.left;
         anchors.leftMargin: parent.width * 0.30;
         anchors.verticalCenter: parent.verticalCenter;
@@ -22,7 +22,7 @@ Item {
         id: txtTranslation;
         text: translation
         color: "#999999";
-        font.pixelSize: 10
+        font.pixelSize: fontSize;
         anchors.left: parent.left;
         anchors.leftMargin: parent.width * 0.6;
         anchors.verticalCenter: parent.verticalCenter;

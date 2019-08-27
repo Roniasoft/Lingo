@@ -31,5 +31,10 @@
         <file alias="images/Icons/White/Unhide.png">images/Icons/White/Unhide.png</file>
         <file alias="images/Icons/White/exit.png">images/Icons/White/exit.png</file>
         <file alias="images/Icons/Grey/exit.png">images/Icons/Grey/exit.png</file>
+        <file alias="images/icon.png">images/icon.png</file>
+        <file alias="images/Icons/Grey/Decrease.png">images/Icons/Grey/Decrease.png</file>
+        <file alias="images/Icons/Grey/Increase.png">images/Icons/Grey/Increase.png</file>
+        <file alias="images/Icons/White/Decrease.png">images/Icons/White/Decrease.png</file>
+        <file alias="images/Icons/White/Increase.png">images/Icons/White/Increase.png</file>
     </qresource>
 </RCC>

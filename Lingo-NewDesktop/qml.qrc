@@ -40,5 +40,10 @@
         <file>QmlFiles/TTextEditBlock.qml</file>
         <file>images/Icons/White/exit.png</file>
         <file>images/Icons/Grey/exit.png</file>
+        <file>images/icon.png</file>
+        <file>images/Icons/Grey/Decrease.png</file>
+        <file>images/Icons/Grey/Increase.png</file>
+        <file>images/Icons/White/Decrease.png</file>
+        <file>images/Icons/White/Increase.png</file>
     </qresource>
 </RCC>

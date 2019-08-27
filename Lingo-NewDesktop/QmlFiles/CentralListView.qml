@@ -100,6 +100,21 @@ Rectangle {
 //        interactive: true;
 //        highlightRangeMode: ListView.StrictlyEnforceRange;
 
+        function tabIsPressedInTextEdit() {
+            if (listModel.count <= listView.currentIndex+1) {
+                return;
+            }
+
+            if (lastOpened != -1) {
+                listModel.get(lastOpened).isOpen = false;
+                listModel.get(lastOpened).highlighted = false;
+            }
+            listModel.get(listView.currentIndex).isOpen = false;
+            listView.currentIndex = listView.currentIndex + 1;
+            listModel.get(listView.currentIndex).isOpen = true;
+            lastOpened = listView.currentIndex;
+        }
+
         model: listModel
         delegate: delegate
 
@@ -134,13 +149,25 @@ Rectangle {
                 if (listModel.get(listView.currentIndex).isOpen) {
                     if (lastOpened != -1) {
                         listModel.get(lastOpened).isOpen = false;
+                        listModel.get(lastOpened).highlighted = false;
                     }
                     lastOpened = listView.currentIndex;
                 }
             }
         }
         Shortcut {
+            sequence: "escape"
+            onActivated: {
+                listModel.get(lastOpened).isOpen = false;
+                listModel.get(listView.currentIndex).isOpen = false;
+                listModel.get(lastOpened).isOpen = false;
+                listModel.get(listView.currentIndex).highlighted = false;
+            }
+        }
+        Shortcut {
+            id: shortcutTab;
             sequence: "Tab"
+            context: Qt.ApplicationShortcut
             onActivated: {
                 if (listModel.count <= listView.currentIndex+1) {
                     return;
@@ -148,6 +175,7 @@ Rectangle {
 
                 if (lastOpened != -1) {
                     listModel.get(lastOpened).isOpen = false;
+                    listModel.get(lastOpened).highlighted = false;
                 }
                 listModel.get(listView.currentIndex).isOpen = false;
                 listView.currentIndex = listView.currentIndex + 1;
@@ -164,6 +192,7 @@ Rectangle {
 
                 if (lastOpened != -1) {
                     listModel.get(lastOpened).isOpen = false;
+                    listModel.get(lastOpened).highlighted = false;
                 }
                 listModel.get(listView.currentIndex).isOpen = false;
                 listView.currentIndex = listView.currentIndex - 1;

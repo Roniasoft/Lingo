@@ -174,6 +174,7 @@ compiler_rcc_clean:
 release\qrc_qml_qmlcache.cpp: qml_qmlcache.qrc \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\bin\rcc.exe \
 		images\backG.png \
+		images\icon.png \
 		images\close.png \
 		images\drawer.png \
 		images\drawerG.png \
@@ -188,16 +189,20 @@ release\qrc_qml_qmlcache.cpp: qml_qmlcache.qrc \
 		images\WindowIcons\3H.png \
 		images\Icons\Grey\open_file.png \
 		images\Icons\Grey\inCompleted2.png \
+		images\Icons\Grey\Increase.png \
 		images\Icons\Grey\Hide.png \
 		images\Icons\Grey\Unhide.png \
+		images\Icons\Grey\Decrease.png \
 		images\Icons\Grey\Completed.png \
 		images\Icons\Grey\search.png \
 		images\Icons\Grey\exit.png \
 		images\Icons\Grey\fullScreen.png \
 		images\Icons\White\open_file.png \
 		images\Icons\White\inCompleted2.png \
+		images\Icons\White\Increase.png \
 		images\Icons\White\Hide.png \
 		images\Icons\White\Unhide.png \
+		images\Icons\White\Decrease.png \
 		images\Icons\White\Completed.png \
 		images\Icons\White\search.png \
 		images\Icons\White\exit.png \
@@ -398,7 +403,11 @@ release\main.obj: main.cpp C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtGui\QGuiA
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtCore\qfile.h \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtGui\qvector2d.h \
-		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtGui\qtouchdevice.h
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtQml\QQmlContext \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtQml\qqmlcontext.h \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtGui\QIcon \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\include\QtGui\qicon.h
 
 release\qrc_qml_qmlcache.obj: release\qrc_qml_qmlcache.cpp 
 

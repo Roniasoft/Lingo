@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QApplication>
 #include <QQmlContext>
+#include <QIcon>
 
 int main(int argc, char *argv[])
 {

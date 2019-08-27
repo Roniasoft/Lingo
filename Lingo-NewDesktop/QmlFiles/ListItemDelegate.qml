@@ -5,6 +5,7 @@ Rectangle {
     color: (highlighted ? "#253646" : "#17212b");
     property alias detailedSection: detailedSection;
     property bool isDetailed: isOpen;
+    property int anmDuration: 20
 
     onIsDetailedChanged: {
         if (isDetailed) {
@@ -15,7 +16,7 @@ Rectangle {
     }
 
     Behavior on height {
-        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+        NumberAnimation { easing.type: Easing.OutSine; duration: anmDuration }
     }
 
     Timer {
@@ -25,7 +26,8 @@ Rectangle {
 
         onTriggered: {
             if (listView.dragging === false) {
-                if (lastOpened != -1) {
+                if (lastOpened !== -1 && lastOpened !== index) {
+                    listModel.get(lastOpened).highlighted = false;
                     listModel.get(lastOpened).isOpen = false;
                 }
 
@@ -61,11 +63,11 @@ Rectangle {
         txtEditTranslation.text: translation;
 
         Behavior on height {
-            NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+            NumberAnimation { easing.type: Easing.OutSine; duration: anmDuration }
         }
 
         Behavior on opacity {
-            NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+            NumberAnimation { easing.type: Easing.OutSine; duration: anmDuration }
         }
         Behavior on color {
             ColorAnimation {
@@ -81,21 +83,10 @@ Rectangle {
         text: (index + 1);
         anchors.left: parent.left;
         anchors.leftMargin: 10;
-        font.pixelSize: 8
+        font.pixelSize: fontSize - 2;
         color: "#7f7f7f";
         anchors.top: parent.top;
-        anchors.topMargin: 12;
-
-        Behavior on font.pixelSize {
-            NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
-        }
-        Behavior on color {
-
-            ColorAnimation {
-                easing.type: Easing.OutCubic;
-                duration: 350
-            }
-        }
+        anchors.topMargin: 24 - fontSize;
     }
 
     // name id
@@ -104,11 +95,11 @@ Rectangle {
         text: name
         anchors.left: parent.left;
         anchors.leftMargin: 35;
-        anchors.top: parent.top;
-        anchors.topMargin: 12;
+        anchors.verticalCenter: txtIndex.verticalCenter;
         clip: true;
         width: isOpen ? parent.width * 0.8 : parent.width * 0.2;
         color: "white";
+        font.pixelSize: fontSize;
     }
 
     // checkbox for displaying completeness of the items.

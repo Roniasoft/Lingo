@@ -11,12 +11,14 @@ FramelessAppWindow {
     height: 680
     visible: true
     title: "lingo"
+    windowIcon: runningFromQt ? ":/images/icon.png" : "images/icon.png";
 
     Material.theme: Material.Dark
     Material.accent: '#4885cc'
     Material.primary: '#4885cc'
+
     property alias footerLabel: footerLabel;
-//    property bool runningFromQt: false;
+    property real fontSize: 12;
 
     // status bar function and timer
     function updateStatusBar(msg) {
@@ -240,18 +242,10 @@ FramelessAppWindow {
                         }
                         if (index === 2) {  // fullscreen
                             if (isFullScreen === false) {
-                                isFullScreen = true;
-                                window.showFullScreen();
-                                header.visible = false;
-                                header.height = 0;
-                                ribbonButtonExit.checked = true;
+                                btnFullScreen.checked = true;
                                 drawer.close();
                             } else {
-                                isFullScreen = false;
-                                header.visible = true;
-                                header.height = 30;
-                                window.showNormal();
-                                ribbonButtonExit.checked = false;
+                                btnFullScreen.checked = false;
                             }
                         }
 
@@ -284,6 +278,7 @@ FramelessAppWindow {
         height: 36;
         color: "#17212b"
         width: parent.width;
+        z: 5;
 
         Row {
             id: ribbonBarRow;
@@ -299,6 +294,7 @@ FramelessAppWindow {
                 anchors.verticalCenter: parent.verticalCenter;
                 imgSource: "qrc:/images/Icons/Grey/open_file.png";
                 imgSourceHovered: "qrc:/images/Icons/White/open_file.png";
+                tooltipStr: "Open New";
                 onButtonClicked: {
                 }
             }
@@ -309,19 +305,22 @@ FramelessAppWindow {
                 anchors.verticalCenter: parent.verticalCenter;
                 imgSource: "qrc:/images/Icons/Grey/Hide.png";
                 imgSourceHovered: "qrc:/images/Icons/White/Hide.png";
+                tooltipStr: "Hide Completed"
                 onButtonClicked: {
                 }
             }
 
             TRibbonButton {
-                id: ribbonButtonExit;
+                id: btnFullScreen;
                 height: parent.height * 0.8;
                 width: height;
                 checkable: true;
                 anchors.verticalCenter: parent.verticalCenter;
                 imgSource: "qrc:/images/Icons/Grey/fullScreen.png";
                 imgSourceHovered: "qrc:/images/Icons/White/fullScreen.png";
-                onButtonClicked: {
+                tooltipStr: checked ? "Normal" : "Full Screen";
+
+                onCheckedChanged: {
                     if (checked) {
                         isFullScreen = true;
                         window.showFullScreen();
@@ -336,75 +335,31 @@ FramelessAppWindow {
                 }
             }
 
-            Item {
-                width: 1;
-                height: parent.height;
-            }
-
-            Rectangle {
-                height: parent.height * 0.70;
-                width: 1;
-                color: "#6c7883";
-                anchors.verticalCenter: parent.verticalCenter;
-            }
-            Item {
-                width: 1;
-                height: parent.height;
-            }
 
             TRibbonButton {
                 height: parent.height * 0.8;
                 width: height;
-                checkable: true;
                 anchors.verticalCenter: parent.verticalCenter;
-                imgSource: "qrc:/images/Icons/Grey/exit.png";
-                imgSourceHovered: "qrc:/images/Icons/White/exit.png";
+                imgSource: "qrc:/images/Icons/Grey/Decrease.png";
+                imgSourceHovered: "qrc:/images/Icons/White/Decrease.png";
+                tooltipStr: "Decrease font size"
                 onButtonClicked: {
-                    window.close();
+                    if (fontSize > 9)
+                        fontSize -= 1;
                 }
             }
-        }
 
-        Row {
-            id: searchBoxRow;
-            anchors.right: parent.right;
-            anchors.rightMargin: 10;
-            anchors.verticalCenter: parent.verticalCenter;
-            height: parent.height;
-            spacing: 5;
 
-            Rectangle {
-                width: 200;
-                height: parent.height * 0.85;
-                color: "transparent";
-                border.color: "#6f8398";
+            TRibbonButton {
+                height: parent.height * 0.8;
+                width: height;
                 anchors.verticalCenter: parent.verticalCenter;
-
-                TextField {
-                    color: "white";
-                    background: Rectangle {
-                        anchors.fill: parent;
-                        color: "#17212b";
-                    }
-
-                    text: "";
-                    anchors.verticalCenter: parent.verticalCenter;
-                    anchors.fill: parent;
-                    anchors.margins: 1;
-                    font.pixelSize: 16;
-                    placeholderText: "Search...";
-                    maximumLength: 25
-                    clip: true;
-                }
-
-                Image {
-                    id: imgSearch
-                    source: pathCR("qrc:/images/Icons/White/search.png")
-                    fillMode: Image.PreserveAspectFit;
-                    height: 16;
-                    anchors.right: parent.right;
-                    anchors.verticalCenter: parent.verticalCenter;
-                    anchors.rightMargin: 16;
+                imgSource: "qrc:/images/Icons/Grey/Increase.png";
+                imgSourceHovered: "qrc:/images/Icons/White/Increase.png";
+                tooltipStr: "Increase font size"
+                onButtonClicked: {
+                    if (fontSize < 25)
+                        fontSize += 1;
                 }
             }
         }
@@ -441,6 +396,14 @@ FramelessAppWindow {
                 Layout.fillWidth: true
                 color: "white";
             }
+        }
+    }
+
+    // shortcuts
+    Shortcut {
+        sequence: "F11";
+        onActivated: {
+            btnFullScreen.checked = !btnFullScreen.checked;
         }
     }
 }
