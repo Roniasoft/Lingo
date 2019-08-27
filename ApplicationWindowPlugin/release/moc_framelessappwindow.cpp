@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FramelessAppWindow_t {
-    QByteArrayData data[7];
-    char stringdata0[64];
+    QByteArrayData data[8];
+    char stringdata0[75];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,11 +37,12 @@ QT_MOC_LITERAL(2, 32, 0), // ""
 QT_MOC_LITERAL(3, 33, 3), // "val"
 QT_MOC_LITERAL(4, 37, 5), // "isMax"
 QT_MOC_LITERAL(5, 43, 7), // "showMin"
-QT_MOC_LITERAL(6, 51, 12) // "isFullScreen"
+QT_MOC_LITERAL(6, 51, 12), // "isFullScreen"
+QT_MOC_LITERAL(7, 64, 10) // "windowIcon"
 
     },
     "FramelessAppWindow\0isMaxChanged\0\0val\0"
-    "isMax\0showMin\0isFullScreen"
+    "isMax\0showMin\0isFullScreen\0windowIcon"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +53,7 @@ static const uint qt_meta_data_FramelessAppWindow[] = {
        0,       // classname
        0,    0, // classinfo
        3,   14, // methods
-       2,   34, // properties
+       3,   34, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -75,8 +76,10 @@ static const uint qt_meta_data_FramelessAppWindow[] = {
  // properties: name, type, flags
        4, QMetaType::Bool, 0x00495001,
        6, QMetaType::Bool, 0x00095103,
+       7, QMetaType::QString, 0x00095103,
 
  // properties: notify_signal_id
+       0,
        0,
        0,
 
@@ -113,6 +116,7 @@ void FramelessAppWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         switch (_id) {
         case 0: *reinterpret_cast< bool*>(_v) = _t->isMax(); break;
         case 1: *reinterpret_cast< bool*>(_v) = _t->isFullScreen(); break;
+        case 2: *reinterpret_cast< QString*>(_v) = _t->windowIcon(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -121,6 +125,7 @@ void FramelessAppWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         void *_v = _a[0];
         switch (_id) {
         case 1: _t->setIsFullScreen(*reinterpret_cast< bool*>(_v)); break;
+        case 2: _t->setWindowIcon(*reinterpret_cast< QString*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -169,17 +174,17 @@ int FramelessAppWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 2;
+        _id -= 3;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

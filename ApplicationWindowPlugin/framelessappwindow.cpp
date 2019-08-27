@@ -200,6 +200,17 @@ bool FramelessAppWindow::nativeEvent(const QByteArray &eventType, void *message,
     }
 }
 
+QString FramelessAppWindow::windowIcon() const
+{
+    return _windowIcon;
+}
+
+void FramelessAppWindow::setWindowIcon(const QString &windowIcon)
+{
+    _windowIcon = windowIcon;
+    setIcon(QIcon(_windowIcon));
+}
+
 bool FramelessAppWindow::isFullScreen() const
 {
     return _isFullScreen;
