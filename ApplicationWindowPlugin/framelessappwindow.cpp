@@ -17,7 +17,7 @@ FramelessAppWindow::FramelessAppWindow(QQuickWindow *parent) :
     QQuickWindow(parent),
     m_bResizeable(true),
     m_bJustMaximized(false),
-    m_borderWidth(5),
+    m_borderWidth(10),
     _isFullScreen(false)
 {
     setFlags(flags() | Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint);
@@ -35,7 +35,7 @@ void FramelessAppWindow::setResizeable(bool resizeable)
         //we will get rid of titlebar and thick frame again in nativeEvent() later
         HWND hwnd = (HWND)this->winId();
         DWORD style = ::GetWindowLong(hwnd, GWL_STYLE);
-        ::SetWindowLong(hwnd, GWL_STYLE, style | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_THICKFRAME | WS_CAPTION);
+        ::SetWindowLong(hwnd, GWL_STYLE, style | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_THICKFRAME | WS_CAPTION | WS_BORDER | WS_SIZEBOX);
     }else{
         setFlags(flags() & ~Qt::WindowMaximizeButtonHint);
 
@@ -45,7 +45,7 @@ void FramelessAppWindow::setResizeable(bool resizeable)
     }
 
     //we better left 1 piexl width of border untouch, so OS can draw nice shadow around it
-    const MARGINS shadow = { 1, 1, 1, 1 };
+    const MARGINS shadow = { 15, 15, 15, 15 };
     DwmExtendFrameIntoClientArea(HWND(winId()), &shadow);
 
     setVisible(visible);
