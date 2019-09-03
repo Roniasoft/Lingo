@@ -6,7 +6,7 @@ import QtQuick.Controls.Styles 1.4
 
 
 Rectangle {
-    color: "#17212b";
+    color: isReadOnly ? "#1e2937" : "#17212b";
     border.color: "#6f8398"
     border.width: 0;
     property alias txtEdit: txtEdit
@@ -47,7 +47,7 @@ Rectangle {
             width: flick.width;
             anchors.margins: 5;
             wrapMode: TextEdit.Wrap;
-            color: "white"
+            color: isReadOnly ? "#cecece" : "white"
             selectedTextColor: "white";
             selectionColor: "#3399ff"
             clip: true;

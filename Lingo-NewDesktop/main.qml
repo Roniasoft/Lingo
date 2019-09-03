@@ -225,7 +225,7 @@ FramelessAppWindow {
                     anchors.left: imgIcon.right;
                     anchors.leftMargin: 10;
                     anchors.verticalCenter: parent.verticalCenter;
-                    font.pixelSize: 12
+                    font.pixelSize: fontSize + 2;
                     color: "white";
                 }
                 MouseArea {

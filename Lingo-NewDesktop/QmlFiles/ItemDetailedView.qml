@@ -38,6 +38,7 @@ Rectangle {
                 id: txtProjectDesc
                 text: qsTr("English:")
                 color: (!englishTextEditBlock && txtEditEng.focus) ? "#65a8e5" : "#6f8398";
+                font.pixelSize: fontSize - 1;
             }
             TTextEditBlock {
                 id: englishTextEditBlock
@@ -57,6 +58,7 @@ Rectangle {
                 id: txtProjectDesc1
                 color: (txtEditTranslation.focus) ? "#65a8e5" : "#6f8398";
                 text: qsTr("Translation:")
+                font.pixelSize: fontSize - 1;
             }
             TTextEditBlock {
                 id: translationTextEditBlock
@@ -70,7 +72,7 @@ Rectangle {
     // comment box
     Column {
         id: commentColumn
-        width: rowLayout.width * 0.49;
+        width: translationColumn.width;
         x: 11
         y: 136
         spacing: 2;
@@ -78,6 +80,7 @@ Rectangle {
             id: txtProjectDesc2
             color: (!commentTextEditBlock && txtEditComment.focus) ? "#65a8e5" : "#6f8398"
             text: qsTr("Comment:")
+            font.pixelSize: fontSize - 1;
         }
         TTextEditBlock {
             id: commentTextEditBlock

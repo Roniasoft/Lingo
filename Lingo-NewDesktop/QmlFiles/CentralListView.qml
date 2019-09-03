@@ -40,18 +40,21 @@ Rectangle {
                 text: qsTr("Name");
                 color: "white";
                 Layout.preferredWidth: 70;
+                font.pixelSize: fontSize - 2;
             }
             Text {
                 id: txtHeaderEnglish
                 text: qsTr("English");
                 color: "white";
                 Layout.preferredWidth: 70
+                font.pixelSize: fontSize - 2;
             }
             Text {
                 id: txtHeaderTranslation
                 text: qsTr("Translation");
                 color: "white";
                 Layout.preferredWidth: 70;
+                font.pixelSize: fontSize - 2;
             }
         }
 
@@ -64,6 +67,7 @@ Rectangle {
             anchors.right: parent.right;
             anchors.rightMargin: 20
             anchors.verticalCenter: parent.verticalCenter;
+            font.pixelSize: fontSize - 2;
 
         }
     }
