@@ -19,8 +19,8 @@ Rectangle {
 
     Flickable {
         id: flick;
-        width: parent.width;
-        height: parent.height;
+        anchors.fill: parent;
+        anchors.margins: 5;
 
         contentWidth: txtEdit.paintedWidth
         contentHeight: txtEdit.paintedHeight
@@ -56,14 +56,6 @@ Rectangle {
             font.pixelSize: fontSize;
             inputMethodHints: Qt.ImhMultiLine;
             onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
-//            Keys.onPressed: {
-//                if ( event.key === Qt.Key_Tab ) {
-//                    txtEdit.focus = false;
-//                    event.accepted = true;
-//                } else {
-//                    event.accepted = false
-//                }
-//            }
 
             Keys.onTabPressed: {
                 event.accepted = true;
@@ -77,30 +69,6 @@ Rectangle {
                 cursorShape: isReadOnly ? Qt.ArrowCursor : Qt.IBeamCursor;
                 hoverEnabled: true
                 enabled: false;
-//                onClicked: {
-//                    selectStart = txtEdit.selectionStart;
-//                    selectEnd = txtEdit.selectionEnd;
-//                    curPos = txtEdit.cursorPosition;
-//                    contextMenu.x = mouse.x;
-//                    contextMenu.y = mouse.y;
-//                    contextMenu.open();
-//                    txtEdit.cursorPosition = curPos;
-//                    txtEdit.select(selectStart,selectEnd);
-//                }
-//                onPressAndHold: {
-//                    if (mouse.source === Qt.MouseEventNotSynthesized) {
-//                        selectStart = txtEdit.selectionStart;
-//                        selectEnd = txtEdit.selectionEnd;
-//                        curPos = txtEdit.cursorPosition;
-//                        contextMenu.x = mouse.x;
-//                        contextMenu.y = mouse.y;
-//                        contextMenu.open();
-//                        txtEdit.cursorPosition = curPos;
-//                        txtEdit.select(selectStart,selectEnd);
-//                    }
-//                }
-
-
             }
 
             Menu {
