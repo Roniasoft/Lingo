@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lingo.common", "lingo.commo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lingo.rsync.mock", "lingo.rsync.mock\lingo.rsync.mock.csproj", "{F4C6D370-609F-4CFA-9007-4D026A312FCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lingo.rsync.mock.test", "lingo.rsync.mock.test\lingo.rsync.mock.test.csproj", "{F043BC2D-93C5-4A98-9B2D-9773B400D11F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lingo.rsync.mock.test", "lingo.rsync.mock.test\lingo.rsync.mock.test.csproj", "{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{F4C6D370-609F-4CFA-9007-4D026A312FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4C6D370-609F-4CFA-9007-4D026A312FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4C6D370-609F-4CFA-9007-4D026A312FCE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F043BC2D-93C5-4A98-9B2D-9773B400D11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F043BC2D-93C5-4A98-9B2D-9773B400D11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F043BC2D-93C5-4A98-9B2D-9773B400D11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F043BC2D-93C5-4A98-9B2D-9773B400D11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
