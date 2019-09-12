@@ -1,4 +1,4 @@
-QT += core gui quick
+QT += core gui quick quickcontrols2
 CONFIG += c++11
 
 
@@ -32,16 +32,22 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    FlatButton.qml \
-    TRibbonButton.qml \
-    TCheckBox.qml \
+    QmlFiles/FlatButton.qml \
+    QmlFiles/TRibbonButton.qml \
+    QmlFiles/TCheckBox.qml \
     main.qml \
-    TTextEditBlock.qml \
-    TListModel.qml \
-    ListItemDelegate.qml \
-    CentralListView.qml \
-    ItemSummaryView.qml \
-    ItemDetailedView.qml
+    QmlFiles/TTextEditBlock.qml \
+    QmlFiles/TListModel.qml \
+    QmlFiles/ListItemDelegate.qml \
+    QmlFiles/CentralListView.qml \
+    QmlFiles/ItemSummaryView.qml \
+    QmlFiles/ItemDetailedView.qml \
+    QmlFiles/MainGroups.qml \
+    QmlFiles/MainGroups.qml \
+    QmlFiles/NiceTabBar.qml \
+    QmlFiles/TabBarHeader.qml \
+    QmlFiles/AppStyle.qml \
+    QmlFiles/GroupItemDelegate.qml
 
 HEADERS += \
 

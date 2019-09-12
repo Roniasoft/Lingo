@@ -1,7 +1,9 @@
-import QtQuick 2.7
-import QtQuick.Layouts 1.3
+import QtQuick 2.12
+import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.5
-import QtQuick.Controls.Material 2.1
+import QtQuick.Window 2.12
+import QtQuick.Controls.Universal 2.12
+import QtQuick.Controls.Material 2.12
 import FramelessWindow 1.0
 import "QmlFiles"
 
@@ -13,9 +15,21 @@ FramelessAppWindow {
     title: "lingo"
     windowIcon: runningFromQt ? ":/images/icon.png" : "images/icon.png";
 
+    //    Material.theme: Material.Dark
+    //    Material.accent: '#4885cc'
+    //    Material.primary: '#4885cc'
+
+    Universal.theme: Universal.Dark
+    Universal.background: appStyle.background
+    Universal.foreground: appStyle.foreground
+
     Material.theme: Material.Dark
-    Material.accent: '#4885cc'
-    Material.primary: '#4885cc'
+    Material.background: appStyle.background
+    Material.foreground: appStyle.foreground
+
+    AppStyle {
+        id: appStyle
+    }
 
     property alias footerLabel: footerLabel;
     property real fontSize: 12;
@@ -365,13 +379,45 @@ FramelessAppWindow {
         }
     }
 
-    // central view (list)
-    CentralListView {
-        id: projects;
-        width: parent.width
-        height: parent.height;
+    TabBarHeader {
+        id: headerBar
         anchors.top: ribbonBar.bottom;
+        anchors.left: parent.left;
+        anchors.right: parent.right;
+        width: parent.width;
+        style: appStyle.headerStyle
+    }
+
+    SwipeView {
+        id: swipeView
+        anchors.top: headerBar.bottom;
+        anchors.left: parent.left;
+        anchors.right: parent.right;
         anchors.bottom: footerBar.top;
+        currentIndex: headerBar.currentIndex
+        interactive: false
+
+        MainGroups {
+            id: projects;
+            style: appStyle.mainFeedStyle
+
+            onOpenProjectRequested: {
+                headerBar.addTab(txt, projectId)
+                swipeView.addPage(projectPage);
+                headerBar.switchTo(projectId)
+            }
+        }
+
+        function addPage(projectPageComponent) {
+            var projectPage1 = projectPage.createObject(swipeView);
+            swipeView.addItem(projectPage1);
+        }
+    }
+
+    Component {
+        id: projectPage
+        CentralListView {
+        }
     }
 
     // status bar
@@ -381,6 +427,7 @@ FramelessAppWindow {
         anchors.left: parent.left;
         anchors.right: parent.right;
         height: 25;
+
 
         background: Rectangle {
             anchors.fill: parent;
@@ -397,6 +444,10 @@ FramelessAppWindow {
                 color: "white";
             }
         }
+    }
+
+    Component.onCompleted: {
+        headerBar.addTab("Main Feed", -1)
     }
 
     // shortcuts

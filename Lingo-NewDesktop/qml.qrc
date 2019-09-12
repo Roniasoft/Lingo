@@ -45,5 +45,11 @@
         <file>images/Icons/Grey/Increase.png</file>
         <file>images/Icons/White/Decrease.png</file>
         <file>images/Icons/White/Increase.png</file>
+        <file>QmlFiles/NiceTabBar.qml</file>
+        <file>QmlFiles/TabBarHeader.qml</file>
+        <file>QmlFiles/AppStyle.qml</file>
+        <file>QmlFiles/GroupItemDelegate.qml</file>
+        <file>QmlFiles/MainGroups.qml</file>
+        <file>images/language_icon.png</file>
     </qresource>
 </RCC>

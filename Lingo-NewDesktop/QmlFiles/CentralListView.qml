@@ -98,7 +98,11 @@ Rectangle {
         keyNavigationEnabled: true;
         clip: true;
         focus: true
-        ScrollBar.vertical: ScrollBar{}
+        ScrollBar.vertical:
+            ScrollBar {
+            opacity: 0.3;
+            width: 5;
+            }
         ScrollBar.horizontal: ScrollBar{}
 //        snapMode: ListView.SnapToItem;
 //        interactive: true;

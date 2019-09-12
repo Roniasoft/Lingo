@@ -36,5 +36,6 @@
         <file alias="images/Icons/Grey/Increase.png">images/Icons/Grey/Increase.png</file>
         <file alias="images/Icons/White/Decrease.png">images/Icons/White/Decrease.png</file>
         <file alias="images/Icons/White/Increase.png">images/Icons/White/Increase.png</file>
+        <file alias="images/language_icon.png">images/language_icon.png</file>
     </qresource>
 </RCC>

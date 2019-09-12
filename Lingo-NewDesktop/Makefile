@@ -253,6 +253,7 @@ Makefile: Lingo-Desktop.pro C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\win32-msvc
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\yacc.prf \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\lex.prf \
 		Lingo-Desktop.pro \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5QuickControls2.prl \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Quick.prl \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Widgets.prl \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Gui.prl \
@@ -437,6 +438,7 @@ C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\exceptions.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\yacc.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\lex.prf:
 Lingo-Desktop.pro:
+C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5QuickControls2.prl:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Quick.prl:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Widgets.prl:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Gui.prl:

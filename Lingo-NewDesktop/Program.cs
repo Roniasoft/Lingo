@@ -8,6 +8,7 @@ public class Program
     static int Main(string[] args)
     {
         RuntimeManager.DiscoverOrDownloadSuitableQtRuntime();
+		QQuickStyle.SetStyle("Universal");
         using (var app = new QGuiApplication(args))
         {
             using (var engine = new QQmlApplicationEngine())
