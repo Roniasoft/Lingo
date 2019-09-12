@@ -32,7 +32,7 @@ ItemDelegate {
             Image {
                 id: previewImg
                 anchors.verticalCenter: parent.verticalCenter
-                source: imageURL
+                source: pathCRDepth1(imageURL);
                 fillMode: Image.PreserveAspectFit
                 height: 64;
                 antialiasing: true;
