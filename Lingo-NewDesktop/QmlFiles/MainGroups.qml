@@ -10,7 +10,7 @@ Pane {
     property var style
     property int scrollWidth: scrollBar.visible ? scrollBar.width : 0
     signal itemClicked(int projectId)
-    signal openProjectRequested(int projectId, string txt)
+    signal openProjectRequested(int projectId, string txt, bool isOpen)
     signal switchToProjectRequested(var project)
 
     Universal.background: style.background
@@ -24,13 +24,15 @@ Pane {
         clip: true;
 
         delegate: GroupItemDelegate {
+            id: itemDelegate;
             width: parent.width
             style: control.style
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor;
                 onClicked: {
-                    control.openProjectRequested(project_id, title)
+                    control.openProjectRequested(project_id, title, isOpen);
+                    isOpen = true;
                 }
             }
         }
