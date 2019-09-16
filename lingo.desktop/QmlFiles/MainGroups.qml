@@ -32,13 +32,12 @@ Pane {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor;
                 onClicked: {
-                    control.openProjectRequested(project_id, title, isOpen);
+                    control.openProjectRequested(modelData.id, modelData.title, modelData.isOpen);
                     isOpen = true;
                 }
             }
         }
 		
-        
 		model: Net.toListModel(control.feedViewModel.projects)
 
         ScrollBar.vertical: ScrollBar {
