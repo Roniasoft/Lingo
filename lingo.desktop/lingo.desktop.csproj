@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+    <StartupObject>lingo.desktop.Program</StartupObject>
+    <ApplicationIcon />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\lingo.common\lingo.common.csproj" />
+    <ProjectReference Include="..\lingo.rsync.mock\lingo.rsync.mock.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Qml.Net" Version="0.10.1" />
+    <PackageReference Include="Qml.Net.LinuxBinaries" Version="0.10.1" />
+    <PackageReference Include="Qml.Net.WindowsBinaries" Version="0.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

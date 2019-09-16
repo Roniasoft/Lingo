@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29201.188
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lingo-old", "lingo-old\lingo-old.csproj", "{BDB8F158-264D-4157-AD66-FFEE29294874}"
 EndProject
@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lingo.common", "lingo.commo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lingo.rsync.mock", "lingo.rsync.mock\lingo.rsync.mock.csproj", "{F4C6D370-609F-4CFA-9007-4D026A312FCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lingo.rsync.mock.test", "lingo.rsync.mock.test\lingo.rsync.mock.test.csproj", "{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lingo.rsync.mock.test", "lingo.rsync.mock.test\lingo.rsync.mock.test.csproj", "{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lingo.desktop", "lingo.desktop\lingo.desktop.csproj", "{489E18DC-0165-48DE-8863-C89B64CD861C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7712A45A-6C28-46B0-B8AE-84ADCDF435B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{489E18DC-0165-48DE-8863-C89B64CD861C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489E18DC-0165-48DE-8863-C89B64CD861C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489E18DC-0165-48DE-8863-C89B64CD861C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489E18DC-0165-48DE-8863-C89B64CD861C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

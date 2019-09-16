@@ -181,5 +181,14 @@ namespace lingo.rsync.mock
                 (true, "Publish Success: Translation Data successfully published to server") :
                 (false, "Publish Fail: No connection available, data will be published later");
         }
+
+        public IEnumerable<(string groupKey, string groupName)> IterAvailableGroups()
+        {
+            Dictionary<string, string> groups =  new Dictionary<string, string>();
+            groups.Add("en", "english");    // I don't know yet what exactly are the groupKey and groupName.
+            groups.Add("ru", "russian");    //  So, I just write these as a simple one. Easily change these then I'll adjust my codes
+            groups.Add("es", "spanish");
+            return groups.Select(p => (p.Key, p.Value));
+        }
     }
 }
