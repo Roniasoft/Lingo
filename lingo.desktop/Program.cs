@@ -10,6 +10,4 @@ namespace lingo.desktop
             return qmlHosting.RunHost(_);
         }
     }
-
-    
 }

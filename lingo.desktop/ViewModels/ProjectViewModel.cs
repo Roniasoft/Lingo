@@ -7,38 +7,31 @@ namespace lingo.desktop.ViewModels
 {
     public sealed class ProjectViewModel
     {
-        readonly private Project project;
+        public int ProjectId => _project.Id;
+        public string Title => _project.Title;
+        public string Summary => _project.Summary;
+        public bool IsOpen => _project.IsOpen;
+
+        readonly Project _project;
 
         internal ProjectViewModel(Project project)
         {
-            this.project = project;
+            _project = project;
         }
-
-        public int ProjectId => project.Id;
-
-        public string Title => project.Title;
-
-        public string Summary => project.Summary;
-
-        public bool IsOpen => project.IsOpen;
 
         [NotifySignal]
         public string UpdateTime
         {
-            get
-            {
-                return project.UpdateTime.ToString();
-            }
-
+            get => _project.UpdateTime.ToString();
             set
             {
                 var newTime = Convert.ToDateTime(value);
-                if (project.UpdateTime == newTime)
+                if (_project.UpdateTime == newTime)
                 {
                     return;
                 }
 
-                project.UpdateTime = newTime;
+                _project.UpdateTime = newTime;
             }
         }
     }

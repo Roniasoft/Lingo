@@ -8,46 +8,36 @@ namespace lingo.desktop.ViewModels
     [Signal("openProjectRequested", NetVariantType.String)]
     public sealed class FeedViewModel
     {
-        private readonly HashSet<int> openedProjects;
+        [NotifySignal]
+        public List<ProjectViewModel> Projects { get; set; }
+
+        readonly HashSet<int> _openedProjects;
 
         internal FeedViewModel(Feed feed)
         {
             Projects = feed.Projects
-                .Select(_ => new ProjectViewModel(_))
+                .Select(p => new ProjectViewModel(p))
                 .ToList();
 
-            openedProjects = new HashSet<int>();
+            _openedProjects = new HashSet<int>();
         }
 
-        public bool IsProjectOpened(int projectId)
-        {
-            return openedProjects.Contains(projectId);
-        }
+        public bool IsProjectOpened(int projectId) =>
+            _openedProjects.Contains(projectId);
 
-        public ProjectViewModel GetProjectViewModel(int projectId)
-        {
-            return Projects.First(_ => _.ProjectId == projectId);
-        }
+        public ProjectViewModel GetProjectViewModel(int projectId) =>
+            Projects.FirstOrDefault(p => p.ProjectId == projectId);
 
-        public void MarkProjectOpened(int projectId)
-        {
-            openedProjects.Add(projectId);
-        }
+        public void MarkProjectOpened(int projectId) => 
+            _openedProjects.Add(projectId);
 
         public void OnItemClicked(int projectId)
         {
-            if (openedProjects.Contains(projectId))
-            {
+            if (_openedProjects.Contains(projectId))
                 return;
-            }
 
-            openedProjects.Add(projectId);
-            this.ActivateSignal("openProjectRequested", Projects.First(_ => _.ProjectId == projectId).Title);
-
+            _openedProjects.Add(projectId);
+            this.ActivateSignal("openProjectRequested", Projects.First(p => p.ProjectId == projectId).Title);
         }
-
-        [NotifySignal]
-        public List<ProjectViewModel> Projects { get; set; }
-
     }
 }

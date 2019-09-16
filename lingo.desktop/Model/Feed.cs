@@ -1,18 +1,16 @@
-﻿using System;
+﻿using lingo.rsync.mock;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using lingo.common;
-using lingo.rsync.mock;
 
 namespace lingo.desktop.Model
 {
     internal sealed class Feed
     {
-        private readonly List<Project> projects;
+        public IEnumerable<Project> Projects => _projects;
+
+        readonly List<Project> _projects;
         public Feed()
         {
-            projects = new List<Project>();
+            _projects = new List<Project>();
             var mock = new LingoDataServiceRsyncMock(true, 0);
             IEnumerable<(string groupKey, string groupName)> availableGroups;
             availableGroups = mock.IterAvailableGroups();
@@ -24,11 +22,9 @@ namespace lingo.desktop.Model
                 groupItem.Title = item.groupName;
                 groupItem.Summary = item.groupName;
                 groupItem.IsOpen = false;
-                projects.Add(groupItem);
+                _projects.Add(groupItem);
 
             }
         }
-
-        public IEnumerable<Project> Projects => projects;
     }
 }
