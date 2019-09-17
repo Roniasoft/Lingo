@@ -396,7 +396,7 @@ FramelessAppWindow {
             style: appStyle.mainFeedStyle
 
             onOpenProjectRequested: {
-				swipeView.addPage(phrasesListView, project)
+				swipeView.addPage(phrasesListView, project.phrases)
 				headerBar.addTab(project.title, project.projectId)
 				headerBar.switchTo(project.projectId)
 			}
