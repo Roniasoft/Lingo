@@ -10,9 +10,8 @@ Pane {
 	property var feedViewModel
     property var style
     property int scrollWidth: scrollBar.visible ? scrollBar.width : 0
-    signal itemClicked(int projectId)
-    signal openProjectRequested(int projectId, string txt, bool isOpen)
-    signal switchToProjectRequested(var project)
+	signal openProjectRequested(var project)
+	signal switchToProjectRequested(var project)
 
     Universal.background: style.background
     Material.background: style.background
@@ -32,8 +31,14 @@ Pane {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor;
                 onClicked: {
-                    control.openProjectRequested(modelData.id, modelData.title, modelData.isOpen);
-                    isOpen = true;
+                    var project = control.feedViewModel.getProjectViewModel(modelData.projectId)
+
+					if (control.feedViewModel.isProjectOpened(modelData.projectId)) {
+						control.switchToProjectRequested(project)
+						return
+					}
+					control.feedViewModel.markProjectOpened(modelData.projectId)
+					control.openProjectRequested(project)
                 }
             }
         }

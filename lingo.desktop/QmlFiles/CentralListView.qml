@@ -7,6 +7,7 @@ import QtQuick.Controls.Styles 1.4
 Rectangle {
     color: "#0e1621";
     property int lastOpened: -1;
+    property var listModel;
     signal openRequested(var projName, var projDetail, var index);
     signal closeRequested(var index);
     signal itemDeleted();

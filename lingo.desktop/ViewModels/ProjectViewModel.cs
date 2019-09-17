@@ -10,7 +10,14 @@ namespace lingo.desktop.ViewModels
         public int ProjectId => _project.Id;
         public string Title => _project.Title;
         public string Summary => _project.Summary;
-        public bool IsOpen => _project.IsOpen;
+        public bool IsOpen
+        {
+            get => _project.IsOpen;
+            set
+            {
+                _project.IsOpen = value;
+            }
+        }
 
         readonly Project _project;
 

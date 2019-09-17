@@ -54,7 +54,7 @@ ItemDelegate {
                         Layout.fillWidth: true
                         font {
                             weight: Font.DemiBold
-                            pixelSize: control.style.titleFontPixelSize
+                            pixelSize: fontSize + 5
                         }
                     }
                     Label {
@@ -63,7 +63,7 @@ ItemDelegate {
                         text: modelData.updateTime;
                         font {
                             italic: true
-                            pixelSize: control.style.timeFontPixelSize
+                            pixelSize: fontSize
                         }
                     }
                 }
@@ -71,7 +71,7 @@ ItemDelegate {
                     id: summaryLabel
                     width: parent.width
                     verticalAlignment: Text.AlignTop
-                    font.pixelSize: control.style.summaryFontPixelSize
+                    font.pixelSize: fontSize + 2
                     text: modelData.summary;
                     wrapMode: Text.WordWrap
                 }

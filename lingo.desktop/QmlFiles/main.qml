@@ -396,22 +396,23 @@ FramelessAppWindow {
             style: appStyle.mainFeedStyle
 
             onOpenProjectRequested: {
-                if (isOpen === false) {
-                    headerBar.addTab(txt, projectId)
-                    swipeView.addPage(projectPage);
-                }
-                headerBar.switchTo(projectId)
-            }
+				swipeView.addPage(phrasesListView, project)
+				headerBar.addTab(project.title, project.projectId)
+				headerBar.switchTo(project.projectId)
+			}
+			onSwitchToProjectRequested: {
+				headerBar.switchTo(project.projectId)
+			}
         }
 
-        function addPage(projectPageComponent) {
-            var projectPage1 = projectPage.createObject(swipeView);
+        function addPage(projectPageComponent, model) {
+            var projectPage1 = phrasesListView.createObject(swipeView, {listModel: model});
             swipeView.addItem(projectPage1);
         }
     }
 
     Component {
-        id: projectPage
+        id: phrasesListView
         CentralListView {
         }
     }
