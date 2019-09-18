@@ -5,18 +5,17 @@ import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Styles 1.4
 
 Rectangle {
+    id: control;
     color: "#0e1621";
     property int lastOpened: -1;
-    property var listModel;
+    property var phraseModel;
+    property var phraseViewModel;
     signal openRequested(var projName, var projDetail, var index);
     signal closeRequested(var index);
     signal itemDeleted();
 
-    function openProject(indx) {
-        listModel.get(indx).isOpen = true;
-    }
-    function closeProject(indx) {
-        listModel.get(indx).isOpen = false;
+    function setPhraseViewModel(pModel) {
+        control.phraseViewModel = pModel;
     }
 
     Rectangle {
@@ -78,12 +77,9 @@ Rectangle {
         ListItemDelegate {
             id: listItemDelegate;
             width: listView.width
-            height: isOpen ? 210 : 36;
+            height: modelData.isOpen ? 210 : 36;
+            phraseViewModel: control.phraseViewModel;
         }
-    }
-
-    TListModel {
-        id: listModel;
     }
 
     ListView {
@@ -110,21 +106,25 @@ Rectangle {
 //        highlightRangeMode: ListView.StrictlyEnforceRange;
 
         function tabIsPressedInTextEdit() {
-            if (listModel.count <= listView.currentIndex+1) {
-                return;
-            }
+            // if (listModel.count <= listView.currentIndex+1) {
+            //     return;
+            // }
 
-            if (lastOpened != -1) {
-                listModel.get(lastOpened).isOpen = false;
-                listModel.get(lastOpened).highlighted = false;
-            }
-            listModel.get(listView.currentIndex).isOpen = false;
-            listView.currentIndex = listView.currentIndex + 1;
-            listModel.get(listView.currentIndex).isOpen = true;
-            lastOpened = listView.currentIndex;
+            // if (lastOpened != -1) {
+            //     listModel.get(lastOpened).isOpen = false;
+            //     listModel.get(lastOpened).highlighted = false;
+            // }
+            // listModel.get(listView.currentIndex).isOpen = false;
+            // listView.currentIndex = listView.currentIndex + 1;
+            // listModel.get(listView.currentIndex).isOpen = true;
+            // lastOpened = listView.currentIndex;
         }
 
-        model: listModel
+        model: Net.toListModel(control.phraseModel)
+        
+
+        
+        
         delegate: delegate
 
         Shortcut {

@@ -2,6 +2,7 @@
 using System.Linq;
 using Qml.Net;
 using lingo.desktop.Model;
+using System;
 
 namespace lingo.desktop.ViewModels
 {

@@ -396,7 +396,7 @@ FramelessAppWindow {
             style: appStyle.mainFeedStyle
 
             onOpenProjectRequested: {
-				swipeView.addPage(phrasesListView, project.phrases)
+				swipeView.addPage(phrasesListView, project)
 				headerBar.addTab(project.title, project.projectId)
 				headerBar.switchTo(project.projectId)
 			}
@@ -405,9 +405,10 @@ FramelessAppWindow {
 			}
         }
 
-        function addPage(projectPageComponent, model) {
-            var projectPage1 = phrasesListView.createObject(swipeView, {listModel: model});
+        function addPage(projectPageComponent, projectViewModel) {
+            var projectPage1 = phrasesListView.createObject(swipeView, {phraseModel: projectViewModel.phrases});
             swipeView.addItem(projectPage1);
+            projectPage1.setPhraseViewModel(projectViewModel);
         }
     }
 

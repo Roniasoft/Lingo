@@ -1,5 +1,7 @@
 ﻿using lingo.rsync.mock;
 using System.Collections.Generic;
+using System.Linq;
+using lingo.common;
 
 namespace lingo.desktop.Model
 {
@@ -22,6 +24,18 @@ namespace lingo.desktop.Model
                 groupItem.Title = item.groupName;
                 groupItem.Summary = item.groupName;
                 groupItem.IsOpen = false;
+
+
+                List<LingoPhrase> phrases = mock.IterAllDefaultPhrases().ToList();
+                foreach (LingoPhrase phrase in phrases)
+                {
+                    Phrase rawPhrase = new Phrase();
+                    rawPhrase.Key = phrase.Key;
+                    rawPhrase.Value = phrase.Text;
+                    rawPhrase.Description = phrase.Description;
+                    groupItem.Phrases.Add(new ViewModels.PhraseViewModel(rawPhrase));
+                }
+                
                 _projects.Add(groupItem);
 
             }

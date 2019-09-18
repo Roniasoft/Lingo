@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 Item {
     id: summarySection;
-    opacity: isOpen ? 0 : 1;
+    opacity: modelData.isOpen ? 0 : 1;
 
     Behavior on opacity {
         NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
@@ -10,7 +10,7 @@ Item {
 
     Text {
         id: txtEnglish;
-        text: english
+        text: modelData.value
         color: "white";
         font.pixelSize: fontSize;
         anchors.left: parent.left;
@@ -20,7 +20,7 @@ Item {
 
     Text {
         id: txtTranslation;
-        text: translation
+        text: modelData.translation
         color: "#999999";
         font.pixelSize: fontSize;
         anchors.left: parent.left;

@@ -1,4 +1,7 @@
 ﻿using System;
+using Qml.Net;
+using lingo.desktop.ViewModels;
+using System.Collections.Generic;
 
 namespace lingo.desktop.Model
 {
@@ -9,6 +12,9 @@ namespace lingo.desktop.Model
         public bool IsOpen { get; set; }
         public string Summary { get; set; }
         public DateTime UpdateTime { get; set; }
+        
+        [NotifySignal]
+        public List<PhraseViewModel> Phrases { get; set; }
 
         public Project(int id)
         {
@@ -16,6 +22,8 @@ namespace lingo.desktop.Model
             Title = $"Lorem ipsum {Id}";
             Summary = "summary!";
             UpdateTime = new DateTime(2019, 06, 01).AddDays(Id * 3);
+
+            Phrases = new List<PhraseViewModel>();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace lingo.desktop.ViewModels
     public sealed class ProjectViewModel
     {
         [NotifySignal]
-        public List<PhraseViewModel> Phrases { get; set; }
+        public List<PhraseViewModel> Phrases => _project.Phrases;
 
         public int ProjectId => _project.Id;
         public string Title => _project.Title;
@@ -45,6 +45,12 @@ namespace lingo.desktop.ViewModels
 
                 _project.UpdateTime = newTime;
             }
+        }
+
+        
+        public PhraseViewModel GetPhraseViewModel(int index)
+        {
+            return Phrases.ElementAt(index);
         }
     }
 }
