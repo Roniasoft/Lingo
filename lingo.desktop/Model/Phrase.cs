@@ -15,10 +15,10 @@ namespace lingo.desktop.Model
 
         public Phrase()
         {
-            Key = "aaa";
-            Value = "bb";
-            Description = "cc";
-            Translation = "dd";
+            Key = "";
+            Value = "";
+            Description = "";
+            Translation = "";
             IsOpen = false;
             IsCompleted = false;
             Highlighted = false;

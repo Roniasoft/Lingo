@@ -7,8 +7,14 @@ namespace lingo.desktop.ViewModels
 {
     public sealed class PhraseViewModel
     {
+        
+        [NotifySignal]
         public string Key => _phrase.Key;
+        
+        [NotifySignal]
         public string Value => _phrase.Value;
+        
+        [NotifySignal]
         public string Description => _phrase.Description;
         
         [NotifySignal]
@@ -59,7 +65,5 @@ namespace lingo.desktop.ViewModels
         {
             _phrase = phrase;
         }
-
-
     }
 }

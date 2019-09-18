@@ -47,7 +47,6 @@ namespace lingo.desktop.ViewModels
             }
         }
 
-        
         public PhraseViewModel GetPhraseViewModel(int index)
         {
             return Phrases.ElementAt(index);

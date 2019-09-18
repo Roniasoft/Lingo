@@ -25,14 +25,22 @@ namespace lingo.desktop.Model
                 groupItem.Summary = item.groupName;
                 groupItem.IsOpen = false;
 
-
+                Dictionary<LingoPhrase, LingoPhraseTranslation> translatedPhrases = mock.IterTranslatedPhrases(item.groupKey);
                 List<LingoPhrase> phrases = mock.IterAllDefaultPhrases().ToList();
+
                 foreach (LingoPhrase phrase in phrases)
                 {
                     Phrase rawPhrase = new Phrase();
                     rawPhrase.Key = phrase.Key;
                     rawPhrase.Value = phrase.Text;
                     rawPhrase.Description = phrase.Description;
+
+                    // check if the phrase have a translation then add it
+                    if (translatedPhrases.ContainsKey(phrase))
+                    {
+                        rawPhrase.Translation = translatedPhrases[phrase].Translation;
+                    }
+
                     groupItem.Phrases.Add(new ViewModels.PhraseViewModel(rawPhrase));
                 }
                 

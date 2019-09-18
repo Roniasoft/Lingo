@@ -172,6 +172,15 @@ namespace lingo.rsync.mock
                 .ToList();
         }
 
+        
+        public Dictionary<LingoPhrase, LingoPhraseTranslation> IterTranslatedPhrases(string langKey, string groupKey = null)
+        {
+            if (!_translations.ContainsKey(langKey))
+                return new Dictionary<LingoPhrase, LingoPhraseTranslation>();
+
+            return _translations[langKey];
+        }
+
         public void ResetMockData() => _resetData();
 
         public async Task<(bool, string)> SyncDataAsync()
@@ -185,9 +194,9 @@ namespace lingo.rsync.mock
         public IEnumerable<(string groupKey, string groupName)> IterAvailableGroups()
         {
             Dictionary<string, string> groups =  new Dictionary<string, string>();
-            groups.Add("en", "english");    // I don't know yet what exactly are the groupKey and groupName.
-            groups.Add("ru", "russian");    //  So, I just write these as a simple one. Easily change these then I'll adjust my codes
-            groups.Add("es", "spanish");
+            groups.Add(ENGLISH, "english");    // I don't know yet what exactly are the groupKey and groupName.
+            groups.Add(RUSSIAN, "russian");    //  So, I just write these as a simple one. Easily change these then I'll adjust my codes
+            groups.Add(SPANISH, "spanish");
             return groups.Select(p => (p.Key, p.Value));
         }
     }

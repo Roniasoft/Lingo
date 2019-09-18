@@ -33,6 +33,14 @@ namespace lingo.common
         /// <param name="groupKey">the group key, e.g. perhaps representing the filename it comes from</param>
         IEnumerable<LingoPhrase> IterUntranslatedPhrases(string langKey, string groupKey = null);
 
+
+        /// <summary>
+        /// Gets all base-language phrases having a translation for a given language key L.
+        /// </summary>
+        /// <param name="langKey">the key for language L</param>
+        /// <param name="groupKey">the group key, e.g. perhaps representing the filename it comes from</param>
+        Dictionary<LingoPhrase, LingoPhraseTranslation> IterTranslatedPhrases(string langKey, string groupKey = null);
+
         /// <summary>
         /// Gets all dirty translations and their phrases for a given language key L.
         /// Dirty translations are ones where the base-language text no longer matches the local phrase text. i.e. text has been updated at the server, so the translation needs to be checked/re-done

@@ -40,6 +40,7 @@ Rectangle {
                 phraseViewModel.getPhraseViewModel(listView.currentIndex).isOpen = isOpen;
 
                 lastOpened = index;
+
             }
         }
     }
