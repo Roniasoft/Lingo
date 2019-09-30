@@ -13,5 +13,9 @@ namespace lingo.desktop
         }
 
         public FeedViewModel GetFeedViewModel() => feedViewModel;
+
+        public void Log(string val) {
+            Console.WriteLine(val);
+        }
     }
 }

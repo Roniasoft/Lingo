@@ -45,6 +45,7 @@ Rectangle {
                 width: parent.width;
                 height: 75
                 isReadOnly: true;
+                txtEdit.text: english;
             }
         }
 
@@ -65,6 +66,7 @@ Rectangle {
                 width: parent.width;
                 height: 75
                 isReadOnly: false;
+                txtEdit.text: translation;
             }
         }
     }
@@ -72,7 +74,7 @@ Rectangle {
     // comment box
     Column {
         id: commentColumn
-        width: translationColumn.width;
+        width: translationColumn.width*2;
         x: 11
         y: 136
         spacing: 2;
@@ -86,6 +88,7 @@ Rectangle {
             id: commentTextEditBlock
             width: parent.width;
             height: 45
+            txtEdit.text: comment;
         }
     }
 }

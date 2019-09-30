@@ -58,9 +58,13 @@ Rectangle {
         color: isOpen ? "#232e3c" : "#253646";
         clip: true;
 
-        txtEditComment.text: comment;
-        txtEditEng.text: english;
-        txtEditTranslation.text: translation;
+        // txtEditComment.text: comment;
+        // txtEditEng.text: english;
+        //txtEditTranslation.text: translation;
+
+       txtEditTranslation.onEditingFinished: {
+          translation = txtEditTranslation.text;
+       }
 
         Behavior on height {
             NumberAnimation { easing.type: Easing.OutSine; duration: anmDuration }
@@ -109,6 +113,10 @@ Rectangle {
         anchors.rightMargin: 20;
         anchors.verticalCenter: txtIndex.verticalCenter;
         checked: completed;
+
+        onCheckedChanged: {
+            completed = chckboxCompleted.checked;
+        }
     }
 
     MouseArea {

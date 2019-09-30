@@ -93,6 +93,17 @@ Rectangle {
             font.pixelSize: fontSize - 2;
 
         }
+
+        MouseArea {
+            
+            anchors.fill: parent;
+
+            onClicked: {
+                netContext.log(listModel.get(0).translation);
+                netContext.log(listModel.get(0).completed);
+            }
+            
+        }
     }
 
     Component {

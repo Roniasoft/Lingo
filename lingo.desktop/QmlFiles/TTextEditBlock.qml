@@ -5,6 +5,7 @@ import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Styles 1.4
 
 Rectangle {
+    id: control;
     color: isReadOnly ? "#1e2937" : "#17212b";
     border.color: "#6f8398"
     border.width: 0;
@@ -19,11 +20,10 @@ Rectangle {
     Flickable {
         id: flick;
         anchors.fill: parent;
-        anchors.margins: 5;
-
-        contentWidth: txtEdit.paintedWidth
-        contentHeight: txtEdit.paintedHeight
+        contentWidth: txtEdit.paintedWidth;
+        contentHeight: txtEdit.paintedHeight;
         clip: true
+        anchors.margins: 5;
 
         ScrollBar.vertical: ScrollBar{}
         ScrollBar.horizontal: ScrollBar{}
@@ -44,17 +44,18 @@ Rectangle {
         TextEdit {
             id: txtEdit;
             width: flick.width;
-            anchors.margins: 5;
+            //anchors.margins: 5;
+            // height: 70;
             wrapMode: TextEdit.Wrap;
             color: isReadOnly ? "#cecece" : "white"
             selectedTextColor: "white";
             selectionColor: "#3399ff"
-            clip: true;
+            // clip: true;
             readOnly: isReadOnly;
             selectByMouse: true;
             font.pixelSize: fontSize;
-            inputMethodHints: Qt.ImhMultiLine;
-            focus: true;
+            // inputMethodHints: Qt.ImhMultiLine;
+            // focus: true;
             activeFocusOnPress: true;
             onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
 
