@@ -9,7 +9,7 @@ namespace lingo.desktop.ViewModels
 {
     public sealed class ProjectViewModel
     {
-        [NotifySignal]
+        
         public List<PhraseViewModel> Phrases => _project.Phrases;
 
         public int ProjectId => _project.Id;
@@ -31,7 +31,6 @@ namespace lingo.desktop.ViewModels
             _project = project;
         }
 
-        [NotifySignal]
         public string UpdateTime
         {
             get => _project.UpdateTime.ToString();
@@ -50,6 +49,17 @@ namespace lingo.desktop.ViewModels
         public PhraseViewModel GetPhraseViewModel(int index)
         {
             return Phrases.ElementAt(index);
+        }
+
+        
+        public void ChangePhraseOpen(int index)
+        {
+
+            //_project.Phrases.ElementAt(index).IsOpen = true;
+            //_project.Phrases.ElementAt(index).IsCompleted = true;
+            //_project.Phrases.ElementAt(index).Translation = "heelo";
+            Console.WriteLine("changed!");
+            //_project.update();
         }
     }
 }

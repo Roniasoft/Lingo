@@ -8,16 +8,12 @@ namespace lingo.desktop.ViewModels
     public sealed class PhraseViewModel
     {
         
-        [NotifySignal]
         public string Key => _phrase.Key;
         
-        [NotifySignal]
         public string Value => _phrase.Value;
         
-        [NotifySignal]
         public string Description => _phrase.Description;
         
-        [NotifySignal]
         public string Translation
         {
             get => _phrase.Translation;
@@ -27,7 +23,6 @@ namespace lingo.desktop.ViewModels
             }
         }
         
-        [NotifySignal]
         public bool IsOpen
         {
             get => _phrase.IsOpen;
@@ -37,7 +32,6 @@ namespace lingo.desktop.ViewModels
             }
         }
         
-        [NotifySignal]
         public bool IsCompleted
         {
             get => _phrase.IsCompleted;
@@ -47,8 +41,6 @@ namespace lingo.desktop.ViewModels
             }
         }
 
-        
-        [NotifySignal]
         public bool Highlighted
         {
             get => _phrase.Highlighted;

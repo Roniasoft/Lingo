@@ -16,6 +16,11 @@ namespace lingo.desktop.Model
         [NotifySignal]
         public List<PhraseViewModel> Phrases { get; set; }
 
+
+        public void update() {
+            this.ActivateSignal("phrasesChanged");
+        }
+
         public Project(int id)
         {
             Id = id;

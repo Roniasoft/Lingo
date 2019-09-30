@@ -5,17 +5,40 @@ import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Styles 1.4
 
 Rectangle {
-    id: control;
     color: "#0e1621";
     property int lastOpened: -1;
-    property var phraseModel;
-    property var phraseViewModel;
+    property var pModel;
+    property alias listModel: listModel;
+    property alias listView: listView;
+
     signal openRequested(var projName, var projDetail, var index);
     signal closeRequested(var index);
     signal itemDeleted();
 
-    function setPhraseViewModel(pModel) {
-        control.phraseViewModel = pModel;
+    function openProject(indx) {
+        listModel.get(indx).isOpen = true;
+    }
+    function closeProject(indx) {
+        listModel.get(indx).isOpen = false;
+    }
+
+    function fillModel(projectViewModel) {
+        pModel = projectViewModel;
+        listModel.clear();
+        var phrasesCount = projectViewModel.phrases.count;
+        for (let i = 0; i < phrasesCount; i++) {
+            var phrase = projectViewModel.getPhraseViewModel(i);
+            listModel.insert(i, 
+            {
+                "name": phrase.key,
+                "isOpen": phrase.isOpen,
+                "english": phrase.value,
+                "translation": phrase.translation,
+                "comment": phrase.description,
+                "completed": phrase.isCompleted,
+                "highlighted": phrase.highlighted
+            });
+        }
     }
 
     Rectangle {
@@ -77,9 +100,12 @@ Rectangle {
         ListItemDelegate {
             id: listItemDelegate;
             width: listView.width
-            height: modelData.isOpen ? 210 : 36;
-            phraseViewModel: control.phraseViewModel;
+            height: isOpen ? 210 : 36;
         }
+    }
+
+    TListModel {
+        id: listModel;
     }
 
     ListView {
@@ -106,120 +132,23 @@ Rectangle {
 //        highlightRangeMode: ListView.StrictlyEnforceRange;
 
         function tabIsPressedInTextEdit() {
-            // if (listModel.count <= listView.currentIndex+1) {
-            //     return;
-            // }
+            if (listModel.count <= listView.currentIndex+1) {
+                return;
+            }
 
-            // if (lastOpened != -1) {
-            //     listModel.get(lastOpened).isOpen = false;
-            //     listModel.get(lastOpened).highlighted = false;
-            // }
-            // listModel.get(listView.currentIndex).isOpen = false;
-            // listView.currentIndex = listView.currentIndex + 1;
-            // listModel.get(listView.currentIndex).isOpen = true;
-            // lastOpened = listView.currentIndex;
+            if (lastOpened != -1) {
+                listModel.get(lastOpened).isOpen = false;
+                listModel.get(lastOpened).highlighted = false;
+            }
+            listModel.get(listView.currentIndex).isOpen = false;
+            listView.currentIndex = listView.currentIndex + 1;
+            listModel.get(listView.currentIndex).isOpen = true;
+            lastOpened = listView.currentIndex;
         }
 
-        model: Net.toListModel(control.phraseModel)
-        
-
-        
-        
+        model: listModel
         delegate: delegate
 
-        Shortcut {
-            sequence: "Down"
-            onActivated: {
-                if (listModel.count <= listView.currentIndex +1) {
-                    return;
-                }
 
-                listModel.get(listView.currentIndex).highlighted = false;
-                listView.currentIndex = listView.currentIndex + 1;
-                listModel.get(listView.currentIndex).highlighted = true;
-            }
-        }
-        Shortcut {
-            sequence: "Up"
-            onActivated: {
-                if (listView.currentIndex <= 0) {
-                    return;
-                }
-
-                listModel.get(listView.currentIndex).highlighted = false;
-                listView.currentIndex = listView.currentIndex - 1;
-                listModel.get(listView.currentIndex).highlighted = true;
-            }
-        }
-        Shortcut {
-            sequences: ["Return", "Enter"]
-            onActivated: {
-                listModel.get(listView.currentIndex).isOpen = !listModel.get(listView.currentIndex).isOpen;
-                if (listModel.get(listView.currentIndex).isOpen) {
-                    if (lastOpened != -1) {
-                        listModel.get(lastOpened).isOpen = false;
-                        listModel.get(lastOpened).highlighted = false;
-                    }
-                    lastOpened = listView.currentIndex;
-                }
-            }
-        }
-        Shortcut {
-            sequence: "escape"
-            onActivated: {
-                listModel.get(lastOpened).isOpen = false;
-                listModel.get(listView.currentIndex).isOpen = false;
-                listModel.get(lastOpened).isOpen = false;
-                listModel.get(listView.currentIndex).highlighted = false;
-            }
-        }
-        Shortcut {
-            id: shortcutTab;
-            sequence: "Tab"
-            context: Qt.ApplicationShortcut
-            onActivated: {
-                if (listModel.count <= listView.currentIndex+1) {
-                    return;
-                }
-
-                if (lastOpened != -1) {
-                    listModel.get(lastOpened).isOpen = false;
-                    listModel.get(lastOpened).highlighted = false;
-                }
-                listModel.get(listView.currentIndex).isOpen = false;
-                listView.currentIndex = listView.currentIndex + 1;
-                listModel.get(listView.currentIndex).isOpen = true;
-                lastOpened = listView.currentIndex;
-            }
-        }
-        Shortcut {
-            sequence: "Shift+Tab"
-            onActivated: {
-                if (listView.currentIndex <= 0) {
-                    return;
-                }
-
-                if (lastOpened != -1) {
-                    listModel.get(lastOpened).isOpen = false;
-                    listModel.get(lastOpened).highlighted = false;
-                }
-                listModel.get(listView.currentIndex).isOpen = false;
-                listView.currentIndex = listView.currentIndex - 1;
-                listModel.get(listView.currentIndex).isOpen = true;
-                lastOpened = listView.currentIndex;
-            }
-        }
-        Shortcut {
-            sequences: ["Ctrl+Return", "Ctrl+Enter"]
-            onActivated: {
-                listModel.get(listView.currentIndex).completed = !listModel.get(listView.currentIndex).completed;
-            }
-        }
-        Shortcut {
-            sequence: "Ctrl+Del"
-            onActivated: {
-                listModel.get(listView.currentIndex).completed = false;
-            }
-        }
     }
 }

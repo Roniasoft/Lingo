@@ -383,7 +383,7 @@ FramelessAppWindow {
     }
 
     SwipeView {
-        id: swipeView
+        id: sv
         anchors.top: headerBar.bottom;
         anchors.left: parent.left;
         anchors.right: parent.right;
@@ -396,7 +396,7 @@ FramelessAppWindow {
             style: appStyle.mainFeedStyle
 
             onOpenProjectRequested: {
-				swipeView.addPage(phrasesListView, project)
+				sv.addPage(listViewComponent, project)   // project: projectViewModel
 				headerBar.addTab(project.title, project.projectId)
 				headerBar.switchTo(project.projectId)
 			}
@@ -406,14 +406,109 @@ FramelessAppWindow {
         }
 
         function addPage(projectPageComponent, projectViewModel) {
-            var projectPage1 = phrasesListView.createObject(swipeView, {phraseModel: projectViewModel.phrases});
-            swipeView.addItem(projectPage1);
-            projectPage1.setPhraseViewModel(projectViewModel);
+            var cListView = listViewComponent.createObject(sv);
+            cListView.fillModel(projectViewModel);
+            sv.addItem(cListView);
+        }
+
+        Shortcut {
+            sequence: "Down"
+            onActivated: {
+                if (sv.currentItem.listModel.count <= sv.currentItem.listView.currentIndex +1) {
+                    return;
+                }
+
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = false;
+                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = true;
+            }
+        }
+        Shortcut {
+            sequence: "Up"
+            onActivated: {
+                if (sv.currentItem.listView.currentIndex <= 0) {
+                    return;
+                }
+
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = false;
+                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex - 1;
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = true;
+            }
+        }
+        Shortcut {
+            sequences: ["Return", "Enter"]
+            onActivated: {
+                sv.currentItem.listModel.get(listView.currentIndex).isOpen = !sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen;
+                if (sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen) {
+                    if (sv.currentItem.lastOpened != -1) {
+                        sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
+                        sv.currentItem.listModel.get(sv.currentItem.lastOpened).highlighted = false;
+                    }
+                    sv.currentItem.lastOpened = listView.currentIndex;
+                }
+            }
+        }
+        Shortcut {
+            sequence: "escape"
+            onActivated: {
+                sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = false;
+                sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = false;
+            }
+        }
+        Shortcut {
+            id: shortcutTab;
+            sequence: "Tab"
+            //context: Qt.ApplicationShortcut
+            onActivated: {
+                if (sv.currentItem.listModel.count <= sv.currentItem.listView.currentIndex+1) {
+                    return;
+                }
+
+                if (sv.currentItem.lastOpened != -1) {
+                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
+                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).highlighted = false;
+                }
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = false;
+                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = true;
+                sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
+            }
+        }
+        Shortcut {
+            sequence: "Shift+Tab"
+            onActivated: {
+                if (sv.currentItem.listView.currentIndex <= 0) {
+                    return;
+                }
+
+                if (sv.currentItem.lastOpened != -1) {
+                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
+                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).highlighted = false;
+                }
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = false;
+                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex - 1;
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = true;
+                sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
+            }
+        }
+        Shortcut {
+            sequences: ["Ctrl+Return", "Ctrl+Enter"]
+            onActivated: {
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).completed = !sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).completed;
+            }
+        }
+        Shortcut {
+            sequence: "Ctrl+Del"
+            onActivated: {
+                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).completed = false;
+            }
         }
     }
 
     Component {
-        id: phrasesListView
+        id: listViewComponent
         CentralListView {
         }
     }
