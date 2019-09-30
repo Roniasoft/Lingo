@@ -3,7 +3,7 @@ import QtQuick 2.0
 Item {
     id: summarySection;
     opacity: isOpen ? 0 : 1;
-
+    
     Behavior on opacity {
         NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
     }

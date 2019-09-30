@@ -96,7 +96,7 @@ Rectangle {
     }
 
     Component {
-        id: delegate;
+        id: ldelegate;
         ListItemDelegate {
             id: listItemDelegate;
             width: listView.width
@@ -120,7 +120,6 @@ Rectangle {
         anchors.bottomMargin: 5;
         keyNavigationEnabled: true;
         clip: true;
-        focus: true
         ScrollBar.vertical:
             ScrollBar {
             opacity: 0.3;
@@ -147,7 +146,7 @@ Rectangle {
         }
 
         model: listModel
-        delegate: delegate
+        delegate: ldelegate
 
 
     }

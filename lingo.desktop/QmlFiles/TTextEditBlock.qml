@@ -4,7 +4,6 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Styles 1.4
 
-
 Rectangle {
     color: isReadOnly ? "#1e2937" : "#17212b";
     border.color: "#6f8398"
@@ -55,6 +54,8 @@ Rectangle {
             selectByMouse: true;
             font.pixelSize: fontSize;
             inputMethodHints: Qt.ImhMultiLine;
+            focus: true;
+            activeFocusOnPress: true;
             onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
 
             Keys.onTabPressed: {

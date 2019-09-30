@@ -1,0 +1,31 @@
+Minor issues fixed.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   ApplicationWindowPlugin/framelessappwindow.cpp
+#	modified:   ApplicationWindowPlugin/imports/FramelessWindow/ApplicationWindowPlugin.dll
+#	modified:   ApplicationWindowPlugin/imports/FramelessWindow/ApplicationWindowPlugin.exp
+#	modified:   ApplicationWindowPlugin/imports/FramelessWindow/ApplicationWindowPlugin.lib
+#	modified:   ApplicationWindowPlugin/release/framelessappwindow.obj
+#
+# Changes not staged for commit:
+#	modified:   Lingo-NewDesktop/QmlFiles/CentralListView.qml
+#	modified:   Lingo-NewDesktop/QmlFiles/ItemSummaryView.qml
+#	modified:   Lingo-NewDesktop/QmlFiles/TTextEditBlock.qml
+#	modified:   Lingo-NewDesktop/main.qml
+#	modified:   Lingo-NewDesktop/release/Lingo-Desktop.exe
+#	modified:   Lingo-NewDesktop/release/QmlFiles_CentralListView_qml.cpp
+#	modified:   Lingo-NewDesktop/release/QmlFiles_CentralListView_qml.obj
+#	modified:   Lingo-NewDesktop/release/QmlFiles_ItemSummaryView_qml.cpp
+#	modified:   Lingo-NewDesktop/release/QmlFiles_ItemSummaryView_qml.obj
+#	modified:   Lingo-NewDesktop/release/QmlFiles_TRibbonButton_qml.obj
+#	modified:   Lingo-NewDesktop/release/QmlFiles_TTextEditBlock_qml.cpp
+#	modified:   Lingo-NewDesktop/release/QmlFiles_TTextEditBlock_qml.obj
+#	modified:   Lingo-NewDesktop/release/main_qml.obj
+#	modified:   Lingo-NewDesktop/release/qrc_qml_qmlcache.obj
+#
