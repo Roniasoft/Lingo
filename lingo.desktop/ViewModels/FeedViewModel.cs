@@ -7,13 +7,16 @@ using System;
 namespace lingo.desktop.ViewModels
 {
     [Signal("openProjectRequested", NetVariantType.String)]
-    public sealed class FeedViewModel
+    public class FeedViewModel
     {
         [NotifySignal]
         public List<ProjectViewModel> Projects { get; set; }
 
+        public Feed ProjectsFeed;
+
         internal FeedViewModel(Feed feed)
         {
+            ProjectsFeed = feed;
             Projects = feed.Projects
                 .Select(p => new ProjectViewModel(p))
                 .ToList();
@@ -28,6 +31,5 @@ namespace lingo.desktop.ViewModels
         public void MarkProjectOpened(int projectId) {
             Projects.FirstOrDefault(_ => _.ProjectId == projectId).IsOpen = true;
         }
-
     }
 }

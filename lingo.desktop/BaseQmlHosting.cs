@@ -9,7 +9,7 @@ namespace lingo.desktop
         {
             // TODO: Register your .NET types.
             Qml.Net.Qml.RegisterType<FeedViewModel>("NetViewModels", 1, 0);
-            Qml.Net.Qml.RegisterType<PhraseViewModel>("NetViewModels", 1, 0);
+            //Qml.Net.Qml.RegisterType<PhraseViewModel>("NetViewModels", 1, 0);
             Qml.Net.Qml.RegisterType<ProjectViewModel>("NetViewModels", 1, 0);
             Qml.Net.Qml.RegisterType<NetAppContext>("NetViewModels", 1, 0);
         }

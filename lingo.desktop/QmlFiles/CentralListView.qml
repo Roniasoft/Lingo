@@ -4,17 +4,14 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Styles 1.4
 
+import NetViewModels 1.0
+
 Rectangle {
     color: "#0e1621";
     property int lastOpened: -1;
     property var pModel;
     property alias listModel: listModel;
     property alias listView: listView;
-
-    signal openRequested(var projName, var projDetail, var index);
-    signal closeRequested(var index);
-    signal itemDeleted();
-
     function openProject(indx) {
         listModel.get(indx).isOpen = true;
     }
@@ -39,6 +36,7 @@ Rectangle {
                 "highlighted": phrase.highlighted
             });
         }
+        
     }
 
     Rectangle {
@@ -95,16 +93,10 @@ Rectangle {
         }
 
         MouseArea {
-            
             anchors.fill: parent;
-
-            onClicked: {
-                netContext.log(listModel.get(0).translation);
-                netContext.log(listModel.get(0).completed);
-            }
-            
         }
     }
+
 
     Component {
         id: ldelegate;
@@ -112,6 +104,10 @@ Rectangle {
             id: listItemDelegate;
             width: listView.width
             height: isOpen ? 210 : 36;
+
+            onUpdateRequested: {
+                netContext.updatePhrase(pModel.projectId, aName, aTranslation, aIsCompleted);
+            }
         }
     }
 

@@ -13,6 +13,8 @@ namespace lingo.desktop.ViewModels
         public List<PhraseViewModel> Phrases => _project.Phrases;
 
         public int ProjectId => _project.Id;
+
+        public string LangKey => _project.LangKey;
         public string Title => _project.Title;
         public string Summary => _project.Summary;
         public bool IsOpen

@@ -50,7 +50,7 @@ ItemDelegate {
                     Label {
                         id: titleLabel
                         verticalAlignment: Text.AlignTop
-                        text: modelData.title;
+                        text: modelData.langKey + " (" + modelData.title + ")";
                         Layout.fillWidth: true
                         font {
                             weight: Font.DemiBold

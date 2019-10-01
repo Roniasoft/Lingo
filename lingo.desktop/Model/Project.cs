@@ -5,9 +5,11 @@ using System.Collections.Generic;
 
 namespace lingo.desktop.Model
 {
-    internal sealed class Project
+    public class Project
     {
         public int Id { get; set; }
+
+        public string LangKey {get; set;}
         public string Title { get; set; }
         public bool IsOpen { get; set; }
         public string Summary { get; set; }

@@ -1,32 +1,34 @@
 ﻿using lingo.rsync.mock;
+using lingo.common;
 using System.Collections.Generic;
 using System.Linq;
-using lingo.common;
 
 namespace lingo.desktop.Model
 {
-    internal sealed class Feed
+    public class Feed
     {
         public IEnumerable<Project> Projects => _projects;
+        public LingoDataServiceRsyncMock DataServiceMock;
 
         readonly List<Project> _projects;
         public Feed()
         {
             _projects = new List<Project>();
-            var mock = new LingoDataServiceRsyncMock(true, 0);
-            IEnumerable<(string groupKey, string groupName)> availableGroups;
-            availableGroups = mock.IterAvailableGroups();
+            DataServiceMock = new LingoDataServiceRsyncMock(true, 0);
+            IEnumerable<(string langKey, string groupName)> availableGroups;
+            availableGroups = DataServiceMock.IterAvailableGroups();
             int id = 0;
             foreach (var item in availableGroups)
             {
                 Project groupItem = new Project(id++);
                 groupItem.Id = id++;
                 groupItem.Title = item.groupName;
-                groupItem.Summary = item.groupName;
+                groupItem.LangKey = item.langKey;
+                groupItem.Summary = "18 out of 25 translations completed!";
                 groupItem.IsOpen = false;
 
-                Dictionary<LingoPhrase, LingoPhraseTranslation> translatedPhrases = mock.IterTranslatedPhrases(item.groupKey);
-                List<LingoPhrase> phrases = mock.IterAllDefaultPhrases().ToList();
+                Dictionary<LingoPhrase, LingoPhraseTranslation> translatedPhrases = DataServiceMock.IterTranslatedPhrases(item.langKey);
+                List<LingoPhrase> phrases = DataServiceMock.IterAllDefaultPhrases().ToList();
 
                 foreach (LingoPhrase phrase in phrases)
                 {

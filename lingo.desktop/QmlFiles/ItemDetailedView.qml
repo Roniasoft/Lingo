@@ -54,6 +54,7 @@ Rectangle {
             id: translationColumn;
             Layout.fillWidth: true;
             Layout.preferredWidth: 290;
+            visible: isOpen;
             spacing: 2;
             Text {
                 id: txtProjectDesc1

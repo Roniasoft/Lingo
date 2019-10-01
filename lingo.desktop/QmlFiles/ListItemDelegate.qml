@@ -7,6 +7,8 @@ Rectangle {
     property bool isDetailed: isOpen;
     property int anmDuration: 20
 
+    signal updateRequested(var aName, var aTranslation, var aIsCompleted);
+
     onIsDetailedChanged: {
         if (isDetailed) {
             detailedSection.txtEditTranslation.focus = true;
@@ -58,12 +60,11 @@ Rectangle {
         color: isOpen ? "#232e3c" : "#253646";
         clip: true;
 
-        // txtEditComment.text: comment;
-        // txtEditEng.text: english;
-        //txtEditTranslation.text: translation;
-
        txtEditTranslation.onEditingFinished: {
-          translation = txtEditTranslation.text;
+            if (translation != txtEditTranslation.text) {
+                translation = txtEditTranslation.text;
+                updateRequested(name, translation, completed);
+            }
        }
 
         Behavior on height {
@@ -116,6 +117,7 @@ Rectangle {
 
         onCheckedChanged: {
             completed = chckboxCompleted.checked;
+            updateRequested(name, translation, completed);//CHECK. This should'nt be called this way since this is called recursively after model is filled.
         }
     }
 
