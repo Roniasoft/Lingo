@@ -1,14 +1,16 @@
 ﻿namespace lingo.common
 {
-    public class LingoPhraseTranslation
+    public class LingoPhraseTranslation : ILingoPhraseTranslation
     {
-        public LingoPhrase BasePhrase { get; }
+        public ILingoPhrase BasePhrase { get; }
         public string Translation { get; set; }
+        public bool IsDirty { get; }
 
-        public LingoPhraseTranslation(LingoPhrase basePhrase, string translation)
+        public LingoPhraseTranslation(ILingoPhrase basePhrase, string translation, bool isDirty)
         {
             BasePhrase = basePhrase;
             Translation = translation;
+            IsDirty = isDirty;
         }
     }
 }

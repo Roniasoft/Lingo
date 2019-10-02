@@ -9,7 +9,6 @@ namespace lingo.desktop.ViewModels
 {
     public sealed class ProjectViewModel
     {
-        
         public List<PhraseViewModel> Phrases => _project.Phrases;
 
         public int ProjectId => _project.Id;
@@ -53,7 +52,6 @@ namespace lingo.desktop.ViewModels
             return Phrases.ElementAt(index);
         }
 
-        
         public void ChangePhraseOpen(int index)
         {
 

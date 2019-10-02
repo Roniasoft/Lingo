@@ -1342,25 +1342,170 @@ NOTE: this attribute is only visible for front row holes.</value>
   <data name="DistanceMeasureNode.ShowText" xml:space="preserve">
     <value>Controls whether to display the distance text</value>
   </data>
-  <data name="MuckpileSettingsNode.BurdenMode" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.BurdenMode" xml:space="preserve">
     <value>Defines where to get per-hole burden values from</value>
   </data>
-  <data name="MuckpileSettingsNode.DirectionMode" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.DirectionMode" xml:space="preserve">
     <value>Defines where to get per-hole throw direction from. "Explicit" mode uses the per-hole, user defined direction vectors displayed in the face setup tool.</value>
   </data>
-  <data name="MuckpileSettingsNode.DrawPerHoleDistances" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.DrawPerHoleDistances" xml:space="preserve">
     <value>Draws a per-hole line that represents the direction and distance of throw</value>
   </data>
-  <data name="MuckpileSettingsNode.DrawTerrainFootprint" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.DrawTerrainFootprint" xml:space="preserve">
     <value>When enabled, the terrain projection of the muckpile footprint will be computed. This makes the footprint conform to the terrain but can take some time to compute. The terrain footprint will only draw on top of terrain.</value>
   </data>
-  <data name="MuckpileSettingsNode.ApplyRolling" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.ApplyRolling" xml:space="preserve">
     <value>Controls whether the footprint includes fragment rolling</value>
   </data>
-  <data name="MuckpileSettingsNode.A_factor" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.A_factor" xml:space="preserve">
     <value>Also referred to as the A term from the original paper this model is based on. Higher values generally correspond to harder material causing it to get thrown further.</value>
   </data>
-  <data name="MuckpileSettingsNode.Friction" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.Friction" xml:space="preserve">
     <value>Controls the rolling friction when rolling is enabled. The higher the friction, the faster fragments will stop rolling.</value>
+  </data>
+  <data name="DistanceMeasureNode.StartPoint" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DistanceMeasureNode.endPoint" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DistanceMeasureNode.EndPoint" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="RadialTimingScenario.origin3" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="RadialTimingScenario.minePosition3" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BenchBlastHole.points" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BenchBlastHole.toeElevation" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.Origin" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.Easting" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.Bearing" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.Extent" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.StaggerStrategy" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.ActualBurden" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.ActualSpacing" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitRowN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitHolesPerRowN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignerPreferencesNode.FlipDirection" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenameUsePrefix" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenamePrefix" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenameUseAlpha" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenameRowN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.RenameHoleN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.MultiLineTextWrap" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.BurdenSampleStep" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.BurdenCrossSectionMode" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.DrawBurdenCrossSection" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.LineOffset" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.EndSelectorAfterDrag" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ProximityCircleRadius" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleStep" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMin" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMax" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMinColour" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMaxColour" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleHideUnloaded" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.BentDeviation" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PreferencesNode.BentTwist" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LineGeometryNode.Thickness" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BoundsNode.Sides" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.Opacity" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.Colour" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.userPointX" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.tiltPoint" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.AimPoint" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ConstructionPlaneNode.TiltPoint" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignPageNode.PrintTimingInitiations" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DesignPageNode.PrintMeasures" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SnapshotNode.points" xml:space="preserve">
+    <value></value>
+    <comment>ignore</comment>
   </data>
 </root>

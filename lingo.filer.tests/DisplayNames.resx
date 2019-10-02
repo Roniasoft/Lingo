@@ -562,7 +562,7 @@
     <value>Default Interval</value>
   </data>
   <data name="PreferencesNode.ViewportBackgroundColour" xml:space="preserve">
-    <value>Viewport Background Colour</value>
+    <value>Viewport Background</value>
   </data>
   <data name="PreferencesNode.AntiAliasing" xml:space="preserve">
     <value>Anti Aliasing</value>
@@ -1208,97 +1208,152 @@
   <data name="DesignerPreferencesNode.GuideRadius" xml:space="preserve">
     <value>Guide Radius</value>
   </data>
-  <data name="BenchBlastHole.MinBurden" p2:space="preserve" xmlns:p2="xml">
+  <data name="BenchBlastHole.MinBurden" xml:space="preserve">
     <value>Min Burden</value>
   </data>
-  <data name="BlastDagNode.Bearing" p2:space="preserve" xmlns:p2="xml">
+  <data name="BlastDagNode.Bearing" xml:space="preserve">
     <value>Bearing</value>
   </data>
-  <data name="MineSettings.FaceContour" p2:space="preserve" xmlns:p2="xml">
+  <data name="MineSettings.FaceContour" xml:space="preserve">
     <value>Face Contour</value>
   </data>
-  <data name="MineSettings.FrontRowHoles" p2:space="preserve" xmlns:p2="xml">
+  <data name="MineSettings.FrontRowHoles" xml:space="preserve">
     <value>Front Row Holes</value>
   </data>
-  <data name="PreferencesNode.DesignerOrigin" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.DesignerOrigin" xml:space="preserve">
     <value>Designer Origin</value>
   </data>
-  <data name="PreferencesNode.DesignerDirection" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.DesignerDirection" xml:space="preserve">
     <value>Designer Direction</value>
   </data>
-  <data name="PreferencesNode.MoveToolShowDistances" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.MoveToolShowDistances" xml:space="preserve">
     <value>Move Tool Show Distances</value>
   </data>
-  <data name="PreferencesNode.MoveToolDiscrete" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.MoveToolDiscrete" xml:space="preserve">
     <value>Move Tool Discrete</value>
   </data>
-  <data name="PreferencesNode.MoveToolStep" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.MoveToolStep" xml:space="preserve">
     <value>Move Tool Step</value>
   </data>
-  <data name="PreferencesNode.LineSelectorRadius" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.LineSelectorRadius" xml:space="preserve">
     <value>Line Selector Radius</value>
   </data>
-  <data name="PreferencesNode.SessionTemplate" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.SessionTemplate" xml:space="preserve">
     <value>Session Template</value>
   </data>
-  <data name="PreferencesNode.BranchNamingPolicy" p2:space="preserve" xmlns:p2="xml">
+  <data name="PreferencesNode.BranchNamingPolicy" xml:space="preserve">
     <value>Branch Naming Policy</value>
   </data>
-  <data name="LineGeometryNode.Length" p2:space="preserve" xmlns:p2="xml">
+  <data name="LineGeometryNode.Length" xml:space="preserve">
     <value>Length</value>
   </data>
-  <data name="ConstructionPlaneNode.Inclination" p2:space="preserve" xmlns:p2="xml">
+  <data name="ConstructionPlaneNode.Inclination" xml:space="preserve">
     <value>Inclination</value>
   </data>
-  <data name="ConstructionPlaneNode.Width" p2:space="preserve" xmlns:p2="xml">
+  <data name="ConstructionPlaneNode.Width" xml:space="preserve">
     <value>Width</value>
   </data>
-  <data name="ConstructionPlaneNode.Length" p2:space="preserve" xmlns:p2="xml">
+  <data name="ConstructionPlaneNode.Length" xml:space="preserve">
     <value>Length</value>
   </data>
-  <data name="ConstructionPlaneNode.Grade" p2:space="preserve" xmlns:p2="xml">
+  <data name="ConstructionPlaneNode.Grade" xml:space="preserve">
     <value>Gradient</value>
   </data>
-  <data name="ConstructionPlaneNode.TiltGrade" p2:space="preserve" xmlns:p2="xml">
+  <data name="ConstructionPlaneNode.TiltGrade" xml:space="preserve">
     <value>Tilt Gradient</value>
   </data>
-  <data name="CameraPlacement.Position" p2:space="preserve" xmlns:p2="xml">
+  <data name="CameraPlacement.Position" xml:space="preserve">
     <value>Position</value>
   </data>
-  <data name="CameraPlacement.Rotation" p2:space="preserve" xmlns:p2="xml">
+  <data name="CameraPlacement.Rotation" xml:space="preserve">
     <value>Rotation</value>
   </data>
-  <data name="CameraPlacement.LookAtDistance" p2:space="preserve" xmlns:p2="xml">
+  <data name="CameraPlacement.LookAtDistance" xml:space="preserve">
     <value>Look At Distance</value>
   </data>
-  <data name="CameraPlacement.OrthoSize" p2:space="preserve" xmlns:p2="xml">
+  <data name="CameraPlacement.OrthoSize" xml:space="preserve">
     <value>Ortho Size</value>
   </data>
-  <data name="DesignPageNode.PrintHoleAngles" p2:space="preserve" xmlns:p2="xml">
+  <data name="DesignPageNode.PrintHoleAngles" xml:space="preserve">
     <value>Print Hole Angles</value>
   </data>
-  <data name="DesignPageNode.TextAngle" p2:space="preserve" xmlns:p2="xml">
+  <data name="DesignPageNode.TextAngle" xml:space="preserve">
     <value>Text Angle</value>
   </data>
-  <data name="DesignPageNode.TextOffset" p2:space="preserve" xmlns:p2="xml">
+  <data name="DesignPageNode.TextOffset" xml:space="preserve">
     <value>Text Offset</value>
   </data>
-  <data name="MeshGeometryNode.TextureCoords" p2:space="preserve" xmlns:p2="xml">
+  <data name="MeshGeometryNode.TextureCoords" xml:space="preserve">
     <value>Texture Coords</value>
   </data>
-  <data name="MeshGeometryNode.TextureFilepath" p2:space="preserve" xmlns:p2="xml">
+  <data name="MeshGeometryNode.TextureFilepath" xml:space="preserve">
     <value>Texture Filepath</value>
   </data>
-  <data name="MuckpileSettingsNode.A_factor" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.A_factor" xml:space="preserve">
     <value>Throw Factor</value>
   </data>
-  <data name="MuckpileSettingsNode.Friction" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.Friction" xml:space="preserve">
     <value>Friction</value>
   </data>
-  <data name="MuckpileSettingsNode.DrawPerHoleDistances" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.DrawPerHoleDistances" xml:space="preserve">
     <value>Draw Distances</value>
   </data>
-  <data name="MuckpileSettingsNode.DrawTerrainFootprint" p2:space="preserve" xmlns:p2="xml">
+  <data name="MuckpileSettingsNode.DrawTerrainFootprint" xml:space="preserve">
     <value>Terrain Projection</value>
+  </data>
+  <data name="DistanceMeasureNode.ElevationDelta" xml:space="preserve">
+    <value>Elevation Delta</value>
+  </data>
+  <data name="DistanceMeasureNode.ShowArrow" xml:space="preserve">
+    <value>Show Arrow</value>
+  </data>
+  <data name="DistanceMeasureNode.ShowText" xml:space="preserve">
+    <value>Show Text</value>
+  </data>
+  <data name="DistanceMeasureNode.ShowRing" xml:space="preserve">
+    <value>Show Ring</value>
+  </data>
+  <data name="DistanceMeasureNode.DisplayScale" xml:space="preserve">
+    <value>Display Scale</value>
+  </data>
+  <data name="BenchBlastHole.ToeElevation" xml:space="preserve">
+    <value>Toe Elevation</value>
+  </data>
+  <data name="LineGeometryNode.Thickness" xml:space="preserve">
+    <value>Thickness</value>
+  </data>
+  <data name="BoundsNode.Sides" xml:space="preserve">
+    <value>Sides</value>
+    <comment>ignore</comment>
+  </data>
+  <data name="ConstructionPlaneNode.Opacity" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="ConstructionPlaneNode.Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="ConstructionPlaneNode.AimPoint" xml:space="preserve">
+    <value>Aim Point</value>
+  </data>
+  <data name="ConstructionPlaneNode.TiltPoint" xml:space="preserve">
+    <value>Tilt Point</value>
+  </data>
+  <data name="DesignPageNode.PrintTimingInitiations" xml:space="preserve">
+    <value>Print Timing Initiations</value>
+  </data>
+  <data name="DesignPageNode.PrintMeasures" xml:space="preserve">
+    <value>Print Measures</value>
+  </data>
+  <data name="MeshGeometryNode.IgnoreForBurden" xml:space="preserve">
+    <value>Ignore For Burden</value>
+  </data>
+  <data name="MuckpileSettingsNode.BurdenMode" xml:space="preserve">
+    <value>Burden Mode</value>
+  </data>
+  <data name="MuckpileSettingsNode.DirectionMode" xml:space="preserve">
+    <value>Direction Mode</value>
+  </data>
+  <data name="MuckpileSettingsNode.ApplyRolling" xml:space="preserve">
+    <value>Apply Rolling</value>
   </data>
 </root>

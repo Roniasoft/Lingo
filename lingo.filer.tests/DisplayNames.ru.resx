@@ -129,12 +129,12 @@
     <!--Active Timing-->
     <value>Динамическое время инициации</value>
   </data>
-  <data name="BenchBlastHole.ActualLength" xml:space="preserve">
-    <!--Actual Length-->
+  <data name="BenchBlastHole.ActualLength" xml:space="preserve" dirty="1">
+    <!--Length-->
     <value>Фактическая длина</value>
   </data>
-  <data name="DagNode.ActualVisibility" xml:space="preserve">
-    <!--Actual Visibility-->
+  <data name="DagNode.ActualVisibility" xml:space="preserve" dirty="1">
+    <!--Visible-->
     <value>Фактическая видимость</value>
   </data>
   <data name="FragmentationSeriesNode.Algorithm" xml:space="preserve">
@@ -278,10 +278,6 @@
     <value>Ответвления</value>
   </data>
   <data name="DesignerSettingsNode.Burden" xml:space="preserve">
-    <!--Burden-->
-    <value>Расстояние между рядами</value>
-  </data>
-  <data name="PreferencesNode.DesignerBurden" xml:space="preserve">
     <!--Burden-->
     <value>Расстояние между рядами</value>
   </data>
@@ -605,10 +601,6 @@
     <!--Fill Mode-->
     <value>Режим заполнения</value>
   </data>
-  <data name="PreferencesNode.DesignerFlipRow" xml:space="preserve">
-    <!--Flip Row Side-->
-    <value>Обратная сторона ряда</value>
-  </data>
   <data name="PreferencesNode.FontName" xml:space="preserve">
     <!--Font Name-->
     <value>Название шрифта</value>
@@ -751,10 +743,6 @@
   </data>
   <data name="DesignerSettingsNode.HolesPerRow" xml:space="preserve">
     <!--Holes Per Row-->
-    <value>Скважин в ряду</value>
-  </data>
-  <data name="PreferencesNode.DesignerHolesPerRowN" xml:space="preserve">
-    <!--Holes per Row-->
     <value>Скважин в ряду</value>
   </data>
   <data name="PreSplitDesignerNode.IdealSpacing" xml:space="preserve">
@@ -997,10 +985,6 @@
     <!--Naming Policy-->
     <value>Политика именования</value>
   </data>
-  <data name="PreferencesNode.DesignerNamingPolicy" xml:space="preserve">
-    <!--Naming Policy-->
-    <value>Процедура присвоения названий</value>
-  </data>
   <data name="RadialTimingScenario.DelayPerLengthMinusA" xml:space="preserve">
     <!--Neg. Primary Axis Relief-->
     <value>Neg. Primary Axis Relief</value>
@@ -1028,10 +1012,6 @@
   <data name="ExplosiveType.Notes" xml:space="preserve">
     <!--Notes-->
     <value>Заметки</value>
-  </data>
-  <data name="PreferencesNode.DesignerRowN" xml:space="preserve">
-    <!--Number of Rows-->
-    <value>Количество рядов</value>
   </data>
   <data name="MeshGeometryNode.Opacity" xml:space="preserve">
     <!--Opacity-->
@@ -1096,10 +1076,6 @@
   <data name="PrintPreferencesNode.Pages" xml:space="preserve">
     <!--Pages-->
     <value>Страниц</value>
-  </data>
-  <data name="PreferencesNode.DesignerPatternType" xml:space="preserve">
-    <!--Pattern Type-->
-    <value>Тип блока</value>
   </data>
   <data name="PercentageLengthRule.Percentage" xml:space="preserve">
     <!--Percentage-->
@@ -1297,8 +1273,8 @@
     <!--Rock Factor Adjuster Kuz Ram-->
     <value>Регулятор взрываемости по Kuz Ram</value>
   </data>
-  <data name="MineSettings.RockStrength" xml:space="preserve">
-    <!--Rock Strength-->
+  <data name="MineSettings.RockStrength" xml:space="preserve" dirty="1">
+    <!--Default Rock Strength-->
     <value>Крепость горной породы</value>
   </data>
   <data name="Geology.RockStrengthLower" xml:space="preserve">
@@ -1361,10 +1337,6 @@
     <!--Shape-->
     <value>Форма</value>
   </data>
-  <data name="PreferencesNode.DesignerPatternShape" xml:space="preserve">
-    <!--Shape-->
-    <value>Форма</value>
-  </data>
   <data name="PreferencesNode.ShowHitRegions" xml:space="preserve">
     <!--Show Hit Regions-->
     <value>Показать зоны разрушения</value>
@@ -1394,10 +1366,6 @@
     <value>Расстояние между скважинами</value>
   </data>
   <data name="PreSplitDesignerNode.Spacing" xml:space="preserve">
-    <!--Spacing-->
-    <value>Расстояние между скважинами</value>
-  </data>
-  <data name="PreferencesNode.DesignerSpacing" xml:space="preserve">
     <!--Spacing-->
     <value>Расстояние между скважинами</value>
   </data>
@@ -1616,5 +1584,305 @@
   <data name="DagNode.WorldTranslation" xml:space="preserve">
     <!--World Translation-->
     <value>World Translation</value>
+  </data>
+  <data name="ExplosiveType.RefDensity" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Reference Density-->
+    <value>Reference Density</value>
+  </data>
+  <data name="PreferencesNode.DefaultGeologiesFilepath" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Default Geology Nodes-->
+    <value>Default Geology Nodes</value>
+  </data>
+  <data name="TimingScenarioBase.DeckPrimerOffset" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Intra-Deck Primer Delay-->
+    <value>Intra-Deck Primer Delay</value>
+  </data>
+  <data name="DeckDelayTimingScenarioBase.DownHoleDelay" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Down Hole Delay-->
+    <value>Down Hole Delay</value>
+  </data>
+  <data name="DeckDelayTimingScenarioBase.PrimerIncrement" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Inter-Deck Delay-->
+    <value>Inter-Deck Delay</value>
+  </data>
+  <data name="PreferencesNode.DefaultPowderFactor" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Default Powder Factor-->
+    <value>Default Powder Factor</value>
+  </data>
+  <data name="MineSettings.BurdenExcessive" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Excessive Dist.-->
+    <value>Excessive Dist.</value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitBurden" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Burden-->
+    <value>Burden</value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitSpacing" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Spacing-->
+    <value>Spacing</value>
+  </data>
+  <data name="DesignerPreferencesNode.Stretch" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Stretch-->
+    <value>Stretch</value>
+  </data>
+  <data name="DesignerPreferencesNode.Shape" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Row Stagger-->
+    <value>Row Stagger</value>
+  </data>
+  <data name="DesignerPreferencesNode.PatternOutline" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Outline Shape-->
+    <value>Outline Shape</value>
+  </data>
+  <data name="DesignerPreferencesNode.NamingPolicy" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Naming Policy-->
+    <value>Naming Policy</value>
+  </data>
+  <data name="DesignerPreferencesNode.RowOffset" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Start Row Offset-->
+    <value>Start Row Offset</value>
+  </data>
+  <data name="DesignerPreferencesNode.ActualRowN" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Rows-->
+    <value>Rows</value>
+  </data>
+  <data name="DesignerPreferencesNode.ActualHolesPerRowN" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Holes-->
+    <value>Holes</value>
+  </data>
+  <data name="DesignerPreferencesNode.FlipRow" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Flip Row Side-->
+    <value>Flip Row Side</value>
+  </data>
+  <data name="DesignerPreferencesNode.FillColFromOrigin" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Holes Start at Origin-->
+    <value>Holes Start at Origin</value>
+  </data>
+  <data name="DesignerPreferencesNode.FillRowFromOrigin" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Rows Start at Origin-->
+    <value>Rows Start at Origin</value>
+  </data>
+  <data name="DesignerPreferencesNode.GuideVisible" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Show Guide-->
+    <value>Show Guide</value>
+  </data>
+  <data name="DesignerPreferencesNode.GuideRadius" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Guide Radius-->
+    <value>Guide Radius</value>
+  </data>
+  <data name="ConstructionPlaneNode.Grade" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Gradient-->
+    <value>Gradient</value>
+  </data>
+  <data name="ConstructionPlaneNode.TiltGrade" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Tilt Gradient-->
+    <value>Tilt Gradient</value>
+  </data>
+  <data name="MuckpileSettingsNode.A_factor" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Throw Factor-->
+    <value>Throw Factor</value>
+  </data>
+  <data name="MuckpileSettingsNode.Friction" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Friction-->
+    <value>Friction</value>
+  </data>
+  <data name="MuckpileSettingsNode.DrawPerHoleDistances" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Draw Distances-->
+    <value>Draw Distances</value>
+  </data>
+  <data name="MuckpileSettingsNode.DrawTerrainFootprint" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Terrain Projection-->
+    <value>Terrain Projection</value>
+  </data>
+  <data name="DistanceMeasureNode.ElevationDelta" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Elevation Delta-->
+    <value>Elevation Delta</value>
+  </data>
+  <data name="DistanceMeasureNode.ShowArrow" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Show Arrow-->
+    <value>Show Arrow</value>
+  </data>
+  <data name="DistanceMeasureNode.ShowText" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Show Text-->
+    <value>Show Text</value>
+  </data>
+  <data name="DistanceMeasureNode.ShowRing" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Show Ring-->
+    <value>Show Ring</value>
+  </data>
+  <data name="DistanceMeasureNode.DisplayScale" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Display Scale-->
+    <value>Display Scale</value>
+  </data>
+  <data name="BenchBlastHole.ToeElevation" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Toe Elevation-->
+    <value>Toe Elevation</value>
+  </data>
+  <data name="DesignerPreferencesNode.Origin" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Origin-->
+    <value>Origin</value>
+  </data>
+  <data name="DesignerPreferencesNode.Easting" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Easting-->
+    <value>Easting</value>
+  </data>
+  <data name="DesignerPreferencesNode.Bearing" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Bearing-->
+    <value>Bearing</value>
+  </data>
+  <data name="DesignerPreferencesNode.Extent" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Extent-->
+    <value>Extent</value>
+  </data>
+  <data name="DesignerPreferencesNode.StaggerStrategy" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Stagger Strategy-->
+    <value>Stagger Strategy</value>
+  </data>
+  <data name="DesignerPreferencesNode.ActualBurden" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Actual Burden-->
+    <value>Actual Burden</value>
+  </data>
+  <data name="DesignerPreferencesNode.ActualSpacing" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Actual Spacing-->
+    <value>Actual Spacing</value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitRowN" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Explicit Row N-->
+    <value>Explicit Row N</value>
+  </data>
+  <data name="DesignerPreferencesNode.ExplicitHolesPerRowN" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Explicit Holes Per Row N-->
+    <value>Explicit Holes Per Row N</value>
+  </data>
+  <data name="DesignerPreferencesNode.FlipDirection" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Flip Direction-->
+    <value>Flip Direction</value>
+  </data>
+  <data name="PreferencesNode.RenameUsePrefix" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Rename Use Prefix-->
+    <value>Rename Use Prefix</value>
+  </data>
+  <data name="PreferencesNode.RenamePrefix" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Rename Prefix-->
+    <value>Rename Prefix</value>
+  </data>
+  <data name="PreferencesNode.RenameUseAlpha" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Rename Use Alpha-->
+    <value>Rename Use Alpha</value>
+  </data>
+  <data name="PreferencesNode.RenameRowN" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Rename Row N-->
+    <value>Rename Row N</value>
+  </data>
+  <data name="PreferencesNode.RenameHoleN" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Rename Hole N-->
+    <value>Rename Hole N</value>
+  </data>
+  <data name="PreferencesNode.MultiLineTextWrap" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Multi Line Text Wrap-->
+    <value>Multi Line Text Wrap</value>
+  </data>
+  <data name="PreferencesNode.BurdenSampleStep" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Burden Sample Step-->
+    <value>Burden Sample Step</value>
+  </data>
+  <data name="PreferencesNode.BurdenCrossSectionMode" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Burden Cross Section Mode-->
+    <value>Burden Cross Section Mode</value>
+  </data>
+  <data name="PreferencesNode.DrawBurdenCrossSection" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Draw Burden Cross Section-->
+    <value>Draw Burden Cross Section</value>
+  </data>
+  <data name="PreferencesNode.LineOffset" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Line Offset-->
+    <value>Line Offset</value>
+  </data>
+  <data name="PreferencesNode.EndSelectorAfterDrag" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--End Selector After Drag-->
+    <value>End Selector After Drag</value>
+  </data>
+  <data name="PreferencesNode.ProximityCircleRadius" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Proximity Circle Radius-->
+    <value>Proximity Circle Radius</value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleStep" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Proximity Sample Step-->
+    <value>Proximity Sample Step</value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMin" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Proximity Sample Min-->
+    <value>Proximity Sample Min</value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMax" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Proximity Sample Max-->
+    <value>Proximity Sample Max</value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMinColour" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Proximity Sample Min Colour-->
+    <value>Proximity Sample Min Colour</value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleMaxColour" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Proximity Sample Max Colour-->
+    <value>Proximity Sample Max Colour</value>
+  </data>
+  <data name="PreferencesNode.ProximitySampleHideUnloaded" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Proximity Sample Hide Unloaded-->
+    <value>Proximity Sample Hide Unloaded</value>
+  </data>
+  <data name="PreferencesNode.BentDeviation" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Bent Deviation-->
+    <value>Bent Deviation</value>
+  </data>
+  <data name="PreferencesNode.BentTwist" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Bent Twist-->
+    <value>Bent Twist</value>
+  </data>
+  <data name="LineGeometryNode.Thickness" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Thickness-->
+    <value>Thickness</value>
+  </data>
+  <data name="BoundsNode.Sides" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Sides-->
+    <value>Sides</value>
+  </data>
+  <data name="ConstructionPlaneNode.Opacity" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Opacity-->
+    <value>Opacity</value>
+  </data>
+  <data name="ConstructionPlaneNode.Colour" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Colour-->
+    <value>Colour</value>
+  </data>
+  <data name="ConstructionPlaneNode.AimPoint" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Aim Point-->
+    <value>Aim Point</value>
+  </data>
+  <data name="ConstructionPlaneNode.TiltPoint" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Tilt Point-->
+    <value>Tilt Point</value>
+  </data>
+  <data name="DesignPageNode.PrintTimingInitiations" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Print Timing Initiations-->
+    <value>Print Timing Initiations</value>
+  </data>
+  <data name="DesignPageNode.PrintMeasures" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Print Measures-->
+    <value>Print Measures</value>
+  </data>
+  <data name="MeshGeometryNode.IgnoreForBurden" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Ignore For Burden-->
+    <value>Ignore For Burden</value>
+  </data>
+  <data name="MuckpileSettingsNode.BurdenMode" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Burden Mode-->
+    <value>Burden Mode</value>
+  </data>
+  <data name="MuckpileSettingsNode.DirectionMode" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Direction Mode-->
+    <value>Direction Mode</value>
+  </data>
+  <data name="MuckpileSettingsNode.ApplyRolling" p2:space="preserve" dirty="1" xmlns:p2="xml">
+    <!--Apply Rolling-->
+    <value>Apply Rolling</value>
   </data>
 </root>
