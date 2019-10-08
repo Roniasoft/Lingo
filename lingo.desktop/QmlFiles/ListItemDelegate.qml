@@ -9,7 +9,7 @@ Rectangle {
 
     signal updateRequested(var aName, var aTranslation, var aIsCompleted);
 
-    onIsDetailedChanged: {
+    onIsDetailedChanged:{
         if (isDetailed) {
             detailedSection.txtEditTranslation.focus = true;
         } else {
