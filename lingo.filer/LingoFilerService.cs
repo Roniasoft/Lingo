@@ -18,7 +18,7 @@ namespace lingo.filer
         static readonly ILog _log;
         static LingoFilerService() => _log = new TraceLogger("lingo.filer");
 
-        internal LingoFilerService(ILingoFilerConfig filerConfig)
+        public LingoFilerService(ILingoFilerConfig filerConfig)
         {
             // Read the base language from the config
             BaseLanguage = LingoLanguages.GetLanguageFromKey(filerConfig.BaseLanguageKey);

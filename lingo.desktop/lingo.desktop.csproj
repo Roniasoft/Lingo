@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\lingo.common\lingo.common.csproj" />
-    <ProjectReference Include="..\lingo.rsync.mock\lingo.rsync.mock.csproj" />
+    <ProjectReference Include="..\lingo.filer\lingo.filer.csproj" />
+    <ProjectReference Include="..\lingo.filer.tests\lingo.filer.tests.csproj" />
   </ItemGroup>
   
   <ItemGroup>

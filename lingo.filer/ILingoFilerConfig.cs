@@ -2,7 +2,7 @@
 
 namespace lingo.filer
 {
-    interface ILingoFilerConfig
+    public interface ILingoFilerConfig
     {
         string BaseLanguageKey { get; set; }
         List<ResourceFile> ResourceFiles { get; set; }

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace lingo.filer.tests
 {
-    class ExampleConfig : ILingoFilerConfig
+    public class ExampleConfig : ILingoFilerConfig
     {
         public string BaseLanguageKey { get; set; } = "en";
         public List<ResourceFile> ResourceFiles { get; set; }

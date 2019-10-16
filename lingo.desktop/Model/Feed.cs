@@ -1,46 +1,46 @@
-﻿using lingo.rsync.mock;
-using lingo.common;
+﻿using lingo.common;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using lingo.filer;
+using lingo.filer.tests;
 
 namespace lingo.desktop.Model
 {
     public class Feed
     {
         public IEnumerable<Project> Projects => _projects;
-        public LingoDataServiceRsyncMock DataServiceMock;
+        // public LingoDataServiceRsyncMock DataServiceMock;
 
         readonly List<Project> _projects;
         public Feed()
         {
             _projects = new List<Project>();
-            DataServiceMock = new LingoDataServiceRsyncMock(true, 0);
-            IEnumerable<(string langKey, string groupName)> availableGroups;
-            availableGroups = DataServiceMock.IterAvailableGroups();
+            var service = new LingoFilerService(new ExampleConfig());
+            var i = service as ILingoDataService;
+
+            var groups = service .IterAvailableGroups().ToArray();
             int id = 0;
-            foreach (var item in availableGroups)
+            foreach (var item in groups)
             {
                 Project groupItem = new Project(id++);
                 groupItem.Id = id++;
-                groupItem.Title = item.groupName;
-                groupItem.LangKey = item.langKey;
-                groupItem.Summary = "18 out of 25 translations completed!";
+                groupItem.Title = item.FriendlyName;
+                groupItem.Summary = item.Language.Name;;
                 groupItem.IsOpen = false;
 
-                Dictionary<LingoPhrase, LingoPhraseTranslation> translatedPhrases = DataServiceMock.IterTranslatedPhrases(item.langKey);
-                List<LingoPhrase> phrases = DataServiceMock.IterAllDefaultPhrases().ToList();
+                var phrases = item.IterPhrases();
 
-                foreach (LingoPhrase phrase in phrases)
+                foreach (ILingoPhrase phrase in phrases)
                 {
                     Phrase rawPhrase = new Phrase();
                     rawPhrase.Key = phrase.Key;
                     rawPhrase.Value = phrase.Text;
                     rawPhrase.Description = phrase.Description;
 
-                    // check if the phrase have a translation then add it
-                    if (translatedPhrases.ContainsKey(phrase))
-                    {
-                        rawPhrase.Translation = translatedPhrases[phrase].Translation;
+                    ILingoPhraseTranslation phraseTranslation = item.GetTranslationFor(phrase);
+                    if (phraseTranslation != null) {
+                        rawPhrase.Translation =  phraseTranslation.Translation;
                     }
 
                     groupItem.Phrases.Add(new ViewModels.PhraseViewModel(rawPhrase));
