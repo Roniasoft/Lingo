@@ -106,7 +106,7 @@ Rectangle {
             height: isOpen ? 210 : 36;
 
             onUpdateRequested: {
-                netContext.updatePhrase(pModel.projectId, aName, aTranslation, aIsCompleted);
+                netContext.updatePhrase(pModel.langKey, aName, aTranslation, aIsCompleted);
             }
         }
     }

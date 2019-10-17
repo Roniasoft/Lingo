@@ -5,14 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Threading.Tasks;
+using lingo.filer;
+using lingo.filer.tests;
 
 namespace lingo.desktop
 {
     public class NetAppContext
     {
-        // LingoPhraseTranslation _translate(LingoPhrase phrase, string translation) => 
-        //     new LingoPhraseTranslation(phrase, translation);
-
         private readonly FeedViewModel feedViewModel;
 
         public NetAppContext()
@@ -42,28 +41,33 @@ namespace lingo.desktop
         /// <param name="translation">Translation updated by user.</param>
         /// <param name="isCompleted">IsCompleted updated by user.</param>
         /// <returns></returns>
-        // public async Task UpdatePhrase(int projectId, string phraseKey, string translation, bool isCompleted) {
-        //     // At first we need to update the table models.
-        //     List<ProjectViewModel> groups = feedViewModel.Projects;
-        //     if (groups.Where(p => projectId == p.ProjectId).Count() != 0)
-        //     {
-        //         ProjectViewModel group = groups.Where(p => projectId == p.ProjectId).First();
-        //         string langKey = group.LangKey;
-        //         List<PhraseViewModel> phrases = group.Phrases;
-        //         if (phrases.Where(p => p.Key == phraseKey).Count() != 0)
-        //         {
-        //             PhraseViewModel phrase = phrases.Where(p => p.Key == phraseKey).First();
-        //             phrase.Translation = translation;
-        //             phrase.IsCompleted = isCompleted;
+        public async Task UpdatePhrase(string langKey, string phraseKey, string translation, bool isCompleted) {
+            // At first we need to update the table models.
+            List<ProjectViewModel> groups = feedViewModel.Projects;
+            if (groups.Where(p => langKey == p.LangKey).Count() != 0)
+            {
+                ProjectViewModel group = groups.Where(p => langKey == p.LangKey).First();
+                List<PhraseViewModel> phrases = group.Phrases;
+                if (phrases.Where(p => p.Key == phraseKey).Count() != 0)
+                {
+                    PhraseViewModel phrase = phrases.Where(p => p.Key == phraseKey).First();
+                    phrase.Translation = translation;
+                    phrase.IsCompleted = isCompleted;
 
-        //             // Now we need to update Mock objects.
-        //             LingoDataServiceRsyncMock dataService = feedViewModel.ProjectsFeed.DataServiceMock;
-        //             LingoPhrase lingoPhrase = dataService.IterAllDefaultPhrases().Where(p => phraseKey == p.Key).First();
-        //             dataService.SetPhraseTranslation(_translate(lingoPhrase, translation), langKey);
+                    // Now we need to update Mock objects.
+                    LingoFilerService dataService = feedViewModel.ProjectsFeed.DataServiceMock;
+                    ILingoGroup lingoGroup = dataService.IterAvailableGroups().Where(p => langKey == p.Key).First();
+                    ILingoPhrase lingoPhrase = lingoGroup.IterPhrases().Where(p => phraseKey == p.Key).First();
 
-        //             var result = await dataService.SyncDataAsync();
-        //         }
-        //     }
-        // }
+                    ILingoPhraseTranslation lingoTranslation = new LingoPhraseTranslation(lingoPhrase, translation, false);
+                    lingoGroup.CommitPhraseTranslation(lingoTranslation);
+                    var validateTranslation = lingoGroup.ValidatePhraseTranslation(lingoTranslation);
+
+                    if (validateTranslation.IsValid) {
+                        var result = await dataService.SyncDataAsync();
+                    }
+                }
+            }
+        }
     }
 }

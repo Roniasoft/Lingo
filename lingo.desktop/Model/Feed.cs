@@ -10,21 +10,22 @@ namespace lingo.desktop.Model
     public class Feed
     {
         public IEnumerable<Project> Projects => _projects;
-        // public LingoDataServiceRsyncMock DataServiceMock;
+        public LingoFilerService DataServiceMock;
 
         readonly List<Project> _projects;
         public Feed()
         {
             _projects = new List<Project>();
-            var service = new LingoFilerService(new ExampleConfig());
-            var i = service as ILingoDataService;
+            DataServiceMock = new LingoFilerService(new ExampleConfig());
+            var service = DataServiceMock as ILingoDataService;
 
-            var groups = service .IterAvailableGroups().ToArray();
+            var groups = service.IterAvailableGroups().ToArray();
             int id = 0;
             foreach (var item in groups)
             {
                 Project groupItem = new Project(id++);
                 groupItem.Id = id++;
+                groupItem.LangKey = item.Key;
                 groupItem.Title = item.FriendlyName;
                 groupItem.Summary = item.Language.Name;;
                 groupItem.IsOpen = false;
