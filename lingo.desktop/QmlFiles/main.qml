@@ -35,6 +35,8 @@ FramelessAppWindow {
 
     property alias footerLabel: footerLabel;
     property real fontSize: 12;
+    property real scaleFactor: fontSize / 12.0;
+
 
     // status bar function and timer
     function updateStatusBar(msg) {
@@ -248,20 +250,12 @@ FramelessAppWindow {
                             drawer.close();
                             updateStatusBar("Returned to projects...");
                         }
-                        if (index === 2) {  // fullscreen
-                            if (isFullScreen === false) {
-                                btnFullScreen.checked = true;
-                                drawer.close();
-                            } else {
-                                btnFullScreen.checked = false;
-                            }
-                        }
 
                         if (index === 1)  {
                             settings.open();
                             updateStatusBar("Settings Opened...");
                         }
-                        if (index === 3) {
+                        if (index === 2) {
                             Qt.quit();
                         }
                     }
@@ -271,7 +265,6 @@ FramelessAppWindow {
             model: ListModel {
                 ListElement { title: "Open File"; iconSrc: "../images/Icons/White/open_file.png"}
                 ListElement { title: "Hide Completed"; iconSrc: "../images/Icons/White/Hide.png"}
-                ListElement { title: "Full Screen"; iconSrc: "../images/Icons/White/fullScreen.png"}
                 ListElement { title: "Exit"; iconSrc: "../images/Icons/White/exit.png"}
             }
 
@@ -319,32 +312,6 @@ FramelessAppWindow {
             }
 
             TRibbonButton {
-                id: btnFullScreen;
-                height: parent.height * 0.8;
-                width: height;
-                checkable: true;
-                anchors.verticalCenter: parent.verticalCenter;
-                imgSource: "../images/Icons/Grey/fullScreen.png";
-                imgSourceHovered: "../images/Icons/White/fullScreen.png";
-                tooltipStr: checked ? "Normal" : "Full Screen";
-
-                onCheckedChanged: {
-                    if (checked) {
-                        isFullScreen = true;
-                        window.showFullScreen();
-                        header.visible = false;
-                        header.height = 0;
-                    } else {
-                        isFullScreen = false;
-                        header.visible = true;
-                        header.height = 30;
-                        window.showNormal();
-                    }
-                }
-            }
-
-
-            TRibbonButton {
                 height: parent.height * 0.8;
                 width: height;
                 anchors.verticalCenter: parent.verticalCenter;
@@ -366,7 +333,7 @@ FramelessAppWindow {
                 imgSourceHovered: "../images/Icons/White/Increase.png";
                 tooltipStr: "Increase font size"
                 onButtonClicked: {
-                    if (fontSize < 25)
+                    if (fontSize < 22)
                         fontSize += 1;
                 }
             }
@@ -449,13 +416,5 @@ FramelessAppWindow {
     Component.onCompleted: {
 		projects.feedViewModel = netContext.getFeedViewModel()
         headerBar.addTab("Main Feed", -1)
-    }
-
-    // shortcuts
-    Shortcut {
-        sequence: "F11";
-        onActivated: {
-            btnFullScreen.checked = !btnFullScreen.checked;
-        }
     }
 }

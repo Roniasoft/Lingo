@@ -3,7 +3,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 
 Rectangle {
-    height: 200
+    height: 210 * scaleFactor;
     width: 600;
     clip: true;
 
@@ -43,7 +43,7 @@ Rectangle {
             TTextEditBlock {
                 id: englishTextEditBlock
                 width: parent.width;
-                height: 75
+                height: 75 * scaleFactor
                 isReadOnly: true;
                 txtEdit.text: english;
             }
@@ -65,7 +65,7 @@ Rectangle {
             TTextEditBlock {
                 id: translationTextEditBlock
                 width: parent.width;
-                height: 75
+                height: 75 * scaleFactor
                 isReadOnly: false;
                 txtEdit.text: translation;
             }
@@ -77,7 +77,7 @@ Rectangle {
         id: commentColumn
         width: translationColumn.width*2;
         x: 11
-        y: 136
+        y: 136 * scaleFactor
         spacing: 2;
         Text {
             id: txtProjectDesc2
@@ -88,7 +88,7 @@ Rectangle {
         TTextEditBlock {
             id: commentTextEditBlock
             width: parent.width;
-            height: 45
+            height: 45 * scaleFactor
             txtEdit.text: comment;
         }
     }

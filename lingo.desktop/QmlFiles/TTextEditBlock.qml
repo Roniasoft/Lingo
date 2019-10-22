@@ -46,6 +46,7 @@ Rectangle {
             width: flick.width;
             //anchors.margins: 5;
             // height: 70;
+            height: 250 * scaleFactor;
             wrapMode: TextEdit.Wrap;
             color: isReadOnly ? "#cecece" : "white"
             selectedTextColor: "white";
@@ -54,6 +55,7 @@ Rectangle {
             readOnly: isReadOnly;
             selectByMouse: true;
             font.pixelSize: fontSize;
+           // contentHeight: 100 * scaleFactor;
             // inputMethodHints: Qt.ImhMultiLine;
             // focus: true;
             activeFocusOnPress: true;

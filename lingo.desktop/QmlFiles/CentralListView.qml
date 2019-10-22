@@ -103,7 +103,7 @@ Rectangle {
         ListItemDelegate {
             id: listItemDelegate;
             width: listView.width
-            height: isOpen ? 210 : 36;
+            height: isOpen ? 210 * scaleFactor : 36 * scaleFactor;
 
             onUpdateRequested: {
                 netContext.updatePhrase(pModel.langKey, aName, aTranslation, aIsCompleted);

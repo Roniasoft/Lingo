@@ -12,6 +12,8 @@ Rectangle {
     onIsDetailedChanged:{
         if (isDetailed) {
             detailedSection.txtEditTranslation.focus = true;
+            detailedSection.txtEditTranslation.cursorPosition = detailedSection.txtEditTranslation.text.length
+            detailedSection.txtEditTranslation.forceActiveFocus();
         } else {
             detailedSection.txtEditTranslation.focus = false;
         }
@@ -54,7 +56,7 @@ Rectangle {
     // detailed view of the opened item.
     ItemDetailedView {
         id: detailedSection;
-        height: isOpen ? 210 : 0;
+        height: isOpen ? 210 * scaleFactor : 0;
         opacity: isOpen ? 1 : 0;
         width: isOpen ? parent.width : parent.width;
         color: isOpen ? "#232e3c" : "#253646";

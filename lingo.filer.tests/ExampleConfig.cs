@@ -11,6 +11,7 @@ namespace lingo.filer.tests
         public ExampleConfig()
         {
             var rootPath = Path.GetDirectoryName(typeof(ExampleConfig).Assembly.Location);
+
             ResourceFiles = new List<ResourceFile>
             {
                 new ResourceFile

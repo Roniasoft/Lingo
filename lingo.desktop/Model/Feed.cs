@@ -16,7 +16,7 @@ namespace lingo.desktop.Model
         public Feed()
         {
             _projects = new List<Project>();
-            DataServiceMock = new LingoFilerService(new ExampleConfig());
+            DataServiceMock = new LingoFilerService(new LingoFilerConfig());
             var service = DataServiceMock as ILingoDataService;
 
             var groups = service.IterAvailableGroups().ToArray();
