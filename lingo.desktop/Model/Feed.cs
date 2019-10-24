@@ -27,7 +27,7 @@ namespace lingo.desktop.Model
                 groupItem.Id = id++;
                 groupItem.LangKey = item.Key;
                 groupItem.Title = item.FriendlyName;
-                groupItem.Summary = item.Language.Name;;
+                groupItem.Summary = item.Language.Name;
                 groupItem.IsOpen = false;
 
                 var phrases = item.IterPhrases();

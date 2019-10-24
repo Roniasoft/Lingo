@@ -23,7 +23,8 @@ Rectangle {
         contentWidth: txtEdit.paintedWidth;
         contentHeight: txtEdit.paintedHeight;
         clip: true
-        anchors.margins: 5;
+        anchors.margins: 0;
+        bottomMargin: 0;
 
         ScrollBar.vertical: ScrollBar{}
         ScrollBar.horizontal: ScrollBar{}
@@ -46,7 +47,7 @@ Rectangle {
             width: flick.width;
             //anchors.margins: 5;
             // height: 70;
-            height: 250 * scaleFactor;
+            height: 200 * scaleFactor;
             wrapMode: TextEdit.Wrap;
             color: isReadOnly ? "#cecece" : "white"
             selectedTextColor: "white";
@@ -58,6 +59,7 @@ Rectangle {
            // contentHeight: 100 * scaleFactor;
             // inputMethodHints: Qt.ImhMultiLine;
             // focus: true;
+            bottomPadding: 0;
             activeFocusOnPress: true;
             onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
 
@@ -70,7 +72,7 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 acceptedButtons: Qt.RightButton
-                cursorShape: isReadOnly ? Qt.ArrowCursor : Qt.IBeamCursor;
+                cursorShape: Qt.IBeamCursor;
                 hoverEnabled: true
                 enabled: false;
             }

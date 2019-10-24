@@ -33,7 +33,7 @@ Rectangle {
             id: englishColumn;
             Layout.fillWidth: true;
             Layout.preferredWidth: 290;
-            spacing: 2;
+            spacing: 3;
             Text {
                 id: txtProjectDesc
                 text: qsTr("English:")
@@ -55,7 +55,7 @@ Rectangle {
             Layout.fillWidth: true;
             Layout.preferredWidth: 290;
             visible: isOpen;
-            spacing: 2;
+            spacing: 3;
             Text {
                 id: txtProjectDesc1
                 color: (txtEditTranslation.focus) ? "#65a8e5" : "#6f8398";
@@ -78,7 +78,7 @@ Rectangle {
         width: translationColumn.width*2;
         x: 11
         y: 136 * scaleFactor
-        spacing: 2;
+        spacing: 3;
         Text {
             id: txtProjectDesc2
             color: (!commentTextEditBlock && txtEditComment.focus) ? "#65a8e5" : "#6f8398"

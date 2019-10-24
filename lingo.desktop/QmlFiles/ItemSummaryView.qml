@@ -4,9 +4,6 @@ Item {
     id: summarySection;
     opacity: isOpen ? 0 : 1;
     
-    Behavior on opacity {
-        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
-    }
 
     Text {
         id: txtEnglish;
@@ -16,8 +13,12 @@ Item {
         width: 0.25 * parent.width;
         anchors.left: parent.left;
         anchors.leftMargin: parent.width * 0.30;
-        anchors.verticalCenter: parent.verticalCenter;
+        anchors.top: parent.top;
+        height: 36;
         clip: true;
+    Behavior on opacity {
+        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+    }
     }
 
     Text {
@@ -28,7 +29,11 @@ Item {
         font.pixelSize: fontSize;
         anchors.left: parent.left;
         anchors.leftMargin: parent.width * 0.6;
-        anchors.verticalCenter: parent.verticalCenter;
+        anchors.top: parent.verticalCenter;
+        height: 36;
         clip: true;
+    Behavior on opacity {
+        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+    }
     }
 }

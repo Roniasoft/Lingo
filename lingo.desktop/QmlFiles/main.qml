@@ -36,6 +36,7 @@ FramelessAppWindow {
     property alias footerLabel: footerLabel;
     property real fontSize: 12;
     property real scaleFactor: fontSize / 12.0;
+    property bool hideCompleteds: false;
 
 
     // status bar function and timer
@@ -252,8 +253,8 @@ FramelessAppWindow {
                         }
 
                         if (index === 1)  {
-                            settings.open();
-                            updateStatusBar("Settings Opened...");
+                            hideCompleteds = !hideCompleteds;
+                            updateStatusBar("...");
                         }
                         if (index === 2) {
                             Qt.quit();
@@ -263,7 +264,7 @@ FramelessAppWindow {
             }
 
             model: ListModel {
-                ListElement { title: "Open File"; iconSrc: "../images/Icons/White/open_file.png"}
+                ListElement { title: "Groups"; iconSrc: "../images/Icons/White/open_file.png"}
                 ListElement { title: "Hide Completed"; iconSrc: "../images/Icons/White/Hide.png"}
                 ListElement { title: "Exit"; iconSrc: "../images/Icons/White/exit.png"}
             }
@@ -293,21 +294,11 @@ FramelessAppWindow {
                 height: parent.height * 0.8;
                 width: height;
                 anchors.verticalCenter: parent.verticalCenter;
-                imgSource: "../images/Icons/Grey/open_file.png";
-                imgSourceHovered: "../images/Icons/White/open_file.png";
-                tooltipStr: "Open New";
-                onButtonClicked: {
-                }
-            }
-
-            TRibbonButton {
-                height: parent.height * 0.8;
-                width: height;
-                anchors.verticalCenter: parent.verticalCenter;
                 imgSource: "../images/Icons/Grey/Hide.png";
                 imgSourceHovered: "../images/Icons/White/Hide.png";
                 tooltipStr: "Hide Completed"
                 onButtonClicked: {
+                    hideCompleteds = !hideCompleteds;
                 }
             }
 
@@ -415,6 +406,6 @@ FramelessAppWindow {
 
     Component.onCompleted: {
 		projects.feedViewModel = netContext.getFeedViewModel()
-        headerBar.addTab("Main Feed", -1)
+        headerBar.addTab("Groups", -1)
     }
 }

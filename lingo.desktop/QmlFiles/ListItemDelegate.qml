@@ -45,13 +45,13 @@ Rectangle {
     }
 
     // summary view of the items (when items are closed)
-    ItemSummaryView {
-        id: summarySection;
-        anchors.top: parent.top;
-        anchors.topMargin: 17;
-        anchors.left: parent.left;
-        anchors.right: parent.right;
-    }
+    // ItemSummaryView {
+    //     id: summarySection;
+    //     anchors.top: parent.top;
+    //     anchors.topMargin: 17;
+    //     anchors.left: parent.left;
+    //     anchors.right: parent.right;
+    // }
 
     // detailed view of the opened item.
     ItemDetailedView {
@@ -107,6 +107,42 @@ Rectangle {
         width: isOpen ? parent.width * 0.8 : parent.width * 0.2;
         color: "white";
         font.pixelSize: fontSize;
+    }
+
+       Text {
+        id: txtEnglish;
+        text: english.replace(/(\r\n|\n|\r)/gm, " ");
+        color: "white";
+        font.pixelSize: fontSize;
+        width: 0.25 * parent.width;
+        anchors.left: parent.left;
+        anchors.leftMargin: parent.width * 0.30;
+        anchors.verticalCenter: txtIndex.verticalCenter;
+        // height: 36;
+        opacity: isOpen ? 0 : 1;
+        clip: true;
+        wrapMode: Text.NoWrap
+    Behavior on opacity {
+        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+    }
+    }
+
+    Text {
+        id: txtTranslation;
+        text: translation.replace(/(\r\n|\n|\r)/gm, " ");
+        color: "#999999";
+        width: 0.30 * parent.width;
+        font.pixelSize: fontSize;
+        anchors.left: parent.left;
+        anchors.leftMargin: parent.width * 0.6;
+        anchors.verticalCenter: txtIndex.verticalCenter;
+        // height: 36;
+        opacity: isOpen ? 0 : 1;
+        clip: true;
+        wrapMode: Text.NoWrap
+    Behavior on opacity {
+        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+    }
     }
 
     // checkbox for displaying completeness of the items.
