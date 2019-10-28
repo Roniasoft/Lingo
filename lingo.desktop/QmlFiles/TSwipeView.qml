@@ -13,13 +13,13 @@ SwipeView {
         Shortcut {
             sequence: "Down"
             onActivated: {
-                if (sv.currentItem.listModel.count <= sv.currentItem.listView.currentIndex +1) {
+                if (sv.currentItem.proxyModel.count <= sv.currentItem.listView.currentIndex +1) {
                     return;
                 }
 
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = false;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
                 sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = true;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", true);
             }
         }
         Shortcut {
@@ -29,19 +29,19 @@ SwipeView {
                     return;
                 }
 
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = false;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
                 sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex - 1;
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = true;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", true);
             }
         }
         Shortcut {
             sequences: ["Return", "Enter"]
             onActivated: {
-                sv.currentItem.listModel.get(listView.currentIndex).isOpen = !sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen;
-                if (sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen) {
+                sv.currentItem.proxyModel.set(listView.currentIndex, "isOpen", !sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen);
+                if (sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen) {
                     if (sv.currentItem.lastOpened != -1) {
-                        sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
-                        sv.currentItem.listModel.get(sv.currentItem.lastOpened).highlighted = false;
+                        sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
+                        sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
                     }
                     sv.currentItem.lastOpened = listView.currentIndex;
                 }
@@ -50,10 +50,10 @@ SwipeView {
         Shortcut {
             sequence: "escape"
             onActivated: {
-                sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = false;
-                sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).highlighted = false;
+                sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
+                sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
             }
         }
         Shortcut {
@@ -61,17 +61,17 @@ SwipeView {
             sequence: "Tab"
             //context: Qt.ApplicationShortcut
             onActivated: {
-                if (sv.currentItem.listModel.count <= sv.currentItem.listView.currentIndex+1) {
+                if (sv.currentItem.proxyModel.count <= sv.currentItem.listView.currentIndex+1) {
                     return;
                 }
 
                 if (sv.currentItem.lastOpened != -1) {
-                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
-                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).highlighted = false;
+                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
+                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
                 }
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = false;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
                 sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = true;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", true);
                 sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
             }
         }
@@ -83,25 +83,25 @@ SwipeView {
                 }
 
                 if (sv.currentItem.lastOpened != -1) {
-                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).isOpen = false;
-                    sv.currentItem.listModel.get(sv.currentItem.lastOpened).highlighted = false;
+                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
+                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
                 }
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = false;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
                 sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex - 1;
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).isOpen = true;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", true);
                 sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
             }
         }
         Shortcut {
             sequences: ["Ctrl+Return", "Ctrl+Enter"]
             onActivated: {
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).completed = !sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).completed;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "completed", !sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).completed);
             }
         }
         Shortcut {
             sequence: "Ctrl+Del"
             onActivated: {
-                sv.currentItem.listModel.get(sv.currentItem.listView.currentIndex).completed = false;
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "completed", false);
             }
         }
     }

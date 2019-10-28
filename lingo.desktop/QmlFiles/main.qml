@@ -5,6 +5,7 @@ import QtQuick.Window 2.12
 import QtQuick.Controls.Universal 2.12
 import QtQuick.Controls.Material 2.12
 import FramelessWindow 1.0
+import SortFilterProxyModel 0.2
 
 import NetViewModels 1.0
 

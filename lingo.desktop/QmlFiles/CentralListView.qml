@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Styles 1.4
+import SortFilterProxyModel 0.2
 
 import NetViewModels 1.0
 
@@ -10,22 +11,29 @@ Rectangle {
     color: "#0e1621";
     property int lastOpened: -1;
     property var pModel;
-    property alias listModel: listModel;
+    property alias sourceModel: sourceListModel;
+    property alias proxyModel: proxyModel;
     property alias listView: listView;
+    property int sortingColumn: 0;
+    property bool col0_isAscending: true;
+    property bool col1_isAscending: true;
+    property bool col2_isAscending: true;
+    property bool col3_isAscending: true;
+
     function openProject(indx) {
-        listModel.get(indx).isOpen = true;
+        proxyModel.set(indx, "isOpen", true);
     }
     function closeProject(indx) {
-        listModel.get(indx).isOpen = false;
+        proxyModel.set(indx, "isOpen", false);
     }
 
     function fillModel(projectViewModel) {
         pModel = projectViewModel;
-        listModel.clear();
+        sourceModel.clear();
         var phrasesCount = projectViewModel.phrases.count;
         for (let i = 0; i < phrasesCount; i++) {
             var phrase = projectViewModel.getPhraseViewModel(i);
-            listModel.insert(i, 
+            sourceModel.insert(i, 
             {
                 "name": phrase.key,
                 "isOpen": phrase.isOpen,
@@ -39,62 +47,134 @@ Rectangle {
         
     }
 
-    Rectangle {
+    Item {
         id: header;
         anchors.top: parent.top;
         anchors.topMargin: 15;
         anchors.left: listView.left;
         anchors.right: listView.right;
-        color: "#364451";
+        // color: "#364451";
         height: 30;
 
-        RowLayout {
-            id: rowTableHeader;
-            anchors.fill: parent;
-            anchors.leftMargin: 20;
-            anchors.rightMargin: 0;
-            anchors.verticalCenter: parent.verticalCenter;
-            spacing: 10;
+            Rectangle {
+                id: nameRectHeader;
+                color: nameRectHeaderMA.containsMouse ? "#2B3741" : "#364451";
+                width: 0.3 * parent.width;
+                height: parent.height;
+                anchors.left: parent.left;
+                Text {
+                    id: txtHeaderName
+                    text: qsTr("Name");
+                    color: "white";
+                    font.pixelSize: fontSize - 2;
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+                MouseArea {
+                    id: nameRectHeaderMA;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor;
+                    onClicked: {
+                        listView.currentIndex = 0;
+                        if (sortingColumn === 0) {
+                            col0_isAscending = !col0_isAscending;
+                        }
+                        sortingColumn = 0;
+                    }
+                }
+            }
 
-            Text {
-                id: txtHeaderName
-                text: qsTr("Name");
-                color: "white";
-                Layout.preferredWidth: 70;
-                font.pixelSize: fontSize - 2;
+            
+            Rectangle {
+                id: englishRectHeader;
+                color: englishRectHeaderMA.containsMouse ? "#2B3741" : "#364451";
+                width: 0.30 * parent.width;
+                height: parent.height;
+                anchors.left: nameRectHeader.right;
+                Text {
+                    id: txtHeaderEnglish
+                    text: qsTr("English");
+                    color: "white";
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    font.pixelSize: fontSize - 2;
+                }
+                MouseArea {
+                    id: englishRectHeaderMA;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor;
+                    onClicked: {
+                        listView.currentIndex = 0;
+                        if (sortingColumn === 1) {
+                            col1_isAscending = !col1_isAscending;
+                        }
+                        sortingColumn = 1;
+                    }
+                }
             }
-            Text {
-                id: txtHeaderEnglish
-                text: qsTr("English");
-                color: "white";
-                Layout.preferredWidth: 70
-                font.pixelSize: fontSize - 2;
+            
+            Rectangle {
+                id: translationRectHeader;
+                color: translationRectHeaderMA.containsMouse ? "#2B3741" : "#364451";
+                width: 0.30 * parent.width;
+                height: parent.height;
+                anchors.left: englishRectHeader.right;
+                Text {
+                    id: txtHeaderTranslation
+                    text: qsTr("Translation");
+                    color: "white";
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    font.pixelSize: fontSize - 2;
+                }
+                MouseArea {
+                    id: translationRectHeaderMA;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor;
+                    onClicked: {
+                        listView.currentIndex = 0;
+                        if (sortingColumn === 2) {
+                            col2_isAscending = !col2_isAscending;
+                        }
+                        sortingColumn = 2;
+                    }
+                }
             }
-            Text {
-                id: txtHeaderTranslation
-                text: qsTr("Translation");
-                color: "white";
-                Layout.preferredWidth: 70;
-                font.pixelSize: fontSize - 2;
-            }
-        }
 
         // adjusting the last column header is very difficult in the rowLayout.
         //  so we adjust it manualy
-        Text {
-            id: txtHeaderIsCompleted
-            text: qsTr("Completed");
-            color: "white";
-            anchors.right: parent.right;
-            anchors.rightMargin: 20
-            anchors.verticalCenter: parent.verticalCenter;
-            font.pixelSize: fontSize - 2;
-
-        }
-
-        MouseArea {
-            anchors.fill: parent;
-        }
+        
+            Rectangle {
+                id: completedRectHeader;
+                color: completedRectHeaderMA.containsMouse ? "#2B3741" : "#364451";
+                width: 0.1 * parent.width;
+                height: parent.height;
+                anchors.left: translationRectHeader.right;
+                Text {
+                    id: txtHeaderIsCompleted
+                    text: qsTr("Completed");
+                    color: "white";
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    font.pixelSize: fontSize - 2;
+                }
+                MouseArea {
+                    id: completedRectHeaderMA;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor;
+                    onClicked: {
+                        listView.currentIndex = 0;
+                        if (sortingColumn === 3) {
+                            col3_isAscending = !col3_isAscending;
+                        }
+                        sortingColumn = 3;
+                    }
+                }
+            }
     }
 
 
@@ -112,7 +192,23 @@ Rectangle {
     }
 
     TListModel {
-        id: listModel;
+        id: sourceListModel;
+    }
+
+    QQmlSortFilterProxyModel {
+        id: proxyModel;
+        sourceModel: sourceListModel
+        filters: RegExpFilter {
+            roleName: "completed"
+            pattern: "false";
+            enabled: hideCompleteds
+        }
+        sorters: [
+            StringSorter { roleName: "name"; sortOrder: col0_isAscending ? 0 : 1; enabled: sortingColumn === 0},
+            StringSorter { roleName: "english"; sortOrder: col1_isAscending ? 0 : 1; enabled: sortingColumn === 1},
+            StringSorter { roleName: "translation"; sortOrder: col2_isAscending ? 0 : 1; enabled: sortingColumn === 2},
+            StringSorter { roleName: "completed"; sortOrder: col3_isAscending ? 0 : 1; enabled: sortingColumn === 3}
+        ]
     }
 
     ListView {
@@ -129,6 +225,7 @@ Rectangle {
         clip: true;
         ScrollBar.vertical:
             ScrollBar {
+                id: lvScrollbar;
             opacity: 0.3;
             width: 5;
             }
@@ -138,23 +235,21 @@ Rectangle {
 //        highlightRangeMode: ListView.StrictlyEnforceRange;
 
         function tabIsPressedInTextEdit() {
-            if (listModel.count <= listView.currentIndex+1) {
+            if (proxyModel.count <= listView.currentIndex+1) {
                 return;
             }
 
             if (lastOpened != -1) {
-                listModel.get(lastOpened).isOpen = false;
-                listModel.get(lastOpened).highlighted = false;
+                proxyModel.set(lastOpened, "isOpen", false);
+                proxyModel.set(lastOpened, "highlighted", false);
             }
-            listModel.get(listView.currentIndex).isOpen = false;
+            proxyModel.set(listView.currentIndex, "isOpen", false);
             listView.currentIndex = listView.currentIndex + 1;
-            listModel.get(listView.currentIndex).isOpen = true;
+            proxyModel.set(listView.currentIndex, "isOpen", true);
             lastOpened = listView.currentIndex;
         }
 
-        model: listModel
+        model: proxyModel
         delegate: ldelegate
-
-
     }
 }

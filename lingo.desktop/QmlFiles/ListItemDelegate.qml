@@ -31,13 +31,13 @@ Rectangle {
         onTriggered: {
             if (listView.dragging === false) {
                 if (lastOpened !== -1 && lastOpened !== index) {
-                    listModel.get(lastOpened).highlighted = false;
-                    listModel.get(lastOpened).isOpen = false;
+                    proxyModel.set(lastOpened, "highlighted", false);
+                    proxyModel.set(lastOpened, "isOpen", false);
                 }
 
                 listView.currentIndex = index;
-                var isOpen = !listModel.get(listView.currentIndex).isOpen;
-                listModel.get(listView.currentIndex).isOpen = isOpen;
+                var isOpen = !proxyModel.get(listView.currentIndex).isOpen;
+                proxyModel.set(listView.currentIndex, "isOpen", isOpen);
 
                 lastOpened = index;
             }
@@ -170,9 +170,9 @@ Rectangle {
 
         onHoveredChanged: {
             if (mouseArea.containsMouse) {
-                listModel.get(index).highlighted = true;
+                proxyModel.set(index, "highlighted", true);
             } else {
-                listModel.get(index).highlighted = false;
+                proxyModel.set(index, "highlighted", false);
             }
         }
 
