@@ -6,7 +6,6 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 using lingo.filer;
-using lingo.filer.tests;
 
 namespace lingo.desktop
 {

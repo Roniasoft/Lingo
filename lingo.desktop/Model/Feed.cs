@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using lingo.filer;
-using lingo.filer.tests;
 
 namespace lingo.desktop.Model
 {

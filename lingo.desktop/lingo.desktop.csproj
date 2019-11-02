@@ -5,13 +5,14 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <StartupObject>lingo.desktop.Program</StartupObject>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
     <ApplicationIcon />
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\lingo.common\lingo.common.csproj" />
     <ProjectReference Include="..\lingo.filer\lingo.filer.csproj" />
-    <ProjectReference Include="..\lingo.filer.tests\lingo.filer.tests.csproj" />
   </ItemGroup>
   
   <ItemGroup>
