@@ -5,8 +5,6 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <StartupObject>lingo.desktop.Program</StartupObject>
-    <PublishTrimmed>true</PublishTrimmed>
-    <PublishReadyToRun>true</PublishReadyToRun>
     <ApplicationIcon />
   </PropertyGroup>
 
