@@ -5,9 +5,18 @@ import QtQuick.Window 2.12
 import QtQuick.Controls.Universal 2.12
 import QtQuick.Controls.Material 2.12
 
-SwipeView {
+StackLayout {
         id: sv
-        interactive: false
+        // interactive: false
+
+        function switchTo(projectId) {
+        for (var i = 0; i < sv.count; i++) {
+            if (sv.itemAt(i).pModel.projectId === projectId) {
+                sv.currentIndex = i
+                return
+            }
+        }
+    }
 
 
         Shortcut {

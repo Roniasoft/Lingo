@@ -20,7 +20,7 @@ namespace lingo.desktop
 
         public FeedViewModel GetFeedViewModel() => feedViewModel;
 
-        public void Log(string val) {
+        public void Log(int val) {
             Console.WriteLine(val);
         }
 

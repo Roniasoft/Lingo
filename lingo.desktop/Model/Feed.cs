@@ -42,12 +42,9 @@ namespace lingo.desktop.Model
                     if (phraseTranslation != null) {
                         rawPhrase.Translation =  phraseTranslation.Translation;
                     }
-
                     groupItem.Phrases.Add(new ViewModels.PhraseViewModel(rawPhrase));
                 }
-                
                 _projects.Add(groupItem);
-
             }
         }
     }

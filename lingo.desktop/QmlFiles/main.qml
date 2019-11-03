@@ -294,9 +294,10 @@ FramelessAppWindow {
                 height: parent.height * 0.8;
                 width: height;
                 anchors.verticalCenter: parent.verticalCenter;
-                imgSource: "../images/Icons/Grey/Hide.png";
-                imgSourceHovered: "../images/Icons/White/Hide.png";
-                tooltipStr: "Hide Completed"
+                imgSource: hideCompleteds ? "../images/Icons/Grey/Show.png" : "../images/Icons/Grey/HideCompleted.png";
+                imgSourceHovered: hideCompleteds ? "../images/Icons/White/ShowAll.png" : "../images/Icons/White/HideCompleted.png";
+                tooltipStr: hideCompleteds ? "Show Completed" : "Hide Completed"
+                checkable: true;
                 onButtonClicked: {
                     hideCompleteds = !hideCompleteds;
                 }
@@ -352,21 +353,26 @@ FramelessAppWindow {
         MainGroups {
             id: projects;
             style: appStyle.mainFeedStyle
+            property int projectId: -1;
 
             onOpenProjectRequested: {
 				headerBar.addTab(project.title, project.projectId)
 				sv.addPage(listViewComponent, project)   // project: projectViewModel
+
 				headerBar.switchTo(project.projectId)
+                sv.switchTo(project.projectId);
 			}
+
 			onSwitchToProjectRequested: {
 				headerBar.switchTo(project.projectId)
+                sv.switchTo(project.projectId);
 			}
         }
         
         function addPage(comp, projectViewModel) {
             var cListView = comp.createObject(sv);
             cListView.fillModel(projectViewModel);
-            sv.addItem(cListView);
+            sv.children.push(cListView);
         }
 
     }

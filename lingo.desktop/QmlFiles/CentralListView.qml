@@ -19,6 +19,7 @@ Rectangle {
     property bool col1_isAscending: true;
     property bool col2_isAscending: true;
     property bool col3_isAscending: true;
+    
 
     function openProject(indx) {
         proxyModel.set(indx, "isOpen", true);

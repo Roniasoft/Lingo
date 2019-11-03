@@ -20,14 +20,13 @@ Rectangle {
     Flickable {
         id: flick;
         anchors.fill: parent;
-        contentWidth: txtEdit.paintedWidth;
-        contentHeight: txtEdit.paintedHeight;
+        contentWidth: flick.width;
+        contentHeight: Math.max(txtEdit.paintedHeight, flick.height);
         clip: true
         anchors.margins: 0;
         bottomMargin: 0;
 
         ScrollBar.vertical: ScrollBar{}
-        ScrollBar.horizontal: ScrollBar{}
 
 
         function ensureVisible(r)
@@ -45,20 +44,14 @@ Rectangle {
         TextEdit {
             id: txtEdit;
             width: flick.width;
-            //anchors.margins: 5;
-            // height: 70;
-            height: 200 * scaleFactor;
+            height: flick.contentHeight;
             wrapMode: TextEdit.Wrap;
             color: isReadOnly ? "#cecece" : "white"
             selectedTextColor: "white";
             selectionColor: "#3399ff"
-            // clip: true;
             readOnly: isReadOnly;
             selectByMouse: true;
             font.pixelSize: fontSize;
-           // contentHeight: 100 * scaleFactor;
-            // inputMethodHints: Qt.ImhMultiLine;
-            // focus: true;
             bottomPadding: 0;
             activeFocusOnPress: true;
             onCursorRectangleChanged: flick.ensureVisible(cursorRectangle)
