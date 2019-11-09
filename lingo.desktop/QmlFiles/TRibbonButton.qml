@@ -34,7 +34,7 @@ Rectangle {
         id: tooltipRect;
         implicitWidth: tooltipText.width + 12;
         height: 25;
-        y: tooltipOnBottom ? parent.height + 5 : -tooltipRect.height - 5;
+        y: tooltipOnBottom ? parent.height + 5 : -tooltipRect.height - 0;
         visible: mouseArea.containsMouse;
         color: "#0e1621";
         border.color: "white"

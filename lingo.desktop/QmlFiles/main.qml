@@ -410,12 +410,10 @@ FramelessAppWindow {
             cListView.fillModel(projectViewModel);
             sv.children.push(cListView);
         }
-
     }
 
     Component {
         id: listViewComponent
-
         CentralListView {
         }
     }
