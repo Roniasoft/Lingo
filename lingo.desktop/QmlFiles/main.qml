@@ -37,6 +37,19 @@ FramelessAppWindow {
     property real fontSize: 12;
     property real scaleFactor: fontSize / 12.0;
     property bool hideCompleteds: false;
+    property alias rbtnHideCompleteds: rbtnHideCompleteds;
+
+    onHideCompletedsChanged: {
+        if (hideCompleteds === true) {
+            lvDrawerMenu.model.get(1).checked = true;
+            rbtnHideCompleteds.checked = true;
+            updateStatusBar("Completed records are hidden now!");
+        } else {
+            lvDrawerMenu.model.get(1).checked = false;
+            rbtnHideCompleteds.checked = false;
+            updateStatusBar("َAll records are visible now!");
+        }
+    }
 
 
     // status bar function and timer
@@ -76,30 +89,7 @@ FramelessAppWindow {
             width: parent.width;
             anchors.fill: parent
 
-            Image {
-                id: imgMenu
-                source: !drawer.visible ? (imgMenuMA.containsMouse ? "../images/drawer.png" : "../images/drawerG.png")
-                                        : (imgMenuMA.containsMouse ? "../images/back.png" : "../images/backG.png");
-                width: isMax ? 18 : 20;
-                fillMode: Image.PreserveAspectFit;
-                anchors.bottom: parent.bottom;
-                anchors.bottomMargin: isMax ? 2 : 5;
-                anchors.left: parent.left;
-                anchors.leftMargin: isMax ? 10 : 5;
 
-                MouseArea {
-                    id: imgMenuMA;
-                    anchors.fill: parent;
-                    hoverEnabled: true;
-                    cursorShape: Qt.PointingHandCursor;
-                    onClicked: {
-                        if (drawer.visible)
-                            drawer.close();
-                        else
-                            drawer.open();
-                    }
-                }
-            }
 
             Label {
                 id: titleLabel
@@ -202,7 +192,7 @@ FramelessAppWindow {
         id: drawer
         width: Math.min(window.width, window.height) / 6 * 2
         height: window.height -  header.height - footerBar.height;
-        y: header.height;
+        y: header.height + ribbonBar.height;
         interactive: true;
         background: Rectangle {
             color: "#0e1621";
@@ -220,10 +210,10 @@ FramelessAppWindow {
                 id: wrapper;
                 width: lvDrawerMenu.width;
                 height: 36;
-                color: dlgMouseArea.containsMouse ? "#2b5278" : "#17212b";
+                color: model.checked ? "#364451" : (dlgMouseArea.containsMouse ? "#2b5278" : "#17212b");
                 Image {
                     id: imgIcon
-                    source: pathCR(model.iconSrc);
+                    source: model.iconSrc;
                     width: 16;
                     fillMode: Image.PreserveAspectFit;
                     anchors.left: parent.left;
@@ -245,16 +235,15 @@ FramelessAppWindow {
                     hoverEnabled: true;
                     cursorShape: Qt.PointingHandCursor;
                     onClicked: {
-                        lvDrawerMenu.currentIndex =index;
+                        lvDrawerMenu.currentIndex = index;
                         if (index === 0) {
-                            ribbonBar.setCurrentIndex(0);
                             drawer.close();
-                            updateStatusBar("Returned to projects...");
+                            updateStatusBar("Drawer Closed.");
                         }
 
                         if (index === 1)  {
                             hideCompleteds = !hideCompleteds;
-                            updateStatusBar("...");
+
                         }
                         if (index === 2) {
                             Qt.quit();
@@ -264,11 +253,10 @@ FramelessAppWindow {
             }
 
             model: ListModel {
-                ListElement { title: "Groups"; iconSrc: "../images/Icons/White/open_file.png"}
-                ListElement { title: "Hide Completed"; iconSrc: "../images/Icons/White/Hide.png"}
-                ListElement { title: "Exit"; iconSrc: "../images/Icons/White/exit.png"}
+                ListElement { title: "Groups"; iconSrc: "../images/Icons/White/open_file.png"; checked: false}
+                ListElement { title: "Hide Completed"; iconSrc: "../images/Icons/White/HideCompleted.png"; checked: false}
+                ListElement { title: "Exit"; iconSrc: "../images/Icons/White/exit.png"; checked: false}
             }
-
             ScrollIndicator.vertical: ScrollIndicator { }
         }
     }
@@ -291,12 +279,53 @@ FramelessAppWindow {
             spacing: 5;
 
             TRibbonButton {
+                id: imgMenu
                 height: parent.height * 0.8;
+                tooltipOnBottom: drawer.visible ? false : true;
                 width: height;
                 anchors.verticalCenter: parent.verticalCenter;
-                imgSource: hideCompleteds ? "../images/Icons/Grey/Show.png" : "../images/Icons/Grey/HideCompleted.png";
-                imgSourceHovered: hideCompleteds ? "../images/Icons/White/ShowAll.png" : "../images/Icons/White/HideCompleted.png";
-                tooltipStr: hideCompleteds ? "Show Completed" : "Hide Completed"
+                imgSource: drawer.visible ? "../images/backG.png" : "../images/drawerG.png";
+                imgSourceHovered: drawer.visible ? "../images/back.png" : "../images/drawer.png";
+                tooltipStr: drawer.visible ? "Show Drawer" : "Hide Drawer"
+
+                onButtonClicked: {
+                        if (drawer.visible) {
+                            drawer.close();
+                        } else {
+                            drawer.open();
+                        }
+                }
+            }
+
+            Item {
+                width: 3;
+                height: 20;
+            }
+
+            
+            Rectangle {
+                width: 2
+                height: 20
+                anchors.verticalCenter: parent.verticalCenter;
+                color: "#6C7883"
+                opacity: 0.3;
+            }
+
+            Item {
+                width: 3;
+                height: 20;
+            }
+
+
+            TRibbonButton {
+                id: rbtnHideCompleteds;
+                height: parent.height * 0.8;
+                width: height;
+                tooltipOnBottom: !drawer.visible;
+                anchors.verticalCenter: parent.verticalCenter;
+                imgSource: /*hideCompleteds ? "../images/Icons/Grey/Show.png" : */"../images/Icons/Grey/HideCompleted.png";
+                imgSourceHovered: /*hideCompleteds ? "../images/Icons/White/ShowAll.png" : */"../images/Icons/White/HideCompleted.png";
+                tooltipStr: hideCompleteds ? "Show All" : "Hide Completed"
                 checkable: true;
                 onButtonClicked: {
                     hideCompleteds = !hideCompleteds;
@@ -306,13 +335,16 @@ FramelessAppWindow {
             TRibbonButton {
                 height: parent.height * 0.8;
                 width: height;
+                tooltipOnBottom: !drawer.visible;
                 anchors.verticalCenter: parent.verticalCenter;
                 imgSource: "../images/Icons/Grey/Decrease.png";
                 imgSourceHovered: "../images/Icons/White/Decrease.png";
                 tooltipStr: "Decrease font size"
                 onButtonClicked: {
-                    if (fontSize > 9)
+                    if (fontSize > 9) {
                         fontSize -= 1;
+                        updateStatusBar("Application font size decremented.");
+                    }
                 }
             }
 
@@ -320,13 +352,16 @@ FramelessAppWindow {
             TRibbonButton {
                 height: parent.height * 0.8;
                 width: height;
+                tooltipOnBottom: !drawer.visible;
                 anchors.verticalCenter: parent.verticalCenter;
                 imgSource: "../images/Icons/Grey/Increase.png";
                 imgSourceHovered: "../images/Icons/White/Increase.png";
                 tooltipStr: "Increase font size"
                 onButtonClicked: {
-                    if (fontSize < 22)
+                    if (fontSize < 22) {
                         fontSize += 1;
+                        updateStatusBar("Application font size incremented.");
+                    }
                 }
             }
         }
@@ -360,12 +395,13 @@ FramelessAppWindow {
 				sv.addPage(listViewComponent, project)   // project: projectViewModel
 
 				headerBar.switchTo(project.projectId)
-                sv.switchTo(project.projectId);
+                updateStatusBar("Project opened: " + project.title);
+
 			}
 
 			onSwitchToProjectRequested: {
 				headerBar.switchTo(project.projectId)
-                sv.switchTo(project.projectId);
+                updateStatusBar("Switch to: " + project.title);
 			}
         }
         
@@ -405,7 +441,7 @@ FramelessAppWindow {
                 elide: Label.ElideRight
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
-                color: "white";
+                color: "#364451";
             }
         }
     }

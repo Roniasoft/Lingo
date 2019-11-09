@@ -8,6 +8,9 @@ Rectangle {
     height: 35;
     width: 35;
     radius: 3;
+    property bool tooltipOnBottom: true;
+
+
     color: checkable ? (checked ? "#364451" : (mouseArea.containsMouse ? "#253646" : "transparent")) :
                        (mouseArea.pressed ? "#364451" : (mouseArea.containsMouse ? "#253646" : "transparent"));
 
@@ -31,13 +34,11 @@ Rectangle {
         id: tooltipRect;
         implicitWidth: tooltipText.width + 12;
         height: 25;
-        anchors.top: parent.bottom;
-        anchors.topMargin: 8;
+        y: tooltipOnBottom ? parent.height + 5 : -tooltipRect.height - 5;
         visible: mouseArea.containsMouse;
         color: "#0e1621";
         border.color: "white"
         opacity: 0.8;
-
 
         Text {
             id: tooltipText

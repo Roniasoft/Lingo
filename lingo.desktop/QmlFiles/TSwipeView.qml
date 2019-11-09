@@ -9,16 +9,6 @@ StackLayout {
         id: sv
         // interactive: false
 
-        function switchTo(projectId) {
-        for (var i = 0; i < sv.count; i++) {
-            if (sv.itemAt(i).pModel.projectId === projectId) {
-                sv.currentIndex = i
-                return
-            }
-        }
-    }
-
-
         Shortcut {
             sequence: "Down"
             onActivated: {
