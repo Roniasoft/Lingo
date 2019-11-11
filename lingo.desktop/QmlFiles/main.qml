@@ -26,6 +26,13 @@ FramelessAppWindow {
     
 	NetAppContext {
 		id: netContext
+
+        Component.onCompleted: {
+            if (netContext.loadingError() != "") {
+                loadingErrorPopUp.msg = netContext.loadingError();
+                loadingErrorPopUp.open();
+            }
+        }
 	}
 
 
@@ -88,8 +95,6 @@ FramelessAppWindow {
             height: 30;
             width: parent.width;
             anchors.fill: parent
-
-
 
             Label {
                 id: titleLabel
@@ -238,6 +243,7 @@ FramelessAppWindow {
                         lvDrawerMenu.currentIndex = index;
                         if (index === 0) {
                             drawer.close();
+                            headerBar.switchTo(-1); // switch to the groups
                             updateStatusBar("Drawer Closed.");
                         }
 
@@ -447,5 +453,18 @@ FramelessAppWindow {
     Component.onCompleted: {
 		projects.feedViewModel = netContext.getFeedViewModel()
         headerBar.addTab("Groups", -1)
+    }
+
+    LoadingErrorPopUp {
+        id: loadingErrorPopUp;
+        anchors.centerIn: parent;
+
+        onRefreshRequested: {
+            netContext.reloadResources();
+		    projects.feedViewModel = netContext.getFeedViewModel()
+            if (netContext.loadingError() === "") {
+                loadingErrorPopUp.close();
+            }
+        }
     }
 }

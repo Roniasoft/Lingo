@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using lingo.filer;
+using System;
 
 namespace lingo.desktop.Model
 {
@@ -12,10 +13,25 @@ namespace lingo.desktop.Model
         public LingoFilerService DataServiceMock;
 
         readonly List<Project> _projects;
+
+        public string LoadingError { get; set; }
         public Feed()
         {
+            LoadingError = string.Empty;
             _projects = new List<Project>();
-            DataServiceMock = new LingoFilerService(new LingoFilerConfig());
+        }
+
+        public void reload() 
+        {
+            LoadingError = string.Empty;
+            _projects.Clear();
+            try {
+                DataServiceMock = new LingoFilerService(new LingoFilerConfig());
+            } catch (System.InvalidOperationException e) {
+                LoadingError = e.Message;
+                return;
+            }
+
             var service = DataServiceMock as ILingoDataService;
 
             var groups = service.IterAvailableGroups().ToArray();

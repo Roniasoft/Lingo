@@ -6,6 +6,7 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 using lingo.filer;
+using Qml.Net;
 
 namespace lingo.desktop
 {
@@ -15,10 +16,19 @@ namespace lingo.desktop
 
         public NetAppContext()
         {
-            feedViewModel = new FeedViewModel(new Feed());
+            var feed = new Feed();
+            feed.reload();
+            feedViewModel = new FeedViewModel(feed);
+        }
+
+
+        public void ReloadResources()
+        {
+            feedViewModel.reload();
         }
 
         public FeedViewModel GetFeedViewModel() => feedViewModel;
+        public string LoadingError() => feedViewModel.ProjectsFeed.LoadingError;
 
         public void Log(int val) {
             Console.WriteLine(val);

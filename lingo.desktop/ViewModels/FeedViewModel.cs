@@ -22,6 +22,14 @@ namespace lingo.desktop.ViewModels
                 .ToList();
         }
 
+        public void reload()
+        {
+            ProjectsFeed.reload();
+            Projects = ProjectsFeed.Projects
+                .Select(p => new ProjectViewModel(p))
+                .ToList();
+        }
+
         public bool IsProjectOpened(int projectId) =>
             Projects.FirstOrDefault(_ => _.ProjectId == projectId).IsOpen;
 
