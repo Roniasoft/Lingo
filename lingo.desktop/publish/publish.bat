@@ -10,7 +10,7 @@ if not exist publish mkdir publish
 @PING 1.1.1.1 -n 2 -w 3000>nul
 robocopy ..\images publish\images /e
 robocopy ..\QmlFiles publish\QmlFiles /e
-robocopy dep\qt-5.12.2-ad0689c-win-x64 publish\qt-5.12.2-ad0689c-win-x64 /e
+REM robocopy dep\qt-5.12.2-ad0689c-win-x64 publish\qt-5.12.2-ad0689c-win-x64 /e
 robocopy resources publish /e
 
 
