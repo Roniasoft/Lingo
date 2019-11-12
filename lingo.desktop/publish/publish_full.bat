@@ -10,7 +10,7 @@ if not exist publishFull mkdir publishFull
 robocopy ..\images publishFull\images /e
 robocopy ..\QmlFiles publishFull\QmlFiles /e
 robocopy dep\qt-5.12.2-ad0689c-win-x64 publishFull\qt-5.12.2-ad0689c-win-x64 /e
-robocopy resources publish /e
+robocopy resources publishFull /e
 
 @echo Publishing the project...
 @PING 1.1.1.1 -n 2 -w 3000>nul
