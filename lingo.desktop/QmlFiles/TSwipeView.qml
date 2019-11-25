@@ -7,18 +7,19 @@ import QtQuick.Controls.Material 2.12
 
 StackLayout {
         id: sv
-        // interactive: false
-
+        
+        property var currentItem: sv.children[sv.currentIndex];
+        
         Shortcut {
             sequence: "Down"
             onActivated: {
-                if (sv.currentItem.proxyModel.count <= sv.currentItem.listView.currentIndex +1) {
+                if (sv.children[sv.currentIndex].proxyModel.count <= sv.children[sv.currentIndex].listView.currentIndex +1) {
                     return;
                 }
 
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
-                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", true);
+                sv.children[sv.currentIndex].proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
+                sv.children[sv.currentIndex].listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
+                sv.children[sv.currentIndex].proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", true);
             }
         }
         Shortcut {
