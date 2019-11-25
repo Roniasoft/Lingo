@@ -8,7 +8,7 @@ namespace lingo.desktop
         public ManagedQmlHosting()
         {
             RuntimeManager.DiscoverOrDownloadSuitableQtRuntime();
-            QQuickStyle.SetStyle("Universal");
+            QQuickStyle.SetStyle("Material");
         }
         override protected int RunHostOverride(string[] _)
         {

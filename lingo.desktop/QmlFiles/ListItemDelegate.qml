@@ -1,4 +1,6 @@
 import QtQuick 2.9
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 
 Rectangle {
     id: delegate
@@ -146,12 +148,13 @@ Rectangle {
     }
 
     // checkbox for displaying completeness of the items.
-    TCheckBox {
+    CheckBox {
         id: chckboxCompleted
         anchors.right: delegate.right;
         anchors.rightMargin: 20;
         anchors.verticalCenter: txtIndex.verticalCenter;
         checked: completed;
+        Material.accent: "#00B10D";
 
         onCheckedChanged: {
             completed = chckboxCompleted.checked;
