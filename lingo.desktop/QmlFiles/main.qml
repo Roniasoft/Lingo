@@ -249,9 +249,13 @@ FramelessAppWindow {
 
                         if (index === 1)  {
                             hideCompleteds = !hideCompleteds;
-
                         }
-                        if (index === 2) {
+
+                        if (index == 2) {
+                            drawer.close();
+                            helpPopUp.open();
+                        }
+                        if (index === 3) {
                             Qt.quit();
                         }
                     }
@@ -261,6 +265,7 @@ FramelessAppWindow {
             model: ListModel {
                 ListElement { title: "Groups"; iconSrc: "../images/Icons/White/open_file.png"; checked: false}
                 ListElement { title: "Hide Completed"; iconSrc: "../images/Icons/White/HideCompleted.png"; checked: false}
+                ListElement { title: "Help"; iconSrc: "../images/Icons/White/help.png"; checked: false}
                 ListElement { title: "Exit"; iconSrc: "../images/Icons/White/exit.png"; checked: false}
             }
             ScrollIndicator.vertical: ScrollIndicator { }
@@ -453,6 +458,11 @@ FramelessAppWindow {
     Component.onCompleted: {
 		projects.feedViewModel = netContext.getFeedViewModel()
         headerBar.addTab("Groups", -1)
+    }
+
+    HelpPopUp {
+        id: helpPopUp;
+        anchors.centerIn: parent;
     }
 
     LoadingErrorPopUp {

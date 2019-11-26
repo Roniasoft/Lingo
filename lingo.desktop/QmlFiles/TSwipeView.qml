@@ -37,13 +37,13 @@ StackLayout {
         Shortcut {
             sequences: ["Return", "Enter"]
             onActivated: {
-                sv.currentItem.proxyModel.set(listView.currentIndex, "isOpen", !sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen);
+                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", !sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen);
                 if (sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen) {
                     if (sv.currentItem.lastOpened != -1) {
                         sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
                         sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
                     }
-                    sv.currentItem.lastOpened = listView.currentIndex;
+                    sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
                 }
             }
         }
@@ -59,7 +59,6 @@ StackLayout {
         Shortcut {
             id: shortcutTab;
             sequence: "Tab"
-            //context: Qt.ApplicationShortcut
             onActivated: {
                 if (sv.currentItem.proxyModel.count <= sv.currentItem.listView.currentIndex+1) {
                     return;
