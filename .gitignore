@@ -27,6 +27,8 @@ App_Data/
 packages/
 ObfuscationMaps/
 TestResults/
+publish/
+publishFull/
 .sync/
 .vs/
 .vscode/
