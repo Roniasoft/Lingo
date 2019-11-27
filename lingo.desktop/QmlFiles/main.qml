@@ -23,6 +23,7 @@ FramelessAppWindow {
     Material.theme: Material.Dark
     Material.background: appStyle.background
     Material.foreground: appStyle.foreground
+    Material.accent: Material.Cyan
     
 	NetAppContext {
 		id: netContext
@@ -214,12 +215,12 @@ FramelessAppWindow {
             delegate: Rectangle {
                 id: wrapper;
                 width: lvDrawerMenu.width;
-                height: 36;
+                height: 36 * scaleFactor;
                 color: model.checked ? "#364451" : (dlgMouseArea.containsMouse ? "#2b5278" : "#17212b");
                 Image {
                     id: imgIcon
                     source: model.iconSrc;
-                    width: 16;
+                    width: 16 * scaleFactor;
                     fillMode: Image.PreserveAspectFit;
                     anchors.left: parent.left;
                     anchors.leftMargin: 10;
@@ -276,7 +277,7 @@ FramelessAppWindow {
     Rectangle {
         id: ribbonBar;
         anchors.top: header.bottom;
-        height: 36;
+        height: 36 * scaleFactor;
         color: "#17212b"
         width: parent.width;
         z: 5;
@@ -284,10 +285,10 @@ FramelessAppWindow {
         Row {
             id: ribbonBarRow;
             anchors.left: parent.left;
-            anchors.leftMargin: 10;
+            anchors.leftMargin: 10 * scaleFactor;
             anchors.verticalCenter: parent.verticalCenter;
             height: parent.height;
-            spacing: 5;
+            spacing: 5 * scaleFactor;
 
             TRibbonButton {
                 id: imgMenu
@@ -309,22 +310,22 @@ FramelessAppWindow {
             }
 
             Item {
-                width: 3;
-                height: 20;
+                width: 3 * scaleFactor;
+                height: 20 * scaleFactor;
             }
 
             
             Rectangle {
                 width: 2
-                height: 20
+                height: 20 * scaleFactor
                 anchors.verticalCenter: parent.verticalCenter;
                 color: "#6C7883"
                 opacity: 0.3;
             }
 
             Item {
-                width: 3;
-                height: 20;
+                width: 3 * scaleFactor;
+                height: 20 * scaleFactor;
             }
 
 
@@ -394,7 +395,6 @@ FramelessAppWindow {
         anchors.right: parent.right;
         anchors.bottom: footerBar.top;
         currentIndex: headerBar.currentIndex
-
         
         MainGroups {
             id: projects;
@@ -407,7 +407,6 @@ FramelessAppWindow {
 
 				headerBar.switchTo(project.projectId)
                 updateStatusBar("Project opened: " + project.title);
-
 			}
 
 			onSwitchToProjectRequested: {
@@ -435,8 +434,7 @@ FramelessAppWindow {
         anchors.bottom: parent.bottom;
         anchors.left: parent.left;
         anchors.right: parent.right;
-        height: 25;
-
+        height: 20 * scaleFactor * 0.9;
 
         background: Rectangle {
             anchors.fill: parent;
@@ -445,12 +443,13 @@ FramelessAppWindow {
                 id: footerLabel;
                 anchors.fill: parent;
                 anchors.left: parent.left;
-                anchors.leftMargin: 10;
+                anchors.leftMargin: 10 * scaleFactor;
                 text: "";
                 elide: Label.ElideRight
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
                 color: "#364451";
+                font.pixelSize: fontSize;
             }
         }
     }

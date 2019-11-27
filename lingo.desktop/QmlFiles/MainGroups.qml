@@ -48,7 +48,7 @@ Pane {
         ScrollBar.vertical: ScrollBar {
             id: scrollBar
             opacity: 0.3;
-            width: 5;
+            width: 5 * scaleFactor;
         }
     }
 }

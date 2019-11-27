@@ -16,24 +16,24 @@ Rectangle {
         id: topHighlightRect;
         color: "#253646";
         width: parent.width;
-        height: 36;
+        height: 36 * scaleFactor;
     }
 
     // translation text boxes
     RowLayout {
         id: rowLayout;
-        y: 40;
+        y: 40 * scaleFactor;
         anchors.left: parent.left;
         anchors.right: parent.right;
-        anchors.leftMargin: 10;
-        anchors.rightMargin: 10;
+        anchors.leftMargin: 10 * scaleFactor;
+        anchors.rightMargin: 10 * scaleFactor;
 
         // english box
         Column {
             id: englishColumn;
             Layout.fillWidth: true;
             Layout.preferredWidth: 290;
-            spacing: 3;
+            spacing: 3 * scaleFactor;
             Text {
                 id: txtProjectDesc
                 text: qsTr("English:")

@@ -4,7 +4,7 @@ import QtQuick.Controls.Material 2.12
 
 Rectangle {
     id: delegate
-    color: (highlighted ? "#253646" : "#17212b");
+    color:  (highlighted ? "#253646" : "#17212b");
     property alias detailedSection: detailedSection;
     property bool isDetailed: isOpen;
     property int anmDuration: 20
@@ -46,15 +46,6 @@ Rectangle {
         }
     }
 
-    // summary view of the items (when items are closed)
-    // ItemSummaryView {
-    //     id: summarySection;
-    //     anchors.top: parent.top;
-    //     anchors.topMargin: 17;
-    //     anchors.left: parent.left;
-    //     anchors.right: parent.right;
-    // }
-
     // detailed view of the opened item.
     ItemDetailedView {
         id: detailedSection;
@@ -91,11 +82,11 @@ Rectangle {
         id: txtIndex
         text: (index + 1);
         anchors.left: parent.left;
-        anchors.leftMargin: 10;
+        anchors.leftMargin: 10 * scaleFactor;
         font.pixelSize: fontSize - 2;
         color: "#7f7f7f";
         anchors.top: parent.top;
-        anchors.topMargin: 24 - fontSize;
+        anchors.topMargin: 24 * scaleFactor - fontSize;
     }
 
     // name id
@@ -103,7 +94,7 @@ Rectangle {
         id: txtName;
         text: name
         anchors.left: parent.left;
-        anchors.leftMargin: 35;
+        anchors.leftMargin: 35 * scaleFactor;
         anchors.verticalCenter: txtIndex.verticalCenter;
         clip: true;
         width: isOpen ? parent.width * 0.8 : parent.width * 0.2;
@@ -151,9 +142,12 @@ Rectangle {
     CheckBox {
         id: chckboxCompleted
         anchors.right: delegate.right;
-        anchors.rightMargin: 20;
+        anchors.rightMargin: 3 + 3 * scaleFactor * 0.9;
         anchors.verticalCenter: txtIndex.verticalCenter;
         checked: completed;
+        
+        indicator.width: 14 * scaleFactor
+        indicator.height: 14 * scaleFactor
         Material.accent: "#00B10D";
 
         onCheckedChanged: {

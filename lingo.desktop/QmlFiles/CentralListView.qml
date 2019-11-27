@@ -52,10 +52,10 @@ Rectangle {
     Item {
         id: header;
         anchors.top: parent.top;
-        anchors.topMargin: 15;
+        anchors.topMargin: 15 * scaleFactor;
         anchors.left: listView.left;
         anchors.right: listView.right;
-        height: 30;
+        height: 30 * scaleFactor;
 
             HeaderButton {
                 id: nameRectHeader;

@@ -68,8 +68,10 @@ StackLayout {
                     sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
                     sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
                 }
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
-                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
+                if (sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen) {
+                    sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
+                    sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
+                }
                 sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", true);
                 sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
             }

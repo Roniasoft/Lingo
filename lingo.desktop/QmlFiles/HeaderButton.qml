@@ -17,7 +17,7 @@ Rectangle {
     Row {
         anchors.verticalCenter: parent.verticalCenter;
         anchors.horizontalCenter: parent.horizontalCenter
-        spacing: 20;
+        spacing: 20 * scaleFactor;
 
         Text {
             id: txtLabel
@@ -32,7 +32,7 @@ Rectangle {
                             (isAscending ? "../images/Icons/Grey/Ascending.png" : "../images/Icons/Grey/Descending.png");
             visible: sortIsActive;
             fillMode: Image.PreserveAspectFit
-            height: sortIsActive ? 15 : 0;
+            height: sortIsActive ? 15*scaleFactor : 0;
         }
     }
     MouseArea {

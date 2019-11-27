@@ -5,8 +5,6 @@ import QtQuick.Controls.Material 2.1
 import FramelessWindow 1.0
 
 Rectangle {
-    height: 35;
-    width: 35;
     radius: 3;
     property bool tooltipOnBottom: true;
 
@@ -33,7 +31,7 @@ Rectangle {
     Rectangle {
         id: tooltipRect;
         implicitWidth: tooltipText.width + 12;
-        height: 25;
+        height: 25 * scaleFactor;
         y: tooltipOnBottom ? parent.height + 5 : -tooltipRect.height - 0;
         visible: mouseArea.containsMouse;
         color: "#0e1621";
@@ -46,7 +44,7 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter;
             anchors.horizontalCenter: parent.horizontalCenter;
             color: "white";
-            font.pixelSize: 13;
+            font.pixelSize: fontSize + 2;
         }
     }
 

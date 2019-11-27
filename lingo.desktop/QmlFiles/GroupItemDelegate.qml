@@ -16,8 +16,8 @@ ItemDelegate {
         id: itemControl
         width: parent.width
 
-        verticalPadding : 13;//control.style.itemsVPadding
-        horizontalPadding : 13;//control.style.itemsHPadding
+        verticalPadding : 13 * scaleFactor;//control.style.itemsVPadding
+        horizontalPadding : 13 * scaleFactor;//control.style.itemsHPadding
 
         topInset: verticalPadding - control.style.insetVDiff
         bottomInset: verticalPadding - control.style.insetVDiff
@@ -26,7 +26,7 @@ ItemDelegate {
 
         Row {
             id: rootItem
-            spacing: control.style.imageSpacing
+            spacing: control.style.imageSpacing * scaleFactor
             anchors.fill: parent
 
             Image {
@@ -34,7 +34,7 @@ ItemDelegate {
                 anchors.verticalCenter: parent.verticalCenter
                 source: "../images/language_icon.png";
                 fillMode: Image.PreserveAspectFit
-                height: 64;
+                height: 64 * scaleFactor;
                 antialiasing: true;
             }
 

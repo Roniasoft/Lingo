@@ -7,18 +7,14 @@ import QtQuick.Controls.Material 2.12
 
 Pane {
     id: control
-
     property var style
     property var menuOpened
     property int currentIndex: tabBar.currentIndex
     signal menuClicked()
-
     height: style.height
-
     Universal.foreground: style.foreground
     Universal.background: style.background
     Universal.accent: style.accent
-
     Material.foreground: style.foreground
     Material.background: style.background
     Material.accent: style.accent
@@ -30,11 +26,8 @@ Pane {
 
     NiceTabBar {
         id: tabBar
-
         Universal.foreground: style.foregroundTabs
-
         Material.foreground: style.foregroundTabs
-
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
@@ -48,20 +41,7 @@ Pane {
             property int projectId
             width: implicitWidth
             height: implicitHeight
-            font.pixelSize: style.fontPixelSize
-//            background: Rectangle {
-//                color: "transparent";
-//            }
-
-//            contentItem: Text {
-//                text: parent.text
-//                font: parent.font
-//                opacity: enabled ? 1.0 : 0.3
-//                color: parent.checked ? "white" : "#6c7883"
-//                horizontalAlignment: Text.AlignHCenter
-//                verticalAlignment: Text.AlignVCenter
-//                elide: Text.ElideRight
-//            }
+            font.pixelSize: fontSize + 2;
         }
     }
 
