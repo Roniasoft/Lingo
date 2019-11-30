@@ -68,7 +68,7 @@ namespace lingo.desktop
                     ILingoGroup lingoGroup = dataService.IterAvailableGroups().Where(p => langKey == p.Key).First();
                     ILingoPhrase lingoPhrase = lingoGroup.IterPhrases().Where(p => phraseKey == p.Key).First();
 
-                    ILingoPhraseTranslation lingoTranslation = new LingoPhraseTranslation(lingoPhrase, translation, false);
+                    ILingoPhraseTranslation lingoTranslation = new LingoPhraseTranslation(lingoPhrase, translation, !isCompleted);
                     lingoGroup.CommitPhraseTranslation(lingoTranslation);
                     var validateTranslation = lingoGroup.ValidatePhraseTranslation(lingoTranslation);
 

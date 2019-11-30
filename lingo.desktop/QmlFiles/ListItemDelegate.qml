@@ -4,11 +4,11 @@ import QtQuick.Controls.Material 2.12
 
 Rectangle {
     id: delegate
-    color:  (highlighted ? "#253646" : "#17212b");
+    color:  (highlighted ? "#1f2c39" : "transparent");
+    // color:  "#17212b";
     property alias detailedSection: detailedSection;
     property bool isDetailed: isOpen;
     property int anmDuration: 20
-
     signal updateRequested(var aName, var aTranslation, var aIsCompleted);
 
     onIsDetailedChanged:{

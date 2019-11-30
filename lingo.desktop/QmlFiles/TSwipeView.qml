@@ -7,102 +7,80 @@ import QtQuick.Controls.Material 2.12
 
 StackLayout {
         id: sv
-        
         property var currentItem: sv.children[sv.currentIndex];
-        
-        Shortcut {
-            sequence: "Down"
-            onActivated: {
-                if (sv.children[sv.currentIndex].proxyModel.count <= sv.children[sv.currentIndex].listView.currentIndex +1) {
-                    return;
-                }
+        property var listView: currentItem.listView;
+        property var proxyModel: currentItem.proxyModel;
+        property var lastOpened: currentItem.lastOpened;
 
-                sv.children[sv.currentIndex].proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
-                sv.children[sv.currentIndex].listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
-                sv.children[sv.currentIndex].proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", true);
-            }
-        }
-        Shortcut {
-            sequence: "Up"
-            onActivated: {
-                if (sv.currentItem.listView.currentIndex <= 0) {
-                    return;
-                }
-
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
-                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex - 1;
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", true);
-            }
-        }
         Shortcut {
             sequences: ["Return", "Enter"]
             onActivated: {
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", !sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen);
-                if (sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen) {
-                    if (sv.currentItem.lastOpened != -1) {
-                        sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
-                        sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
+                sv.proxyModel.set(sv.listView.currentIndex, "isOpen", !sv.proxyModel.get(sv.listView.currentIndex).isOpen);
+                if (sv.proxyModel.get(sv.listView.currentIndex).isOpen) {
+                    if (sv.lastOpened != -1) {
+                        sv.proxyModel.set(sv.lastOpened, "isOpen", false);
                     }
-                    sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
+                    sv.lastOpened = sv.listView.currentIndex;
                 }
             }
         }
+
         Shortcut {
             sequence: "escape"
             onActivated: {
-                sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
-                sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "highlighted", false);
+                sv.proxyModel.set(sv.lastOpened, "isOpen", false);
+                sv.proxyModel.set(sv.listView.currentIndex, "isOpen", false);
+                sv.proxyModel.set(sv.lastOpened, "isOpen", false);
             }
         }
+
         Shortcut {
             id: shortcutTab;
             sequence: "Tab"
             onActivated: {
-                if (sv.currentItem.proxyModel.count <= sv.currentItem.listView.currentIndex+1) {
+                if (sv.proxyModel.count <= sv.listView.currentIndex+1) {
                     return;
                 }
-
-                if (sv.currentItem.lastOpened != -1) {
-                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
-                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
+                if (sv.lastOpened != -1) {
+                    sv.proxyModel.set(sv.lastOpened, "isOpen", false);
                 }
-                if (sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).isOpen) {
-                    sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
-                    sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex + 1;
+                if (sv.proxyModel.get(sv.listView.currentIndex).isOpen) {
+                    sv.proxyModel.set(sv.listView.currentIndex, "isOpen", false);
+                    sv.listView.currentIndex = sv.listView.currentIndex + 1; 
                 }
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", true);
-                sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
+                sv.proxyModel.set(sv.listView.currentIndex, "isOpen", true);
+                sv.lastOpened = sv.listView.currentIndex;
             }
         }
+
         Shortcut {
             sequence: "Shift+Tab"
             onActivated: {
-                if (sv.currentItem.listView.currentIndex <= 0) {
+                if (sv.listView.currentIndex <= 0) {
                     return;
                 }
-
-                if (sv.currentItem.lastOpened != -1) {
-                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "isOpen", false);
-                    sv.currentItem.proxyModel.set(sv.currentItem.lastOpened, "highlighted", false);
+                if (sv.lastOpened != -1) {
+                    sv.proxyModel.set(sv.lastOpened, "isOpen", false);
+                    // sv.proxyModel.set(sv.lastOpened, "highlighted", false);
                 }
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", false);
-                sv.currentItem.listView.currentIndex = sv.currentItem.listView.currentIndex - 1;
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "isOpen", true);
-                sv.currentItem.lastOpened = sv.currentItem.listView.currentIndex;
+                sv.proxyModel.set(sv.listView.currentIndex, "isOpen", false);
+                sv.listView.currentIndex = sv.listView.currentIndex - 1;
+                sv.proxyModel.set(sv.listView.currentIndex, "isOpen", true);
+                sv.lastOpened = sv.listView.currentIndex;
             }
         }
+
         Shortcut {
             sequences: ["Ctrl+Return", "Ctrl+Enter"]
             onActivated: {
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "completed", !sv.currentItem.proxyModel.get(sv.currentItem.listView.currentIndex).completed);
+                sv.proxyModel.set(sv.listView.currentIndex, "completed", !sv.proxyModel.get(sv.listView.currentIndex).completed);
             }
         }
+        
         Shortcut {
             sequence: "Ctrl+Del"
             onActivated: {
-                sv.currentItem.proxyModel.set(sv.currentItem.listView.currentIndex, "completed", false);
+                sv.proxyModel.set(sv.listView.currentIndex, "completed", false);
             }
         }
     }

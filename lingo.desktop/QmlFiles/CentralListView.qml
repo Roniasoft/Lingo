@@ -4,7 +4,6 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Styles 1.4
 import SortFilterProxyModel 0.2
-
 import NetViewModels 1.0
 
 Rectangle {
@@ -20,10 +19,10 @@ Rectangle {
     property bool col2_isAscending: true;
     property bool col3_isAscending: true;
     
-
     function openProject(indx) {
         proxyModel.set(indx, "isOpen", true);
     }
+
     function closeProject(indx) {
         proxyModel.set(indx, "isOpen", false);
     }
@@ -45,7 +44,6 @@ Rectangle {
                 "highlighted": phrase.highlighted
             });
         }
-        
     }
 
 
@@ -53,95 +51,85 @@ Rectangle {
         id: header;
         anchors.top: parent.top;
         anchors.topMargin: 15 * scaleFactor;
-        anchors.left: listView.left;
-        anchors.right: listView.right;
+        anchors.left: listViewRect.left;
+        anchors.right: listViewRect.right;
         height: 30 * scaleFactor;
-
-            HeaderButton {
-                id: nameRectHeader;
-                width: 0.27 * parent.width;
-                height: parent.height;
-                anchors.left: parent.left;
-                sortIsActive: sortingColumn === 0 ? true : false;
-                sortEnabled: true;
-                title: "Name";
-
-                onHeaderClicked: {
-                    listView.currentIndex = 0;
-                    if (sortingColumn === 0) {
-                        nameRectHeader.isAscending = !nameRectHeader.isAscending;
-                    }
-                    sortingColumn = 0;
+        HeaderButton {
+            id: nameRectHeader;
+            width: 0.27 * parent.width;
+            height: parent.height;
+            anchors.left: parent.left;
+            sortIsActive: sortingColumn === 0 ? true : false;
+            sortEnabled: true;
+            title: "Name";
+            onHeaderClicked: {
+                listView.currentIndex = 0;
+                if (sortingColumn === 0) {
+                    nameRectHeader.isAscending = !nameRectHeader.isAscending;
                 }
+                sortingColumn = 0;
             }
-
-            HeaderButton {
-                id: englishRectHeader;
-                width: 0.28 * parent.width;
-                height: parent.height;
-                anchors.left: nameRectHeader.right;
-                sortEnabled: false;
-                title: "English";
-                
-                onHeaderClicked: {
-                    listView.currentIndex = 0;
-                    if (sortingColumn === 1) {
-                        englishRectHeader.isAscending = !englishRectHeader.isAscending;
-                    }
-                    sortingColumn = 1;
+        }
+        HeaderButton {
+            id: englishRectHeader;
+            width: 0.28 * parent.width;
+            height: parent.height;
+            anchors.left: nameRectHeader.right;
+            sortEnabled: false;
+            title: "English";
+            onHeaderClicked: {
+                listView.currentIndex = 0;
+                if (sortingColumn === 1) {
+                    englishRectHeader.isAscending = !englishRectHeader.isAscending;
                 }
+                sortingColumn = 1;
             }
+        }
+        HeaderButton {
+            id: translationRectHeader;
+            width: 0.28 * parent.width;
+            height: parent.height;
+            anchors.left: englishRectHeader.right;
+            sortEnabled: false;
+            title: "Translation";
+            onHeaderClicked: {
+                listView.currentIndex = 0;
+                if (sortingColumn === 2) {
+                    translationRectHeader.isAscending = !translationRectHeader.isAscending;
+                }
+                sortingColumn = 2;
+            }
+        }
+        HeaderButton {
+            id: completedRectHeader;
+            width: 0.17 * parent.width;
+            height: parent.height;
+            anchors.left: translationRectHeader.right;
+            sortIsActive: sortingColumn === 3 ? true : false;
+            sortEnabled: true;
+            title: "Completed";
             
-            HeaderButton {
-                id: translationRectHeader;
-                width: 0.28 * parent.width;
-                height: parent.height;
-                anchors.left: englishRectHeader.right;
-                sortEnabled: false;
-                title: "Translation";
-                
-                onHeaderClicked: {
-                    listView.currentIndex = 0;
-                    if (sortingColumn === 2) {
-                        translationRectHeader.isAscending = !translationRectHeader.isAscending;
-                    }
-                    sortingColumn = 2;
+            onHeaderClicked: {
+                listView.currentIndex = 0;
+                if (sortingColumn === 3) {
+                    completedRectHeader.isAscending = !completedRectHeader.isAscending;
                 }
+                sortingColumn = 3;
             }
-            
-            HeaderButton {
-                id: completedRectHeader;
-                width: 0.17 * parent.width;
-                height: parent.height;
-                anchors.left: translationRectHeader.right;
-                sortIsActive: sortingColumn === 3 ? true : false;
-                sortEnabled: true;
-                title: "Completed";
-                
-                onHeaderClicked: {
-                    listView.currentIndex = 0;
-                    if (sortingColumn === 3) {
-                        completedRectHeader.isAscending = !completedRectHeader.isAscending;
-                    }
-                    sortingColumn = 3;
-                }
-            }
+        }
     }
-
 
     Component {
         id: ldelegate;
         ListItemDelegate {
             id: listItemDelegate;
-            width: listView.width
+            width: listViewRect.width
             height: isOpen ? 210 * scaleFactor : 36 * scaleFactor;
-
             onUpdateRequested: {
                 netContext.updatePhrase(pModel.langKey, aName, aTranslation, aIsCompleted);
             }
         }
     }
-
 
     TListModel {
         id: sourceListModel;
@@ -163,8 +151,8 @@ Rectangle {
         ]
     }
 
-    ListView {
-        id: listView;
+    Rectangle {
+        id: listViewRect;
         anchors.top: header.bottom;
         anchors.topMargin: 0;
         anchors.left: parent.left;
@@ -173,31 +161,43 @@ Rectangle {
         anchors.rightMargin: 20;
         anchors.bottom: parent.bottom;
         anchors.bottomMargin: 5;
-        keyNavigationEnabled: true;
-        clip: true;
-        //ScrollBar.horizontal: ScrollBar{}
-        ScrollBar.vertical: ScrollBar {
-                id: lvScrollbar;
-                opacity: 0.3;
-                width: 5;
-            }
+        color:  "#17212b";
+        ListView {
+            id: listView;
+            anchors.fill: parent;
+            keyNavigationEnabled: true;
+            clip: true;
 
-        function tabIsPressedInTextEdit() {
-            if (proxyModel.count <= listView.currentIndex+1) {
-                return;
+            ScrollBar.vertical: ScrollBar {
+                    id: lvScrollbar;
+                    opacity: 0.3;
+                    width: 5;
             }
+            function tabIsPressedInTextEdit() {
+                if (proxyModel.count <= listView.currentIndex+1) {
+                    return;
+                }
+                if (lastOpened != -1) {
+                    proxyModel.set(lastOpened, "isOpen", false);
+                    proxyModel.set(lastOpened, "highlighted", false);
+                }
+                proxyModel.set(listView.currentIndex, "isOpen", false);
+                listView.currentIndex = listView.currentIndex + 1;
+                proxyModel.set(listView.currentIndex, "isOpen", true);
+                lastOpened = listView.currentIndex;
+            }
+            model: proxyModel
+            highlight: Rectangle
+            {
+                color:"#253646"
+                width: parent.width;
+            }
+            delegate: ldelegate
 
-            if (lastOpened != -1) {
-                proxyModel.set(lastOpened, "isOpen", false);
-                proxyModel.set(lastOpened, "highlighted", false);
-            }
-            proxyModel.set(listView.currentIndex, "isOpen", false);
-            listView.currentIndex = listView.currentIndex + 1;
-            proxyModel.set(listView.currentIndex, "isOpen", true);
-            lastOpened = listView.currentIndex;
+            highlightFollowsCurrentItem: true;
+            highlightMoveDuration: -1;
+            highlightMoveVelocity: -1;
+            highlightResizeDuration: 0;
         }
-
-        model: proxyModel
-        delegate: ldelegate
     }
 }

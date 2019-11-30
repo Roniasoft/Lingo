@@ -57,7 +57,7 @@ namespace lingo.desktop.Model
                     ILingoPhraseTranslation phraseTranslation = item.GetTranslationFor(phrase);
                     if (phraseTranslation != null) {
                         rawPhrase.Translation =  phraseTranslation.Translation;
-                        rawPhrase.IsCompleted = true;
+                        rawPhrase.IsCompleted = !phraseTranslation.IsDirty;
                     }
                     groupItem.Phrases.Add(new ViewModels.PhraseViewModel(rawPhrase));
                 }
