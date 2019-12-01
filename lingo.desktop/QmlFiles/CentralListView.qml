@@ -44,8 +44,9 @@ Rectangle {
                 "highlighted": phrase.highlighted
             });
         }
+        listView.currentIndex = 0;
+        listView.focus = true;
     }
-
 
     Item {
         id: header;
@@ -125,6 +126,7 @@ Rectangle {
             id: listItemDelegate;
             width: listViewRect.width
             height: isOpen ? 210 * scaleFactor : 36 * scaleFactor;
+
             onUpdateRequested: {
                 netContext.updatePhrase(pModel.langKey, aName, aTranslation, aIsCompleted);
             }
@@ -162,6 +164,7 @@ Rectangle {
         anchors.bottom: parent.bottom;
         anchors.bottomMargin: 5;
         color:  "#17212b";
+
         ListView {
             id: listView;
             anchors.fill: parent;
@@ -172,6 +175,7 @@ Rectangle {
                     id: lvScrollbar;
                     opacity: 0.3;
                     width: 5;
+                    policy: ScrollBar.AlwaysOn;
             }
             function tabIsPressedInTextEdit() {
                 if (proxyModel.count <= listView.currentIndex+1) {

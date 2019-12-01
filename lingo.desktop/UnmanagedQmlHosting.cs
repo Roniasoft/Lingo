@@ -15,7 +15,6 @@ namespace lingo.desktop
             return Host.Run(_, (args, app, engine, runCallback) =>
             {
                 RegisterTypes();
-
                 return runCallback();
             });
         }

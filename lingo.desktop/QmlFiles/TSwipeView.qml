@@ -61,7 +61,6 @@ StackLayout {
                 }
                 if (sv.lastOpened != -1) {
                     sv.proxyModel.set(sv.lastOpened, "isOpen", false);
-                    // sv.proxyModel.set(sv.lastOpened, "highlighted", false);
                 }
                 sv.proxyModel.set(sv.listView.currentIndex, "isOpen", false);
                 sv.listView.currentIndex = sv.listView.currentIndex - 1;

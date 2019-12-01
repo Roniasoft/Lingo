@@ -209,6 +209,8 @@ void FramelessAppWindow::setWindowIcon(const QString &windowIcon)
 {
     _windowIcon = windowIcon;
     setIcon(QIcon(_windowIcon));
+
+    emit windowIconChanged();
 }
 
 bool FramelessAppWindow::isFullScreen() const

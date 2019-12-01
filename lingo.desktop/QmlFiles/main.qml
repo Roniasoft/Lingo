@@ -15,6 +15,8 @@ FramelessAppWindow {
     visible: true
     title: "lingo"
     windowIcon: "../images/icon.png";
+    x: Screen.width / 2 - width / 2
+    y: Screen.height / 2 - height / 2 - 20
 
     Universal.theme: Universal.Dark
     Universal.background: appStyle.background
@@ -27,7 +29,6 @@ FramelessAppWindow {
     
 	NetAppContext {
 		id: netContext
-
         Component.onCompleted: {
             if (netContext.loadingError() != "") {
                 loadingErrorPopUp.msg = netContext.loadingError();
@@ -35,7 +36,6 @@ FramelessAppWindow {
             }
         }
 	}
-
 
     AppStyle {
         id: appStyle
@@ -96,6 +96,17 @@ FramelessAppWindow {
             height: 30;
             width: parent.width;
             anchors.fill: parent
+
+            Image {
+                id: imgLogo
+                height: 17;
+                source: "../images/icon.png";
+                anchors.left: parent.left;
+                anchors.leftMargin: 15;
+                smooth : bool
+                fillMode: Image.PreserveAspectFit
+                anchors.verticalCenter: parent.verticalCenter;
+            }
 
             Label {
                 id: titleLabel

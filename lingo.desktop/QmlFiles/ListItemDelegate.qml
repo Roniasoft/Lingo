@@ -115,9 +115,9 @@ Rectangle {
         opacity: isOpen ? 0 : 1;
         clip: true;
         wrapMode: Text.NoWrap
-    Behavior on opacity {
-        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
-    }
+        Behavior on opacity {
+            NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+        }
     }
 
     Text {
@@ -133,9 +133,9 @@ Rectangle {
         opacity: isOpen ? 0 : 1;
         clip: true;
         wrapMode: Text.NoWrap
-    Behavior on opacity {
-        NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
-    }
+        Behavior on opacity {
+            NumberAnimation { easing.type: Easing.OutSine; duration: 200 }
+        }
     }
 
     // checkbox for displaying completeness of the items.
@@ -151,8 +151,10 @@ Rectangle {
         Material.accent: "#00B10D";
 
         onCheckedChanged: {
-            completed = chckboxCompleted.checked;
-            updateRequested(name, translation, completed);//CHECK. This should'nt be called this way since this is called recursively after model is filled.
+            if (completed != chckboxCompleted.checked) {
+                completed = chckboxCompleted.checked;
+                updateRequested(name, translation, completed);//CHECK. This should'nt be called this way since this is called recursively after model is filled.
+            }
         }
     }
 

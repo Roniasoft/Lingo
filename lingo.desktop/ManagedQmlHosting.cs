@@ -17,9 +17,7 @@ namespace lingo.desktop
                 using (var engine = new QQmlApplicationEngine())
                 {
                     RegisterTypes();
-
                     LoadViews(engine);
-
                     return app.Exec();
                 }
             }

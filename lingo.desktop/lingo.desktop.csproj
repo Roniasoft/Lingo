@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <StartupObject>lingo.desktop.Program</StartupObject>
-    <ApplicationIcon />
+    <ApplicationIcon>images\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

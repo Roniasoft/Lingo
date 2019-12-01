@@ -41,7 +41,9 @@ Pane {
             property int projectId
             width: implicitWidth
             height: implicitHeight
-            font.pixelSize: fontSize + 2;
+            font.pixelSize: fontSize + 1;
+            topInset: 0
+            topPadding: 5 * scaleFactor;
         }
     }
 
