@@ -2,7 +2,6 @@
 #include <QPoint>
 #include <QSize>
 using namespace std;
-
 #include <windows.h>
 #include <WinUser.h>
 #include <windowsx.h>
@@ -22,6 +21,12 @@ FramelessAppWindow::FramelessAppWindow(QQuickWindow *parent) :
 {
     setFlags(flags() | Qt::Window | Qt::FramelessWindowHint | Qt::WindowSystemMenuHint);
     setResizeable(m_bResizeable);
+    resize(640, 680);
+
+//    QRect screenGeometry = QApplication::desktop()->screenGeometry();
+//    int x = (screenGeometry.width()-this->width()) / 2;
+//    int y = (screenGeometry.height()-this->height()) / 2;
+//    setPosition(x,y);
 }
 
 void FramelessAppWindow::setResizeable(bool resizeable)

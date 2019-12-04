@@ -33,15 +33,19 @@ Rectangle {
         onTriggered: {
             if (listView.dragging === false) {
                 if (lastOpened !== -1 && lastOpened !== index) {
-                    proxyModel.set(lastOpened, "highlighted", false);
+                    // proxyModel.set(lastOpened, "highlighted", false);
                     proxyModel.set(lastOpened, "isOpen", false);
                 }
 
                 listView.currentIndex = index;
                 var isOpen = !proxyModel.get(listView.currentIndex).isOpen;
                 proxyModel.set(listView.currentIndex, "isOpen", isOpen);
-
-                lastOpened = index;
+                if (lastOpened !== index) {
+                    if (lastOpened != -1) {
+                        proxyModel.set(lastOpened, "isOpen", false);
+                    }
+                    lastOpened = listView.currentIndex;
+                }
             }
         }
     }

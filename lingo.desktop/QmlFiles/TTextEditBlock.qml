@@ -92,7 +92,6 @@ Rectangle {
                 }
             }
         }
-
     }
     Rectangle {
         height: 2;

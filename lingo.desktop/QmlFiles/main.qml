@@ -12,11 +12,9 @@ FramelessAppWindow {
     id: window
     width: 640
     height: 680
-    visible: true
+    visible: false
     title: "lingo"
     windowIcon: "../images/icon.png";
-    x: Screen.width / 2 - width / 2
-    y: Screen.height / 2 - height / 2 - 20
 
     Universal.theme: Universal.Dark
     Universal.background: appStyle.background
@@ -468,6 +466,10 @@ FramelessAppWindow {
     Component.onCompleted: {
 		projects.feedViewModel = netContext.getFeedViewModel()
         headerBar.addTab("Groups", -1)
+
+        window.x = (window.Screen.width - window.width)/2;
+        window.y = (window.Screen.height - window.height)/2;
+        window.visible = true;
     }
 
     HelpPopUp {

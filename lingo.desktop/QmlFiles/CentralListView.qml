@@ -183,7 +183,6 @@ Rectangle {
                 }
                 if (lastOpened != -1) {
                     proxyModel.set(lastOpened, "isOpen", false);
-                    proxyModel.set(lastOpened, "highlighted", false);
                 }
                 proxyModel.set(listView.currentIndex, "isOpen", false);
                 listView.currentIndex = listView.currentIndex + 1;

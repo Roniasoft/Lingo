@@ -183,10 +183,6 @@ Makefile: applicationwindowplugin.pro C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_remoteobjects_private.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_repparser.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_repparser_private.pri \
-		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_script.pri \
-		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_script_private.pri \
-		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scripttools.pri \
-		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scripttools_private.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scxml.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scxml_private.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_sensors.pri \
@@ -207,6 +203,8 @@ Makefile: applicationwindowplugin.pro C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_uiplugin.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_uitools.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_uitools_private.pri \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_virtualkeyboard.pri \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_vulkan_support_private.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_webchannel.pri \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_webchannel_private.pri \
@@ -241,6 +239,7 @@ Makefile: applicationwindowplugin.pro C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\resources.prf \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\moc.prf \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\win32\opengl.prf \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\uic.prf \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\qtquickcompiler.prf \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\precompile_header.prf \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\warn_on.prf \
@@ -253,6 +252,7 @@ Makefile: applicationwindowplugin.pro C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\lex.prf \
 		applicationwindowplugin.pro \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Quick.prl \
+		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Widgets.prl \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Gui.prl \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Qml.prl \
 		C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Network.prl \
@@ -364,10 +364,6 @@ C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_remoteobjects.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_remoteobjects_private.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_repparser.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_repparser_private.pri:
-C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_script.pri:
-C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_script_private.pri:
-C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scripttools.pri:
-C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scripttools_private.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scxml.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_scxml_private.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_sensors.pri:
@@ -388,6 +384,8 @@ C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_theme_support_private.p
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_uiplugin.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_uitools.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_uitools_private.pri:
+C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_virtualkeyboard.pri:
+C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_vulkan_support_private.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_webchannel.pri:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\modules\qt_lib_webchannel_private.pri:
@@ -422,6 +420,7 @@ C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\qt.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\resources.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\moc.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\win32\opengl.prf:
+C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\uic.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\qtquickcompiler.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\precompile_header.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\warn_on.prf:
@@ -434,6 +433,7 @@ C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\yacc.prf:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\mkspecs\features\lex.prf:
 applicationwindowplugin.pro:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Quick.prl:
+C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Widgets.prl:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Gui.prl:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Qml.prl:
 C:\Qt\Qt5.12.1\5.12.1\msvc2015_64\lib\Qt5Network.prl:
