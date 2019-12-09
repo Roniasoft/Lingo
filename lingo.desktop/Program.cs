@@ -4,6 +4,7 @@ namespace lingo.desktop
 {
     public class Program
     {
+        [STAThread]
         static int Main(string[] _)
         {
             var qmlHosting = new ManagedQmlHosting();
