@@ -12,6 +12,7 @@ ItemDelegate {
     Material.background: style.feedBackground
 
 
+
     contentItem: Pane {
         id: itemControl
         width: parent.width
@@ -46,7 +47,6 @@ ItemDelegate {
                 RowLayout {
                     id: titleHeader
                     width: parent.width
-
                     Label {
                         id: titleLabel
                         verticalAlignment: Text.AlignTop
@@ -67,13 +67,18 @@ ItemDelegate {
                         }
                     }
                 }
-                Label {
-                    id: summaryLabel
+                RowLayout {
                     width: parent.width
-                    verticalAlignment: Text.AlignTop
-                    font.pixelSize: fontSize + 2
-                    text: modelData.summary;
-                    wrapMode: Text.WordWrap
+                    Label {
+                        id: summaryLabel
+                        width: parent.width
+                        verticalAlignment: Text.AlignTop
+                        font.pixelSize: fontSize + 2
+                        text: modelData.summary;
+                        wrapMode: Text.WordWrap
+                        Layout.fillWidth: true
+                    }
+
                 }
             }
         } // Row rootItem

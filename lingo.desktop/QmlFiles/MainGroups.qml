@@ -41,6 +41,38 @@ Pane {
 					control.openProjectRequested(project)
                 }
             }
+
+            Button {
+                id: btnExp;
+                text: "Find in Explorer";
+                icon.source: "../images/Icons/White/File.png";
+                icon.height: 18 * scaleFactor;
+                icon.width: 18 * scaleFactor;
+                font.pixelSize: fontSize - 2;
+                font.capitalization: Font.Capitalize;
+                anchors.right: parent.right;
+                anchors.rightMargin: 30;
+                anchors.bottom: parent.bottom;
+                anchors.bottomMargin: 10 * scaleFactor;
+                
+
+                MouseArea {
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+                    cursorShape: Qt.PointingHandCursor
+                    
+                    propagateComposedEvents: true
+                    onClicked: mouse.accepted = false;
+                    onPressed: mouse.accepted = false;
+                    onReleased: mouse.accepted = false;
+                    onDoubleClicked: mouse.accepted = false;
+                    onPositionChanged: mouse.accepted = false;
+                    onPressAndHold: mouse.accepted = false;
+                }
+                onClicked: {
+                    netContext.openSelectedGroupItem(modelData.langKey);
+                }
+            }
         }
 		
 		model: Net.toListModel(control.feedViewModel.projects)

@@ -5,7 +5,6 @@ import QtQuick.Window 2.12
 import QtQuick.Controls.Universal 2.12
 import QtQuick.Controls.Material 2.12
 import FramelessWindow 1.0
-
 import NetViewModels 1.0
 
 FramelessAppWindow {
@@ -384,6 +383,18 @@ FramelessAppWindow {
                         fontSize += 1;
                         updateStatusBar("Application font size incremented.");
                     }
+                }
+            }
+            TRibbonButton {
+                height: parent.height * 0.8;
+                width: height;
+                tooltipOnBottom: !drawer.visible;
+                anchors.verticalCenter: parent.verticalCenter;
+                imgSource: "../images/Icons/Grey/Folder.png";
+                imgSourceHovered: "../images/Icons/White/Folder.png";
+                tooltipStr: "Open Translations Dir"
+                onButtonClicked: {
+                    netContext.openTranslationsDir();
                 }
             }
         }

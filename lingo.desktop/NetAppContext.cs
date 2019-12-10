@@ -7,6 +7,7 @@ using System;
 using System.Threading.Tasks;
 using lingo.filer;
 using Qml.Net;
+using System.IO;
 
 namespace lingo.desktop
 {
@@ -34,7 +35,14 @@ namespace lingo.desktop
             Console.WriteLine(val);
         }
 
-
+        public void OpenTranslationsDir() {
+            var rootPath = Path.GetDirectoryName(typeof(LingoFilerConfig).Assembly.Location) + "\\TranslationFiles";
+            System.Diagnostics.Process.Start("explorer.exe" , rootPath);
+        }
+        public void OpenSelectedGroupItem(string langKey) {
+            var rootPath = "/select, " + Path.GetDirectoryName(typeof(LingoFilerConfig).Assembly.Location) + "\\TranslationFiles\\" + langKey;
+            System.Diagnostics.Process.Start("explorer.exe", rootPath);
+        }
         
         /// <summary>
         ///     This method is called from QML whenever either a translation or iscompleted parameters are 
