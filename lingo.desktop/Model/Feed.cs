@@ -33,7 +33,6 @@ namespace lingo.desktop.Model
             }
 
             var service = DataServiceMock as ILingoDataService;
-
             var groups = service.IterAvailableGroups().ToArray();
             int id = 0;
             foreach (var item in groups)
@@ -44,7 +43,6 @@ namespace lingo.desktop.Model
                 groupItem.Title = item.FriendlyName;
                 groupItem.Summary = item.Language.Name;
                 groupItem.IsOpen = false;
-
                 var phrases = item.IterPhrases();
 
                 foreach (ILingoPhrase phrase in phrases)
@@ -53,7 +51,6 @@ namespace lingo.desktop.Model
                     rawPhrase.Key = phrase.Key;
                     rawPhrase.Value = phrase.Text;
                     rawPhrase.Description = phrase.Description;
-
                     ILingoPhraseTranslation phraseTranslation = item.GetTranslationFor(phrase);
                     if (phraseTranslation != null) {
                         rawPhrase.Translation =  phraseTranslation.Translation;

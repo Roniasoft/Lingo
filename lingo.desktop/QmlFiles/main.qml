@@ -44,6 +44,7 @@ FramelessAppWindow {
     property real scaleFactor: fontSize / 12.0;
     property bool hideCompleteds: false;
     property alias rbtnHideCompleteds: rbtnHideCompleteds;
+    property int isLoading: 0;
 
     onHideCompletedsChanged: {
         if (hideCompleteds === true) {
@@ -307,7 +308,7 @@ FramelessAppWindow {
                 anchors.verticalCenter: parent.verticalCenter;
                 imgSource: drawer.visible ? "../images/backG.png" : "../images/drawerG.png";
                 imgSourceHovered: drawer.visible ? "../images/back.png" : "../images/drawer.png";
-                tooltipStr: drawer.visible ? "Show Drawer" : "Hide Drawer"
+                tooltipStr: !drawer.visible ? "Show Menu" : "Hide Menu"
 
                 onButtonClicked: {
                         if (drawer.visible) {
@@ -411,11 +412,13 @@ FramelessAppWindow {
             property int projectId: -1;
 
             onOpenProjectRequested: {
+                isLoading = 1;
 				headerBar.addTab(project.title, project.projectId)
 				sv.addPage(listViewComponent, project)   // project: projectViewModel
 
 				headerBar.switchTo(project.projectId)
                 updateStatusBar("Project opened: " + project.title);
+                isLoading = 0;
 			}
 
 			onSwitchToProjectRequested: {

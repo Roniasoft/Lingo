@@ -13,6 +13,8 @@ namespace lingo.desktop.ViewModels
         public List<ProjectViewModel> Projects { get; set; }
 
         public Feed ProjectsFeed;
+        
+
 
         internal FeedViewModel(Feed feed)
         {

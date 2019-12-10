@@ -60,7 +60,7 @@ Rectangle {
         clip: true;
 
        txtEditTranslation.onEditingFinished: {
-            if (translation != txtEditTranslation.text) {
+            if (isLoading === 0 && translation != txtEditTranslation.text) {
                 translation = txtEditTranslation.text;
                 updateRequested(name, translation, completed);
             }
@@ -155,7 +155,7 @@ Rectangle {
         Material.accent: "#00B10D";
 
         onCheckedChanged: {
-            if (completed != chckboxCompleted.checked) {
+            if (isLoading === 0) {
                 completed = chckboxCompleted.checked;
                 updateRequested(name, translation, completed);//CHECK. This should'nt be called this way since this is called recursively after model is filled.
             }

@@ -29,7 +29,6 @@ namespace lingo.desktop.Model
             Title = $"Lorem ipsum {Id}";
             Summary = "summary!";
             UpdateTime = new DateTime(2019, 06, 01).AddDays(Id * 3);
-
             Phrases = new List<PhraseViewModel>();
         }
     }

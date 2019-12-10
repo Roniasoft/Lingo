@@ -41,7 +41,6 @@ Rectangle {
                 "translation": phrase.translation,
                 "comment": phrase.description,
                 "completed": phrase.isCompleted,
-                "highlighted": phrase.highlighted
             });
         }
         listView.currentIndex = 0;
