@@ -21,10 +21,18 @@ namespace lingo.common
         ILingoLanguage Language { get; }
 
         /// <summary>
+        /// The path of the file.
+        /// </summary>
+        string FilePath {get;}
+
+        /// <summary>
         /// Gets all available phrases for the group
         /// </summary>
         /// <returns></returns>
         IEnumerable<ILingoPhrase> IterPhrases();
+
+        IEnumerable<ILingoPhrase> GetUntranslated();
+        IEnumerable<ILingoPhraseTranslation> GetDirtyTranslations();
 
         /// <summary>
         /// Checks whether the translation is valid before committing the translation (e.g. allows checks for illegal characters or other implementation specific validations)

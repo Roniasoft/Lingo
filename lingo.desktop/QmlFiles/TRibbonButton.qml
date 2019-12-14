@@ -17,6 +17,9 @@ Rectangle {
     property bool checkable: false;
     property bool checked: false;
     property string tooltipStr: "Tooltip"
+    property int tooltipBottomMargin: 5;
+    property real tooltipOpacity: 0.8;
+    property bool tooltipVisible: true;
     signal buttonClicked();
 
     Image {
@@ -32,11 +35,11 @@ Rectangle {
         id: tooltipRect;
         implicitWidth: tooltipText.width + 12;
         height: 25 * scaleFactor;
-        y: tooltipOnBottom ? parent.height + 5 : -tooltipRect.height - 0;
-        visible: mouseArea.containsMouse;
+        y: tooltipOnBottom ? parent.height + tooltipBottomMargin : -tooltipRect.height - 0;
+        visible: mouseArea.containsMouse & tooltipVisible;
         color: "#0e1621";
         border.color: "white"
-        opacity: 0.8;
+        opacity: tooltipOpacity;
 
         Text {
             id: tooltipText

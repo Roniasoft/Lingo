@@ -42,7 +42,10 @@ namespace lingo.desktop.Model
                 groupItem.LangKey = item.Key;
                 groupItem.Title = item.FriendlyName;
                 groupItem.Summary = item.Language.Name;
+                groupItem.FilePath = item.FilePath;
                 groupItem.IsOpen = false;
+                groupItem.UntranslatedCounts = item.GetUntranslated().ToArray().Length;
+                groupItem.DirtyCounts = item.GetDirtyTranslations().ToArray().Length;
                 var phrases = item.IterPhrases();
 
                 foreach (ILingoPhrase phrase in phrases)

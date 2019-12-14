@@ -127,7 +127,7 @@ Rectangle {
             height: isOpen ? 210 * scaleFactor : 36 * scaleFactor;
 
             onUpdateRequested: {
-                netContext.updatePhrase(pModel.langKey, aName, aTranslation, aIsCompleted);
+                netContext.getFeedViewModel().updatePhrase(pModel.langKey, aName, aTranslation, aIsCompleted);
             }
         }
     }

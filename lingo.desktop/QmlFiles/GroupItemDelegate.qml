@@ -10,8 +10,7 @@ ItemDelegate {
 
     Universal.background: style.feedBackground
     Material.background: style.feedBackground
-
-
+    property alias lDateTime: lDateTime;
 
     contentItem: Pane {
         id: itemControl
@@ -57,7 +56,9 @@ ItemDelegate {
                             pixelSize: fontSize + 5
                         }
                     }
+                    
                     Label {
+                        id: lDateTime;
                         horizontalAlignment: Text.AlignRight
                         verticalAlignment: Text.AlignTop
                         text: modelData.updateTime;
@@ -77,6 +78,11 @@ ItemDelegate {
                         text: modelData.summary;
                         wrapMode: Text.WordWrap
                         Layout.fillWidth: true
+                    }
+                    Label {
+                        font.pixelSize: fontSize - 1
+                        color: "#767676";
+                        text: modelData.untranslatedCounts + " untranslated, " + modelData.dirtyCounts + " dirty";
                     }
 
                 }

@@ -14,6 +14,10 @@ namespace lingo.desktop.Model
         public bool IsOpen { get; set; }
         public string Summary { get; set; }
         public DateTime UpdateTime { get; set; }
+
+        public int UntranslatedCounts {get; set;}
+        public int DirtyCounts {get; set;}
+        public string FilePath {get; set;}
         
         [NotifySignal]
         public List<PhraseViewModel> Phrases { get; set; }
@@ -30,6 +34,7 @@ namespace lingo.desktop.Model
             Summary = "summary!";
             UpdateTime = new DateTime(2019, 06, 01).AddDays(Id * 3);
             Phrases = new List<PhraseViewModel>();
+            UntranslatedCounts = 0;
         }
     }
 }

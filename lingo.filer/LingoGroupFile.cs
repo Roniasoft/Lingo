@@ -13,26 +13,28 @@ namespace lingo.filer
 
         public string Key { get; }
         public string FriendlyName => $"{_friendlyNameBase} ({Language.Key})";
+
+        public string FilePath {get;}
         string _friendlyNameBase { get; }
         public ILingoLanguage Language { get; }
 
-        readonly string _filepath;
         readonly XDocument _doc;
         readonly HashSet<LingoPhrase> _phrases = new HashSet<LingoPhrase>();
 
         public LingoGroupFile(string filepath, string friendlyName)
         {
-            if (!File.Exists(this._filepath = filepath))
+            FilePath = filepath;
+            if (!File.Exists(this.FilePath = filepath))
                 throw new ArgumentException("File at <filepath> does not exist");
 
-            Key = Path.GetFileName(_filepath);
+            Key = Path.GetFileName(FilePath);
             _friendlyNameBase = friendlyName;
 
             // Parse the language from the filename
-            Language = LingoLanguages.ParseLanguageFromFilename(_filepath);
+            Language = LingoLanguages.ParseLanguageFromFilename(FilePath);
 
             // Load the phrases from the file
-            _doc = new XDocument(XDocument.Load(_filepath));
+            _doc = new XDocument(XDocument.Load(FilePath));
             _iterAppStrings(_doc.Root)
                 .Select(xmlEntry => new LingoPhrase(xmlEntry))
                 .ForEach(phrase => _phrases.Add(phrase));
@@ -58,6 +60,16 @@ namespace lingo.filer
 
         public IEnumerable<ILingoPhrase> IterPhrases() => _phrases;
 
+        public IEnumerable<ILingoPhrase> GetUntranslated()
+        {
+            return _phrases.Where(p => this.GetTranslationFor(p) == null);
+        }
+
+        public IEnumerable<ILingoPhraseTranslation> GetDirtyTranslations()
+        {
+            return _phrases.Select(p => GetTranslationFor(p)).Where(t => t != null).Where(t => t.IsDirty);
+        }
+
         public (bool Success, string Message) CommitPhraseTranslation(ILingoPhraseTranslation translation)
         {
             if (!_phrases.Contains(translation.BasePhrase))
@@ -76,7 +88,7 @@ namespace lingo.filer
             var message = "Translation committed";
 
             // Save the XML doc
-            try { _doc.Save(_filepath); }
+            try { _doc.Save(FilePath); }
             catch (Exception e) { return (false, e.ToString()); }
 
             DataModified?.Invoke(this, message);

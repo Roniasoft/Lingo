@@ -15,7 +15,28 @@ namespace lingo.desktop.ViewModels
 
         public string LangKey => _project.LangKey;
         public string Title => _project.Title;
-        public string Summary => _project.Summary;
+        public string Summary
+        {
+            get => _project.Summary;
+            set
+            {
+                _project.Summary = value;
+            }
+        }
+        public int UntranslatedCounts
+        {
+            get => _project.UntranslatedCounts;
+            set {
+                _project.UntranslatedCounts = value;
+            }
+        }
+        public int DirtyCounts
+        {
+            get => _project.DirtyCounts;
+            set {
+                _project.DirtyCounts = value;
+            }
+        }
         public bool IsOpen
         {
             get => _project.IsOpen;
@@ -24,6 +45,8 @@ namespace lingo.desktop.ViewModels
                 _project.IsOpen = value;
             }
         }
+
+        public string FilePath => _project.FilePath;
 
         readonly Project _project;
 

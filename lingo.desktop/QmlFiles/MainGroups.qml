@@ -42,35 +42,20 @@ Pane {
                 }
             }
 
-            Button {
+            TRibbonButton {
                 id: btnExp;
-                text: "Find in Explorer";
-                icon.source: "../images/Icons/White/File.png";
-                icon.height: 18 * scaleFactor;
-                icon.width: 18 * scaleFactor;
-                font.pixelSize: fontSize - 2;
-                font.capitalization: Font.Capitalize;
+                imgSource: "../images/Icons/Grey/File.png";
+                imgSourceHovered: "../images/Icons/White/File.png";
+                width: 35 * scaleFactor;
+                height: width;
                 anchors.right: parent.right;
-                anchors.rightMargin: 30;
-                anchors.bottom: parent.bottom;
-                anchors.bottomMargin: 10 * scaleFactor;
+                anchors.rightMargin: 160 * scaleFactor;
+                anchors.top: parent.top;
+                anchors.topMargin: 17 * scaleFactor;
+                tooltipStr: "Open file location"
                 
-
-                MouseArea {
-                    anchors.fill: parent;
-                    hoverEnabled: true;
-                    cursorShape: Qt.PointingHandCursor
-                    
-                    propagateComposedEvents: true
-                    onClicked: mouse.accepted = false;
-                    onPressed: mouse.accepted = false;
-                    onReleased: mouse.accepted = false;
-                    onDoubleClicked: mouse.accepted = false;
-                    onPositionChanged: mouse.accepted = false;
-                    onPressAndHold: mouse.accepted = false;
-                }
-                onClicked: {
-                    netContext.openSelectedGroupItem(modelData.langKey);
+                onButtonClicked: {
+                    netContext.openSelectedGroupItem(modelData.filePath);
                 }
             }
         }
