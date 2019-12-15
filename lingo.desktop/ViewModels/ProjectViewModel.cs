@@ -57,7 +57,7 @@ namespace lingo.desktop.ViewModels
 
         public string UpdateTime
         {
-            get => _project.UpdateTime.ToString();
+            get => _project.UpdateTime.ToString("MM/dd/yyyy HH:mm");
             set
             {
                 var newTime = Convert.ToDateTime(value);

@@ -155,10 +155,15 @@ Rectangle {
         Material.accent: "#00B10D";
 
         onCheckedChanged: {
-            if (isLoading === 0) {
+            if (phraseChangingByUser === true) {
                 completed = chckboxCompleted.checked;
                 updateRequested(name, translation, completed);//CHECK. This should'nt be called this way since this is called recursively after model is filled.
             }
+        }
+
+        onClicked: {
+            completed = chckboxCompleted.checked;
+            updateRequested(name, translation, completed);//CHECK. This should'nt be called this way since this is called recursively after model is filled.
         }
     }
 

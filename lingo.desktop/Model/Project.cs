@@ -32,7 +32,7 @@ namespace lingo.desktop.Model
             Id = id;
             Title = $"Lorem ipsum {Id}";
             Summary = "summary!";
-            UpdateTime = new DateTime(2019, 06, 01).AddDays(Id * 3);
+            UpdateTime = DateTime.Now;
             Phrases = new List<PhraseViewModel>();
             UntranslatedCounts = 0;
         }

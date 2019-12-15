@@ -85,6 +85,7 @@ namespace lingo.desktop.ViewModels
                     }
                     group.UntranslatedCounts = lingoGroup.GetUntranslated().ToArray().Length;
                     group.DirtyCounts = lingoGroup.GetDirtyTranslations().ToArray().Length;
+                    group.UpdateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
                 }
             }
             this.ActivateSignal("projectsChanged");

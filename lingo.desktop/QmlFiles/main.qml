@@ -44,6 +44,7 @@ FramelessAppWindow {
     property bool hideCompleteds: false;
     property alias rbtnHideCompleteds: rbtnHideCompleteds;
     property int isLoading: 0;
+    property bool phraseChangingByUser: false;
 
     onHideCompletedsChanged: {
         if (hideCompleteds === true) {

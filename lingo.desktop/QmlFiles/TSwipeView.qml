@@ -74,14 +74,20 @@ StackLayout {
         Shortcut {
             sequences: ["Ctrl+Return", "Ctrl+Enter"]
             onActivated: {
-                sv.children[sv.currentIndex].proxyModel.set(sv.children[sv.currentIndex].listView.currentIndex, "completed", !sv.children[sv.currentIndex].proxyModel.get(sv.children[sv.currentIndex].listView.currentIndex).completed);
+                var currIndex = sv.children[sv.currentIndex].listView.currentIndex;
+                var isComp = sv.children[sv.currentIndex].proxyModel.get(currIndex).completed;
+                phraseChangingByUser = true;
+                sv.children[sv.currentIndex].proxyModel.set(currIndex, "completed", !isComp);
+                phraseChangingByUser = false;
             }
         }
         
         Shortcut {
             sequence: "Ctrl+Del"
             onActivated: {
+                phraseChangingByUser = true;
                 sv.children[sv.currentIndex].proxyModel.set(sv.children[sv.currentIndex].listView.currentIndex, "completed", false);
+                phraseChangingByUser = false;
             }
         }
     }
